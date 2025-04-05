@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=devide-width, initial-scale=1.0">
+	<title>IITJAM 2025 Result - Fitting a Logistics Growth Model to the
+Data</title>
+	<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<nav>
+				<a class="hhome" href="../../index.html" id="profileLink">
+					<img id="pfp" width="50" src="../../resources/profiles/OriginalS.png" alt="pfp">
+				</a>
+				<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar's</span> blog</span>
+			</nav>
+		</header>
+		<main>
+			<section>
+				<p class="blogdesc">
+					<a href="../blog.html">Back</a>
+				</p>
+			</section>
+			<section class="blog__post">
+				<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">IITJAM
+2025 Result - Fitting a Logistics Growth Model to the Data</h1>
+				<p><i>22 March, 2025</i></p>
+				<hr><br><br>
+<h2 id="introduction">1. Introduction</h2>
+<p>The logistics growth model is defined by the differential
+equation</p>
+<p><span
+class="math display"><em>R</em>′(<em>m</em>) = <em>r</em>(1 − <em>R</em>(<em>m</em>)/<em>K</em>)</span></p>
+<p>with <span
+class="math inline"><em>R</em>(0) = <em>R</em><sub>0</sub></span>, where
+<span class="math inline"><em>K</em></span> is the capacity of <span
+class="math inline"><em>R</em>(<em>m</em>)</span>, and <span
+class="math inline"><em>r</em></span> is the rate at which <span
+class="math inline"><em>R</em>(<em>m</em>)</span> changes with respect
+to <span class="math inline"><em>m</em></span>. We are denoting the rank
+at marks <span class="math inline"><em>m</em></span> by <span
+class="math inline"><em>R</em>(<em>m</em>)</span>. Then, the value of
+<span class="math inline"><em>K</em></span> will be <span
+class="math inline">1</span> and <span
+class="math inline"><em>r</em></span> is to be estimated. When <span
+class="math inline"><em>R</em>(<em>m</em>) &gt; 1</span>, the rate of
+change will be negative. As <span
+class="math inline"><em>R</em>(<em>m</em>) → 1</span>, <span
+class="math inline"><em>R</em>′(<em>m</em>) → 0</span>. We solve this
+system along with initial data <span
+class="math inline"><em>R</em>(30.33) = 1212</span> (rank-marks pair
+corresponding to one of the candidates) using the Mathematica code</p>
+<pre><code>DSolve[{R&#39;[m] == r (1 - R[m]), R[33.33] == 1212}, R[m], m]</code></pre>
+<p>to get</p>
+<p><span
+class="math display"><em>R</em>(<em>m</em>) = <em>e</em><sup>−<em>m</em><em>r</em></sup>(<em>e</em><sup><em>m</em><em>r</em></sup> + 1211<em>e</em><sup>33.33<em>r</em></sup>).</span></p>
+<p>The overall dynamics then are shown in figure 1, with imaginary value
+of <span class="math inline"><em>r</em></span>.</p>
+<figure>
+<img src="img/im.png" alt="Figure 1: Behaviour of R(m) at r=0.1." />
+<figcaption aria-hidden="true">Figure 1: Behaviour of <span
+class="math inline"><em>R</em>(<em>m</em>)</span> at <span
+class="math inline"><em>r</em> = 0.1</span>.</figcaption>
+</figure>
+<h2 id="simulation">2. Simulation</h2>
+<p>We use the data extracted from 20 actual result score-cards found
+online (table 1) to estimate the value of <span
+class="math inline"><em>r</em></span> in (1). Using
+<strong>NonlinearModelFit</strong> command of Mathematica, we receive
+<span class="math inline"><em>r</em> = 0.0828338</span>. Using this
+value, we plot the correct graph in figure 2.</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Marks</strong></th>
+<th style="text-align: left;"><strong>Rank</strong></th>
+<th style="text-align: left;"><strong>Marks</strong></th>
+<th style="text-align: left;"><strong>Rank</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">30.33</td>
+<td style="text-align: left;">1521</td>
+<td style="text-align: left;">48.67</td>
+<td style="text-align: left;">336</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">33.33</td>
+<td style="text-align: left;">1212</td>
+<td style="text-align: left;">54.33</td>
+<td style="text-align: left;">187</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">79</td>
+<td style="text-align: left;">4</td>
+<td style="text-align: left;">54</td>
+<td style="text-align: left;">194</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">58</td>
+<td style="text-align: left;">140</td>
+<td style="text-align: left;">62.67</td>
+<td style="text-align: left;">86</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">95.33</td>
+<td style="text-align: left;">1</td>
+<td style="text-align: left;">49.33</td>
+<td style="text-align: left;">319</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">94</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">30.33</td>
+<td style="text-align: left;">1521</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">45.44</td>
+<td style="text-align: left;">467</td>
+<td style="text-align: left;">39.67</td>
+<td style="text-align: left;">734</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">48</td>
+<td style="text-align: left;">364</td>
+<td style="text-align: left;">45.33</td>
+<td style="text-align: left;">467</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">38</td>
+<td style="text-align: left;">841</td>
+<td style="text-align: left;">49.33</td>
+<td style="text-align: left;">317</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">66</td>
+<td style="text-align: left;">44</td>
+<td style="text-align: left;">64.67</td>
+<td style="text-align: left;">57</td>
+</tr>
+</tbody>
+</table>
+<figure>
+<img src="img/re.png"
+alt="Figure 2: Comparison of the model (black) at r=0.0828338 with actual data (gray)." />
+<figcaption aria-hidden="true">Figure 2: Comparison of the model (black)
+at <span class="math inline"><em>r</em> = 0.0828338</span> with actual
+data (gray).</figcaption>
+</figure>
+<p>The model can be used to predict rank of varying marks, as shown in
+table 2.</p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 9%" />
+<col style="width: 6%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+<col style="width: 9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;"><strong>Marks</strong></th>
+<th style="text-align: left;">10</th>
+<th style="text-align: left;">20</th>
+<th style="text-align: left;">30</th>
+<th style="text-align: left;">40</th>
+<th style="text-align: left;">50</th>
+<th style="text-align: left;">60</th>
+<th style="text-align: left;">70</th>
+<th style="text-align: left;">80</th>
+<th style="text-align: left;">90</th>
+<th style="text-align: left;">100</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>Rank</strong></td>
+<td style="text-align: left;">8365</td>
+<td style="text-align: left;">3654</td>
+<td style="text-align: left;">1596</td>
+<td style="text-align: left;">697</td>
+<td style="text-align: left;">305</td>
+<td style="text-align: left;">133</td>
+<td style="text-align: left;">59</td>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">5</td>
+</tr>
+</tbody>
+</table>
+<p>Of course, these are only approximate results, yet fairly
+accurate.</p>
+<p>This article is also available in PDF format at <a
+href="../../resources/JAM25_Logistics.pdf">this file</a>.</p>
+<h2 id="references">References</h2>
+<ol type="1">
+<li>Barnes, Belinda, and Glenn R. Fulford. <em>Mathematical Modelling
+with Case Studies: A Differential Equations Approach Using Maple and
+MATLAB.</em> 2nd ed., CRC Press, 2009.</li>
+</ol>
+				<hr><br><br>
+				<p>
+					Thanks for reading. Return to see <a href="../blog.html">all blog posts,</a> or to the <a href="../../index.html">home page.</a>
+				</p>
+			</section>
+		</main>
+		<footer>&copy; <strong>Naman Taggar</strong> 2024&mdash;25. <a href="../copy.html">Read more.</a></footer>
+	</div>
+</body>
+</html>

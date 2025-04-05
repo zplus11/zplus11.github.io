@@ -1,0 +1,293 @@
+@font-face {
+        font-family: "mserif";
+        font-weight: 400;
+        font-style: normal;
+        src: url("resources/fonts/Merriweather-Regular.ttf") format("truetype");
+}
+
+@font-face {
+        font-family: "mserif";
+        font-weight: 400;
+        font-style: italic;
+        src: url("resources/fonts/Merriweather-Italic.ttf") format("truetype");
+}
+
+@font-face {
+        font-family: "mserif";
+        font-weight: 700;
+        font-style: normal;
+        src: url("resources/fonts/Merriweather-Bold.ttf") format("truetype");
+}
+
+@font-face {
+        font-family: "mserif";
+        font-weight: 700;
+        font-style: italic;
+        src: url("resources/fonts/Merriweather-BoldItalic.ttf") format("truetype");
+}
+
+
+@font-face {
+        font-family: "msans";
+        font-weight: 400;
+        font-style: normal;
+        src: url("resources/fonts/MerriweatherSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+        font-family: "msans";
+        font-weight: 400;
+        font-style: italic;
+        src: url("resources/fonts/MerriweatherSans-Italic.ttf") format("truetype");
+}
+
+@font-face {
+        font-family: "msans";
+        font-weight: 700;
+        font-style: normal;
+        src: url("resources/fonts/MerriweatherSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+        font-family: "msans";
+        font-weight: 700;
+        font-style: italic;
+        src: url("resources/fonts/MerriweatherSans-BoldItalic.ttf") format("truetype");
+}
+
+@font-face {
+	font-family: "msans";
+	font-weight: 800;
+	font-style: normal;
+	src: url("resources/fonts/MerriWeatherSans-ExtraBold.ttf") format("truetype")
+}
+
+:root {
+	--col-bg: #ffffff;
+	--col-fg: #181825;
+	--col-hl: #CC1E1D;
+	--col-links: #EB008B;
+	--col-ecl: #A7A7A7;
+	--font-rm: "mserif";
+	--font-sf: "msans";
+	--font-rmi: inherit;
+	--font-links: inherit
+}
+
+.hl {
+	color: var(--col-hl)
+}
+
+a {
+	color: var(--col-links);
+	font-family: var(--font-links);
+	font-weight: bold;
+	text-decoration: none;
+	line-height: 1
+}
+
+html, body {
+}
+
+html {
+	box-sizing: border-box;
+	font-size: 100%
+}
+
+*, *::before, *::after {
+	box-sizing: inherit
+}
+
+body {
+	margin: 0;
+	background-color: var(--col-bg);
+	color: var(--col-fg);
+	font-family: var(--font-rm);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.6;
+	padding-bottom: 50px
+}
+
+.wrapper {
+	width: calc(100% - 2rem);
+	max-width: 800px;
+	margin-inline: auto
+}
+
+#pfp, #pfp2 {
+	border-radius: 30px;
+	max-width: 100%
+}
+
+header {
+	margin-top: 30px;
+	font-family: var(--font-sf);
+  	font-weight: 700;
+  	font-style: normal;
+	position: relative;
+	z-index: 1
+}
+
+header nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px 25px
+}
+
+header a {
+	text-decoration: none;
+	color: inherit
+}
+
+header a:hover {
+	text-decoration: underline
+}
+
+header .hhome {
+	font-size: 1.5em;
+	line-height: 1;
+	flex: 1 0 100%
+}
+
+.hsoc {
+	text-underline-offset: 4px
+}
+
+figcaption {
+	font-style: italic
+}
+
+table, th, td {
+	border-collapse: collapse;
+	padding: 2px 7px
+}
+
+table {
+	border-top: solid var(--col-hl) 2px;
+	border-bottom: solid var(--col-hl) 2px
+}
+
+table th {
+	border-bottom: solid var(--col-hl) 2px
+}
+
+img {
+	max-width: 100%;
+}
+
+@media (min-width: 700px) {
+	img {
+      		max-width: 70%;
+    	}
+}
+
+@media (min-width: 500px) {
+	header .hnav {
+		justify-content: flex-start;
+		align-items: center;
+		text-align: left
+	}
+
+	header .hhome {
+		flex: 0 1 auto;
+		margin-inline-end: auto
+	}
+}
+
+main h1 {
+	font-size: 4rem;
+	font-family: var(--font-sf);
+  	font-style: normal;
+	font-weight: normal;
+	margin-bottom: 20px
+}
+
+.ntdesc {
+	max-width: 750px;
+	font-size: 18px;
+	margin-inline-end: auto;
+	margin: 10px 0;
+	padding: 40px 0px
+}
+
+pre {
+    	max-height: 100%;
+    	overflow: auto;
+	border-left: solid var(--col-hl) 4px;
+	border-radius: 4px;
+	background-color: rgba(1, 1, 1, 0.05);
+}
+
+pre code {
+    	display: block;
+      	white-space: pre;
+     	padding: 1em;
+}
+
+.blog__card {
+	margin: 30px 0
+}
+
+.blog__card h2 {
+	font-family: "msans"
+}
+
+.blog__date {
+	margin: -8px 0 -5px 0
+}
+
+.blogdesc {
+	font-size: 18px;
+	padding: 20px 0
+}
+
+.tag-btn {
+	border: var(--col-hl) 2px solid;
+	border-radius: 5px;
+	background-color: white;
+	margin: 2px 3px
+}
+
+.tag-btn:active {
+	background-color: var(--col-hl);
+	color: white
+}
+
+@media (max-width: 775px) {
+	main h1 {font-size: 54px; margin-bottom: -10px}
+
+	body {font-size: 15px}
+
+	.ntdesc {font-size: 17px}
+
+	.blogdesc {font-size: 17px; padding: 10px 0}
+
+	h2 {font-size: 19px}
+}
+
+@media (max-width: 500px) {
+	main h1 {font-size: 40px; font-weight: bold; padding-top: 20px}
+	
+	header .hhome {font-size: 22px}
+
+	body {font-size: 14px}
+
+	.ntdesc {font-size: 16px}
+
+	.blogdesc {font-size: 16px; padding: 0}
+
+	h2 {font-size: 17px}
+}
+
+@media (max-width: 350px) {
+	main h1 {font-size: 36px; padding-top: 20px}
+
+	header .hhome {font-size: 21px}
+
+	body {font-size: 13px}
+
+	.ntdesc {font-size: 15px}
+
+	.blogdesc {font-size: 15px}
+} 

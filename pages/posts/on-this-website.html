@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=devide-width, initial-scale=1.0">
+	<title>On This Website</title>
+	<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<nav>
+				<a class="hhome" href="../../index.html" id="profileLink">
+					<img id="pfp" width="50" src="../../resources/profiles/OriginalS.png" alt="pfp">
+				</a>
+				<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar's</span> blog</span>
+			</nav>
+		</header>
+		<main>
+			<section>
+				<p class="blogdesc">
+					<a href="../blog.html">Back</a>
+				</p>
+			</section>
+			<section class="blog__post">
+				<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">On
+This Website</h1>
+				<p><i>17 December, 2024</i></p>
+				<hr><br><br>
+<p>After looking at so many personal websites, I finally set my mind on
+designing one for myself as well. And, here it is. I have kept it very
+plain and simple, with merely an introduction of mine along with a blog
+where I will talk about the things I like.</p>
+<p>Being a simple website, I have resorted to implementing it in simple
+ways. I wrote <a href="../index.html">index.html</a> file as well as <a
+href="blog.html">blog.html</a> manually, whereas I created a pandoc
+template for the blog-posts. It is available at <a
+href="template.html">template.html</a> which contains the boiler-plate
+code (including all CSS styling) along with variables that are to change
+per post. These include</p>
+<ol type="1">
+<li>title of the post,</li>
+<li>date on which the post is written, and</li>
+<li>content of the post.</li>
+</ol>
+<p>In template.html, these are marked with respectively
+<code>$title$</code>, <code>$date$</code>, and <code>$body$</code>. The
+former two are supplied via the yaml section in the markdown file,
+whereas the latter is probably a standard variable for content of the
+markdown file. The yaml section of this post contains the following:</p>
+<pre><code>---
+title: On This Website
+date: 16 December, 2024
+---</code></pre>
+<p>After writing my markdown file, I merely run the following
+command:</p>
+<pre><code>pandoc on-this-website.md --template template.html -o on-this-website.html</code></pre>
+<p>which (if I have pandoc installed) will create
+<code>on-this-website.html</code> ready to be imported in my website.
+The list of blogs is printed to the <a href="blog.html">blog.html</a>
+page (after being filtered by tag) using javascript.</p>
+<p>Here is to hoping that I continue writing about the things I like or
+do.</p>
+				<hr><br><br>
+				<p>
+					Thanks for reading. Return to see <a href="../blog.html">all blog posts,</a> or to the <a href="../../index.html">home page.</a>
+				</p>
+			</section>
+		</main>
+		<footer>&copy; <strong>Naman Taggar</strong> 2024&mdash;25. <a href="../copy.html">Read more.</a></footer>
+	</div>
+</body>
+</html>

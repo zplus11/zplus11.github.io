@@ -1,0 +1,1 @@
+Personal website of Naman Taggar. See [Copying](https://namantaggar.github.io/pages/copy.html).

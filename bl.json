@@ -1,0 +1,37 @@
+[
+	{
+		"title": "Logistics of IITJAM 2025",
+		"date": "22 March, 2025",
+		"desc": "I fitted a logistics growth model to the rank vs. marks dynamics in IITJAM 2025 Examination.",
+		"url": "JAM25-Logistics.html",
+		"tags": ["maths"]
+	},
+	{
+		"title": "Salaries of Professors",
+		"date": "14 February, 2025",
+		"desc": "Show-case of my project work done for a course of data analytics that included machine learning as well. In it, I studied a dataset concerning the salaries of professors at a university and found disparity among salary on the basis of gender.",
+		"url": "salaries-disparity.html",
+		"tags": ["machine-learning"]
+	},
+	{
+		"title": "Multivariate Calculus",
+		"date": "05 February, 2025",
+		"desc": "Introductory blog post on multivariate calculus showcasing various visualisations I created.",
+		"url": "intro-to-mvc.html",
+		"tags": ["maths"]
+	},
+	{
+    		"title": "Attendance & Marks at SGTB Khalsa College",
+    		"date": "06 January, 2025",
+    		"desc": "I analysed the marks and attendance data for students of my college. The data was taken from college website, and the analysis has been visually presented in various manners using ggplot2 and dplyr packages of R.",
+    		"url": "Attendance-Marks.html",
+    		"tags": ["general"]
+  	},
+  	{
+   	 	"title": "On This Website",
+    		"date": "17 December, 2024",
+    		"desc": "A first blog that talks about this website itself, how I create blogs. Nothing extra-ordinary...",
+    		"url": "on-this-website.html",
+    		"tags": ["general"]
+	}
+]
