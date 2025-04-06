@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    	fetch(window.location.origin+"/bl.json")
+    	fetch(window.location.origin+"/pages/blog.json")
 	.then(response => response.json())
         .then(data => {
         	const blogList = document.getElementById("blogs__list");
@@ -17,10 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 			blogCard.classList.add("blog__card");
 
                         		blogCard.innerHTML = `
-                            		<h2><a href="posts/${blog.url}">${blog.title}</a></h2>
+                            		<strong><a href="posts/${blog.url}">${blog.title}</a></strong>
                         		<p class="blog__date"><i>${blog.date}</i></p>
-                    			<p>${blog.desc}<br>
-					<strong>Tags:</strong> ${blog.tags.map(tag => `<span class="tag">${tag}</span>`).join(" ")}</p>`;
+                    			<div>${blog.desc}<br>
+					<strong>Tags:</strong> ${blog.tags.map(tag => `<span class="tag">${tag}</span>`).join(" ")}</div>`;
 
                        			blogList.appendChild(blogCard);
 				}

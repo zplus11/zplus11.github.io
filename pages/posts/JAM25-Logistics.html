@@ -3,8 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=devide-width, initial-scale=1.0">
-	<title>IITJAM 2025 Result - Fitting a Logistics Growth Model to the
-Data</title>
+	<title>Logistics of IITJAM 2025</title>
 	<link rel="stylesheet" href="../../style.css">
 </head>
 <body>
@@ -24,18 +23,18 @@ Data</title>
 				</p>
 			</section>
 			<section class="blog__post">
-				<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">IITJAM
-2025 Result - Fitting a Logistics Growth Model to the Data</h1>
+				<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">Logistics
+of IITJAM 2025</h1>
 				<p><i>22 March, 2025</i></p>
 				<hr><br><br>
 <h2 id="introduction">1. Introduction</h2>
 <p>The logistics growth model is defined by the differential
 equation</p>
-<p><span
-class="math display"><em>R</em>′(<em>m</em>) = <em>r</em>(1 − <em>R</em>(<em>m</em>)/<em>K</em>)</span></p>
-<p>with <span
-class="math inline"><em>R</em>(0) = <em>R</em><sub>0</sub></span>, where
-<span class="math inline"><em>K</em></span> is the capacity of <span
+<p><span class="math display"><em>R</em>’(<em>m</em>) = <em>r</em>(1 -
+<em>R</em>(<em>m</em>)/<em>K</em>)</span></p>
+<p>with <span class="math inline"><em>R</em>(0) =
+<em>R</em><sub>0</sub></span>, where <span
+class="math inline"><em>K</em></span> is the capacity of <span
 class="math inline"><em>R</em>(<em>m</em>)</span>, and <span
 class="math inline"><em>r</em></span> is the rate at which <span
 class="math inline"><em>R</em>(<em>m</em>)</span> changes with respect
@@ -45,31 +44,34 @@ class="math inline"><em>R</em>(<em>m</em>)</span>. Then, the value of
 <span class="math inline"><em>K</em></span> will be <span
 class="math inline">1</span> and <span
 class="math inline"><em>r</em></span> is to be estimated. When <span
-class="math inline"><em>R</em>(<em>m</em>) &gt; 1</span>, the rate of
+class="math inline"><em>R</em>(<em>m</em>) &gt; 1</span>, the rate of
 change will be negative. As <span
-class="math inline"><em>R</em>(<em>m</em>) → 1</span>, <span
-class="math inline"><em>R</em>′(<em>m</em>) → 0</span>. We solve this
+class="math inline"><em>R</em>(<em>m</em>)</span> goes to 1,
+[<em>R</em>’(<em>m</em>){.math .inline} will tend to 0. We solve this
 system along with initial data <span
-class="math inline"><em>R</em>(30.33) = 1212</span> (rank-marks pair
+class="math inline"><em>R</em>(33.33) = 1212</span> (rank-marks pair
 corresponding to one of the candidates) using the Mathematica code</p>
 <pre><code>DSolve[{R&#39;[m] == r (1 - R[m]), R[33.33] == 1212}, R[m], m]</code></pre>
 <p>to get</p>
-<p><span
-class="math display"><em>R</em>(<em>m</em>) = <em>e</em><sup>−<em>m</em><em>r</em></sup>(<em>e</em><sup><em>m</em><em>r</em></sup> + 1211<em>e</em><sup>33.33<em>r</em></sup>).</span></p>
+<p><span class="math display"><em>R</em>(<em>m</em>) =
+<em>e</em><sup>-<em>mr</em></sup>(<em>e</em><sup><em>mr</em></sup> +
+1211<em>e</em><sup>33.33<em>r</em></sup>).</span></p>
 <p>The overall dynamics then are shown in figure 1, with imaginary value
 of <span class="math inline"><em>r</em></span>.</p>
 <figure>
 <img src="img/im.png" alt="Figure 1: Behaviour of R(m) at r=0.1." />
-<figcaption aria-hidden="true">Figure 1: Behaviour of <span
+<figcaption>
+Figure 1: Behaviour of <span
 class="math inline"><em>R</em>(<em>m</em>)</span> at <span
-class="math inline"><em>r</em> = 0.1</span>.</figcaption>
+class="math inline"><em>r</em> = 0.1</span>.
+</figcaption>
 </figure>
 <h2 id="simulation">2. Simulation</h2>
 <p>We use the data extracted from 20 actual result score-cards found
 online (table 1) to estimate the value of <span
 class="math inline"><em>r</em></span> in (1). Using
 <strong>NonlinearModelFit</strong> command of Mathematica, we receive
-<span class="math inline"><em>r</em> = 0.0828338</span>. Using this
+<span class="math inline"><em>r</em> = 0.0828338</span>. Using this
 value, we plot the correct graph in figure 2.</p>
 <table>
 <thead>
@@ -146,25 +148,27 @@ value, we plot the correct graph in figure 2.</p>
 <figure>
 <img src="img/re.png"
 alt="Figure 2: Comparison of the model (black) at r=0.0828338 with actual data (gray)." />
-<figcaption aria-hidden="true">Figure 2: Comparison of the model (black)
-at <span class="math inline"><em>r</em> = 0.0828338</span> with actual
-data (gray).</figcaption>
+<figcaption>
+Figure 2: Comparison of the model (black) at <span
+class="math inline"><em>r</em> = 0.0828338</span> with actual data
+(gray).
+</figcaption>
 </figure>
 <p>The model can be used to predict rank of varying marks, as shown in
 table 2.</p>
-<table>
+<table style="width:98%;">
 <colgroup>
-<col style="width: 11%" />
-<col style="width: 9%" />
-<col style="width: 6%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
-<col style="width: 9%" />
+<col style="width: 14%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
+<col style="width: 8%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -213,7 +217,7 @@ MATLAB.</em> 2nd ed., CRC Press, 2009.</li>
 				</p>
 			</section>
 		</main>
-		<footer>&copy; <strong>Naman Taggar</strong> 2024&mdash;25. <a href="../copy.html">Read more.</a></footer>
+		<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="../copy.html">Read more.</a></footer>
 	</div>
 </body>
 </html>

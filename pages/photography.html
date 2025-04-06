@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=devide-width, initial-scale=1.0">
+		<title>Photography</title>
+		<link rel="stylesheet" href="../style.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav>
+					<a class="hhome" href="../index.html">
+						<img id="pfp2" width="50" src="../resources/profiles/OriginalS.png" alt="pfp">
+					</a>
+					<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar's</span> Photography</span>
+				</nav>
+			</header>
+			<main>
+				<section>
+					<p class="blogdesc">
+						This is a collection of some photographs I have clicked over the past.
+					</p>
+					<p>Navigate using the buttons below.</p>
+					<div style="margin: 10px 0px">
+						<button onclick="prevImage()">Previous</button>
+						<button onclick="nextImage()">Next</button>
+					</div>
+					<img
+					id="imageViewer"
+					src="/resources/photographs/0.jpeg"
+					alt="Image Viewer"
+					height="300px"
+					style="object-fit:contain">
+				</section>
+			</main>
+			<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="copy.html">Read more.</a></footer>
+		</div>
+		<script>
+			const images = Array.from({length: 15}, (_, i) => `${i}.jpeg`);
+			let index = 0;
+
+			function showImage() {
+				document.getElementById("imageViewer").src = "/resources/photographs/" + images[index];
+			}
+
+			function nextImage() {
+				index = (index + 1) % images.length;
+				showImage();
+			}
+
+			function prevImage() {
+				index = (index - 1 + images.length) % images.length;
+				showImage();
+			}
+		</script>
+	</body>
+</html>

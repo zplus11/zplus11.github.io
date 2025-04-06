@@ -25,7 +25,7 @@
 			<section class="blog__post">
 				<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">Attendance
 &amp; Marks at SGTB Khalsa College</h1>
-				<p><i>06 January, 2025</i></p>
+				<p><i>6 January, 2025</i></p>
 				<hr><br><br>
 <p>We used the data available on my college’s website to analyse the
 bahavious of students in terms of their attendance, marks, and relation
@@ -43,34 +43,36 @@ all students. Marks data contains marks of students who took admission
 in 2022, 2023, and 2024. It contains marks in the most recent semester
 at that time, for two categories — IA and CA. In total, we have the data
 of over 3,000 students; spanning almost 20,000 rows.</p>
-<p>We analysed it using R, and the complete work can be found at
-<a href="../../resources/AttendanceMarks.html" target="_blank">AttendanceMarks.html</a>.
-CSV files are available upon request — write to me at namantaggar
-<code>[dot]</code> 11 <code>[at]</code> gmail <code>[dot]</code>
-com.</p>
+<p>We analysed it using R, and the complete work can be found at <a
+href="../../resources/AttendanceMarks.html"
+target="_blank">AttendanceMarks.html</a>. CSV files are available upon
+request — write to me at namantaggar <code>[dot]</code> 11
+<code>[at]</code> gmail <code>[dot]</code> com.</p>
 <p>This blog also contains the simplified versions of commands used.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(yrwisestudents, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>,</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>                           <span class="at">y=</span>Total,</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>                           <span class="at">fill=</span>Year)) <span class="sc">+</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>           <span class="at">width=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>ggplot(yrwisestudents, aes(x=&quot;&quot;,
+                           y=Total,
+                           fill=Year)) +
+  geom_bar(stat=&quot;identity&quot;,
+           width=1)</code></pre>
 <figure>
 <img src="img/no.ofstudents.png"
 alt="Number of students in each batch." />
-<figcaption aria-hidden="true">Number of students in each
-batch.</figcaption>
+<figcaption aria-hidden="true">
+Number of students in each batch.
+</figcaption>
 </figure>
 <p>Starting with the attendance dataset, first and foremost we compare
 the year-wise attendance:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(attendance, <span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>,</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                       <span class="at">y=</span>Percentage,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">col=</span>Year)) <span class="sc">+</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">linewidth=</span><span class="dv">1</span>) </span></code></pre></div>
+<pre><code>ggplot(attendance, aes(x=&quot;&quot;,
+                       y=Percentage,
+                       col=Year)) +
+   geom_boxplot(linewidth=1) </code></pre>
 <figure>
 <img src="img/boxplot3.png"
 alt="Change in attendance metrics over the three years of a course." />
-<figcaption aria-hidden="true">Change in attendance metrics over the
-three years of a course.</figcaption>
+<figcaption aria-hidden="true">
+Change in attendance metrics over the three years of a course.
+</figcaption>
 </figure>
 <p>where it can be seen decreasing throughout the 3 years of a course.
 Out of over 3000 students, only about 85 students have attended more
@@ -104,115 +106,121 @@ than 85% of the lectures.</p>
 <p>Department-wise, we see that there is a variation in the number of
 lectures being taken as well — such as Zoology holding the most number
 of lectures whereas B.A. (Prog.) the least.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>attendanceDept <span class="sc">%&gt;%</span> </span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(., <span class="at">cols=</span><span class="fu">c</span>(AvgAttendance,</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                         AvgDelivered),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to=</span><span class="st">&quot;Type&quot;</span>,</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to=</span><span class="st">&quot;Score&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x=</span>Department,</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                <span class="at">y=</span>Score,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                <span class="at">fill=</span>Type)) <span class="sc">+</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>           <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<pre><code>attendanceDept %&gt;% 
+  pivot_longer(., cols=c(AvgAttendance,
+                         AvgDelivered),
+               names_to=&quot;Type&quot;,
+               values_to=&quot;Score&quot;) %&gt;% 
+  ggplot(., aes(x=Department,
+                y=Score,
+                fill=Type)) +
+  geom_bar(stat=&quot;identity&quot;,
+           position=&quot;dodge&quot;)</code></pre>
 <figure>
 <img src="img/attdept1.png"
 alt="Department-wise attendance and delivered lectures" />
-<figcaption aria-hidden="true">Department-wise attendance and delivered
-lectures</figcaption>
+<figcaption aria-hidden="true">
+Department-wise attendance and delivered lectures
+</figcaption>
 </figure>
 <p>More can be interpreted by the ratio between the 2 metrics for each
 department. Average attendance then sits at around 30% for most of the
 departments:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>attendanceDept <span class="sc">%&gt;%</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Ratio=</span>AvgAttendance<span class="sc">/</span>AvgDelivered) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x=</span>Department,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">y=</span>Ratio)) <span class="sc">+</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<pre><code>attendanceDept %&gt;%
+  mutate(Ratio=AvgAttendance/AvgDelivered) %&gt;% 
+  ggplot(., aes(x=Department,
+                y=Ratio)) +
+  geom_bar(stat=&quot;identity&quot;,
+           position=&quot;dodge&quot;)</code></pre>
 <figure>
 <img src="img/attdept2.png"
 alt="Department-wise attendance and delivered lectures" />
-<figcaption aria-hidden="true">Department-wise attendance and delivered
-lectures</figcaption>
+<figcaption aria-hidden="true">
+Department-wise attendance and delivered lectures
+</figcaption>
 </figure>
 <h2 id="marks">Marks</h2>
 <p>As per marks, the analysis will be focused on only IA marks. See
 Appendix A of the document for CA marks. Firstly, we show density plot
 for IA marks. The distribution is more evenly spread for 1st and 2nd
 year students.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(marks, <span class="fu">aes</span>(<span class="at">x=</span>IAPercentage,</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>                  <span class="at">col=</span>Year)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">linewidth=</span><span class="dv">1</span>)</span></code></pre></div>
+<pre><code>ggplot(marks, aes(x=IAPercentage,
+                  col=Year)) +
+  geom_density(linewidth=1)</code></pre>
 <figure>
 <img src="img/densityIA.png"
 alt="Density of IA marks among students." />
-<figcaption aria-hidden="true">Density of IA marks among
-students.</figcaption>
+<figcaption aria-hidden="true">
+Density of IA marks among students.
+</figcaption>
 </figure>
 <p>Department-wise IA marks:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>marks <span class="sc">%&gt;%</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Department) <span class="sc">%&gt;%</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">AvgMarks=</span><span class="fu">mean</span>(IAPercentage,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                          <span class="at">na.rm=</span>T)) <span class="sc">%&gt;%</span> </span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(., <span class="fu">aes</span>(<span class="at">x=</span>Department,</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">y=</span>AvgMarks)) <span class="sc">+</span> </span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>           <span class="at">position=</span><span class="st">&quot;dodge&quot;</span>)</span></code></pre></div>
+<pre><code>marks %&gt;%
+  group_by(Department) %&gt;%
+  summarise(AvgMarks=mean(IAPercentage,
+                          na.rm=T)) %&gt;% 
+  ggplot(., aes(x=Department,
+                y=AvgMarks)) + 
+  geom_bar(stat=&quot;identity&quot;,
+           position=&quot;dodge&quot;)</code></pre>
 <figure>
 <img src="img/marksdept.png" alt="Average marks in each department." />
-<figcaption aria-hidden="true">Average marks in each
-department.</figcaption>
+<figcaption aria-hidden="true">
+Average marks in each department.
+</figcaption>
 </figure>
 <p>Most interesting of all, below is the relation between attendance
 percentage of, and marks received by the students. Creating the
 dataset:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>marks_avg <span class="ot">&lt;-</span> marks <span class="sc">%&gt;%</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(RollNo) <span class="sc">%&gt;%</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">IA=</span><span class="fu">mean</span>(IAPercentage, <span class="at">na.rm=</span>T),</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">CA=</span><span class="fu">mean</span>(TotalScoreCA[TotalScoreCA<span class="sc">&gt;</span><span class="dv">0</span>])</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>marksattendance <span class="ot">&lt;-</span> <span class="fu">merge</span>(marks_avg, attendance, <span class="at">by=</span><span class="st">&quot;RollNo&quot;</span>)</span></code></pre></div>
+<pre><code>marks_avg &lt;- marks %&gt;%
+  group_by(RollNo) %&gt;%
+  summarise(
+    IA=mean(IAPercentage, na.rm=T),
+    CA=mean(TotalScoreCA[TotalScoreCA&gt;0])
+  )
+marksattendance &lt;- merge(marks_avg, attendance, by=&quot;RollNo&quot;)</code></pre>
 <p>then using it to plot:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  marksattendance[<span class="fu">sample</span>(<span class="fu">nrow</span>(marksattendance), <span class="dv">1000</span>), ],</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">as.numeric</span>(Percentage),</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">y=</span><span class="fu">as.numeric</span>(IA),</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">color=</span>Year)) <span class="sc">+</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span>.<span class="dv">5</span>)</span></code></pre></div>
+<pre><code>ggplot(
+  marksattendance[sample(nrow(marksattendance), 1000), ],
+  aes(x=as.numeric(Percentage),
+      y=as.numeric(IA),
+      color=Year)) +
+  geom_point(alpha=.5)</code></pre>
 <figure>
 <img src="img/attvsIA.png"
 alt="Relation between attendance and IA marks." />
-<figcaption aria-hidden="true">Relation between attendance and IA
-marks.</figcaption>
+<figcaption aria-hidden="true">
+Relation between attendance and IA marks.
+</figcaption>
 </figure>
 <p>Certainly, there is a direct relation among attendance and marks
 obtained in CA/IA. One observation is that 2nd year students have
 consistently scored more marks than 1st year students, specially in
 IA.</p>
 <p>Detailed department-wise display of the same:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  marksattendance,</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">as.numeric</span>(Percentage),</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>      <span class="at">y=</span><span class="fu">as.numeric</span>(IA),</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>      <span class="at">color=</span>Year)) <span class="sc">+</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span>.<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>Department)</span></code></pre></div>
+<pre><code>ggplot(
+  marksattendance,
+  aes(x=as.numeric(Percentage),
+      y=as.numeric(IA),
+      color=Year)) +
+  geom_point(alpha=.5) +
+  facet_wrap(~Department)</code></pre>
 <figure>
 <img src="img/attvsIADept.png"
 alt="Department-wise relation between attendance and IA marks." />
-<figcaption aria-hidden="true">Department-wise relation between
-attendance and IA marks.</figcaption>
+<figcaption aria-hidden="true">
+Department-wise relation between attendance and IA marks.
+</figcaption>
 </figure>
 <h2 id="authors">Authors</h2>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>marksattendance <span class="sc">%&gt;%</span> </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(StudentName<span class="sc">==</span><span class="st">&quot;Naman Taggar&quot;</span> <span class="sc">|</span> StudentName<span class="sc">==</span><span class="st">&quot;DIPANSH CHAUDHARY&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(StudentName,</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>         RollNo,</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>         IA,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>         CA,</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>         Percentage)</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="er">)</span></span></code></pre></div>
+<pre><code>marksattendance %&gt;% 
+  filter(StudentName==&quot;Naman Taggar&quot; | StudentName==&quot;DIPANSH CHAUDHARY&quot;) %&gt;% 
+  select(StudentName,
+         RollNo,
+         IA,
+         CA,
+         Percentage)
+  )</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -246,7 +254,7 @@ attendance and IA marks.</figcaption>
 				</p>
 			</section>
 		</main>
-		<footer>&copy; <strong>Naman Taggar</strong> 2024&mdash;25. <a href="../copy.html">Read more.</a></footer>
+		<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="../copy.html">Read more.</a></footer>
 	</div>
 </body>
 </html>

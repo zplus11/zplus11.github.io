@@ -203,12 +203,23 @@ main h1 {
 	margin-bottom: 20px
 }
 
-.ntdesc {
-	max-width: 750px;
-	font-size: 18px;
-	margin-inline-end: auto;
-	margin: 10px 0;
-	padding: 40px 0px
+.ntpic {
+	border-radius: 35px;
+	width: 175px;
+	margin: 3.5rem 0px 0px 0px;
+	border: gray solid 2px;
+	padding: 5px
+}
+
+.ntname {
+	font-size: 22px;
+	font-weight: bold;
+	font-family: var(--font-sf);
+	margin: .5rem 0px 2.5rem 0px
+}
+
+.ntlinks {
+	margin: 0px 0px 2rem 0px
 }
 
 pre {
@@ -226,15 +237,15 @@ pre code {
 }
 
 .blog__card {
-	margin: 30px 0
+	margin: 15px 0
 }
 
-.blog__card h2 {
+.blog__card strong {
 	font-family: "msans"
 }
 
 .blog__date {
-	margin: -8px 0 -5px 0
+	margin: .25rem 0;
 }
 
 .blogdesc {
