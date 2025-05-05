@@ -1,5 +1,12 @@
 [
 	{
+    		"title": "Gaussian Distribution",
+    		"date": "05 May, 2025",
+    		"desc": "Marks scored by students in a large class follow the gaussian distribution &amp; a demonstration of that.",
+		"url": "Gaussian-Distribution.html",
+    		"tags": ["maths"]
+  	},
+	{
 		"title": "Logistics of IITJAM 2025",
 		"date": "22 March, 2025",
 		"desc": "I fitted a logistics growth model to the rank vs. marks dynamics in IITJAM 2025 Examination.",
@@ -20,13 +27,6 @@
 		"url": "intro-to-mvc.html",
 		"tags": ["maths"]
 	},
-	{
-    		"title": "Attendance & Marks at SGTB Khalsa College",
-    		"date": "06 January, 2025",
-    		"desc": "I analysed the marks and attendance data for students of my college. The data was taken from college website, and the analysis has been visually presented in various manners using ggplot2 and dplyr packages of R.",
-    		"url": "Attendance-Marks.html",
-    		"tags": ["general"]
-  	},
   	{
    	 	"title": "On This Website",
     		"date": "17 December, 2024",
