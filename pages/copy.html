@@ -1,29 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=devide-width, initial-scale=1.0">
-	<title>Notice</title>
-	<link rel="stylesheet" href="../style.css">
-</head>
-<body>
-	<div class="wrapper">
-		<header>
-			<nav>
-				<a class="hhome" href="../index.html">
-					<img id="pfp2" width="50" src="../resources/profiles/OriginalS.png" alt="pfp">
-				</a>
-				<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar</span></span>
-			</nav>
-		</header>
-		<main>
-			<p>&copy; 2024&ndash;25 <strong>Naman Taggar</strong></p>
-			<p>With regard to any content in <a href="../index.html">index.html</a> and <a href="photography.html">photography.html</a> files, AND the default icon used therein (the 11th, red-striped ball from the game of billiards), AND the icon containing the goose with sunglasses riding its skateboard, AND derivative icons thereof, I reserve all rights to myself.</p>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=devide-width, initial-scale=1.0">
+		<title>Notice</title>
+		<link rel="stylesheet" href="../style.css">
 
-			<p>All remaining content on this website, unless otherwise specified, is licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.</p>
+		<script defer>
+			(function () {
+			        const savedTheme = localStorage.getItem('theme');
+			        if (savedTheme === 'dark') {
+			                document.documentElement.classList.add('dark');
+			        } else {
+			                document.documentElement.classList.remove('dark');
+			        }
+			})();
+			
+			document.addEventListener('DOMContentLoaded', function () {
+			        const toggleBtn = document.getElementById('theme-toggle');
+			        if (toggleBtn) {
+			                toggleBtn.addEventListener('click', () => {
+			                        const isDark = document.documentElement.classList.toggle('dark');
+			                        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			                });
+			        }
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav>
+					<a class="hhome" href="../index.html">
+						<img id="pfp2" width="50" src="../resources/profiles/OriginalS.png" alt="pfp">
+					</a>
+					<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar</span></span>
+				</nav>
+			</header>
+			<main>
+				<p>&copy; 2024&ndash;25 <strong>Naman Taggar</strong></p>
+				<p>With regard to any content in <a href="../index.html">index.html</a> file, AND the default icon used therein (the 11th, red-striped ball from the game of billiards), AND the icon containing the goose with sunglasses riding its skateboard, AND derivative icons thereof, I reserve all rights to myself.</p>
 
-			<p>Return to the <a href="../index.html">main page.</a></p>
-		</main>
-	</div>
-</body>
+				<p>All remaining content on this website, unless otherwise specified, is licensed under <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.</p>
+
+				<p>Return to the <a href="../index.html">main page.</a></p>
+			</main>
+		</div>
+	</body>
 </html>

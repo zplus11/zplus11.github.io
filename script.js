@@ -15,4 +15,3 @@ document.getElementById("profileLink").addEventListener("click", function(event)
 	event.preventDefault();
     	changeProfile();
 });
-

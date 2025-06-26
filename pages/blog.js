@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
                             		<strong><a href="posts/${blog.url}">${blog.title}</a></strong>
                         		<p class="blog__date"><i>${blog.date}</i></p>
                     			<div>${blog.desc}<br>
-					<strong>Tags:</strong> ${blog.tags.map(tag => `<span class="tag">${tag}</span>`).join(" ")}</div>`;
+					<strong>Tags:</strong> ${blog.tags.map(tag => `<span class="tag">${tag}</span>`).join(", ")}</div>`;
 
                        			blogList.appendChild(blogCard);
 				}

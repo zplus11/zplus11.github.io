@@ -6,6 +6,27 @@
 	<title>$title$</title>
 	<link rel="stylesheet" href="../../style.css">
 	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+
+	<script defer>
+		(function () {
+		        const savedTheme = localStorage.getItem('theme');
+		        if (savedTheme === 'dark') {
+		                document.documentElement.classList.add('dark');
+		        } else {
+		                document.documentElement.classList.remove('dark');
+		        }
+		})();
+		
+		document.addEventListener('DOMContentLoaded', function () {
+		        const toggleBtn = document.getElementById('theme-toggle');
+		        if (toggleBtn) {
+		                toggleBtn.addEventListener('click', () => {
+		                        const isDark = document.documentElement.classList.toggle('dark');
+		                        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		                });
+		        }
+		});
+	</script>
 </head>
 <body>
 	<div class="wrapper">

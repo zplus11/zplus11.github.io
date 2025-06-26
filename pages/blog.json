@@ -1,5 +1,12 @@
 [
 	{
+		"title": "Demonstrations, Functions and Paclets",
+		"date": "25 June, 2025",
+		"desc": "Compilation of my contributions to the public repositories of Wolfram language.",
+		"url": "Wolfram.html",
+		"tags": ["wolfram", "general"]
+	},
+	{
     		"title": "Gaussian Distribution",
     		"date": "05 May, 2025",
     		"desc": "Marks scored by students in a large class follow the gaussian distribution &mdash; a demonstration of that.",

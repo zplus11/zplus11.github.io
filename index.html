@@ -1,62 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=devide-width, initial-scale=1.0">
-	<title>Naman Taggar</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<div class="wrapper">
-		<header>
-			<nav>
-				<a class="hhome" href="#" id="profileLink">
-					<img id="pfp" width="50" src="resources/profiles/11.png" alt="pfp">
-				</a>
-				<a class="hsoc" href="pages/blog.html">
-					Blog
-				</a>
-				<a class="hsoc" href="https://github.com/zplus11" target="_blank">
-					Github
-				</a>
-				<a class="hsoc" href="https://linkedin.com/in/namantaggar" target="_blank">
-					LinkedIn
-				</a>
-			</nav>
-		</header>
-		<main>
-			<section>
-				<div>
-					<img 
-					class="ntpic"
-					src="resources/NamanTaggar.portrait.2.jpeg"
-					alt="Naman Taggar's portrait">
-				</div>
-				<div class="ntname">Naman Taggar</div>
-				<p>I am an under-graduate student of Mathematics at Sri Guru Tegh Bahadur Khalsa College, University of Delhi, with particular interests lying in algebra. I am interested in many other things including design, typesetting, music and <a href="pages/photography.html">photography</a>.</p>
-				<p>
-					<strong>Projects.</strong>&nbsp;&nbsp;The things I have worked on can be found <a href="https://github.com/zplus11" target="_blank">here.</a>
-				</p>
-				<p>
-					<strong>Highlights.</strong>&nbsp;&nbsp;I contributed as part of Organising Committee to the <i>International Conference on Mathematical Sciences and its Applications</i> (ICMSA 2024) organised by Department of Mathematics, Sri Guru Tegh Bahadur Khalsa College, University of Delhi during 15&ndash;17 October, 2024. Over 140 delegates from India and abroad joined the conference.
-				</p>
-				<p>
-					I have been editing the official magazine of Sri Guru Tegh Bahadur Khalsa College since 2023. The annual document is over 200 pages in length and over 500 hard-copies are printed every year. Also served as the editor in chief of Mathos 2024&ndash;25, annual magazine of the college's Mathematics department. Furthermore, I have also contributed to the re-curation of the college's official website by providing content and graphics. I performed an analysis of marks and attendance in the college using R, and talked about a part of it in <a href="pages/posts/Gaussian-Distribution.html">this blog post.</a>
-				</p>
-				<p>
-					I have joined numerous workshops including 2 national workshops, on topics varying from programming with Python to numerical optimisation. Further, I have delivered 2 presentations on a mathematica package I developed for finite group theory &mdash; one at ICMSA 2024, and the other in the paper presentation competition held at Jesus &amp; Mary College, University of Delhi in February, 2025 where I won first prize out of 60+ submitted abstracts and 8 shortlisted presentations.
-				</p>
-				<p>
-					<strong>Skills &amp; Languages.</strong>&nbsp;&nbsp;I speak English and Hindi. I know Mathematica, Python (base, numpy, pandas), R (base, dyplr, ggplot2), and a little bit of Javascript. I am well-experienced with LaTeX, and familiar with Inkscape (vector graphics editing), HTML, CSS, and Markdown. 
-				</p>
-				<p>
-					<strong>Contact.</strong>&nbsp;&nbsp;You can get in touch with me by writing to namantaggar <tt>[dot]</tt> 11 <tt>[at]</tt> gmail <tt>[dot]</tt> com.
-				</p>
-			</section>
-		</main>
-		<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="pages/copy.html">Read more.</a></footer>
-	</div>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=devide-width, initial-scale=1.0">
+		<title>Naman Taggar</title>
+		<link rel="stylesheet" href="style.css">
 
-	<script src="script.js"></script>
-</body>
+		<script defer>
+			(function () {
+			        const savedTheme = localStorage.getItem('theme');
+			        if (savedTheme === 'dark') {
+			                document.documentElement.classList.add('dark');
+			        } else {
+			                document.documentElement.classList.remove('dark');
+			        }
+			})();
+			
+			document.addEventListener('DOMContentLoaded', function () {
+			        const toggleBtn = document.getElementById('theme-toggle');
+			        if (toggleBtn) {
+			                toggleBtn.addEventListener('click', () => {
+			                        const isDark = document.documentElement.classList.toggle('dark');
+			                        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			                });
+			        }
+			});
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav>
+					<a class="hhome" href="#" id="profileLink">
+						<img id="pfp" width="50" src="resources/profiles/11.png" alt="pfp">
+					</a>
+					<a class="hsoc" href="pages/blog.html">
+						Blog
+					</a>
+					<a class="hsoc" href="https://github.com/zplus11" target="_blank">
+						Github
+					</a>
+					<a class="hsoc" href="https://linkedin.com/in/namantaggar" target="_blank">
+						LinkedIn
+					</a>
+					<button id="theme-toggle">Theme</button>
+				</nav>
+			</header>
+			<main>
+				<section>
+					<div>
+						<img 
+						class="ntpic"
+						src="resources/NamanTaggar.portrait.2.jpeg"
+						alt="Naman Taggar's portrait">
+					</div>
+					<div class="ntname">Naman Taggar</div>
+					<p>I am an post-graduate student of Mathematics at the University of Delhi, having done my bachelors in the same subject from the same university. Apart from Mathematics, I am interested in many other things including design, typesetting, music and photography.</p>
+					<p>
+					<strong>Projects.</strong>&nbsp;&nbsp;The things I have worked on can be found <a href="https://github.com/zplus11" target="_blank">here.</a>
+					</p>
+					<p>
+					<strong>Highlights.</strong>&nbsp;&nbsp;I contributed as head of the student organising team and as student coordinator to ICMSA 2024 organised by Department of Mathematics, Sri Guru Tegh Bahadur Khalsa College, University of Delhi. Over 140 delegates joined the 3-day international conference. Apart from that, I also served as a student editor of the college's official magazine <a href="https://sgtbkhalsadu.ac.in/studentscorner/magazines" target="_blank">Tegh</a> during 2023&ndash;25 and my department's magazine <a href="https://drive.google.com/file/d/1U3yBc7gK5sYMe6DK4fy1xJwuG9d3Vf1M/view?usp=sharing" target="_blank">Mathos</a> in 2024&ndash;25.
+					</p>
+					<p>
+					I have joined numerous workshops including 2 national ones on topics varying from numerical optimisation to programming with Python. I have also delivered two presentations on <a href="https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups" target="_blank">MGroups</a>, a Mathematica package I developed, on two different occassions &mdash; once at ICMSA 2024 and the other at a paper presentation competition held by Jesus &amp; Mary College in February, 2025 winning first prize out of 60+ abstracts and 8 shortlisted offline presentations.
+					</p>
+					<p>
+					I have performed analysis of two data-sets: both of the works are available <a href="https://rpubs.com/taggar" target="_blank">here.</a> I also talk about my contributions to Wolfram's public repositories <a href="pages/posts/Wolfram.html">here.</a>
+					<p>
+					<p>	<strong>Skills &amp; Languages.</strong>&nbsp;&nbsp; I speak English and Hindi. I know Mathematica (upto proficiency), Python, R, and a little bit of Javascript. I am well-experienced with LaTeX, and familiar with Inkscape (vector graphics editing), HTML, CSS, and Markdown.
+					</p>
+					<p>
+					<strong>Contact.</strong>&nbsp;&nbsp;You can get in touch with me by writing to namantaggar <tt>[dot]</tt> 11 <tt>[at]</tt> gmail <tt>[dot]</tt> com.
+					</p>
+				</section>
+			</main>
+			<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="pages/copy.html">Read more.</a></footer>
+		</div>
+
+		<script src="script.js"></script>
+	</body>
 </html>

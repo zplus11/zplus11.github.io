@@ -66,12 +66,39 @@
 	--col-bg: #ffffff;
 	--col-fg: #181825;
 	--col-hl: #CC1E1D;
+	--col-text: black;
 	--col-links: #EB008B;
 	--col-ecl: #A7A7A7;
 	--font-rm: "mserif";
 	--font-sf: "msans";
 	--font-rmi: inherit;
 	--font-links: inherit
+}
+
+:root.dark {
+	--col-bg: #1e1e2e;
+	--col-fg: #f5f5f5;
+	--col-hl: #66abff;
+	--col-text: #dddddd;
+	--col-links: #ff6cc3;
+}
+
+#theme-toggle {
+	height: 10px;
+        background: none;
+        border: none;
+        font: inherit;
+	color: var(--col-text);
+        text-decoration: none;
+        cursor: pointer;
+        margin: -5px 0px 0px 0px;
+	padding: 0;
+	text-underline-offset: 4px;
+	vertical-align: middle
+}
+
+#theme-toggle:hover {
+        text-decoration: underline;
 }
 
 .hl {
@@ -101,7 +128,7 @@ html {
 body {
 	margin: 0;
 	background-color: var(--col-bg);
-	color: var(--col-fg);
+	color: var(--col-text);
 	font-family: var(--font-rm);
 	font-weight: 400;
 	font-size: 16px;
