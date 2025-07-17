@@ -9,6 +9,10 @@ date: 17 July, 2025
 
 \def\index#1{}
 
+## Preface
+
+This is the first article in the series "Some Notes on Multivariate Calculus," based on the course I studied in 2024 taught by my professor <a href="https://sgtbkhalsadu.ac.in/academics/departments/Mathematics/faculty-detail/97/" target="_blank">Amarpreet ma'am.</a> It is largely due of her consistent encouragement and powerful motivation that these notes could be compiled in the form presented here.
+
 ## Introduction
 
 Calculus\index{calculus} is the study of small changes. Multivariate Calculus\index{multivariate calculus} is the study of small changes in functions of multiple variables, such as those defined from $\mathbb R^2$ to $\mathbb R$ by some definition that maps each $(x,y)$ in the domain set to its image given by $f(x,y)$. Every point in the domain (usually a subset of the $xy$-plane\index{$xy$-plane}; figure 1) gets mapped to a real number in $\mathbb R$, along the $z$-axis. Formally, we define the graph of $f(x,y)$\index{$f(x,y)$} to be the collection of all three tuples $(x,y,z)$ such that $(x,y)$ belongs to the domain of $f$ and $z=f(x,y)$. Hence the graph of $f(x,y)$ is a surface in $\mathbb R^3$ whose projection onto the $xy$-plane is the domain $D$.
