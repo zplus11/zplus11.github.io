@@ -87,7 +87,7 @@ it must go off.</em></p>
 <p>— Anton Chekhov</p>
 <h2 id="introduction">Introduction</h2>
 <p>Calculus is the study of small changes. Multivariate Calculus is the
-study of changes in functions of multiple variables, such as those
+study of small changes in functions of multiple variables, such as those
 defined from <span class="math inline">ℝ<sup>2</sup></span> to <span
 class="math inline">ℝ</span> by some definition that maps each <span
 class="math inline">(<em>x</em>, <em>y</em>)</span> in the domain set to
@@ -137,9 +137,15 @@ class="math inline"><em>z</em> = <em>c</em></span>. And further, the
 level curve of <span class="math inline"><em>f</em></span> at <span
 class="math inline"><em>c</em></span> is the set of all points <span
 class="math inline">(<em>x</em>, <em>y</em>)</span> in the <span
-class="math inline"><em>x</em><em>y</em></span>-plane which satisfy
-<span
-class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>c</em></span>.</p>
+class="math inline"><em>x</em><em>y</em></span>-plane that satisfy <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>c</em></span>.
+In figure 2, the blue disk is trace whereas red disk is the level
+curve.</p>
+<figure>
+<img src="img/trace.png" alt="Figure 2: Trace and level curves." />
+<figcaption aria-hidden="true">Figure 2: Trace and level
+curves.</figcaption>
+</figure>
 <h2 id="open-spheres-in-mathbb-r3">Open Spheres in <span
 class="math inline">ℝ<sup>3</sup></span></h2>
 <p>On the real line, we talked of open intervals of the form <span
@@ -156,8 +162,8 @@ point at center. If the boundary is to be included, we can replace the
 strict inequality in favour of including equality.</p>
 <figure>
 <img src="img/openset2d.png"
-alt="Figure 2: Open set in 2 dimensions," />
-<figcaption aria-hidden="true">Figure 2: Open set in 2
+alt="Figure 3: Open set in 2 dimensions," />
+<figcaption aria-hidden="true">Figure 3: Open set in 2
 dimensions,</figcaption>
 </figure>
 <p>Furthering this discussion, a point is said to be an interior point
@@ -198,13 +204,13 @@ forward with the necessary amendments.</p>
 <p>For a function of 2 variables, we now define its limit. The
 mathematical definition is as follows:—</p>
 <p><strong>Definition</strong> <em>(Limit).</em> We say that <span
-class="math inline">lim<sub>(<em>x</em>, <em>y</em>) → (0, 0)</sub><em>f</em>(<em>x</em>, <em>y</em>) = <em>l</em></span>
+class="math inline">lim<sub>(<em>x</em>, <em>y</em>) → (<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</sub><em>f</em>(<em>x</em>, <em>y</em>) = <em>l</em></span>
 if and only if <span
 class="math inline">∀<em>ϵ</em> &gt; 0, ∃<em>δ</em> &gt; 0</span> such
 that whenever <span class="math display">$$0&lt; \sqrt{(x-x_0)^2 +
 (y-y_0)^2} &lt; \delta,$$</span> we have <span
 class="math inline">|<em>f</em>(<em>x</em>, <em>y</em>) − <em>l</em>| &lt; <em>ϵ</em></span>.</p>
-<p>In figure 3, radius of the disk represents <span
+<p>In figure 4, radius of the disk represents <span
 class="math inline"><em>δ</em></span>, and the 2 planes are at a
 distance of <span class="math inline">2<em>ϵ</em></span> having <span
 class="math inline"><em>l</em></span> at the center. Notice the
@@ -214,8 +220,8 @@ there always exists such radius of the disk that of every point of
 domain within that disk, the image lies between those planes.</p>
 <figure>
 <img src="img/limit.png"
-alt="Figure 3: Limit of a 2 variable function." />
-<figcaption aria-hidden="true">Figure 3: Limit of a 2 variable
+alt="Figure 4: Limit of a 2 variable function." />
+<figcaption aria-hidden="true">Figure 4: Limit of a 2 variable
 function.</figcaption>
 </figure>
 <p>Using the definition of limits, for example to prove that <span
@@ -349,8 +355,8 @@ class="math inline">|<em>f</em>(<em>x</em>, <em>y</em>) − <em>f</em>(<em
 \end{cases}$$</span> is not continuous at <span
 class="math inline">(0, 0)</span>.</p>
 <figure>
-<img src="img/discont.png" alt="Figure 4: Discontinuity," />
-<figcaption aria-hidden="true">Figure 4: Discontinuity,</figcaption>
+<img src="img/discont.png" alt="Figure 5: Discontinuity." />
+<figcaption aria-hidden="true">Figure 5: Discontinuity.</figcaption>
 </figure>
 <p>This is because it fails the very first requirement for continuity —
 existence of limit. Along <span
@@ -360,7 +366,7 @@ class="math inline"><em>x</em> = <em>y</em><sup>2</sup></span>, the
 limit comes out to be <span class="math inline">1/2</span>. These limits
 can be noticed in the plot of this function. Discontinuity can also be
 visibly seen, as the graph is fairly disturbed at <span
-class="math inline">(0, 0)</span> (see figure 4).</p>
+class="math inline">(0, 0)</span> (see figure 5).</p>
 <p>Consider <span class="math display">$$f(x,y) =
 \frac{x-y}{x^2+y^2}.$$</span> Note that both the numerator and
 denominator are continuous functions of <span
@@ -375,8 +381,8 @@ domain except where denominator is zero. That is, along the parabola
 <span
 class="math inline"><em>y</em> = <em>x</em><sup>2</sup></span>.</p>
 <figure>
-<img src="img/para.png" alt="Figure 5: More discontinuity." />
-<figcaption aria-hidden="true">Figure 5: More
+<img src="img/para.png" alt="Figure 6: More discontinuity." />
+<figcaption aria-hidden="true">Figure 6: More
 discontinuity.</figcaption>
 </figure>
 <hr />
