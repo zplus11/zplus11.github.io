@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=devide-width, initial-scale=1.0">
+		<title>Functions of Multiple Variables</title>
+		<link rel="stylesheet" href="../../style.css">
+		<style>
+			code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+			code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+			code span.at { color: #7d9029; } /* Attribute */
+			code span.bn { color: #40a070; } /* BaseN */
+			code span.bu { color: #008000; } /* BuiltIn */
+			code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+			code span.ch { color: #4070a0; } /* Char */
+			code span.cn { color: #880000; } /* Constant */
+			code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+			code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+			code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+			code span.dt { color: #902000; } /* DataType */
+			code span.dv { color: #40a070; } /* DecVal */
+			code span.er { color: #ff0000; font-weight: bold; } /* Error */
+			code span.ex { } /* Extension */
+			code span.fl { color: #40a070; } /* Float */
+			code span.fu { color: #bc6433; } /* Function */
+			code span.im { color: #008000; font-weight: bold; } /* Import */
+			code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+			code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+			code span.op { color: #666666; } /* Operator */
+			code span.ot { color: #007020; } /* Other */
+			code span.pp { color: #bc7a00; } /* Preprocessor */
+			code span.sc { color: #4070a0; } /* SpecialChar */
+			code span.ss { color: #bb6688; } /* SpecialString */
+			code span.st { color: #4070a0; } /* String */
+			code span.va { color: #19177c; } /* Variable */
+			code span.vs { color: #4070a0; } /* VerbatimString */
+			code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+		</style>
+
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+		<script defer>
+			(function () {
+			const savedTheme = localStorage.getItem('theme');
+			if (savedTheme === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		})();
+
+		document.addEventListener('DOMContentLoaded', function () {
+			const toggleBtn = document.getElementById('theme-toggle');
+			if (toggleBtn) {
+				toggleBtn.addEventListener('click', () => {
+					const isDark = document.documentElement.classList.toggle('dark');
+					localStorage.setItem('theme', isDark ? 'dark' : 'light');
+				});
+			}
+		});
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav>
+					<a class="hhome" href="../../index.html" id="profileLink">
+						<img id="pfp" width="50" src="../../resources/profiles/OriginalS.png" alt="pfp">
+					</a>
+					<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar's</span> blog</span>
+				</nav>
+			</header>
+			<main>
+				<section>
+					<p class="blogdesc">
+					<a href="../blog.html">Back</a>
+					</p>
+				</section>
+				<section class="blog__post">
+					<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">Functions
+of Multiple Variables</h2>
+					<p><i>17 July, 2025</i></p>
+					<hr><br><br>
+					<blockquote>
+<p><em>If in the first act you hang a gun on the wall, in the next act
+it must go off.</em></p>
+</blockquote>
+<p>— Anton Chekhov</p>
+<h2 id="introduction">Introduction</h2>
+<p>Calculus is the study of small changes. Multivariate Calculus is the
+study of changes in functions of multiple variables, such as those
+defined from <span class="math inline">ℝ<sup>2</sup></span> to <span
+class="math inline">ℝ</span> by some definition that maps each <span
+class="math inline">(<em>x</em>, <em>y</em>)</span> in the domain set to
+its image given by <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)</span>. Every
+point in the domain (usually a subset of the <span
+class="math inline"><em>x</em><em>y</em></span>-plane; figure 1) gets
+mapped to a real number in <span class="math inline">ℝ</span>, along the
+<span class="math inline"><em>z</em></span>-axis. Formally, we define
+the graph of <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)</span> to be the
+collection of all three tuples <span
+class="math inline">(<em>x</em>, <em>y</em>, <em>z</em>)</span> such
+that <span class="math inline">(<em>x</em>, <em>y</em>)</span> belongs
+to the domain of <span class="math inline"><em>f</em></span> and <span
+class="math inline"><em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>)</span>.
+Hence the graph of <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)</span> is a
+surface in <span class="math inline">ℝ<sup>3</sup></span> whose
+projection onto the <span
+class="math inline"><em>x</em><em>y</em></span>-plane is the domain
+<span class="math inline"><em>D</em></span>.</p>
+<figure>
+<img src="img/mvc1.png"
+alt="Figure 1: Functions in one (top) and two (bottom) variables." />
+<figcaption aria-hidden="true">Figure 1: Functions in one (top) and two
+(bottom) variables.</figcaption>
+</figure>
+<p>For example, consider <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = 10 − <em>x</em><sup>2</sup> − <em>y</em><sup>2</sup></span>
+for every <span
+class="math inline">(<em>x</em>, <em>y</em>) ∈ ℝ<sup>2</sup></span>.
+Here <span class="math inline">(0, 0)</span> gets mapped to <span
+class="math inline">10 − 0<sup>2</sup> − 0<sup>2</sup> = 10</span>,
+<span class="math inline">(1, 2)</span> gets mapped to <span
+class="math inline">10 − 1<sup>2</sup> − 2<sup>2</sup> = 5</span>, and
+so on. Along that line, for a constant <span
+class="math inline"><em>c</em></span>, the plane <span
+class="math inline"><em>z</em> = <em>c</em></span> intersects the
+surface <span
+class="math inline"><em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>)</span>
+at <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>c</em></span>.
+Such an intersection is called the “trace of graph of <span
+class="math inline"><em>f</em></span>” in the plane <span
+class="math inline"><em>z</em> = <em>c</em></span>. And further, the
+level curve of <span class="math inline"><em>f</em></span> at <span
+class="math inline"><em>c</em></span> is the set of all points <span
+class="math inline">(<em>x</em>, <em>y</em>)</span> in the <span
+class="math inline"><em>x</em><em>y</em></span>-plane which satisfy
+<span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>c</em></span>.</p>
+<h2 id="open-spheres-in-mathbb-r3">Open Spheres in <span
+class="math inline">ℝ<sup>3</sup></span></h2>
+<p>On the real line, we talked of open intervals of the form <span
+class="math inline">(<em>a</em>, <em>b</em>)</span>. In two-dimensional
+calculus, we talked of neighbourhoods (or open disks), which were the
+collection of all points in <span
+class="math inline">ℝ<sup>2</sup></span> that were within a certain
+distance from the point at center. Mathematically, the set <span
+class="math display">$$\left\{(x,y)\in\mathbb R^2:\sqrt{(x-a)^2 +
+(y-b)^2}&lt;r\right\}$$</span> for <span
+class="math inline"><em>r</em></span> being the certain distance and
+<span class="math inline">(<em>a</em>, <em>b</em>)</span> being the
+point at center. If the boundary is to be included, we can replace the
+strict inequality in favour of including equality.</p>
+<figure>
+<img src="img/openset2d.png"
+alt="Figure 2: Open set in 2 dimensions," />
+<figcaption aria-hidden="true">Figure 2: Open set in 2
+dimensions,</figcaption>
+</figure>
+<p>Furthering this discussion, a point is said to be an interior point
+of a set <span class="math inline"><em>S</em></span> in <span
+class="math inline">ℝ<sup>2</sup></span> if some open disk centered at
+that point is contained entirely in <span
+class="math inline"><em>S</em></span>. If the set <span
+class="math inline"><em>S</em></span> is empty or if each of its points
+is an interior point, it is said to be open. A point is said to be a
+boundary point of <span class="math inline"><em>S</em></span> if every
+open disk centered at the point contains at least one element that is in
+<span class="math inline"><em>S</em></span> and at least one element
+that is not in <span class="math inline"><em>S</em></span>, and in fact,
+infinitely many such points. <span class="math inline"><em>S</em></span>
+is said to be closed if it includes its boundary, i.e., if it includes
+all of its boundary points. By convention, the empty set and the
+universal set of this context — <span
+class="math inline">ℝ<sup>2</sup></span> — are both open as well as
+closed.</p>
+<p>In the same way, we can proceed further onto the next dimension and
+define open spheres in <span class="math inline">ℝ<sup>3</sup></span>.
+Consider a point <span
+class="math inline"><em>P</em>(<em>a</em>, <em>b</em>, <em>c</em>)</span>,
+then the open sphere centered at it will be the set <span
+class="math display">$$
+\left\{
+\begin{aligned}
+(x,y,z) &amp;\in \mathbb{R}^3 :\ 0 &lt; \\
+&amp; \hspace{-20pt} \sqrt{(x-a)^2 + (y-b)^2 + (z-c)^2} &lt; r
+\end{aligned}
+\right\}.
+$$</span> with <span class="math inline"><em>r</em></span> being the
+radius of such sphere. For this sphere again, we can similarly talk of
+all aspects as done for open disks in <span
+class="math inline">ℝ<sup>2</sup></span> above. Most properties carry
+forward with the necessary amendments.</p>
+<h2 id="limit">Limit</h2>
+<p>For a function of 2 variables, we now define its limit. The
+mathematical definition is as follows:—</p>
+<p><strong>Definition</strong> <em>(Limit).</em> We say that <span
+class="math inline">lim<sub>(<em>x</em>, <em>y</em>) → (0, 0)</sub><em>f</em>(<em>x</em>, <em>y</em>) = <em>l</em></span>
+if and only if <span
+class="math inline">∀<em>ϵ</em> &gt; 0, ∃<em>δ</em> &gt; 0</span> such
+that whenever <span class="math display">$$0&lt; \sqrt{(x-x_0)^2 +
+(y-y_0)^2} &lt; \delta,$$</span> we have <span
+class="math inline">|<em>f</em>(<em>x</em>, <em>y</em>) − <em>l</em>| &lt; <em>ϵ</em></span>.</p>
+<p>In figure 3, radius of the disk represents <span
+class="math inline"><em>δ</em></span>, and the 2 planes are at a
+distance of <span class="math inline">2<em>ϵ</em></span> having <span
+class="math inline"><em>l</em></span> at the center. Notice the
+<strong>geometrical interpretation</strong> of this definition: no
+matter how much the two parallel planes are to be brought together,
+there always exists such radius of the disk that of every point of
+domain within that disk, the image lies between those planes.</p>
+<figure>
+<img src="img/limit.png"
+alt="Figure 3: Limit of a 2 variable function." />
+<figcaption aria-hidden="true">Figure 3: Limit of a 2 variable
+function.</figcaption>
+</figure>
+<p>Using the definition of limits, for example to prove that <span
+class="math inline">lim<sub>(<em>x</em>, <em>y</em>) → (0, 0)</sub><em>f</em>(<em>x</em>, <em>y</em>) = 0</span>
+where <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = (<em>x</em><sup>2</sup> + <em>y</em><sup>2</sup>)<sup>3/2</sup>,</span>
+we can proceed as follows. Let <span
+class="math inline"><em>ϵ</em> &gt; 0</span> be given. Then, if <span
+class="math display">$$0&lt;\sqrt{x^2+y^2}&lt;\delta,$$</span> we have
+<span
+class="math display">|<em>f</em>(<em>x</em>, <em>y</em>) − 0| = |(<em>x</em><sup>2</sup> + <em>y</em><sup>2</sup>)<sup>3/2</sup>| &lt; <em>ϵ</em></span>
+that is if and only if <span
+class="math display">(<em>x</em><sup>2</sup> + <em>y</em><sup>2</sup>)<sup>1/2</sup> &lt; <em>ϵ</em><sup>1/3</sup>.</span>
+Now, set <span
+class="math inline"><em>δ</em> = <em>ϵ</em><sup>1/3</sup></span>, so
+that we have <span
+class="math inline">|<em>f</em>(<em>x</em>, <em>y</em>)| &lt; <em>ϵ</em></span>
+and hence <span
+class="math inline">lim<sub>(0, 0)</sub><em>f</em>(<em>x</em>, <em>y</em>) = 0</span>.</p>
+<p>Similarly, consider <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>y</em>sin (1/<em>x</em>)</span>,
+then <span
+class="math display">lim<sub>(<em>x</em>, <em>y</em>) → (0, 0)</sub><em>f</em>(<em>x</em>, <em>y</em>) = 0;</span>
+proved as follows: let <span
+class="math inline"><em>ϵ</em> &gt; 0</span> be given. Then, consider
+<span
+class="math inline">|<em>f</em>(<em>x</em>, <em>y</em>) − 0|</span>,
+<span class="math display">$$\begin{aligned}
+\left|y\sin\frac1x\right|
+  &amp;= |y|\left|\sin\frac1x\right| \\
+  &amp;\le |y| \\
+  &amp;= \sqrt{y^2} \\
+  &amp;\le \sqrt{x^2 + y^2} \\
+  &amp;&lt; \epsilon,\end{aligned}$$</span> and with <span
+class="math inline"><em>δ</em> = <em>ϵ</em></span>, we have <span
+class="math inline">|<em>f</em>(<em>x</em>, <em>y</em>)| &lt; <em>ϵ</em></span>,
+and hence the proof.</p>
+<p>For a function <span class="math inline"><em>f</em></span> of two
+variables, when we write <span
+class="math inline">(<em>x</em>, <em>y</em>) → (<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</span>,
+we mean that the point is allowed to approach <span
+class="math inline">(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</span>
+along any path or axis in <span
+class="math inline">ℝ<sup>3</sup></span>. If limit <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)</span> is not the
+same for all approaches within the domain of <span
+class="math inline"><em>f</em></span>, then it is said that the limit
+does not exist.</p>
+<p>For instance, consider <span
+class="math display">$$\lim_{(x,y)\to(0,0)}
+\frac{2xy}{x^2+y^2}.$$</span> It does not exist. Along <span
+class="math inline"><em>x</em></span> and <span
+class="math inline"><em>y</em></span> axes, the limit is <span
+class="math inline">0</span>. However, along <span
+class="math inline"><em>y</em> = <em>x</em></span>, it is <span
+class="math display">$$\left.\lim_{(x,y)\to(0,0)}\frac{2xy}{x^2+y^2}\right|_{y
+= x} = \lim_{y\to0}\frac{y^2}{2y^2} = \frac12.$$</span> Since limit is
+not the same along all axes, we conclude that it does not exist.</p>
+<p>In case of homogenous equations, for example in the current question,
+we can merely set <span
+class="math inline"><em>y</em> = <em>m</em><em>x</em></span> for <span
+class="math inline"><em>m</em> ∈ ℝ</span> and proceed as follows:— <span
+class="math display">$$\lim_{(x,y)\to(0,0)} f(x,y) =
+\lim_{x\to0}\frac{x^2m}{x^2 + m^2x^2} = \frac{m^2}{1+m^2}$$</span> and
+note that the limit is dependent on <span
+class="math inline"><em>m</em></span>, hence also on the path we choose.
+Therefore, it does not exist.</p>
+<h2 id="polar-transformations">Polar Transformations</h2>
+<p>For functions involving <span
+class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup></span>,
+we may use polar transformations given by <span
+class="math display"><em>x</em> = <em>r</em>cos <em>θ</em>,  and,  <em>y</em> = <em>r</em>sin <em>θ</em></span>
+where <span
+class="math inline"><em>x</em><sup>2</sup> = <em>x</em><sup>2</sup> + <em>y</em><sup>2</sup></span>,
+to evaluate the limit which becomes <span
+class="math display">lim<sub><em>r</em> → 0</sub><em>f</em>(<em>r</em>cos <em>θ</em>, <em>r</em>sin <em>θ</em>).</span>
+Polar coordinates usually make the evaluation of such limits extremely
+easy. Wherever the said term <span
+class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup></span>
+is spotted, one almost always would want to convert the limit into polar
+coordinates.</p>
+<p>For example, to find <span
+class="math display">$$\lim_{(x,y)\to(0,0)}\frac{\tan(x^2+y^2)}{x^2+y^2},$$</span>
+we may use polar transformations so that the limit becomes <span
+class="math display">$$\lim_{r\to0}\frac{\tan{r^2}}{r^2}$$</span> which
+is <span class="math inline">1</span>. Similarly, for <span
+class="math display">$$\lim_{(x,y)\to(0,0)}
+\frac{x^2y^2}{x^2+y^2},$$</span> we can proceed as follows:—</p>
+<p><span class="math display">$$\begin{aligned}
+    \lim_{(0,0)} \frac{x^2y^2}{x^2+y^2}
+    &amp;\buildrel \mathrm{polar} \over {=}
+    \lim_{r\to0}\frac{r^4\cos^2\theta\sin^2\theta}{r^2} \\
+    &amp;\ \ =\lim_{r\to0}r^2\cos^2\theta\sin^2\theta \\
+    &amp;\ \ =0.
+\end{aligned}$$</span></p>
+<p>We end this section with another example. The limit <span
+class="math display">$$\lim_{(x, y)\to(0, 0)} \frac{x-y}{\sqrt{x^2 +
+y^2}}$$</span> can be converted to polar coordinates and evaluated
+as</p>
+<p><span class="math display">$$\begin{aligned}
+    \lim_{(x, y)\to(0, 0)} \frac{x-y}{\sqrt{x^2 + y^2}}
+&amp;\buildrel{\mathrm{polar}}\over
+{=}\lim_{r\to0}\frac{r(\cos\theta-\sin\theta)}{\sqrt{r^2}} \\
+    &amp;\ \; = \cos\theta-\sin\theta
+\end{aligned}$$</span></p>
+<p>which depends upon an arbitrary variable <span
+class="math inline"><em>θ</em></span>. This is an indeterminate
+limit.</p>
+<h2 id="continuity">Continuity</h2>
+<p>We now define continuity for functions of 2 variables. Briefly, a
+function will be continuous at a point if small changes in the index
+result in only small changes in the image. Formally, <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)</span> is said to
+be continuous at <span
+class="math inline">(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</span>
+if <span
+class="math inline"><em>f</em>(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</span>
+is defined, if <span
+class="math inline">lim<sub>(<em>x</em>, <em>y</em>) → (<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</sub><em>f</em>(<em>x</em>, <em>y</em>)</span>
+exists, and if <span
+class="math display">lim<sub>(<em>x</em>, <em>y</em>) → (<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</sub><em>f</em>(<em>x</em>, <em>y</em>) = <em>f</em>(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>).</span>
+In other words, and mathematically, if <span
+class="math inline">∀<em>ϵ</em> &gt; 0, ∃<em>δ</em> &gt; 0</span> such
+that whenever <span class="math display">$$\sqrt{(x-x_0)^2+(y-y_0)^2}
+&lt; \delta,$$</span> we have <span
+class="math inline">|<em>f</em>(<em>x</em>, <em>y</em>) − <em>f</em>(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)| &lt; <em>ϵ</em></span>.</p>
+<p>For example, the function <span class="math display">$$f(x,y) =
+\begin{cases}
+    \frac{xy^2}{x^2+y^4}, &amp;(x,y)\not=(0,0), \\
+    0, &amp;(x,y)=(0,0),
+\end{cases}$$</span> is not continuous at <span
+class="math inline">(0, 0)</span>.</p>
+<figure>
+<img src="img/discont.png" alt="Figure 4: Discontinuity," />
+<figcaption aria-hidden="true">Figure 4: Discontinuity,</figcaption>
+</figure>
+<p>This is because it fails the very first requirement for continuity —
+existence of limit. Along <span
+class="math inline"><em>x</em> = 0</span>, the limit is zero. However,
+along the path <span
+class="math inline"><em>x</em> = <em>y</em><sup>2</sup></span>, the
+limit comes out to be <span class="math inline">1/2</span>. These limits
+can be noticed in the plot of this function. Discontinuity can also be
+visibly seen, as the graph is fairly disturbed at <span
+class="math inline">(0, 0)</span> (see figure 4).</p>
+<p>Consider <span class="math display">$$f(x,y) =
+\frac{x-y}{x^2+y^2}.$$</span> Note that both the numerator and
+denominator are continuous functions of <span
+class="math inline"><em>x</em>, <em>y</em></span>, therefore <span
+class="math inline"><em>f</em></span> is continuous for every <span
+class="math inline">(<em>x</em>, <em>y</em>) ≠ (0, 0)</span>. At <span
+class="math inline">(0, 0)</span>, <span
+class="math inline"><em>f</em></span> is not defined.</p>
+<p>Another interesting example is <span class="math display">$$f(x,y) =
+\frac{1}{y-x^2}.$$</span> This is again continuous for all points in the
+domain except where denominator is zero. That is, along the parabola
+<span
+class="math inline"><em>y</em> = <em>x</em><sup>2</sup></span>.</p>
+<figure>
+<img src="img/para.png" alt="Figure 5: More discontinuity." />
+<figcaption aria-hidden="true">Figure 5: More
+discontinuity.</figcaption>
+</figure>
+<hr />
+<p>This is the first article on multivariate calculus. If you enjoyed
+reading it, I am glad. For any feedback or discussion, please contact me
+via email at namtgr at gmail dot com. The graphs for this article were
+created using Mathematica. A notebook containing them can be found at <a
+href="../../resources/mm/fmv.nb">this link</a>.</p>
+					<hr><br><br>
+					<p>
+					Thanks for reading. Return to see <a href="../blog.html">all blog posts,</a> or to the <a href="../../index.html">home page.</a>
+					</p>
+				</section>
+			</main>
+			<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="../copy.html">Read more.</a></footer>
+		</div>
+	</body>
+</html>

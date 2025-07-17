@@ -21,7 +21,9 @@ be negative. As [*R*(*m*)]{.math .inline} goes to 1, [*R*'(*m*){.math
 [*R*(33.33) = 1212]{.math .inline} (rank-marks pair corresponding to one
 of the candidates) using the Mathematica code
 
-    DSolve[{R'[m] == r (1 - R[m]), R[33.33] == 1212}, R[m], m]
+```mathematica
+DSolve[{R'[m] == R[m](1-R[m]/K), R[33.33] = 1212}, R[m], m]
+```
 
 to get
 

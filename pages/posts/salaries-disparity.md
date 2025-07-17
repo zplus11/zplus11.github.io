@@ -20,7 +20,7 @@ These will include pandas used for data analysis and manipulation,
 sklearn for applying machine learning, seaborn & matplotlib for data
 visualisation.
 
-```
+```python
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
@@ -33,12 +33,12 @@ import seaborn as sns
 Now, we import and present the dataset, followed by giving a brief
 outlook of it.
 
-```
+```python
 salaries = pd.read_csv("salaries.csv")
 salaries.head()
 ```
 
-```
+```python
 #     row     rank discipline  yrs.since.phd  yrs.service gender  salary
 #  0    1     Prof          B             19           18   Male  139750
 #  1    2     Prof          B             20           16   Male  173200
@@ -54,7 +54,7 @@ for male, 1 for female); and convert rank column to take three values (0
 for asst. prof., 1 for assoc. prof., 2 for prof.). Other than that, the
 data does not require any other pre-processing.
 
-```
+```python
 salaries["discipline"] = salaries["discipline"].map({"A": 0, "B": 1})
 salaries["gender"] = salaries["gender"].map({"Male": 0, "Female": 1})
 salaries["rank"] = salaries["rank"].map({"AsstProf": 0, "AssocProf": 1, "Prof": 2})
@@ -101,7 +101,7 @@ Now, We propose a machine learning model, the independent variables will
 be rank, discipline, years since PhD & of service, and salary. Gender
 will be predicted.
 
-```
+```python
 x = salaries.drop(["row", "gender"], axis=1)
 # the column called row has nothing but serial numbers
 y = salaries["gender"]
@@ -109,7 +109,7 @@ y = salaries["gender"]
 
 Now, we form the training and testing datassets.
 
-```
+```python
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.20, random_state=11, stratify=y)
 ```
 
@@ -117,7 +117,7 @@ Some columns have large values, and to make the computations easier they
 need to get scaled down. For this purpose, we use the `preprocessing`
 module and create a scaler in order to scale the data values.
 
-```
+```python
 scaler = preprocessing.StandardScaler().fit(x_train)
 x_train_scaled = scaler.transform(x_train)
 ```
@@ -126,11 +126,11 @@ Finally, we now train the dataset and bring our model to the test. If we
 look at the `gender` column in the dataset, we note that there are far
 more males than females:---
 
-```
+```python
 salaries["gender"].value_counts()
 ```
 
-```
+```python
 #  gender
 #  0    358
 #  1     39
@@ -143,37 +143,37 @@ towards males category in the dataset. However, due to this, the
 accuracy on will get affected. We dropped down to an accuracy score of
 around 60%.
 
-```
+```python
 model = LogisticRegression(class_weight="balanced")
 model.fit(x_train_scaled, y_train)
 train_acc = model.score(x_train_scaled, y_train)
 print("The Accuracy for Training Set is {}%".format(train_acc*100))
 ```
 
-```
+```python
 #  The Accuracy for Training Set is 57.413249211356465%
 ```
 
 Similarly, the accuracy for testing set can also be found out.
 
-```
+```python
 test_acc = accuracy_score(y_test, y_pred)
 print("The Accuracy for Test Set is {}%".format(test_acc*100))
 ```
 
-```
+```python
 #  The Accuracy for Test Set is 63.74999999999999%
 ```
 
 The classification report is as follows:
 
-```
+```python
 x_test_scaled = scaler.transform(x_test)
 y_pred = model.predict(x_test_scaled)
 print(classification_report(y_test, y_pred))
 ```
 
-```
+```python
 #                precision    recall  f1-score   support
 #  
 #             0       0.94      0.64      0.76        72
@@ -191,25 +191,25 @@ discipline B, third element means 30 years of experience, fourth element
 means 25 years of experience, and fifth element means a salary of
 \$180,000. The model predicts that this data-point is for gender male.
 
-```
+```python
 dpt = (2, 1, 30, 25, 180000)
 dpt_scaled = scaler.transform([dpt])
 model.predict(dpt_scaled)
 ```
 
-```
+```python
 array([0], dtype=int64)
 ```
 
 However, if we edit the datapoint as follows:
 
-```
+```python
 dpt = (2, 1, 30, 25, 65000)
 dpt_scaled = scaler.transform([dpt])
 model.predict(dpt_scaled)
 ```
 
-```
+```python
 array([1], dtype=int64)
 ```
 

@@ -21,8 +21,9 @@ This blog post will serve the purpose of bringing all of my contributions to the
 
 #### Functions
 
-<!-- - Naman Taggar (2025), "AutomorphicNumberQ" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/AutomorphicNumberQ/](https://resources.wolframcloud.com/FunctionRepository/resources/AutomorphicNumberQ/).
-- Naman Taggar (2025), "RoughIntegerQ" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/](https://resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/). -->
+- Naman Taggar (2025), "AutomorphicNumberQ" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/AutomorphicNumberQ/](https://resources.wolframcloud.com/FunctionRepository/resources/AutomorphicNumberQ/).
+
+<!-- - Naman Taggar (2025), "RoughIntegerQ" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/](https://resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/). -->
 
 - Naman Taggar (2025), "ShowPolygonSymmetries" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/ShowPolygonSymmetries/](https://resources.wolframcloud.com/FunctionRepository/resources/ShowPolygonSymmetries/).
 

@@ -1,55 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=devide-width, initial-scale=1.0">
-	<title>On this Website</title>
-	<link rel="stylesheet" href="../../style.css">
-	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=devide-width, initial-scale=1.0">
+		<title>On this Website</title>
+		<link rel="stylesheet" href="../../style.css">
+		<style>
+			code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+			code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+			code span.at { color: #7d9029; } /* Attribute */
+			code span.bn { color: #40a070; } /* BaseN */
+			code span.bu { color: #008000; } /* BuiltIn */
+			code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+			code span.ch { color: #4070a0; } /* Char */
+			code span.cn { color: #880000; } /* Constant */
+			code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+			code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+			code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+			code span.dt { color: #902000; } /* DataType */
+			code span.dv { color: #40a070; } /* DecVal */
+			code span.er { color: #ff0000; font-weight: bold; } /* Error */
+			code span.ex { } /* Extension */
+			code span.fl { color: #40a070; } /* Float */
+			code span.fu { color: #bc6433; } /* Function */
+			code span.im { color: #008000; font-weight: bold; } /* Import */
+			code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+			code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+			code span.op { color: #666666; } /* Operator */
+			code span.ot { color: #007020; } /* Other */
+			code span.pp { color: #bc7a00; } /* Preprocessor */
+			code span.sc { color: #4070a0; } /* SpecialChar */
+			code span.ss { color: #bb6688; } /* SpecialString */
+			code span.st { color: #4070a0; } /* String */
+			code span.va { color: #19177c; } /* Variable */
+			code span.vs { color: #4070a0; } /* VerbatimString */
+			code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+		</style>
 
-	<script defer>
-		(function () {
-		        const savedTheme = localStorage.getItem('theme');
-		        if (savedTheme === 'dark') {
-		                document.documentElement.classList.add('dark');
-		        } else {
-		                document.documentElement.classList.remove('dark');
-		        }
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+		<script defer>
+			(function () {
+			const savedTheme = localStorage.getItem('theme');
+			if (savedTheme === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
 		})();
-		
+
 		document.addEventListener('DOMContentLoaded', function () {
-		        const toggleBtn = document.getElementById('theme-toggle');
-		        if (toggleBtn) {
-		                toggleBtn.addEventListener('click', () => {
-		                        const isDark = document.documentElement.classList.toggle('dark');
-		                        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		                });
-		        }
+			const toggleBtn = document.getElementById('theme-toggle');
+			if (toggleBtn) {
+				toggleBtn.addEventListener('click', () => {
+					const isDark = document.documentElement.classList.toggle('dark');
+					localStorage.setItem('theme', isDark ? 'dark' : 'light');
+				});
+			}
 		});
-	</script>
-</head>
-<body>
-	<div class="wrapper">
-		<header>
-			<nav>
-				<a class="hhome" href="../../index.html" id="profileLink">
-					<img id="pfp" width="50" src="../../resources/profiles/OriginalS.png" alt="pfp">
-				</a>
-				<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar's</span> blog</span>
-			</nav>
-		</header>
-		<main>
-			<section>
-				<p class="blogdesc">
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav>
+					<a class="hhome" href="../../index.html" id="profileLink">
+						<img id="pfp" width="50" src="../../resources/profiles/OriginalS.png" alt="pfp">
+					</a>
+					<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar's</span> blog</span>
+				</nav>
+			</header>
+			<main>
+				<section>
+					<p class="blogdesc">
 					<a href="../blog.html">Back</a>
-				</p>
-			</section>
-			<section class="blog__post">
-				<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">On
-this Website</h1>
-				<p><i>17 December, 2024</i></p>
-				<hr><br><br>
-<p>After looking at so many personal websites, I finally set my mind on
+					</p>
+				</section>
+				<section class="blog__post">
+					<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">On
+this Website</h2>
+					<p><i>17 December, 2024</i></p>
+					<hr><br><br>
+					<p>After looking at so many personal websites, I finally set my mind on
 designing one for myself as well. And, here it is. I have kept it very
 plain and simple, with merely an introduction of mine along with a blog
 where I will talk about the things I like.</p>
@@ -83,13 +114,13 @@ The list of blogs is printed to the <a href="blog.html">blog.html</a>
 page (after being filtered by tag) using javascript.</p>
 <p>Here is to hoping that I continue writing about the things I like or
 do.</p>
-				<hr><br><br>
-				<p>
+					<hr><br><br>
+					<p>
 					Thanks for reading. Return to see <a href="../blog.html">all blog posts,</a> or to the <a href="../../index.html">home page.</a>
-				</p>
-			</section>
-		</main>
-		<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="../copy.html">Read more.</a></footer>
-	</div>
-</body>
+					</p>
+				</section>
+			</main>
+			<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="../copy.html">Read more.</a></footer>
+		</div>
+	</body>
 </html>

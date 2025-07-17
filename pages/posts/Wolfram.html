@@ -1,55 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=devide-width, initial-scale=1.0">
-	<title>Demonstrations, Functions and Paclets</title>
-	<link rel="stylesheet" href="../../style.css">
-	<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=devide-width, initial-scale=1.0">
+		<title>Demonstrations, Functions and Paclets</title>
+		<link rel="stylesheet" href="../../style.css">
+		<style>
+			code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+			code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+			code span.at { color: #7d9029; } /* Attribute */
+			code span.bn { color: #40a070; } /* BaseN */
+			code span.bu { color: #008000; } /* BuiltIn */
+			code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+			code span.ch { color: #4070a0; } /* Char */
+			code span.cn { color: #880000; } /* Constant */
+			code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+			code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+			code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+			code span.dt { color: #902000; } /* DataType */
+			code span.dv { color: #40a070; } /* DecVal */
+			code span.er { color: #ff0000; font-weight: bold; } /* Error */
+			code span.ex { } /* Extension */
+			code span.fl { color: #40a070; } /* Float */
+			code span.fu { color: #bc6433; } /* Function */
+			code span.im { color: #008000; font-weight: bold; } /* Import */
+			code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+			code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+			code span.op { color: #666666; } /* Operator */
+			code span.ot { color: #007020; } /* Other */
+			code span.pp { color: #bc7a00; } /* Preprocessor */
+			code span.sc { color: #4070a0; } /* SpecialChar */
+			code span.ss { color: #bb6688; } /* SpecialString */
+			code span.st { color: #4070a0; } /* String */
+			code span.va { color: #19177c; } /* Variable */
+			code span.vs { color: #4070a0; } /* VerbatimString */
+			code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+		</style>
 
-	<script defer>
-		(function () {
-		        const savedTheme = localStorage.getItem('theme');
-		        if (savedTheme === 'dark') {
-		                document.documentElement.classList.add('dark');
-		        } else {
-		                document.documentElement.classList.remove('dark');
-		        }
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+		<script defer>
+			(function () {
+			const savedTheme = localStorage.getItem('theme');
+			if (savedTheme === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
 		})();
-		
+
 		document.addEventListener('DOMContentLoaded', function () {
-		        const toggleBtn = document.getElementById('theme-toggle');
-		        if (toggleBtn) {
-		                toggleBtn.addEventListener('click', () => {
-		                        const isDark = document.documentElement.classList.toggle('dark');
-		                        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		                });
-		        }
+			const toggleBtn = document.getElementById('theme-toggle');
+			if (toggleBtn) {
+				toggleBtn.addEventListener('click', () => {
+					const isDark = document.documentElement.classList.toggle('dark');
+					localStorage.setItem('theme', isDark ? 'dark' : 'light');
+				});
+			}
 		});
-	</script>
-</head>
-<body>
-	<div class="wrapper">
-		<header>
-			<nav>
-				<a class="hhome" href="../../index.html" id="profileLink">
-					<img id="pfp" width="50" src="../../resources/profiles/OriginalS.png" alt="pfp">
-				</a>
-				<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar's</span> blog</span>
-			</nav>
-		</header>
-		<main>
-			<section>
-				<p class="blogdesc">
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav>
+					<a class="hhome" href="../../index.html" id="profileLink">
+						<img id="pfp" width="50" src="../../resources/profiles/OriginalS.png" alt="pfp">
+					</a>
+					<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar's</span> blog</span>
+				</nav>
+			</header>
+			<main>
+				<section>
+					<p class="blogdesc">
 					<a href="../blog.html">Back</a>
-				</p>
-			</section>
-			<section class="blog__post">
-				<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">Demonstrations,
-Functions and Paclets</h1>
-				<p><i>25 June, 2025</i></p>
-				<hr><br><br>
-<p>Wolfram Research maintains several public repositories to encourage
+					</p>
+				</section>
+				<section class="blog__post">
+					<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">Demonstrations,
+Functions and Paclets</h2>
+					<p><i>25 June, 2025</i></p>
+					<hr><br><br>
+					<p>Wolfram Research maintains several public repositories to encourage
 community engagement, sharing of knowledge, and collaborative
 development in the Wolfram Language ecosystem. Key repositories
 include</p>
@@ -76,21 +107,25 @@ href="https://demonstrations.wolfram.com/SubgroupLatticeOfZn">demonstrations.wol
 href="https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups">resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups/</a>.</li>
 </ul>
 <h4 id="functions">Functions</h4>
-<!-- - Naman Taggar (2025), "AutomorphicNumberQ" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/AutomorphicNumberQ/](https://resources.wolframcloud.com/FunctionRepository/resources/AutomorphicNumberQ/).
-- Naman Taggar (2025), "RoughIntegerQ" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/](https://resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/). -->
+<ul>
+<li>Naman Taggar (2025), “AutomorphicNumberQ” Wolfram Function
+Repository. <a
+href="https://resources.wolframcloud.com/FunctionRepository/resources/AutomorphicNumberQ/">resources.wolframcloud.com/FunctionRepository/resources/AutomorphicNumberQ/</a>.</li>
+</ul>
+<!-- - Naman Taggar (2025), "RoughIntegerQ" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/](https://resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/). -->
 <ul>
 <li>Naman Taggar (2025), “ShowPolygonSymmetries” Wolfram Function
 Repository. <a
 href="https://resources.wolframcloud.com/FunctionRepository/resources/ShowPolygonSymmetries/">resources.wolframcloud.com/FunctionRepository/resources/ShowPolygonSymmetries/</a>.</li>
 </ul>
 <!-- - Naman Taggar (2025), "SerflingFit" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/SerflingFit/](https://resources.wolframcloud.com/FunctionRepository/resources/SerflingFit/). -->
-				<hr><br><br>
-				<p>
+					<hr><br><br>
+					<p>
 					Thanks for reading. Return to see <a href="../blog.html">all blog posts,</a> or to the <a href="../../index.html">home page.</a>
-				</p>
-			</section>
-		</main>
-		<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="../copy.html">Read more.</a></footer>
-	</div>
-</body>
+					</p>
+				</section>
+			</main>
+			<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="../copy.html">Read more.</a></footer>
+		</div>
+	</body>
 </html>

@@ -1,5 +1,12 @@
 [
 	{
+		"title": "Functions of Multiple Variables",
+		"date": "17 July, 2025",
+		"desc": "Introductory blog post on multivariate calculus showcasing various visualisations I created.",
+		"url": "functions-of-multiple-variables.html",
+		"tags": ["maths"]
+	},
+	{
 		"title": "Demonstrations, Functions and Paclets",
 		"date": "25 June, 2025",
 		"desc": "Compilation of my contributions to the public repositories of Wolfram language.",
@@ -26,13 +33,6 @@
 		"desc": "Show-case of my project work done for a course of data analytics that included machine learning as well. In it, I studied a dataset concerning the salaries of professors at a university and found disparity among salary on the basis of gender.",
 		"url": "salaries-disparity.html",
 		"tags": ["machine-learning"]
-	},
-	{
-		"title": "Multivariate Calculus",
-		"date": "05 February, 2025",
-		"desc": "Introductory blog post on multivariate calculus showcasing various visualisations I created.",
-		"url": "intro-to-mvc.html",
-		"tags": ["maths"]
 	},
   	{
    	 	"title": "On This Website",
