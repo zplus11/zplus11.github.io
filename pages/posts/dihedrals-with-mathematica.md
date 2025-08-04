@@ -6,7 +6,7 @@ date: 04 August, 2025
 When it comes to symbolic computation, Wolfram Mathematica is a giant. Known for its ability to manipulate abstract mathematical structures with ease, it's especially powerful for algebraic systems like groups, rings, and beyond.
 
 In this post, I'll define a set of rules that simulate the operation of a dihedral group. $D_n$ contains these elements:
-$$\{r^0,r^1,\ldots,r^n,s,rs,\ldots,r^{n-1}s\}.$$
+$$\{r^0,r^1,\ldots,r^{n-1},s,rs,\ldots,r^{n-1}s\}.$$
 The operation among these elements is defined by the following set of rules: $r^0$ being the identity, for any $x$ we have $r^0x = xr^0=x$. Among all rotations, $r^ir^j = r^{(i+j)\bmod n}$ holds. Now, $s$ being the reflection along the axis oriented at 0 degrees, we have $s^2=r^0$. Finally, $sr^i=r^{n-i}s$.
 
 Using these rules, any product of elements in $D_n$ can be reduced to one of the elements of $D_n$ itself. For example,
@@ -24,30 +24,30 @@ Now, the first rule is that anything (left-or-right) multiplied by $r^0$ results
 
 ```mathematica
 Unprotect[NonCommutativeMultiply];
-Sym[r, 0] ** x_ := x
-x_ ** Sym[r, 0] := x
+Rot[r, 0] ** x_ := x
+x_ ** Rot[r, 0] := x
 ```
 
-Mathematica's advanced pattern matching makes it very easy to define such rules. Now for example if we type `Sym[r, 0] ** Sym[r, 2]`, the result will be `Sym[r, 2]` itself.
+Mathematica's advanced pattern matching makes it very easy to define such rules. Now for example if we type `Rot[r, 0] ** Rot[r, 2]`, the result will be `Rot[r, 2]` itself.
 
 Next, we define how rotations react with each other:
 
 ```mathematica
-Sym[r, i_] ** Sym[r, j_] := Sym[r, Mod[i + j, n]]
+Rot[r, i_] ** Rot[r, j_] := Rot[r, Mod[i + j, n]]
 ```
 
 and finally we define the rules regarding $s$:
 
 ```mathematica
-s ** s := Sym[r, 0]
-s ** Sym[r, i_] := Sym[r, n-k] ** s
+s ** s := Rot[r, 0]
+s ** Rot[r, i_] := Rot[r, n - k] ** s
 ```
 
-With that, we are almost done. All that remains is to let Mathematica know that when we type `r^i`, we mean `Sym[r, i]`. Further, in all outputs, we want `Sym[r, i]` formatted as `r^i` back:
+With that, we are almost done. All that remains is to let Mathematica know that when we type `r^i`, we mean `Rot[r, i]`. Further, in all outputs, we want `Rot[r, i]` formatted as `r^i` back:
 
 ```mathematica
-r /: r^i_ := Sym[r, i]
-Format[Sym[r, i_]] := Superscript[r, i]
+r /: r^i_ := Rot[r, i]
+Format[Rot[r, i_]] := Superscript[r, i]
 Protect[NonCommutativeMultiply];
 ```
 
@@ -59,7 +59,7 @@ r^3 ** s ** r^1
 
 we get
 
-```
+```mathematica
 r^2 ** s
 ```
 
