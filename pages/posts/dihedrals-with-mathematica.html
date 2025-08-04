@@ -93,10 +93,9 @@ The operation among these elements is defined by the following set of
 rules: <span class="math inline"><em>r</em><sup>0</sup></span> being the
 identity, for any <span class="math inline"><em>x</em></span> we have
 <span
-class="math inline"><em>r</em><sup>0</sup><em>x</em> = <em>x</em><em>r</em><sup>0</sup> = <em>x</em>∀<em>x</em></span>.
-Among all <span
-class="math inline"><em>r</em><sup><em>i</em></sup></span>’s, <span
-class="math inline"><em>r</em><sup><em>i</em></sup><em>r</em><sup><em>j</em></sup> = <em>r</em><sup><em>i</em> + <em>j</em> mod  <em>n</em></sup></span>
+class="math inline"><em>r</em><sup>0</sup><em>x</em> = <em>x</em><em>r</em><sup>0</sup> = <em>x</em></span>.
+Among all rotations, <span
+class="math inline"><em>r</em><sup><em>i</em></sup><em>r</em><sup><em>j</em></sup> = <em>r</em><sup>(<em>i</em> + <em>j</em>) mod  <em>n</em></sup></span>
 holds. Now, <span class="math inline"><em>s</em></span> being the
 reflection along the axis oriented at 0 degrees, we have <span
 class="math inline"><em>s</em><sup>2</sup> = <em>r</em><sup>0</sup></span>.
@@ -114,7 +113,7 @@ computations can be automatically done. For it, we will use the
 <code>NonCommutativeMultiply</code> so that <span
 class="math inline"><em>x</em><em>y</em></span> should not be confused
 for <span class="math inline"><em>y</em><em>x</em></span>.</p>
-<p>We will define a rotation <span
+<p>We will denote a rotation <span
 class="math inline"><em>r</em><sup><em>i</em></sup></span> by
 <code>Rot[r, i]</code> to secure more control over the operation,
 although it will be formatted as is. We also define <span
