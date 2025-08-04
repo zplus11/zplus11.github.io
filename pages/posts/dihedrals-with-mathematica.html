@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=devide-width, initial-scale=1.0">
+		<title>Dihedrals with Mathematica</title>
+		<link rel="stylesheet" href="../../style.css">
+		<style>
+			code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+			code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+			code span.at { color: #7d9029; } /* Attribute */
+			code span.bn { color: #40a070; } /* BaseN */
+			code span.bu { color: #008000; } /* BuiltIn */
+			code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+			code span.ch { color: #4070a0; } /* Char */
+			code span.cn { color: #880000; } /* Constant */
+			code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+			code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+			code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+			code span.dt { color: #902000; } /* DataType */
+			code span.dv { color: #40a070; } /* DecVal */
+			code span.er { color: #ff0000; font-weight: bold; } /* Error */
+			code span.ex { } /* Extension */
+			code span.fl { color: #40a070; } /* Float */
+			code span.fu { color: #bc6433; } /* Function */
+			code span.im { color: #008000; font-weight: bold; } /* Import */
+			code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+			code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+			code span.op { color: #666666; } /* Operator */
+			code span.ot { color: #007020; } /* Other */
+			code span.pp { color: #bc7a00; } /* Preprocessor */
+			code span.sc { color: #4070a0; } /* SpecialChar */
+			code span.ss { color: #bb6688; } /* SpecialString */
+			code span.st { color: #4070a0; } /* String */
+			code span.va { color: #19177c; } /* Variable */
+			code span.vs { color: #4070a0; } /* VerbatimString */
+			code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+		</style>
+
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+		<script defer>
+			(function () {
+			const savedTheme = localStorage.getItem('theme');
+			if (savedTheme === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		})();
+
+		document.addEventListener('DOMContentLoaded', function () {
+			const toggleBtn = document.getElementById('theme-toggle');
+			if (toggleBtn) {
+				toggleBtn.addEventListener('click', () => {
+					const isDark = document.documentElement.classList.toggle('dark');
+					localStorage.setItem('theme', isDark ? 'dark' : 'light');
+				});
+			}
+		});
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav>
+					<a class="hhome" href="../../index.html" id="profileLink">
+						<img id="pfp" width="50" src="../../resources/profiles/OriginalS.png" alt="pfp">
+					</a>
+					<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar's</span> blog</span>
+				</nav>
+			</header>
+			<main>
+				<section>
+					<p class="blogdesc">
+					<a href="../blog.html">Back</a>
+					</p>
+				</section>
+				<section class="blog__post">
+					<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">Dihedrals
+with Mathematica</h2>
+					<p><i>04 August, 2025</i></p>
+					<hr><br><br>
+					<p>When it comes to symbolic computation, Wolfram Mathematica is a
+giant. Known for its ability to manipulate abstract mathematical
+structures with ease, it’s especially powerful for algebraic systems
+like groups, rings, and beyond.</p>
+<p>In this post, I’ll define a set of rules that simulate the operation
+of a dihedral group. <span
+class="math inline"><em>D</em><sub><em>n</em></sub></span> contains
+these elements: <span
+class="math display">{<em>r</em><sup>0</sup>, <em>r</em><sup>1</sup>, …, <em>r</em><sup><em>n</em></sup>, <em>s</em>, <em>r</em><em>s</em>, …, <em>r</em><sup><em>n</em> − 1</sup><em>s</em>}.</span>
+The operation among these elements is defined by the following set of
+rules: <span class="math inline"><em>r</em><sup>0</sup></span> being the
+identity, for any <span class="math inline"><em>x</em></span> we have
+<span
+class="math inline"><em>r</em><sup>0</sup><em>x</em> = <em>x</em><em>r</em><sup>0</sup> = <em>x</em>∀<em>x</em></span>.
+Among all <span
+class="math inline"><em>r</em><sup><em>i</em></sup></span>’s, <span
+class="math inline"><em>r</em><sup><em>i</em></sup><em>r</em><sup><em>j</em></sup> = <em>r</em><sup><em>i</em> + <em>j</em> mod  <em>n</em></sup></span>
+holds. Now, <span class="math inline"><em>s</em></span> being the
+reflection along the axis oriented at 0 degrees, we have <span
+class="math inline"><em>s</em><sup>2</sup> = <em>r</em><sup>0</sup></span>.
+Finally, <span
+class="math inline"><em>s</em><em>r</em><sup><em>i</em></sup> = <em>r</em><sup><em>n</em> − <em>i</em></sup><em>s</em></span>.</p>
+<p>Using these rules, any product of elements in <span
+class="math inline"><em>D</em><sub><em>n</em></sub></span> can be
+reduced to one of the elements of <span
+class="math inline"><em>D</em><sub><em>n</em></sub></span> itself. For
+example, <span
+class="math display"><em>r</em><sup>3</sup><em>s</em><em>r</em><sup>1</sup> = <em>r</em><sup>3</sup><em>r</em><sup><em>n</em> − 1</sup><em>s</em> = <em>r</em><sup>3 + <em>n</em> − 1</sup><em>s</em> = <em>r</em><sup>2</sup><em>s</em>.</span>
+Our motive is to define these patterns in Mathematica so that such
+computations can be automatically done. For it, we will use the
+<code>**</code> symbol of Mathematica that stands for
+<code>NonCommutativeMultiply</code> so that <span
+class="math inline"><em>x</em><em>y</em></span> should not be confused
+for <span class="math inline"><em>y</em><em>x</em></span>.</p>
+<p>We will define a rotation <span
+class="math inline"><em>r</em><sup><em>i</em></sup></span> by
+<code>Rot[r, i]</code> to secure more control over the operation,
+although it will be formatted as is. We also define <span
+class="math inline"><em>n</em> = 4</span> during this experiment.</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ClearAll</span><span class="op">[</span>Rot<span class="op">,</span> <span class="fu">r</span><span class="op">,</span> <span class="fu">s</span><span class="op">]</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">n</span> <span class="ex">:=</span> <span class="dv">4</span></span></code></pre></div>
+<p>Now, the first rule is that anything (left-or-right) multiplied by
+<span class="math inline"><em>r</em><sup>0</sup></span> results in
+itself, hence</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Unprotect</span><span class="op">[</span><span class="fu">NonCommutativeMultiply</span><span class="op">]</span>;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="dv">0</span><span class="op">]</span> <span class="sc">**</span> <span class="at">x_</span> <span class="ex">:=</span> <span class="fu">x</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">x_</span> <span class="sc">**</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="dv">0</span><span class="op">]</span> <span class="ex">:=</span> <span class="fu">x</span></span></code></pre></div>
+<p>Mathematica’s advanced pattern matching makes it very easy to define
+such rules. Now for example if we type
+<code>Sym[r, 0] ** Sym[r, 2]</code>, the result will be
+<code>Sym[r, 2]</code> itself.</p>
+<p>Next, we define how rotations react with each other:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">i_</span><span class="op">]</span> <span class="sc">**</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">j_</span><span class="op">]</span> <span class="ex">:=</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">Mod</span><span class="op">[</span><span class="fu">i</span> <span class="sc">+</span> <span class="fu">j</span><span class="op">,</span> <span class="fu">n</span><span class="op">]]</span></span></code></pre></div>
+<p>and finally we define the rules regarding <span
+class="math inline"><em>s</em></span>:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">s</span> <span class="sc">**</span> <span class="fu">s</span> <span class="ex">:=</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="dv">0</span><span class="op">]</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">s</span> <span class="sc">**</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">i_</span><span class="op">]</span> <span class="ex">:=</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">n</span><span class="sc">-</span><span class="fu">k</span><span class="op">]</span> <span class="sc">**</span> <span class="fu">s</span></span></code></pre></div>
+<p>With that, we are almost done. All that remains is to let Mathematica
+know that when we type <code>r^i</code>, we mean <code>Sym[r, i]</code>.
+Further, in all outputs, we want <code>Sym[r, i]</code> formatted as
+<code>r^i</code> back:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span> <span class="sc">/</span>: <span class="fu">r</span><span class="sc">^</span><span class="at">i_</span> <span class="ex">:=</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">i</span><span class="op">]</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Format</span><span class="op">[</span>Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">i_</span><span class="op">]]</span> <span class="ex">:=</span> <span class="fu">Superscript</span><span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">i</span><span class="op">]</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Protect</span><span class="op">[</span><span class="fu">NonCommutativeMultiply</span><span class="op">]</span>;</span></code></pre></div>
+<p>And that is it. Now, using our previous example, if we type</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">3</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span></span></code></pre></div>
+<p>we get</p>
+<pre><code>r^2 ** s</code></pre>
+<p>as the output. Here are a few more test runs:</p>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">0</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span>                  <span class="co">(* r^1 *)</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span>                  <span class="co">(* r^3 *)</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">1</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">3</span> <span class="sc">**</span> <span class="fu">s</span>             <span class="co">(* s *)</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">3</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">3</span> <span class="sc">**</span> <span class="fu">s</span>        <span class="co">(* r^0 *)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">2</span>        <span class="co">(* r^1 *)</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span> <span class="sc">**</span> <span class="fu">s</span>        <span class="co">(* r^1 *)</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">3</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">2</span>        <span class="co">(* r^3 *)</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">1</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">**</span> <span class="fu">s</span>        <span class="co">(* r^3 *)</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">3</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">s</span>   <span class="co">(* r^1 s *)</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">1</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span> <span class="sc">**</span> <span class="fu">s</span>        <span class="co">(* r^0 *)</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span> <span class="sc">**</span> <span class="fu">s</span>        <span class="co">(* r^1 *)</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">3</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span> <span class="sc">**</span> <span class="fu">s</span> <span class="co">(* r^0 *)</span></span></code></pre></div>
+<p>The code is available in this mathematica notebook: <a
+href="../../resources/mm/dih.nb">dih.nb</a>.</p>
+					<hr><br><br>
+					<p>
+					Thanks for reading. Return to see <a href="../blog.html">all blog posts,</a> or to the <a href="../../index.html">home page.</a>
+					</p>
+				</section>
+			</main>
+			<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="../copy.html">Read more.</a></footer>
+		</div>
+	</body>
+</html>

@@ -4,8 +4,8 @@ date: 17 July, 2025
 ---
 
 > *If in the first act you hang a gun on the wall, in the next act it must go off.*
-
---- Anton Chekhov
+>
+> --- Anton Chekhov
 
 \def\index#1{}
 
@@ -30,7 +30,7 @@ On the real line, we talked of open intervals of the form $(a,b)$. In two-dimens
 $$\left\{(x,y)\in\mathbb R^2:\sqrt{(x-a)^2 + (y-b)^2}<r\right\}$$
 for $r$ being the certain distance and $(a,b)$ being the point at center. If the boundary is to be included, we can replace the strict inequality in favour of including equality.
 
-![Figure 3: Open set in 2 dimensions,](img/openset2d.png)
+![Figure 3: Open set in 2 dimensions.](img/openset2d.png)
 
 Furthering this discussion, a point is said to be an interior point of a set $S$ in $\mathbb R^2$ if some open disk\index{open disk} centered at that point is contained entirely in $S$.
 If the set $S$ is empty or if each of its points is an interior point, it is said to be open. A point is said to be a boundary point\index{boundary point} of $S$ if every open disk centered at the point contains at least one element that is in $S$ and at least one element that is not in $S$, and in fact, infinitely many such points. $S$ is said to be closed if it includes its boundary, i.e., if it includes all of its boundary points. By convention, the empty set and the universal set of this context --- $\mathbb R^2$ --- are both open as well as closed.
@@ -154,4 +154,4 @@ This is again continuous for all points in the domain except where denominator i
 
 ---
 
-This is the first article on multivariate calculus. If you enjoyed reading it, I am glad. For any feedback or discussion, please contact me via email at namtgr at gmail dot com. The graphs for this article were created using Mathematica. A notebook containing them can be found at [this link](../../resources/mm/fmv.nb).
+This is the first article in the series "Some Notes on Multivariate Calculus." If you enjoyed reading it, I am glad. To read the next article, visit [this page.](derivatives-in-multivariate-calculus.html) For any feedback or discussion, please contact me via email at namtgr at gmail dot com. The graphs for this article were created using Mathematica. A notebook containing them can be found at [this link](../../resources/mm/fmv.nb).

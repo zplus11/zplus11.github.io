@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=devide-width, initial-scale=1.0">
+		<title>Derivatives in Multivariate Calculus</title>
+		<link rel="stylesheet" href="../../style.css">
+		<style>
+			code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+			code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+			code span.at { color: #7d9029; } /* Attribute */
+			code span.bn { color: #40a070; } /* BaseN */
+			code span.bu { color: #008000; } /* BuiltIn */
+			code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+			code span.ch { color: #4070a0; } /* Char */
+			code span.cn { color: #880000; } /* Constant */
+			code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+			code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+			code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+			code span.dt { color: #902000; } /* DataType */
+			code span.dv { color: #40a070; } /* DecVal */
+			code span.er { color: #ff0000; font-weight: bold; } /* Error */
+			code span.ex { } /* Extension */
+			code span.fl { color: #40a070; } /* Float */
+			code span.fu { color: #bc6433; } /* Function */
+			code span.im { color: #008000; font-weight: bold; } /* Import */
+			code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+			code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+			code span.op { color: #666666; } /* Operator */
+			code span.ot { color: #007020; } /* Other */
+			code span.pp { color: #bc7a00; } /* Preprocessor */
+			code span.sc { color: #4070a0; } /* SpecialChar */
+			code span.ss { color: #bb6688; } /* SpecialString */
+			code span.st { color: #4070a0; } /* String */
+			code span.va { color: #19177c; } /* Variable */
+			code span.vs { color: #4070a0; } /* VerbatimString */
+			code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+		</style>
+
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+		<script defer>
+			(function () {
+			const savedTheme = localStorage.getItem('theme');
+			if (savedTheme === 'dark') {
+				document.documentElement.classList.add('dark');
+			} else {
+				document.documentElement.classList.remove('dark');
+			}
+		})();
+
+		document.addEventListener('DOMContentLoaded', function () {
+			const toggleBtn = document.getElementById('theme-toggle');
+			if (toggleBtn) {
+				toggleBtn.addEventListener('click', () => {
+					const isDark = document.documentElement.classList.toggle('dark');
+					localStorage.setItem('theme', isDark ? 'dark' : 'light');
+				});
+			}
+		});
+		</script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav>
+					<a class="hhome" href="../../index.html" id="profileLink">
+						<img id="pfp" width="50" src="../../resources/profiles/OriginalS.png" alt="pfp">
+					</a>
+					<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar's</span> blog</span>
+				</nav>
+			</header>
+			<main>
+				<section>
+					<p class="blogdesc">
+					<a href="../blog.html">Back</a>
+					</p>
+				</section>
+				<section class="blog__post">
+					<h2 style="font-family: msans; font-weight: 800; text-transform: uppercase">Derivatives
+in Multivariate Calculus</h2>
+					<p><i>XX August, 2025</i></p>
+					<hr><br><br>
+					<blockquote>
+<p><em>Shall we then err in regarding that as the true science of Logic
+which, laying down certain elementary laws, confirmed by the very
+testimony of the mind, permits us thence to deduce, by uniform
+processes, the entire chain of its secondary consequences, and
+furnishes, for its practical applications, methods of perfect
+generality? …</em></p>
+<p>— Boole</p>
+</blockquote>
+<h2 id="preface">Preface</h2>
+<p>This is the second article in the series “Some Notes on Multivariate
+Calculus,” based on the course I studied in 2024 taught by my professor
+<a href="https://sgtbkhalsadu.ac.in/academics/departments/Mathematics/faculty-detail/97/" target="_blank">Amarpreet
+ma’am.</a> It is largely due of her consistent encouragement and
+powerful motivation that these notes could be compiled in the form
+presented here. To read the first article, visit <a
+href="functions-of-multiple-variables.html">this page</a>.</p>
+<h2 id="rates-of-change">Rates of Change</h2>
+<p>In a one variable function <span
+class="math inline"><em>f</em></span> of <span
+class="math inline"><em>x</em></span>, the derivative is the rate of
+change in <span class="math inline"><em>f</em></span> with respect to
+<span class="math inline"><em>x</em></span>. For two variable functions
+also, we talk of changes. Unlike one variable functions where the change
+in <span class="math inline"><em>x</em></span> is in certain direction
+(namely from <span class="math inline"><em>x</em></span> to <span
+class="math inline"><em>x</em> + <em>Δ</em><em>x</em></span>), for two
+variable functions there can be infinite ways in which the input
+variables can advance. Two of the most basic ways are along the positive
+sides of <span class="math inline"><em>x</em></span> and <span
+class="math inline"><em>y</em></span> axes. Changes along these are
+called Partial Derivatives. As the name suggests, partial derivatives
+only speak about the rates of partial change in the function. That is,
+the change due to increase in only one of the variables, at a time.</p>
+<figure>
+<img src="img/pd.png"
+alt="Figure 1: Partial derivatives of a function." />
+<figcaption aria-hidden="true">Figure 1: Partial derivatives of a
+function.</figcaption>
+</figure>
+<p>The partial derivative with respect to <span
+class="math inline"><em>x</em></span>, denoted by <span
+class="math display">$$\frac{\partial^{} f}{\partial x^{}},$$</span>
+will be the change in <span class="math inline"><em>f</em></span> when
+<span class="math inline"><em>x</em></span> increases but <span
+class="math inline"><em>y</em></span> remains constant. In figure 1, the
+curve draw in blue is the intersection of function <span
+class="math inline"><em>f</em></span> and the plane <span
+class="math inline"><em>x</em> = 1</span>. This is called the trace of
+<span class="math inline"><em>y</em></span> in the concerned plane. At
+any point <span class="math inline">(1, <em>y</em><sub>0</sub>)</span>
+on this curve, the slope of the tangent to it (which can be found now,
+as this is just a function of <span
+class="math inline"><em>y</em></span> alone; <span
+class="math inline"><em>x</em></span> being constant at <span
+class="math inline">1</span>) will be the partial derivative of <span
+class="math inline"><em>f</em></span> with respect to <span
+class="math inline"><em>y</em></span> at <span
+class="math inline">(1, <em>y</em><sub>0</sub>)</span>.</p>
+<p>Mathematically, we define the partials as <span
+class="math display">$$\begin{aligned}
+    \frac{\partial^{} f}{\partial x^{}} &amp;= \lim_{\Delta{x} \to 0}
+\frac{f(x + \Delta{x}, y_0) - f(x, y_0)}{\Delta{x}}, \\
+    \frac{\partial^{} f}{\partial y^{}} &amp;= \lim_{\Delta{y} \to 0}
+\frac{f(x_0, y + \Delta{y}) - f(x_0, y)}{\Delta{y}}.
+\end{aligned}$$</span></p>
+<p>Similar definitions can be written for double partial derivatives, or
+mixed partials as well. For example, the mixed partial <span
+class="math display">$$\frac{\partial}{\partial y}\frac{\partial^{}
+z}{\partial x^{}}$$</span> can be calculated by considering <span
+class="math display">$$\frac{\partial^{} z}{\partial x^{}}$$</span> as a
+function and partially differentiating it with respect to <span
+class="math inline"><em>y</em></span>: <span class="math display">$$
+    \frac{\partial^2z}{\partial y\partial x}=
+    \lim_{\Delta{y} \to 0} \frac{f_x(x_0, y + \Delta{y}) - f_x(x_0,
+y)}{\Delta{y}}
+$$</span></p>
+<p>Based on that, we present a question on partials: find slope of the
+line parallel to the <span
+class="math inline"><em>x</em><em>z</em></span>-plane and tangent to the
+surface <span class="math display">$$z=x\sqrt{x+y}$$</span> at the point
+<span class="math inline"><em>P</em>(1, 3, 2)</span>. Such line being
+parallel to the <span
+class="math inline"><em>x</em><em>z</em></span>-plane will run through a
+constant <span class="math inline"><em>y</em></span> value, therefore we
+have to evaluate <span
+class="math inline"><em>f</em><sub><em>x</em></sub>(1, 3)</span>. This
+can be done using the definition given above, as follows:—</p>
+<p>On mixed partials, we mention an important theorem below.</p>
+<p><strong>Theorem</strong> <em>(Equality of Mixed Partials).</em> Mixed
+partials <span
+class="math inline">∂<sup>2</sup><em>f</em>/(∂<em>x</em>∂<em>y</em>)</span>
+and <span
+class="math inline">∂<sup>2</sup><em>f</em>/(∂<em>x</em>∂<em>y</em>)</span>
+of the function <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)</span>, if they
+exist, satisfy <span
+class="math display"><em>f</em><sub><em>x</em></sub>(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>) = <em>f</em><sub><em>y</em></sub>(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</span>
+if both are continuous in an open disk containing <span
+class="math inline">(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</span>.</p>
+<p>In other words, this theorem states that for such functions, the
+order of differentiation does not matter while computing mixed partials.
+Consider the given function <span class="math display">$$f(x, y) =
+\begin{cases}
+    xy\left(\frac{x^2-y^2}{x^2+y^2}\right), &amp; (x,y)\not=(0,0), \\
+    0, &amp; (x,y)=(0,0).
+\end{cases}$$</span> We show that</p>
+<ul>
+<li><span
+class="math inline"><em>f</em><sub><em>x</em></sub>(0, <em>y</em>) = −<em>y</em></span></li>
+<li><span
+class="math inline"><em>f</em><sub><em>y</em></sub>(<em>x</em>, 0) = <em>x</em></span></li>
+<li><span
+class="math inline"><em>f</em><sub><em>x</em><em>y</em></sub>(0, 0) = −1</span></li>
+<li><span
+class="math inline"><em>f</em><sub><em>y</em><em>x</em></sub>(0, 0) = 1</span></li>
+</ul>
+<p>For the first part:</p>
+<p><span class="math display">$$\begin{aligned}
+    f_x(0, y)    &amp;= \lim_{\Delta x \to 0} \frac{f(\Delta x,y) - f(0,
+y)}{\Delta x} \\
+                 &amp;= \lim_{\Delta x \to 0} \frac{y \Delta x
+\frac{\big((\Delta x)^2 - y^2\big)}{\big((\Delta x)^2 +
+y^2\big)}}{\Delta x} \\
+                 &amp;= -y.
+\end{aligned}$$</span></p>
+<p>Similarly, the other parts can be solved. It is worth noting that the
+mixed partials in this case will not be equal to each other. However,
+this does not violate the theorem on mixed partials equality since the
+function in question is not continuous.</p>
+<h2 id="directional-derivatives">Directional Derivatives</h2>
+<p>A broader type of derivatives are the directional derivatives, which
+are calculated for a function in a given direction. In this sense, <span
+class="math inline">$\frac{\partial^{} f}{\partial x^{}}$</span> is the
+derivative of <span class="math inline"><em>f</em></span> along the
+vector <span class="math inline">1<em>î</em> + 0<em>ĵ</em></span>. In
+extension to that, directional derivative along the vector <span
+class="math inline"><em>v⃗</em> = <em>a</em><em>î</em> + <em>b</em><em>ĵ</em></span>
+would be the rate of change in <span
+class="math inline"><em>f</em></span> in the direction of this vector.
+It is denoted by <span
+class="math inline">𝒟<sub><em>v⃗</em></sub><em>f</em></span>. In figure ,
+the plane goes in the direction of <span
+class="math inline"><em>v⃗</em></span>, and the red coloured curve is its
+intersection with <span class="math inline"><em>f</em></span>. Then,
+<span class="math inline">𝒟<sub><em>v⃗</em></sub><em>f</em></span> is
+slope of the tangent on this curve at the concerned point.</p>
+<hr />
+<p>This is the second article in the series “Some Notes on Multivariate
+Calculus.” If you enjoyed reading it, I am glad. For any feedback or
+discussion, please contact me via email at namtgr at gmail dot com. The
+graphs for this article were created using Mathematica. A notebook
+containing them can be found at <a href="../../resources/mm/dmc.nb">this
+link</a>.</p>
+					<hr><br><br>
+					<p>
+					Thanks for reading. Return to see <a href="../blog.html">all blog posts,</a> or to the <a href="../../index.html">home page.</a>
+					</p>
+				</section>
+			</main>
+			<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="../copy.html">Read more.</a></footer>
+		</div>
+	</body>
+</html>

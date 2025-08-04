@@ -13,18 +13,19 @@ This blog post will serve the purpose of bringing all of my contributions to the
 
 #### Demonstrations
 
-- Naman Taggar (2025), "Subgroup Lattice of Zn" Wolfram Demonstrations Project. [demonstrations.wolfram.com/SubgroupLatticeOfZn](https://demonstrations.wolfram.com/SubgroupLatticeOfZn).
+- [SubgroupLatticeOfZn](https://demonstrations.wolfram.com/SubgroupLatticeOfZn).
 
 #### Paclets
 
-- Naman Taggar (2025), "MGroups" Wolfram Paclet Repository. [resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups/](https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups).
+- [MGroups](https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups).
 
 #### Functions
 
-- Naman Taggar (2025), "AutomorphicNumberQ" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/AutomorphicNumberQ/](https://resources.wolframcloud.com/FunctionRepository/resources/AutomorphicNumberQ/).
+- [AutomorphicIntegerQ](https://resources.wolframcloud.com/FunctionRepository/resources/AutomorphicIntegerQ/).
 
 <!-- - Naman Taggar (2025), "RoughIntegerQ" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/](https://resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/). -->
 
-- Naman Taggar (2025), "ShowPolygonSymmetries" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/ShowPolygonSymmetries/](https://resources.wolframcloud.com/FunctionRepository/resources/ShowPolygonSymmetries/).
+- [SerflingFit](https://resources.wolframcloud.com/FunctionRepository/resources/SerflingFit/).
 
-<!-- - Naman Taggar (2025), "SerflingFit" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/SerflingFit/](https://resources.wolframcloud.com/FunctionRepository/resources/SerflingFit/). -->
+
+- [ShowPolygonSymmetries](https://resources.wolframcloud.com/FunctionRepository/resources/ShowPolygonSymmetries/).
