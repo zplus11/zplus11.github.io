@@ -88,7 +88,7 @@ like groups, rings, and beyond.</p>
 of a dihedral group. <span
 class="math inline"><em>D</em><sub><em>n</em></sub></span> contains
 these elements: <span
-class="math display">{<em>r</em><sup>0</sup>, <em>r</em><sup>1</sup>, …, <em>r</em><sup><em>n</em></sup>, <em>s</em>, <em>r</em><em>s</em>, …, <em>r</em><sup><em>n</em> − 1</sup><em>s</em>}.</span>
+class="math display">{<em>r</em><sup>0</sup>, <em>r</em><sup>1</sup>, …, <em>r</em><sup><em>n</em> − 1</sup>, <em>s</em>, <em>r</em><em>s</em>, …, <em>r</em><sup><em>n</em> − 1</sup><em>s</em>}.</span>
 The operation among these elements is defined by the following set of
 rules: <span class="math inline"><em>r</em><sup>0</sup></span> being the
 identity, for any <span class="math inline"><em>x</em></span> we have
@@ -126,33 +126,34 @@ class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb
 itself, hence</p>
 <div class="sourceCode" id="cb2"><pre
 class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Unprotect</span><span class="op">[</span><span class="fu">NonCommutativeMultiply</span><span class="op">]</span>;</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="dv">0</span><span class="op">]</span> <span class="sc">**</span> <span class="at">x_</span> <span class="ex">:=</span> <span class="fu">x</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">x_</span> <span class="sc">**</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="dv">0</span><span class="op">]</span> <span class="ex">:=</span> <span class="fu">x</span></span></code></pre></div>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>Rot<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="dv">0</span><span class="op">]</span> <span class="sc">**</span> <span class="at">x_</span> <span class="ex">:=</span> <span class="fu">x</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">x_</span> <span class="sc">**</span> Rot<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="dv">0</span><span class="op">]</span> <span class="ex">:=</span> <span class="fu">x</span></span></code></pre></div>
 <p>Mathematica’s advanced pattern matching makes it very easy to define
 such rules. Now for example if we type
-<code>Sym[r, 0] ** Sym[r, 2]</code>, the result will be
-<code>Sym[r, 2]</code> itself.</p>
+<code>Rot[r, 0] ** Rot[r, 2]</code>, the result will be
+<code>Rot[r, 2]</code> itself.</p>
 <p>Next, we define how rotations react with each other:</p>
 <div class="sourceCode" id="cb3"><pre
-class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">i_</span><span class="op">]</span> <span class="sc">**</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">j_</span><span class="op">]</span> <span class="ex">:=</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">Mod</span><span class="op">[</span><span class="fu">i</span> <span class="sc">+</span> <span class="fu">j</span><span class="op">,</span> <span class="fu">n</span><span class="op">]]</span></span></code></pre></div>
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Rot<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">i_</span><span class="op">]</span> <span class="sc">**</span> Rot<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">j_</span><span class="op">]</span> <span class="ex">:=</span> Rot<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">Mod</span><span class="op">[</span><span class="fu">i</span> <span class="sc">+</span> <span class="fu">j</span><span class="op">,</span> <span class="fu">n</span><span class="op">]]</span></span></code></pre></div>
 <p>and finally we define the rules regarding <span
 class="math inline"><em>s</em></span>:</p>
 <div class="sourceCode" id="cb4"><pre
-class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">s</span> <span class="sc">**</span> <span class="fu">s</span> <span class="ex">:=</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="dv">0</span><span class="op">]</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">s</span> <span class="sc">**</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">i_</span><span class="op">]</span> <span class="ex">:=</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">n</span><span class="sc">-</span><span class="fu">k</span><span class="op">]</span> <span class="sc">**</span> <span class="fu">s</span></span></code></pre></div>
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">s</span> <span class="sc">**</span> <span class="fu">s</span> <span class="ex">:=</span> Rot<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="dv">0</span><span class="op">]</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">s</span> <span class="sc">**</span> Rot<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">i_</span><span class="op">]</span> <span class="ex">:=</span> Rot<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">n</span> <span class="sc">-</span> <span class="fu">k</span><span class="op">]</span> <span class="sc">**</span> <span class="fu">s</span></span></code></pre></div>
 <p>With that, we are almost done. All that remains is to let Mathematica
-know that when we type <code>r^i</code>, we mean <code>Sym[r, i]</code>.
-Further, in all outputs, we want <code>Sym[r, i]</code> formatted as
+know that when we type <code>r^i</code>, we mean <code>Rot[r, i]</code>.
+Further, in all outputs, we want <code>Rot[r, i]</code> formatted as
 <code>r^i</code> back:</p>
 <div class="sourceCode" id="cb5"><pre
-class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span> <span class="sc">/</span>: <span class="fu">r</span><span class="sc">^</span><span class="at">i_</span> <span class="ex">:=</span> Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">i</span><span class="op">]</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Format</span><span class="op">[</span>Sym<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">i_</span><span class="op">]]</span> <span class="ex">:=</span> <span class="fu">Superscript</span><span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">i</span><span class="op">]</span></span>
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span> <span class="sc">/</span>: <span class="fu">r</span><span class="sc">^</span><span class="at">i_</span> <span class="ex">:=</span> Rot<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">i</span><span class="op">]</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Format</span><span class="op">[</span>Rot<span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="at">i_</span><span class="op">]]</span> <span class="ex">:=</span> <span class="fu">Superscript</span><span class="op">[</span><span class="fu">r</span><span class="op">,</span> <span class="fu">i</span><span class="op">]</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Protect</span><span class="op">[</span><span class="fu">NonCommutativeMultiply</span><span class="op">]</span>;</span></code></pre></div>
 <p>And that is it. Now, using our previous example, if we type</p>
 <div class="sourceCode" id="cb6"><pre
 class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">3</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span></span></code></pre></div>
 <p>we get</p>
-<pre><code>r^2 ** s</code></pre>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">**</span> <span class="fu">s</span></span></code></pre></div>
 <p>as the output. Here are a few more test runs:</p>
 <div class="sourceCode" id="cb8"><pre
 class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">0</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span>                  <span class="co">(* r^1 *)</span> </span>
