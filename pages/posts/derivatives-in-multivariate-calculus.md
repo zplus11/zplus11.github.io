@@ -16,7 +16,7 @@ date: XX August, 2025
 \newcommand\pd[3][]{\frac{\partial^{#1} #2}{\partial #3^{#1}}}
 \newcommand\del[1]{\Delta{#1}}
 \newcommand\dir[1]{\mathcal D_{\vec{#1}}}
-\def\vec#1{\overrightarrow{#1}}
+\def\vec#1{#1}
 
 ## Preface
 
@@ -27,8 +27,9 @@ This is the second article in the series "Some Notes on Multivariate Calculus," 
 In a one variable function $f$ of $x$, the derivative\index{derivative} is the rate of change in $f$ with respect to $x$. For two variable functions also, we talk of changes. Unlike one variable functions where the change in $x$ is in certain direction (namely from $x$ to $x+\Delta x$), for two variable functions there can be infinite ways in which the input variables can advance. Two of the most basic ways are along the positive sides of $x$ and $y$ axes. Changes along these are called Partial Derivatives\index{partial derivative}. As the name suggests, partial derivatives only speak about the rates of partial change in the function. That is, the change due to increase in only one of the variables, at a time.
 
 ![Figure 1: Partial derivatives of a function.](img/pd.png)
+![Figure 1 ctnd.](img/pdsmall.png)
 
-The partial derivative with respect to $x$, denoted by $$\pd fx,$$ will be the change in $f$ when $x$ increases but $y$ remains constant. In figure 1, the curve draw in blue is the intersection of function $f$ and the plane $x=1$. This is called the trace of $y$ in the concerned plane. At any point $(1, y_0)$ on this curve, the slope of the tangent to it (which can be found now, as this is just a function of $y$ alone; $x$ being constant at $1$) will be the partial derivative of $f$ with respect to $y$ at $(1, y_0)$.
+The partial derivative with respect to $x$, denoted by $$\pd fx,$$ will be the change in $f$ when $x$ increases but $y$ remains constant. In figure 1, the curve draw in blue is the intersection of function $f$ and the plane $x=1$. This is called the trace of $y$ in the concerned plane. At any point $(1, y_0)$ on this curve, the slope of the tangent to it (which can be found now as this is just a function of $y$ alone, $x$ being constant at $1$) will be the partial derivative of $f$ with respect to $y$ at $(1, y_0)$.
 
 Mathematically, we define the partials as
 $$\begin{aligned}
@@ -85,7 +86,10 @@ Similarly, the other parts can be solved. It is worth noting that the mixed part
 
 ## Directional Derivatives
 
-A broader type of derivatives are the directional derivatives, which are calculated for a function in a given direction. In this sense, $\pd fx$ is the derivative of $f$ along the vector $1\hat i + 0 \hat j$. In extension to that, directional derivative along the vector $\vec v=a\hat i + b \hat j$ would be the rate of change in $f$ in the direction of this vector. It is denoted by $\dir vf$. In figure \ref{dirderiv_visualised}, the plane goes in the direction of $\vec v$, and the red coloured curve is its intersection with $f$. Then, $\dir vf$ is slope of the tangent on this curve at the concerned point.
+A broader type of derivatives are the directional derivatives, which are calculated for a function in a given direction. In this sense, $$\pd fx$$ is the derivative of $f$ along the vector $1\hat i + 0 \hat j$. In extension to that, directional derivative along the vector $\vec v=a\hat i + b \hat j$ would be the rate of change in $f$ in the direction of this vector. It is denoted by $\dir vf$. In figure \ref{dirderiv_visualised}, the plane goes in the direction of $\vec v$, and the red coloured curve is its intersection with $f$. Then, $\dir vf$ is slope of the tangent on this curve at the concerned point.
+
+![](img/dd1.png)
+![Figure 2: Directional derivative.](img/dd1.png)
 
 ---
 

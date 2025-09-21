@@ -13,19 +13,17 @@ This blog post will serve the purpose of bringing all of my contributions to the
 
 #### Demonstrations
 
-- [SubgroupLatticeOfZn](https://demonstrations.wolfram.com/SubgroupLatticeOfZn).
+- [SubgroupLatticeOfZn](https://demonstrations.wolfram.com/SubgroupLatticeOfZn)
 
 #### Paclets
 
-- [MGroups](https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups).
+- [MGroups](https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups)
 
 #### Functions
 
-- [AutomorphicIntegerQ](https://resources.wolframcloud.com/FunctionRepository/resources/AutomorphicIntegerQ/).
+- [AutomorphicIntegerQ](https://resources.wolframcloud.com/FunctionRepository/resources/AutomorphicIntegerQ/)
 
 <!-- - Naman Taggar (2025), "RoughIntegerQ" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/](https://resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/). -->
 
-- [SerflingFit](https://resources.wolframcloud.com/FunctionRepository/resources/SerflingFit/).
-
-
-- [ShowPolygonSymmetries](https://resources.wolframcloud.com/FunctionRepository/resources/ShowPolygonSymmetries/).
+- [SerflingFit](https://resources.wolframcloud.com/FunctionRepository/resources/SerflingFit/)
+- [ShowPolygonSymmetries](https://resources.wolframcloud.com/FunctionRepository/resources/ShowPolygonSymmetries/)
