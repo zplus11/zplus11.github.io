@@ -7,14 +7,14 @@ date: 22 March, 2025
 
 The logistics growth model is defined by the differential equation
 
-[*R*'(*m*) = *r*(1 - *R*(*m*)/*K*)]{.math .display}
+$$R'(m) = r \, R(m) \left(1 - \frac{R(m)}{K}\right)$$
 
 with [*R*(0) = *R*~0~]{.math .inline}, where [*K*]{.math .inline} is the
 capacity of [*R*(*m*)]{.math .inline}, and [*r*]{.math .inline} is the
 rate at which [*R*(*m*)]{.math .inline} changes with respect to
 [*m*]{.math .inline}. We are denoting the rank at marks [*m*]{.math
 .inline} by [*R*(*m*)]{.math .inline}. Then, the value of [*K*]{.math
-.inline} will be [1]{.math .inline} and [*r*]{.math .inline} is to be
+.inline} will be [11000]{.math .inline} (approximately the number of students, and [*r*]{.math .inline} is to be
 estimated. When [*R*(*m*) > 1]{.math .inline}, the rate of change will
 be negative. As [*R*(*m*)]{.math .inline} goes to 1, [*R*'(*m*){.math
 .inline} will tend to 0. We solve this system along with initial data
@@ -22,14 +22,14 @@ be negative. As [*R*(*m*)]{.math .inline} goes to 1, [*R*'(*m*){.math
 of the candidates) using the Mathematica code
 
 ```mathematica
-DSolve[{R'[m] == R[m](1-R[m]/K), R[33.33] = 1212}, R[m], m]
+DSolve[{R'[m] == r R[m](1-R[m]/K), R[33.33] = 1212}, R[m], m]
 ```
 
 to get
 
-[*R*(*m*) = *e*^-*mr*^(*e*^*mr*^ + 1211*e*^33.33*r*^).]{.math .display}
+$$R(m) = \frac{11000 e^{mr}}{e^{mr} + 8.07591 e^{33.33 r}}.$$
 
-The overall dynamics then are shown in figure 1, with imaginary value of
+The overall dynamics then are shown in figure 1, with a dummy value of
 [*r*]{.math .inline}.
 
 <figure>
@@ -71,17 +71,14 @@ class="math inline"><em>r</em> = 0.0828338</span> with actual data
 The model can be used to predict rank of varying marks, as shown in
 table 2.
 
-  ---------------------------------------------------------------------------------
-  **Marks**   10     20     30     40     50     60     70     80     90     100
-  ----------- ------ ------ ------ ------ ------ ------ ------ ------ ------ ------
-  **Rank**    8365   3654   1596   697    305    133    59     26     12     5
-
-  ---------------------------------------------------------------------------------
+| **Marks** | 10    | 20    | 30    | 40    | 50    | 60    | 70    | 80    | 90    | 100   |
+|:----------|:------|:------|:------|:------|:------|:------|:------|:------|:------|:------|
+| **Rank**  | 5465  | 3174  | 1570  | 704   | 300   | 125   | 51    | 21    | 8     | 3     |
 
 Of course, these are only approximate results, yet fairly accurate.
 
 This article is also available in PDF format at [this
-file](../../resources/JAM25_Logistics.pdf).
+file.](../../resources/JAM25_Logistics.pdf) A notebook can also be found [here.](../../resources/JAM25_Logistics.nb)
 
 ## References
 

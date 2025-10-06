@@ -83,8 +83,8 @@ of IITJAM 2025</h2>
 					<h2 id="introduction">1. Introduction</h2>
 <p>The logistics growth model is defined by the differential
 equation</p>
-<p><span class="math display"><em>R</em>’(<em>m</em>) = <em>r</em>(1 -
-<em>R</em>(<em>m</em>)/<em>K</em>)</span></p>
+<p><span class="math display">$$R'(m) = r \, R(m) \left(1 -
+\frac{R(m)}{K}\right)$$</span></p>
 <p>with <span class="math inline"><em>R</em>(0) =
 <em>R</em><sub>0</sub></span>, where <span
 class="math inline"><em>K</em></span> is the capacity of <span
@@ -95,22 +95,21 @@ to <span class="math inline"><em>m</em></span>. We are denoting the rank
 at marks <span class="math inline"><em>m</em></span> by <span
 class="math inline"><em>R</em>(<em>m</em>)</span>. Then, the value of
 <span class="math inline"><em>K</em></span> will be <span
-class="math inline">1</span> and <span
-class="math inline"><em>r</em></span> is to be estimated. When <span
-class="math inline"><em>R</em>(<em>m</em>) &gt; 1</span>, the rate of
-change will be negative. As <span
+class="math inline">11000</span> (approximately the number of students,
+and <span class="math inline"><em>r</em></span> is to be estimated. When
+<span class="math inline"><em>R</em>(<em>m</em>) &gt; 1</span>, the rate
+of change will be negative. As <span
 class="math inline"><em>R</em>(<em>m</em>)</span> goes to 1,
 [<em>R</em>’(<em>m</em>){.math .inline} will tend to 0. We solve this
 system along with initial data <span
 class="math inline"><em>R</em>(33.33) = 1212</span> (rank-marks pair
 corresponding to one of the candidates) using the Mathematica code</p>
 <div class="sourceCode" id="cb1"><pre
-class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">DSolve</span><span class="op">[{</span>R&#39;<span class="op">[</span><span class="fu">m</span><span class="op">]</span> <span class="ex">==</span> <span class="fu">R</span><span class="op">[</span><span class="fu">m</span><span class="op">]</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">R</span><span class="op">[</span><span class="fu">m</span><span class="op">]</span><span class="sc">/</span><span class="fu">K</span>)<span class="op">,</span> <span class="fu">R</span><span class="op">[</span><span class="fl">33.33</span><span class="op">]</span> <span class="ex">=</span> <span class="dv">1212</span><span class="op">},</span> <span class="fu">R</span><span class="op">[</span><span class="fu">m</span><span class="op">],</span> <span class="fu">m</span><span class="op">]</span></span></code></pre></div>
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">DSolve</span><span class="op">[{</span>R&#39;<span class="op">[</span><span class="fu">m</span><span class="op">]</span> <span class="ex">==</span> <span class="fu">r</span> <span class="fu">R</span><span class="op">[</span><span class="fu">m</span><span class="op">]</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">R</span><span class="op">[</span><span class="fu">m</span><span class="op">]</span><span class="sc">/</span><span class="fu">K</span>)<span class="op">,</span> <span class="fu">R</span><span class="op">[</span><span class="fl">33.33</span><span class="op">]</span> <span class="ex">=</span> <span class="dv">1212</span><span class="op">},</span> <span class="fu">R</span><span class="op">[</span><span class="fu">m</span><span class="op">],</span> <span class="fu">m</span><span class="op">]</span></span></code></pre></div>
 <p>to get</p>
-<p><span class="math display"><em>R</em>(<em>m</em>) =
-<em>e</em><sup>-<em>mr</em></sup>(<em>e</em><sup><em>mr</em></sup> +
-1211<em>e</em><sup>33.33<em>r</em></sup>).</span></p>
-<p>The overall dynamics then are shown in figure 1, with imaginary value
+<p><span class="math display">$$R(m) = \frac{11000 e^{mr}}{e^{mr} +
+8.07591 e^{33.33 r}}.$$</span></p>
+<p>The overall dynamics then are shown in figure 1, with a dummy value
 of <span class="math inline"><em>r</em></span>.</p>
 <figure>
 <img src="img/im.png" alt="Figure 1: Behaviour of R(m) at r=0.1." />
@@ -210,9 +209,9 @@ class="math inline"><em>r</em> = 0.0828338</span> with actual data
 </figure>
 <p>The model can be used to predict rank of varying marks, as shown in
 table 2.</p>
-<table style="width:98%;">
+<table style="width:100%;">
 <colgroup>
-<col style="width: 14%" />
+<col style="width: 13%" />
 <col style="width: 8%" />
 <col style="width: 8%" />
 <col style="width: 8%" />
@@ -242,23 +241,24 @@ table 2.</p>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;"><strong>Rank</strong></td>
-<td style="text-align: left;">8365</td>
-<td style="text-align: left;">3654</td>
-<td style="text-align: left;">1596</td>
-<td style="text-align: left;">697</td>
-<td style="text-align: left;">305</td>
-<td style="text-align: left;">133</td>
-<td style="text-align: left;">59</td>
-<td style="text-align: left;">26</td>
-<td style="text-align: left;">12</td>
-<td style="text-align: left;">5</td>
+<td style="text-align: left;">5465</td>
+<td style="text-align: left;">3174</td>
+<td style="text-align: left;">1570</td>
+<td style="text-align: left;">704</td>
+<td style="text-align: left;">300</td>
+<td style="text-align: left;">125</td>
+<td style="text-align: left;">51</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">8</td>
+<td style="text-align: left;">3</td>
 </tr>
 </tbody>
 </table>
 <p>Of course, these are only approximate results, yet fairly
 accurate.</p>
 <p>This article is also available in PDF format at <a
-href="../../resources/JAM25_Logistics.pdf">this file</a>.</p>
+href="../../resources/JAM25_Logistics.pdf">this file.</a> A notebook can
+also be found <a href="../../resources/JAM25_Logistics.nb">here.</a></p>
 <h2 id="references">References</h2>
 <ol type="1">
 <li>Barnes, Belinda, and Glenn R. Fulford. <em>Mathematical Modelling
