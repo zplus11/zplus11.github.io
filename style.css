@@ -73,7 +73,7 @@
 	--font-sf: "msans";
 	--font-rmi: inherit;
 	--font-links: inherit;
-	--bg-path: url("resources/bgl.png")
+	--bg-path: url("resources/bgl.webp")
 }
 
 :root.dark {
@@ -82,7 +82,7 @@
 	--col-hl: #66abff;
 	--col-text: #dddddd;
 	--col-links: #ff6cc3;
-	--bg-path: url("resources/bgd.png")
+	--bg-path: url("resources/bgd.webp")
 }
 
 #theme-toggle {
