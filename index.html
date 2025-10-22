@@ -6,28 +6,25 @@
 		<title>Naman Taggar</title>
 		<link rel="stylesheet" href="style.css">
 
-		<link rel="preload" href="resources/bgd.webp" as="image" type="image/webp">
-		<link rel="preload" href="resources/bgl.webp" as="image" type="image/webp">
-
 
 		<script defer>
 			(function () {
-			        const savedTheme = localStorage.getItem('theme');
-			        if (savedTheme === 'dark') {
-			                document.documentElement.classList.add('dark');
-			        } else {
-			                document.documentElement.classList.remove('dark');
-			        }
+				const savedTheme = localStorage.getItem('theme');
+				if (savedTheme === 'dark') {
+					document.documentElement.classList.add('dark');
+				} else {
+					document.documentElement.classList.remove('dark');
+				}
 			})();
-			
+
 			document.addEventListener('DOMContentLoaded', function () {
-			        const toggleBtn = document.getElementById('theme-toggle');
-			        if (toggleBtn) {
-			                toggleBtn.addEventListener('click', () => {
-			                        const isDark = document.documentElement.classList.toggle('dark');
-			                        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-			                });
-			        }
+				const toggleBtn = document.getElementById('theme-toggle');
+				if (toggleBtn) {
+					toggleBtn.addEventListener('click', () => {
+						const isDark = document.documentElement.classList.toggle('dark');
+						localStorage.setItem('theme', isDark ? 'dark' : 'light');
+					});
+				}
 			});
 		</script>
 	</head>
@@ -35,32 +32,43 @@
 		<div class="wrapper">
 			<header>
 				<nav>
-					<a class="hhome" href="#" id="profileLink">
-						<img id="pfp" width="50" src="resources/profiles/11.png" alt="pfp">
+					<a href="#" id="profileLink" alt="Home">
+						<img id="pfp" width="50ox" src="resources/profiles/11.png" alt="pfp">
 					</a>
-					<a class="hsoc" href="pages/blog.html">
-						Blog
+					<a href="pages/blog.html" alt="My Blog">
+						My blog
 					</a>
-					<a class="hsoc" href="https://github.com/zplus11" target="_blank">
-						Github
-					</a>
-					<a class="hsoc" href="https://linkedin.com/in/namantaggar" target="_blank">
-						LinkedIn
-					</a>
-					<button id="theme-toggle">Theme</button>
 				</nav>
 			</header>
 			<main>
 				<section>
-					<div>
-						<img 
-						class="ntpic"
-						src="resources/NamanTaggar.portrait.2.jpeg"
-						alt="Naman Taggar's portrait">
+					<div class="hero">
+						<div>
+							<img
+									src="resources/NamanTaggar.portrait.2.jpeg"
+									alt="Naman Taggar's portrait"
+									width="200px"
+									>
+									<h1>Naman Taggar</h1>
+									<p>
+									I am a post-graduate student of Mathematics at the University of Delhi, having done my bachelors in the same subject from the same university. Apart from Mathematics, I am interested in many other things including design, typesetting, music and photography.
+									</p>
+									<strong>Links.</strong>&nbsp;&nbsp;As follows:&mdash;
+									<ul>
+										<li><a target="_blank" href="https://github.com/zplus11">GitHub</a></li>
+										<li><a target="_blank" href="https://www.linkedin.com/in/namantaggar">LinkedIn</a></li>
+										<li><a target="_blank" href="https://orcid.org/my-orcid?orcid=0009-0004-6105-603X">ORCID</a></li>
+									</ul>
+						</div>
+						<figure>
+							<img 
+									src="resources/s5g.svg"
+									alt="Graph of S₅"
+									width="100%"
+									>
+							<figcaption>Subgroup lattice of <i>S</i><sub>5</sub>, the group of permutations on 5 symbols, presented using radial embedding.</figcaption>
+						</figure>
 					</div>
-					<div class="ntname">Naman Taggar</div>
-					<p>I am a post-graduate student of Mathematics at the University of Delhi, having done my bachelors in the same subject from the same university. Apart from Mathematics, I am interested in many other things including design, typesetting, music and photography.</p>
-					<p>
 					<strong>Research.</strong>&nbsp;&nbsp;I am still exploring my research interests, but algebra and analysis (in particular group theory and topology) are interesting and I look forward to explore these areas from a research point of view. So far, my research work has been in mathematical modelling and nonlinear partial differential equations: an article entitled &ldquo;Mathematical modelling in epidemiology&rdquo; has been accepted for publication in <a href="https://www.ias.ac.in/Journals/Resonance_Journal_of_Science_Education" target="_blank">Resonance,</a> whereas work is underway on solving nonlinear PDEs using the generalised exponential rational function method and innovative variations thereof.
 					</p>
 					<p>

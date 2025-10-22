@@ -1,58 +1,58 @@
 @font-face { 
-        font-family: "mserif";
-        font-weight: 400;
-        font-style: normal;
-        src: url("resources/fonts/Merriweather-Regular.ttf") format("truetype");
+	font-family: "mserif";
+	font-weight: 400;
+	font-style: normal;
+	src: url("resources/fonts/Merriweather-Regular.ttf") format("truetype");
 }
 
 @font-face {
-        font-family: "mserif";
-        font-weight: 400;
-        font-style: italic;
-        src: url("resources/fonts/Merriweather-Italic.ttf") format("truetype");
+	font-family: "mserif";
+	font-weight: 400;
+	font-style: italic;
+	src: url("resources/fonts/Merriweather-Italic.ttf") format("truetype");
 }
 
 @font-face {
-        font-family: "mserif";
-        font-weight: 700;
-        font-style: normal;
-        src: url("resources/fonts/Merriweather-Bold.ttf") format("truetype");
+	font-family: "mserif";
+	font-weight: 700;
+	font-style: normal;
+	src: url("resources/fonts/Merriweather-Bold.ttf") format("truetype");
 }
 
 @font-face {
-        font-family: "mserif";
-        font-weight: 700;
-        font-style: italic;
-        src: url("resources/fonts/Merriweather-BoldItalic.ttf") format("truetype");
+	font-family: "mserif";
+	font-weight: 700;
+	font-style: italic;
+	src: url("resources/fonts/Merriweather-BoldItalic.ttf") format("truetype");
 }
 
 
 @font-face {
-        font-family: "msans";
-        font-weight: 400;
-        font-style: normal;
-        src: url("resources/fonts/MerriweatherSans-Regular.ttf") format("truetype");
+	font-family: "msans";
+	font-weight: 400;
+	font-style: normal;
+	src: url("resources/fonts/MerriweatherSans-Regular.ttf") format("truetype");
 }
 
 @font-face {
-        font-family: "msans";
-        font-weight: 400;
-        font-style: italic;
-        src: url("resources/fonts/MerriweatherSans-Italic.ttf") format("truetype");
+	font-family: "msans";
+	font-weight: 400;
+	font-style: italic;
+	src: url("resources/fonts/MerriweatherSans-Italic.ttf") format("truetype");
 }
 
 @font-face {
-        font-family: "msans";
-        font-weight: 700;
-        font-style: normal;
-        src: url("resources/fonts/MerriweatherSans-Bold.ttf") format("truetype");
+	font-family: "msans";
+	font-weight: 700;
+	font-style: normal;
+	src: url("resources/fonts/MerriweatherSans-Bold.ttf") format("truetype");
 }
 
 @font-face {
-        font-family: "msans";
-        font-weight: 700;
-        font-style: italic;
-        src: url("resources/fonts/MerriweatherSans-BoldItalic.ttf") format("truetype");
+	font-family: "msans";
+	font-weight: 700;
+	font-style: italic;
+	src: url("resources/fonts/MerriweatherSans-BoldItalic.ttf") format("truetype");
 }
 
 @font-face {
@@ -76,37 +76,6 @@
 	--bg-path: url("resources/bgl.webp")
 }
 
-:root.dark {
-	--col-bg: #1e1e2e;
-	--col-fg: #f5f5f5;
-	--col-hl: #66abff;
-	--col-text: #dddddd;
-	--col-links: #ff6cc3;
-	--bg-path: url("resources/bgd.webp")
-}
-
-#theme-toggle {
-	height: 10px;
-        background: none;
-        border: none;
-        font: inherit;
-	color: var(--col-text);
-        text-decoration: none;
-        cursor: pointer;
-        margin: -5px 0px 0px 0px;
-	padding: 0;
-	text-underline-offset: 4px;
-	vertical-align: middle
-}
-
-#theme-toggle:hover {
-        text-decoration: underline;
-}
-
-.hl {
-	color: var(--col-hl)
-}
-
 html, body {
 }
 
@@ -117,22 +86,6 @@ html {
 
 *, *::before, *::after {
 	box-sizing: inherit
-}
-
-body {
-	margin: 0;
-	background-color: var(--col-bg);
-	color: var(--col-text);
-	font-family: var(--font-rm);
-	font-weight: 400;
-	font-size: 16px;
-	line-height: 1.6;
-	padding-bottom: 50px;
-
-	background: 
-                linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)),
-                var(--bg-path) no-repeat center center fixed;
-        background-size: cover
 }
 
 a {
@@ -149,22 +102,28 @@ p, li {
 	word-wrap: break-word
 }
 
+body {
+	margin: 0;
+	background-color: var(--col-bg);
+	color: var(--col-text);
+	font-family: var(--font-rm);
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 1.6;
+	padding-bottom: 50px
+}
+
 .wrapper {
 	width: calc(100% - 2rem);
 	max-width: 800px;
-	margin-inline: auto
-}
-
-#pfp, #pfp2 {
-	border-radius: 30px;
-	max-width: 100%
+	margin: auto
 }
 
 header {
 	margin-top: 30px;
 	font-family: var(--font-sf);
-  	font-weight: 700;
-  	font-style: normal;
+	font-weight: 700;
+	font-style: normal;
 	position: relative;
 	z-index: 1
 }
@@ -172,173 +131,57 @@ header {
 header nav {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 20px 25px
+	gap: 20px 25px;
+	align-items: center
 }
 
-header a {
-	text-decoration: none;
-	color: inherit
-}
+header nav a { color: black }
+header nav a:hover { text-decoration: underline }
 
-header a:hover {
-	text-decoration: underline
-}
-
-header .hhome {
-	font-size: 1.5em;
+header nav {
+	font-size: 1em;
 	line-height: 1;
 	flex: 1 0 100%
 }
 
-.hsoc {
-	text-underline-offset: 4px
+.hero {
+	margin: 1rem 0;
+	margin-top: 3rem;
+	display: flex;
+	align-items: center;
+	gap: 3rem
 }
 
-figcaption {
-	font-style: italic
+.hero div { flex: 1 }
+.hero figure { flex: 1 }
+figcaption { font-style: italic; font-size: small }
+
+.hero > div:first-child img {
+	border-radius: 24px;
+	border: 2px gray solid;
+	padding: 4px;
+	max-width: 150px
 }
 
-table, th, td {
-	border-collapse: collapse;
-	padding: 2px 7px
-}
-
-table {
-	border-top: solid var(--col-hl) 2px;
-	border-bottom: solid var(--col-hl) 2px
-}
-
-table th {
-	border-bottom: solid var(--col-hl) 2px
-}
-
-img {
-	max-width: 100%;
-}
-
-@media (min-width: 700px) {
-	img {
-      		max-width: 70%;
-    	}
-}
-
-@media (min-width: 500px) {
-	header .hnav {
-		justify-content: flex-start;
-		align-items: center;
-		text-align: left
+@media (max-width: 780px) {
+	.hero {
+		display: block
 	}
 
-	header .hhome {
-		flex: 0 1 auto;
-		margin-inline-end: auto
+	.hero figure {
+		width: 80%;
+		margin: 0 auto
 	}
-}
-
-main h1 {
-	font-size: 4rem;
-	font-family: var(--font-sf);
-  	font-style: normal;
-	font-weight: normal;
-	margin-bottom: 20px
-}
-
-.ntpic {
-	border-radius: 35px;
-	width: 175px;
-	margin: 3.5rem 0px 0px 0px;
-	border: gray solid 2px;
-	padding: 5px
-}
-
-.ntname {
-	font-size: 22px;
-	font-weight: bold;
-	font-family: var(--font-sf);
-	margin: .5rem 0px 2.5rem 0px
-}
-
-.ntlinks {
-	margin: 0px 0px 2rem 0px
-}
-
-pre {
-    	max-height: 100%;
-    	overflow: auto;
-	border-left: solid var(--col-hl) 4px;
-	border-radius: 4px;
-	background-color: rgba(1, 1, 1, 0.05);
-}
-
-pre code {
-    	display: block;
-      	white-space: pre;
-     	padding: 1em;
-}
-
-.blog__card {
-	margin: 15px 0
-}
-
-.blog__card strong {
-	font-family: "msans"
-}
-
-.blog__date {
-	margin: .25rem 0;
-}
-
-.blogdesc {
-	font-size: 18px;
-	padding: 20px 0
-}
-
-.tag-btn {
-	border: var(--col-hl) 2px solid;
-	border-radius: 5px;
-	background-color: white;
-	margin: 2px 3px
-}
-
-.tag-btn:active {
-	background-color: var(--col-hl);
-	color: white
 }
 
 @media (max-width: 775px) {
-	main h1 {font-size: 54px; margin-bottom: -10px}
-
 	body {font-size: 15px}
-
-	.ntdesc {font-size: 17px}
-
-	.blogdesc {font-size: 17px; padding: 10px 0}
-
-	h2 {font-size: 19px}
 }
 
 @media (max-width: 500px) {
-	main h1 {font-size: 40px; font-weight: bold; padding-top: 20px}
-	
-	header .hhome {font-size: 22px}
-
 	body {font-size: 14px}
-
-	.ntdesc {font-size: 16px}
-
-	.blogdesc {font-size: 16px; padding: 0}
-
-	h2 {font-size: 17px}
 }
 
 @media (max-width: 350px) {
-	main h1 {font-size: 36px; padding-top: 20px}
-
-	header .hhome {font-size: 21px}
-
 	body {font-size: 13px}
-
-	.ntdesc {font-size: 15px}
-
-	.blogdesc {font-size: 15px}
-} 
+}
