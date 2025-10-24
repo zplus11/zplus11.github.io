@@ -2,31 +2,9 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="width=devide-width, initial-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Naman Taggar</title>
 		<link rel="stylesheet" href="style.css">
-
-
-		<script defer>
-			(function () {
-				const savedTheme = localStorage.getItem('theme');
-				if (savedTheme === 'dark') {
-					document.documentElement.classList.add('dark');
-				} else {
-					document.documentElement.classList.remove('dark');
-				}
-			})();
-
-			document.addEventListener('DOMContentLoaded', function () {
-				const toggleBtn = document.getElementById('theme-toggle');
-				if (toggleBtn) {
-					toggleBtn.addEventListener('click', () => {
-						const isDark = document.documentElement.classList.toggle('dark');
-						localStorage.setItem('theme', isDark ? 'dark' : 'light');
-					});
-				}
-			});
-		</script>
 	</head>
 	<body>
 		<div class="wrapper">
@@ -37,6 +15,9 @@
 					</a>
 					<a href="pages/blog.html" alt="My Blog">
 						My blog
+					</a>
+					<a href="pages/mgroups.html" alt="About MGroups package">
+						MGroups
 					</a>
 				</nav>
 			</header>
@@ -58,6 +39,7 @@
 										<li><a target="_blank" href="https://github.com/zplus11">GitHub</a></li>
 										<li><a target="_blank" href="https://www.linkedin.com/in/namantaggar">LinkedIn</a></li>
 										<li><a target="_blank" href="https://orcid.org/my-orcid?orcid=0009-0004-6105-603X">ORCID</a></li>
+										<li><strong>Email:</strong> namtgr at <a href="https://maths.du.ac.in">maths.du.ac.in</a></li>
 									</ul>
 						</div>
 						<figure>
@@ -66,7 +48,7 @@
 									alt="Graph of S₅"
 									width="100%"
 									>
-							<figcaption>Subgroup lattice of <i>S</i><sub>5</sub>, the group of permutations on 5 symbols, presented using radial embedding.</figcaption>
+									<figcaption>Subgroup lattice of <i>S</i><sub>5</sub>, the group of permutations on 5 symbols, presented using radial embedding. A path from <i>S</i><sub>5</sub> to {&varepsilon;} is highlighted in pink.</figcaption>
 						</figure>
 					</div>
 					<strong>Research.</strong>&nbsp;&nbsp;I am still exploring my research interests, but algebra and analysis (in particular group theory and topology) are interesting and I look forward to explore these areas from a research point of view. So far, my research work has been in mathematical modelling and nonlinear partial differential equations: an article entitled &ldquo;Mathematical modelling in epidemiology&rdquo; has been accepted for publication in <a href="https://www.ias.ac.in/Journals/Resonance_Journal_of_Science_Education" target="_blank">Resonance,</a> whereas work is underway on solving nonlinear PDEs using the generalised exponential rational function method and innovative variations thereof.
