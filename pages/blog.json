@@ -1,5 +1,12 @@
 [
 	{
+		"title": "Interpolation",
+		"date": "26 October, 2025",
+		"desc": "Fun with interpolation.",
+		"url": "interpolation.html",
+		"tags": ["wolfram", "maths"]
+	},
+	{
 		"title": "Dihedrals with Mathematica",
 		"date": "04 August, 2025",
 		"desc": "In this post, I define a set of rules that simulate the operation of a dihedral group.",
