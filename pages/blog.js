@@ -1,48 +1,48 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    	fetch(window.location.origin+"/pages/blog.json")
-	.then(response => response.json())
-        .then(data => {
-        	const blogList = document.getElementById("blogs__list");
-    		const tagFilter = document.getElementById("tag-filter");
-		
-        	let allTags = new Set();
+	fetch(window.location.origin+"/pages/blog.json")
+		.then(response => response.json())
+		.then(data => {
+			const blogList = document.getElementById("blogs__list");
+			const tagFilter = document.getElementById("tag-filter");
 
-        	function renderBlogs(filterTag = "all") {
-        		blogList.innerHTML = ""; 
+			let allTags = new Set();
 
-                	data.forEach(blog => {
-            			if (filterTag === "all" || blog.tags.includes(filterTag)) {
-                			const blogCard = document.createElement("div");
-                			blogCard.classList.add("blog__card");
+			function renderBlogs(filterTag = "all") {
+				blogList.innerHTML = ""; 
 
-                        		blogCard.innerHTML = `
-                            		<strong><a href="posts/${blog.url}">${blog.title}</a></strong>
-                        		<p class="blog__date"><i>${blog.date}</i></p>
-                    			<div>${blog.desc}<br>
-					<strong>Tags:</strong> ${blog.tags.map(tag => `<span class="tag">${tag}</span>`).join(", ")}</div>`;
+				data.forEach(blog => {
+					if (filterTag === "all" || blog.tags.includes(filterTag)) {
+						const blogCard = document.createElement("div");
+						blogCard.classList.add("blog__card");
 
-                       			blogList.appendChild(blogCard);
+						blogCard.innerHTML = `
+ <a href="posts/${blog.url}" class="blog-link">${blog.title}</a> <span class="blog-date">${blog.date}</span>
+  <p>${blog.desc}</p>
+  <div class="blog-tags">${blog.tags.map(t => `<span>${t}</span>`).join("")}</div>
+`;
+
+						blogList.appendChild(blogCard);
+					}
+				});
+			}
+
+			data.forEach(blog => blog.tags.forEach(tag => allTags.add(tag)));
+
+			allTags.forEach(tag => {
+				let btn = document.createElement("button");
+				btn.classList.add("tag-btn");
+				btn.textContent = tag;
+				btn.dataset.tag = tag;
+				tagFilter.appendChild(btn);
+			});
+
+			tagFilter.addEventListener("click", function (e) {
+				if (e.target.classList.contains("tag-btn")) {
+					renderBlogs(e.target.dataset.tag);
 				}
 			});
-		}
 
-		data.forEach(blog => blog.tags.forEach(tag => allTags.add(tag)));
-
-            	allTags.forEach(tag => {
-                	let btn = document.createElement("button");
-                	btn.classList.add("tag-btn");
-        		btn.textContent = tag;
-        		btn.dataset.tag = tag;
-			tagFilter.appendChild(btn);
-            	});
-
-            	tagFilter.addEventListener("click", function (e) {
-                	if (e.target.classList.contains("tag-btn")) {
-                		renderBlogs(e.target.dataset.tag);
-        		}
-    		});
-
-		renderBlogs();
-	});
+			renderBlogs();
+		});
 });

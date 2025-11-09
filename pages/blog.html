@@ -3,56 +3,32 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>NT's Blog</title>
-		<link rel="stylesheet" href="../style.css">
-		<link rel="stylesheet" href="../blog.css">
-
-<script defer>
-			(function () {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-                document.documentElement.classList.add('dark');
-        } else {
-                document.documentElement.classList.remove('dark');
-        }
-})();
-
-document.addEventListener('DOMContentLoaded', function () {
-        const toggleBtn = document.getElementById('theme-toggle');
-        if (toggleBtn) {
-                toggleBtn.addEventListener('click', () => {
-                        const isDark = document.documentElement.classList.toggle('dark');
-                        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-                });
-        }
-});
-		</script>
+		<title>taggar.me</title>
+		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
-		<div class="wrapper">
-			<header>
-				<nav>
-					<a class="home" href="../index.html">
-						<img width="65" src="../resources/profiles/OriginalS.png" alt="pfp">
-					</a>
-					<span style="font-family: msans; font-weight: normal"><span style="font-weight: 800">Naman Taggar's</span> blog</span>
-				</nav>
-			</header>
-			<main>
-				<section>
-					<p>
-					<strong>Here I talk about the things I do or like...</strong>
-					</p>
-				</section>
-				<div id="tag-filter">
-					<button class="tag-btn" data-tag="all">All</button>
-				</div>
-				<section id="blogs__list">
-				</section>
-			</main>
-			<footer>&copy; <strong>Naman Taggar</strong> 2024&mdash;25. <a href="copy.html">Read more.</a></footer>
-		</div>
+		<nav>
+			<img class="pfp" onclick="location.href='/'" src="/resources/profiles/OriginalW.png" alt="pfp">
+			<ul>
+				<li><a href="/pages/blog.html">My blog</a></li>
+				<li><a href="/pages/mgroups.html">MGroups</a></li>
+				<li><a href="/pages/vitae.html">Vitae</a></li>
+			</ul>
+		</nav>
 
-		<script src="blog.js"></script>
+		<main>
+			<section>
+				<p><strong>Here I talk about the things I do or like...</strong></p>
+			</section>
+			<div id="tag-filter">
+				<button class="tag-btn" data-tag="all">All</button>
+			</div>
+			<section id="blogs__list">
+			</section>
+		</main>
+
+		<script src="/script.js"></script>
+		<script src="/pages/blog.js"></script>
+		<footer>Copyright &copy; 2025 - Naman T.</footer>
 	</body>
 </html>

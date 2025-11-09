@@ -3,65 +3,41 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>MGroups</title>
-		<link rel="stylesheet" href="../style.css">
-		<link rel="stylesheet" href="../blog.css">
+		<title>taggar.me</title>
+		<link rel="stylesheet" href="/style.css">
 	</head>
 	<body>
-		<div class="wrapper">
-			<header>
-				<nav>
-					<a class="home" href="../index.html">
-						<img width="65" src="../resources/profiles/OriginalS.png" alt="pfp">
-					</a>
-					<a href="blog.html" alt="My Blog">
-						My blog
-					</a>
-					<a href="mgroups.html" alt="About MGroups package">
-						MGroups
-					</a>
-				</nav>
-			</header>
-			<main>
+		<nav>
+			<img class="pfp" onclick="location.href='/'" src="/resources/profiles/OriginalW.png" alt="pfp">
+			<ul>
+				<li><a href="/pages/blog.html">My blog</a></li>
+				<li><a href="/pages/mgroups.html">MGroups</a></li>
+				<li><a href="/pages/vitae.html">Vitae</a></li>
+			</ul>
+		</nav>
 
-				<section>
+		<main>
+			<section>
+				<h2>Introduction</h2>
+				<p>MGroups is a mathematica package I developed which helps in the exploration of finite group structures. The package is hosted on the Wolfram's paclet repository at <a href="https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups">this link:&mdash;</a></p>
+				<blockquote>
+					<p>MGroups is a Mathematica package that implements a part of finite group theory. It offers a user-friendly interface for performing a range of computations involving finite groups including <i>Z<sub>n</sub></i>, <i>U<sub>n</sub></i>, <i>D<sub>n</sub></i>, <i>S<sub>n</sub></i>, and more. The package allows users to define and analyse groups through Cayley tables and provides functionality for investigating group operations, subgroup structures (lattices), group morphisms, and more. Each group is defined in terms of its Cayley table representation itself, and operations are applied appropriately.</p>
+					<p>Computational tools play a vital role in modern mathematics by automating complex and often tedious calculations, thereby freeing users from manual labour and enabling deeper exploration of abstract concepts. In that essence, MGroups is designed primarily for undergraduate students beginning with group theory, as well as for educators seeking a user-friendly tool to demonstrate group-theoretic concepts interactively.</p>
+				</blockquote>
 
-					<br>
+				<p>
+				Installation is as easy as writing
+				<pre><code>PacletInstall["Taggar/MGroups"]</code></pre>
+				in any mathematica notebook, even on cloud. Then, to start using the package, write
+				<pre><code>&lt;&lt;Taggar`MGroups`</code></pre>
+				to load it into the environment. The package is fully documented using Mathematica's in-build help system, and running <tt>?CommandName</tt> will give help for any of the package's commands.</p>
+				<p>This web-page is under development.</p>
+				<br>
 
-					<h2>Introduction</h2>
-
-					<div class="wrapfig">
-						<img src="../resources/wrapfig.png" alt="">
-					</div>
-
-					<p>
-					MGroups is a mathematica package I developed which helps in the exploration of finite group structures. The package is hosted on the Wolfram's paclet repository at <a href="https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups">this link:&mdash;</a>
-					</p>
-
-					<blockquote>
-						<p>
-						MGroups is a Mathematica package that implements a part of finite group theory. It offers a user-friendly interface for performing a range of computations involving finite groups including <i>Z<sub>n</sub></i>, <i>U<sub>n</sub></i>, <i>D<sub>n</sub></i>, <i>S<sub>n</sub></i>, and more. The package allows users to define and analyse groups through Cayley tables and provides functionality for investigating group operations, subgroup structures (lattices), group morphisms, and more. Each group is defined in terms of its Cayley table representation itself, and operations are applied appropriately.
-						</p>
-						<p>
-						Computational tools play a vital role in modern mathematics by automating complex and often tedious calculations, thereby freeing users from manual labour and enabling deeper exploration of abstract concepts. In that essence, MGroups is designed primarily for undergraduate students beginning with group theory, as well as for educators seeking a user-friendly tool to demonstrate group-theoretic concepts interactively.
-						</p>
-					</blockquote>
-
-					<p>
-					Installation is as easy as writing
-					<pre><code>PacletInstall["Taggar/MGroups"]</code></pre>
-					in any mathematica notebook, even on cloud. Then, to start using the package, write
-					<pre><code>&lt;&lt;Taggar`MGroups`</code></pre>
-					to load it into the environment. The package is fully documented using Mathematica's in-build help system, and running <tt>?CommandName</tt> will give help for any of the package's commands.</p>
-					<p>This web-page is under development.</p>
-					<br>
-
-				</section>
-
-			</main>
-			<footer>&copy; 2024&mdash;25 <strong>Naman Taggar.</strong> <a href="pages/copy.html">Read more.</a></footer>
-		</div>
-
-		<script src="../script.js"></script>
+			</section>
+		</main>
+		
+		<script src="/script.js"></script>
+		<footer>Copyright &copy; 2025 - Naman T.</footer>
 	</body>
 </html>
