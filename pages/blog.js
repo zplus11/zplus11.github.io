@@ -18,8 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 						blogCard.innerHTML = `
  <a href="posts/${blog.url}" class="blog-link">${blog.title}</a> <span class="blog-date">${blog.date}</span>
-  <p>${blog.desc}</p>
-  <div class="blog-tags">${blog.tags.map(t => `<span>${t}</span>`).join("")}</div>
+  <p style="margin-left: 1rem">${blog.desc}</p>
 `;
 
 						blogList.appendChild(blogCard);
