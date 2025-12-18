@@ -4,16 +4,17 @@
 
 :root {
 	--small: clamp(0.75rem, 1.5vw, 0.9rem);
-	--pink: #EB008B;
-	--purple: #A020F0;
+	--pink: #FF80FA;
+	--purple: #A880FF;
 	--red: #CC1E1D;
-	--sans: "msans";
-	--serif: "mserif"
+	--font: "Cardo";
+	--bg: #232326;
+	--fg: #d5d2d2
 }
 *, *::before, *::after {
 	box-sizing: inherit
 }
-html { font-size: 16px; font-family: var(--serif) }
+html { font-size: 20px; font-family: var(--font); color: var(--fg); background-color: var(--bg) }
 a { color: var(--pink); font-family: inherit }
 a:visited { color: var(--purple) }
 
@@ -22,11 +23,11 @@ a:visited { color: var(--purple) }
 
 nav {
 	display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center;
-	font-family: var(--sans);
+	font-family: var(--font);
 	margin-bottom: 1rem
 }
 nav > ul { display: flex; list-style: none; margin: 0; padding: 0; gap: 0.7rem }
-nav > ul li a, nav > ul li a:visited { color: black !important }
+nav > ul li a, nav > ul li a:visited { color: var(--fg) !important }
 nav > ul li a:hover { font-style: italic }
 @media (max-width: 512px) {
 	nav { gap: 0.4rem; margin-bottom: 2rem }
@@ -37,10 +38,10 @@ nav > ul li a:hover { font-style: italic }
 
 body { max-width: 900px; margin: auto; min-height: 80vh; padding: 1rem }
 
-h1 { font-size: clamp(1.55rem, 4vw, 2.1rem); font-family: var(--sans) }
-h2 { font-size: clamp(1.3rem, 3vw, 1.7rem); font-family: var(--sans) }
-h3 { font-size: clamp(1.15rem, 2.5vw, 1.35rem); font-family: var(--sans) }
-p, li { font-size: clamp(0.9rem, 2vw, 1rem); line-height: 1.6; hyphens: auto }
+h1 { font-size: clamp(1.55rem, 4vw, 2.1rem) }
+h2 { font-size: clamp(1.3rem, 3vw, 1.7rem) }
+h3 { font-size: clamp(1.15rem, 2.5vw, 1.35rem) }
+p, li { font-size: clamp(0.9rem, 2vw, 1rem); line-height: 1.4; hyphens: auto }
 
 header { display: flex; align-items: center }
 @media (max-width: 768px) { header { display: block } }
@@ -51,30 +52,32 @@ header > *:first-child img { border: 2px solid grey; border-radius: 0.8rem; padd
 
 /* footer */
 
-footer { margin-top: 1rem; padding: 0.5rem 0; font-family: var(--sans); border-top: 1pt grey solid; font-size: var(--small) }
+footer { margin-top: 1rem; padding: 0.5rem 0; border-top: 1pt grey solid; font-size: var(--small) }
 
 
 /* blogs */
 
 #blogs__list > div { margin: 0.7rem 0 }
 .blog-date { font-style: italic; opacity: 0.7; margin: 0; padding: 0 }
-.blog-tags span { background: #eee; padding: 0.15rem 0.4rem; margin-right: 0.3rem; border-radius: 4px; font-size: var(--small) }
+.blog-tags span { padding: 0.15rem 0.4rem; margin-right: 0.3rem; border-radius: 4px; font-size: var(--small) }
 .blog__card p { margin: 0 }
-#tag-filter button { background: #eee; border: none; padding: 0.3rem 0.6rem; margin-right: 0.3rem; cursor: pointer; border-radius: 4px }
-#tag-filter button:hover { background: #ccc }
+#tag-filter button { border: none; padding: 0.3rem 0.6rem; margin-right: 0.3rem; cursor: pointer; border-radius: 4px }
+#tag-filter button:hover { }
 
 table, th, td { border-collapse: collapse; padding: 2px 7px }
 table { border-top: solid var(--red) 2px; border-bottom: solid var(--red) 2px }
 table th { border-bottom: solid var(--red) 2px }
 img { max-width: 100% }
 @media (min-width: 700px) { img { max-width: 70% } }
+#s5g { max-width: 100% }
 pre { max-height: 100%; overflow: auto; border-left: solid var(--red) 4px; border-radius: 4px; background-color: rgba(1, 1, 1, 0.05) }
 pre code { display: block; white-space: pre; padding: 1em }
+code { font-size: var(--small) }
+
 
 
 /* misc */
 
 figcaption { font-size: var(--small); font-style: italic }
-.pfp { width: 3rem; cursor: pointer; border-radius: 100% }
+.pfp { width: 4rem; cursor: pointer }
 @media (max-width: 512px) { .pfp { width: 3rem } }
-.blog__card strong

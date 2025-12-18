@@ -1,63 +1,20 @@
 @font-face { 
-	font-family: "mserif";
-	font-weight: 400;
+	font-family: "Cardo";
+	font-weight: 500;
 	font-style: normal;
-	src: url("resources/fonts/Merriweather-Regular.ttf") format("truetype");
+	src: url("resources/fonts/Cardo-Regular.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: "mserif";
-	font-weight: 400;
+	font-family: "Cardo";
+	font-weight: 500;
 	font-style: italic;
-	src: url("resources/fonts/Merriweather-Italic.ttf") format("truetype");
+	src: url("resources/fonts/Cardo-Italic.ttf") format("truetype");
 }
 
 @font-face {
-	font-family: "mserif";
-	font-weight: 700;
+	font-family: "Cardo";
+	font-weight: 900;
 	font-style: normal;
-	src: url("resources/fonts/Merriweather-Bold.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "mserif";
-	font-weight: 700;
-	font-style: italic;
-	src: url("resources/fonts/Merriweather-BoldItalic.ttf") format("truetype");
-}
-
-
-@font-face {
-	font-family: "msans";
-	font-weight: 400;
-	font-style: normal;
-	src: url("resources/fonts/MerriweatherSans-Regular.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "msans";
-	font-weight: 400;
-	font-style: italic;
-	src: url("resources/fonts/MerriweatherSans-Italic.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "msans";
-	font-weight: 700;
-	font-style: normal;
-	src: url("resources/fonts/MerriweatherSans-Bold.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "msans";
-	font-weight: 700;
-	font-style: italic;
-	src: url("resources/fonts/MerriweatherSans-BoldItalic.ttf") format("truetype");
-}
-
-@font-face {
-	font-family: "msans";
-	font-weight: 800;
-	font-style: normal;
-	src: url("resources/fonts/MerriWeatherSans-ExtraBold.ttf") format("truetype")
+	src: url("resources/fonts/Cardo-Bold.ttf") format("truetype");
 }
