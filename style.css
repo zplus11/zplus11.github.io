@@ -4,20 +4,22 @@
 
 :root {
 	--small: clamp(0.75rem, 1.5vw, 0.9rem);
-	--pink: #FF80FA;
-	--purple: #A880FF;
+	--orange: #F54927;
+	--blue: #2D1982;
 	--red: #CC1E1D;
-	--grey: #BAB8B8;
-	--font: "Cardo";
-	--bg: #232326;
-	--fg: #d5d2d2
+	--brown: #730B0B;
+	--grey: #615F5F;
+	--font: "MPLUSRounded1c";
+	--bg: #FFFBF5;
+	--fg: #232326
 }
 *, *::before, *::after {
 	box-sizing: inherit
 }
-html { font-size: 20px; font-family: var(--font); color: var(--fg); background-color: var(--bg) }
-a { color: var(--pink); font-family: inherit }
-a:visited { color: var(--purple) }
+html { font-size: 20px; font-family: var(--font); color: var(--fg); background-color: var(--bg); font-weight: 400 }
+@media (max-width: 512px) { html { font-size: 18px } }
+a { color: var(--orange); font-family: inherit }
+a:visited { color: var(--blue) }
 
 
 /* navigation */
@@ -39,14 +41,15 @@ nav > ul li a:hover { font-style: italic }
 
 body { max-width: 900px; margin: auto; min-height: 80vh; padding: 1rem }
 
-h1 { font-size: clamp(1.55rem, 4vw, 2.1rem) }
-h2 { font-size: clamp(1.3rem, 3vw, 1.7rem) }
-h3 { font-size: clamp(1.15rem, 2.5vw, 1.35rem) }
+h1 { font-size: clamp(1.55rem, 4vw, 2.1rem); border-left: solid 0.3rem var(--brown); padding-left: 1rem; border-radius: 5px }
+h2 { font-size: clamp(1.15rem, 2.7vw, 1.6rem) }
+h3 { font-size: clamp(1rem, 2.2vw, 1.1rem) }
 p, li { font-size: clamp(0.9rem, 2vw, 1rem); line-height: 1.4; hyphens: auto }
 
 header { display: flex; align-items: center }
 @media (max-width: 768px) { header { display: block } figure { margin: 0 } }
-.hero { flex: 1 }
+.hero { flex: 1}
+@media (max-width: 512px) { .hero { margin-top: 3rem } }
 header > figure { flex: 1 }
 header > *:first-child img { border: 2px solid grey; border-radius: 0.8rem; padding: 0.25rem }
 
@@ -58,8 +61,8 @@ footer { margin-top: 1rem; padding: 0.5rem 0; border-top: 1pt grey solid; font-s
 
 /* blogs */
 
-#blogs__list > div { margin: 0.7rem 0 }
-.blog-date { font-style: italic; opacity: 0.7; margin: 0; padding: 0 }
+#blogs__list > div { margin: 1rem 0 }
+.blog-date { font-style: italic; opacity: 0.7; margin: 0; padding: 0; font-size: var(--small) }
 .blog-tags span { padding: 0.15rem 0.4rem; margin-right: 0.3rem; border-radius: 4px; font-size: var(--small) }
 .blog__card p { margin: 0 }
 #tag-filter button { border: none; padding: 0.3rem 0.6rem; margin-right: 0.3rem; cursor: pointer; border-radius: 4px }
@@ -79,6 +82,6 @@ code { font-size: var(--small) }
 /* misc */
 
 figcaption { font-size: var(--small); font-style: italic }
-.pfp { width: 4rem; cursor: pointer }
+.pfp { width: 4rem; cursor: pointer; border-radius: 100% }
 @media (max-width: 512px) { .pfp { width: 3rem } }
 blockquote { border-left: var(--grey) solid 2px; font-style: italic; color: var(--grey); padding-left: 1rem; margin-left: 0 }

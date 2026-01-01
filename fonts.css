@@ -1,20 +1,48 @@
 @font-face { 
-	font-family: "Cardo";
+	font-family: "MPLUSRounded1c";
+	font-weight: 300;
+	font-style: normal;
+	src: url("resources/fonts/MPLUSRounded1c-Light.ttf") format("truetype")
+}
+
+@font-face { 
+	font-family: "MPLUSRounded1c";
+	font-weight: 400;
+	font-style: normal;
+	src: url("resources/fonts/MPLUSRounded1c-Regular.ttf") format("truetype")
+}
+
+@font-face { 
+	font-family: "MPLUSRounded1c";
 	font-weight: 500;
 	font-style: normal;
-	src: url("resources/fonts/Cardo-Regular.ttf") format("truetype");
+	src: url("resources/fonts/MPLUSRounded1c-Medium.ttf") format("truetype")
 }
 
-@font-face {
-	font-family: "Cardo";
-	font-weight: 500;
-	font-style: italic;
-	src: url("resources/fonts/Cardo-Italic.ttf") format("truetype");
+@font-face { 
+	font-family: "MPLUSRounded1c";
+	font-weight: 200;
+	font-style: normal;
+	src: url("resources/fonts/MPLUSRounded1c-Thin.ttf") format("truetype")
 }
 
-@font-face {
-	font-family: "Cardo";
+@font-face { 
+	font-family: "MPLUSRounded1c";
+	font-weight: 700;
+	font-style: normal;
+	src: url("resources/fonts/MPLUSRounded1c-Bold.ttf") format("truetype")
+}
+
+@font-face { 
+	font-family: "MPLUSRounded1c";
+	font-weight: 800;
+	font-style: normal;
+	src: url("resources/fonts/MPLUSRounded1c-ExtraBold.ttf") format("truetype")
+}
+
+@font-face { 
+	font-family: "MPLUSRounded1c";
 	font-weight: 900;
 	font-style: normal;
-	src: url("resources/fonts/Cardo-Bold.ttf") format("truetype");
+	src: url("resources/fonts/MPLUSRounded1c-Black.ttf") format("truetype")
 }
