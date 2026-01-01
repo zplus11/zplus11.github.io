@@ -31,6 +31,6 @@ Khalsa College in internal assessments. The data was taken from college website.
 A normal distribution can indeed be seen. In this case, we find that the average lies around 60 as
 expected, and marks corresponding to students of all three years follow a similar distribution.
 
-This article is available in PDF format <a href="../../resources/Gaussian_Distribution.pdf" target="_blank">here</a>.
+This article is available in PDF format <a href="/resources/Gaussian_Distribution.pdf" target="_blank">here</a>.
 
 This article is an extract taken from the analysis done on marks and attendance secured by students in Sri Guru Tegh Bahadur Khalsa College, a full version of which can be found <a href="https://github.com/zplus11/MarksAttendance.git" target="_blank">here</a>.

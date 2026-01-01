@@ -9,9 +9,9 @@ plain and simple, with merely an introduction of mine along with a blog
 where I will talk about the things I like.
 
 Being a simple website, I have resorted to implementing it in simple
-ways. I wrote [index.html](../index.html) file as well as
-[blog.html](blog.html) manually, whereas I created a pandoc template for
-the blog-posts. It is available at [template.html](template.html) which
+ways. I wrote [index.html](/index.html) file as well as
+[blog.html](/pages/blog.html) manually, whereas I created a pandoc template for
+the blog-posts. It is available at [template.html](/pages/posts/template.html) which
 contains the boiler-plate code (including all CSS styling) along with
 variables that are to change per post. These include
 
@@ -36,7 +36,7 @@ After writing my markdown file, I merely run the following command:
 
 which (if I have pandoc installed) will create `on-this-website.html`
 ready to be imported in my website. The list of blogs is printed to the
-[blog.html](blog.html) page (after being filtered by tag) using
+[blog.html](/pages/blog.html) page (after being filtered by tag) using
 javascript.
 
 Here is to hoping that I continue writing about the things I like or do.

@@ -80,4 +80,4 @@ r^2 ** s ** r^1 ** s		(* r^1 *)
 r^3 ** r^2 ** s ** r^1 ** s	(* r^0 *)
 ```
 
-The code is available in this mathematica notebook: [dih.nb](../../resources/mm/dih.nb).
+The code is available in this mathematica notebook: [dih.nb](/resources/mm/dih.nb).

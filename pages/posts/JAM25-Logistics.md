@@ -78,7 +78,7 @@ table 2.
 Of course, these are only approximate results, yet fairly accurate.
 
 This article is also available in PDF format at [this
-file.](../../resources/JAM25_Logistics.pdf) A notebook can also be found [here.](../../resources/JAM25_Logistics.nb)
+file.](/resources/JAM25_Logistics.pdf) A notebook can also be found [here.](/resources/JAM25_Logistics.nb)
 
 ## References
 

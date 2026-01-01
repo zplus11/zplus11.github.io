@@ -154,4 +154,4 @@ This is again continuous for all points in the domain except where denominator i
 
 ---
 
-This is the first article in the series "Some Notes on Multivariate Calculus." If you enjoyed reading it, I am glad. To read the next article, visit [this page.](derivatives-in-multivariate-calculus.html) For any feedback or discussion, please contact me via email at namtgr at gmail dot com. The graphs for this article were created using Mathematica. A notebook containing them can be found at [this link](../../resources/mm/fmv.nb).
+This is the first article in the series "Some Notes on Multivariate Calculus." If you enjoyed reading it, I am glad. To read the next article, visit [this page.](/pages/posts/derivatives-in-multivariate-calculus.html) For any feedback or discussion, please contact me via email at namtgr at gmail dot com. The graphs for this article were created using Mathematica. A notebook containing them can be found at [this link](/resources/mm/fmv.nb).
