@@ -3,7 +3,7 @@ title: Logistics of IITJAM 2025
 date: 22 March, 2025
 ---
 
-## 1. Introduction
+## Introduction
 
 The logistics growth model is defined by the differential equation
 
@@ -39,7 +39,7 @@ class="math inline"><em>R</em>(<em>m</em>)</span> at <span
 class="math inline"><em>r</em> = 0.1</span>.</figcaption>
 </figure>
 
-## 2. Simulation
+## Simulation
 
 We use the data extracted from 20 actual result score-cards found online
 (table 1) to estimate the value of [*r*]{.math .inline} in (1). Using
