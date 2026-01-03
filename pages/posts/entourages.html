@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Entourages</title>
+		<link rel="stylesheet" href="/style.css">
+
+		<style>
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #bc6433; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+		</style>
+
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+	</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-85NBEPVK2H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-85NBEPVK2H');
+</script>
+	<body>
+		<nav>
+			<img class="pfp" onclick="location.href='/'" src="/resources/profiles/PortraitW.png" alt="pfp">
+			<ul>
+				<li><a href="/pages/blog.html">My blog</a></li>
+				<li><a href="/pages/mgroups.html">MGroups</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<section>
+				<p class=>
+				<a href="/pages/blog.html">Back</a>
+				</p>
+			</section>
+			<section class="blog__post">
+				<h1>Entourages</h1>
+				<p><i>03 January, 202<s>5</s>6</i></p>
+				<hr><br><br>
+				<p>In real calculus, a sequence of points is said to be Cauchy if at
+arbitrarily large indices, points start getting arbitrarily close to
+each other. This sounds like the very definition of convergence, and in
+fact on <span class="math inline">ℝ</span>, convergence and Cauchy-ness
+of sequences go hand in hand. But, suppose we talk about the sequence
+<span
+class="math inline"><em>a</em><sub><em>n</em></sub> = 1/<em>n</em></span>
+for <span class="math inline"><em>n</em> ≥ 2</span> on the interval
+<span class="math inline">(0, 1)</span>. It is still Cauchy, but it is
+not convergent, for the limit (<span class="math inline"> = 0</span>)
+does not belong to the interval (our space). Topologically, we can say a
+sequence <span
+class="math inline"><em>x</em><sub><em>n</em></sub></span> is convergent
+to the limit <span class="math inline"><em>x</em></span> if every nbhd
+<span class="math inline"><em>U</em></span> of <span
+class="math inline"><em>x</em></span> contains all but finitely many
+points of the sequence. But, to define Cauchy sequences, a notion of
+distance is required. Enter: entourages.</p>
+<p>On a set <span class="math inline"><em>X</em></span>, an entourage
+(upto my understanding, I have just begun business with this) is just a
+subset of the product <span
+class="math inline"><em>X</em> × <em>X</em></span> with the condition
+that it contains the diagonal <span
+class="math inline"><em>δ</em> = {(<em>x</em>, <em>x</em>) : <em>x</em> ∈ <em>X</em>}</span>.</p>
+<figure>
+<img src="img/entourage.png" alt="An entourage for \mathbb R." />
+<figcaption aria-hidden="true">An entourage for <span
+class="math inline">ℝ</span>.</figcaption>
+</figure>
+<p>With entourages, we now have a notion of distance. In particular, we
+call <span class="math inline"><em>x</em></span> and <span
+class="math inline"><em>y</em></span> to be <span
+class="math inline"><em>U</em></span>-“close” to each other if the point
+<span class="math inline">(<em>x</em>, <em>y</em>)</span> belongs to the
+entourage <span class="math inline"><em>U</em></span>. Now, we can call
+a sequence <span
+class="math inline"><em>x</em><sub><em>n</em></sub></span> to be <span
+class="math inline"><em>U</em></span>-Cauchy if there exists some <span
+class="math inline"><em>N</em> ∈ ℕ</span> such that <span
+class="math inline">(<em>x</em><sub><em>m</em></sub>, <em>x</em><sub><em>n</em></sub>)</span>
+belongs to <span class="math inline"><em>U</em></span> for each <span
+class="math inline"><em>m</em>, <em>n</em> ≥ <em>N</em></span>. That is
+all I have to share. Below I present some graphs in Mathematica.</p>
+<p>Some entourage-defining functions:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">d</span><span class="op">[</span><span class="dv">1</span><span class="op">,</span> <span class="at">a_</span><span class="op">][{</span><span class="at">x_</span><span class="op">,</span> <span class="at">y_</span><span class="op">}]</span> <span class="ex">:=</span> <span class="fu">Abs</span><span class="op">[</span><span class="fu">x</span> <span class="sc">-</span> <span class="fu">y</span><span class="op">]</span> &lt;<span class="ex">=</span> <span class="fu">a</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">d</span><span class="op">[</span><span class="dv">2</span><span class="op">,</span> <span class="at">a_</span>:<span class="dv">1</span><span class="op">][{</span><span class="at">x_</span><span class="op">,</span> <span class="at">y_</span><span class="op">}]</span> <span class="ex">:=</span> <span class="fu">Abs</span><span class="op">[</span><span class="fu">x</span><span class="sc">-</span><span class="fu">y</span><span class="op">]</span> &lt;<span class="ex">=</span> <span class="fu">a</span> (<span class="dv">1</span> <span class="sc">+</span> <span class="fu">Abs</span><span class="op">[</span><span class="fu">x</span><span class="op">]</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">d</span><span class="op">[</span><span class="dv">3</span><span class="op">,</span> <span class="at">a_</span>:<span class="dv">1</span><span class="op">,</span> <span class="at">s_</span>:<span class="dv">1</span><span class="op">][{</span><span class="at">x_</span><span class="op">,</span> <span class="at">y_</span><span class="op">}]</span> <span class="ex">:=</span> <span class="fu">Abs</span><span class="op">[</span>(<span class="dv">1</span> <span class="sc">+</span> <span class="fu">s</span> <span class="fu">x</span>) (<span class="fu">x</span> <span class="sc">-</span> <span class="fu">y</span>)<span class="op">]</span> &lt;<span class="ex">=</span> <span class="fu">a</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">d</span><span class="op">[</span><span class="dv">4</span><span class="op">,</span> <span class="at">a_</span>:<span class="dv">1</span><span class="op">,</span> <span class="at">f_</span><span class="op">][{</span><span class="at">x_</span><span class="op">,</span> <span class="at">y_</span><span class="op">}]</span> <span class="ex">:=</span> <span class="fu">Abs</span><span class="op">[</span><span class="fu">f</span><span class="op">[</span><span class="fu">x</span><span class="op">]</span> <span class="sc">-</span> <span class="fu">f</span><span class="op">[</span><span class="fu">y</span><span class="op">]]</span> &lt;<span class="ex">=</span> <span class="fu">a</span></span></code></pre></div>
+<p>Then, to define an entourage, one could do:</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">x</span> <span class="ex">=</span> <span class="fu">Range</span><span class="op">[</span><span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="fl">0.01</span><span class="op">]</span>;</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>x2 <span class="ex">=</span> <span class="fu">Tuples</span><span class="op">[</span><span class="fu">X</span><span class="op">,</span> <span class="dv">2</span><span class="op">]</span>;</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">u</span> <span class="ex">=</span> <span class="fu">Select</span><span class="op">[</span>X2<span class="op">,</span> <span class="fu">d</span><span class="op">[</span><span class="dv">2</span><span class="op">,</span> <span class="fl">0.01</span><span class="op">]]</span>;</span></code></pre></div>
+<p>and present it using</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ListPlot</span><span class="op">[</span><span class="fu">u</span><span class="op">]</span></span></code></pre></div>
+<p>which returns the figure shown above. One could also draw a directed
+graph of points of <span class="math inline"><em>x</em></span> with a
+directed edge between two points indicating closeness among them. For
+example, with <span
+class="math inline"><em>x</em> = {0, 0.05, 0.1, …, 1}</span>, below we
+have the entourage defined by <code>d[1, a]</code> for varying <span
+class="math inline"><em>a</em></span>.</p>
+<figure>
+<img src="img/entg1.png" alt="a=0.05" />
+<figcaption aria-hidden="true"><span
+class="math inline"><em>a</em> = 0.05</span></figcaption>
+</figure>
+<figure>
+<img src="img/entg2.png" alt="a=0.1" />
+<figcaption aria-hidden="true"><span
+class="math inline"><em>a</em> = 0.1</span></figcaption>
+</figure>
+<figure>
+<img src="img/entg3.png" alt="a=0.2" />
+<figcaption aria-hidden="true"><span
+class="math inline"><em>a</em> = 0.2</span></figcaption>
+</figure>
+<figure>
+<img src="img/entg4.png" alt="a=0.3" />
+<figcaption aria-hidden="true"><span
+class="math inline"><em>a</em> = 0.3</span></figcaption>
+</figure>
+<p>With each increase in the value of <span
+class="math inline"><em>a</em></span>, we have thereby “relaxed” the
+definition of points being “close” to each other and hence more points
+are connected to each other.</p>
+<p>Finally, in the following figure, red is by <code>d[2,0.1]</code>,
+green by <code>d[4,0.15,Cos]</code> and blue is the “composition” of
+both of these.</p>
+<p><img src="img/entg.png" /></p>
+<p>Thanks.</p>
+				<hr><br><br>
+				<p>
+				Thanks for reading. Return to see <a href="/pages/blog.html">all blog posts,</a> or to the <a href="/index.html">home page.</a>
+				</p>
+			</section>
+		</main>
+
+		<footer>Copyright &copy; 2025&ndash;26, Naman T.</footer>
+	</body>
+</html>

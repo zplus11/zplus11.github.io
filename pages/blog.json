@@ -1,5 +1,12 @@
 [
 	{
+		"title": "Entourages",
+		"date": "03 January, 2026",
+		"desc": "I share what little I have been able to understand, of an introduction to uniform spaces in topology.",
+		"url": "entourages.html",
+		"tags": ["wolfram", "maths"]
+	},
+	{
 		"title": "Interpolation",
 		"date": "26 October, 2025",
 		"desc": "Fun with interpolation.",

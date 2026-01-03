@@ -74,7 +74,7 @@ table th { border-bottom: solid var(--red) 2px }
 img { max-width: 100% }
 @media (min-width: 700px) { img { max-width: 70% } }
 #s5g { max-width: 100% }
-pre { max-height: 100%; overflow: auto; border-left: solid var(--red) 4px; border-radius: 4px; background-color: rgba(1, 1, 1, 0.05) }
+pre { max-height: 100%; overflow: auto; border-left: solid var(--brown) 4px; border-radius: 4px; background-color: rgba(1, 1, 1, 0.05) }
 pre code { display: block; white-space: pre; padding: 1em }
 code { font-size: var(--small) }
 
