@@ -85,3 +85,10 @@ figcaption { font-size: var(--small); font-style: italic }
 .pfp { width: 4rem; cursor: pointer; border-radius: 100% }
 @media (max-width: 512px) { .pfp { width: 3rem } }
 blockquote { border-left: var(--grey) solid 2px; font-style: italic; color: var(--grey); padding-left: 1rem; margin-left: 0 }
+.lat { margin: 1rem 0 }
+.lat h4 { margin: 0; padding: 0 }
+.lat p { font-style: italic }
+@media (min-width: 512px) {
+	.lat { display: flex }
+	.lat img { max-width: 60%; margin-inline: auto; margin-left: 2rem }
+}
