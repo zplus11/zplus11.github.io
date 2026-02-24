@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Population growth</title>
+		<link rel="stylesheet" href="/style.css">
+
+		<style>
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #bc6433; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+		</style>
+
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+	</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-85NBEPVK2H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-85NBEPVK2H');
+</script>
+	<body>
+		<nav>
+			<img class="pfp" onclick="location.href='/'" src="/resources/profiles/PortraitW.png" alt="pfp">
+			<ul>
+				<li><a href="/pages/blog.html">My blog</a></li>
+				<li><a href="/pages/mgroups.html">MGroups</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<section>
+				<p class=>
+				<a href="/pages/blog.html">Back</a>
+				</p>
+			</section>
+			<section class="blog__post">
+				<h1>Population growth</h1>
+				<p><i>24 February, 2026</i></p>
+				<hr><br><br>
+				<p>Population growth models are one of the most basic mathematical
+models and are often used to introduce the subject of modelling to
+newcomers. In this post I will present an introductory discussion on
+these models using real life dataset. I consider the Indian population
+during 1950–2025. I will be using Mathematica. First off, I show the
+data:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>india <span class="ex">=</span> TimeSeries@N@Transpose<span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">10</span><span class="sc">^-</span><span class="dv">6</span><span class="op">}}</span> .</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Transpose</span><span class="op">[</span><span class="fu">Import</span><span class="op">[</span><span class="fu">NotebookDirectory</span><span class="op">[]</span> &lt;&gt; <span class="st">&quot;../data/ipop.csv&quot;</span><span class="op">,</span> <span class="st">&quot;CSV&quot;</span><span class="op">]]</span> <span class="sc">-</span> <span class="op">{</span><span class="dv">1950</span><span class="op">,</span> <span class="dv">0</span><span class="op">}]</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">(* scaling and translating the data *)</span>;</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>p0 <span class="ex">=</span> india<span class="op">[</span><span class="dv">0</span><span class="op">]</span>;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ListPlot</span><span class="op">[</span>india<span class="op">]</span></span></code></pre></div>
+<p><img src="img/inpop.png" /></p>
+<p>We will start with an exponential growth model: <span
+class="math inline"><em>p</em>′(<em>t</em>) = <em>r</em><em>p</em>(<em>t</em>), <em>p</em>(<em>t</em><sub>0</sub>) = <em>p</em><sub>0</sub></span>.
+<span class="math inline"><em>r</em></span> here is the constant growth
+rate, which we can take to be the average of yearly growth of the
+population.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>gr <span class="ex">=</span> TimeSeries<span class="op">[</span><span class="fu">Transpose</span><span class="op">[{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    india<span class="op">[</span><span class="st">&quot;Times&quot;</span><span class="op">],</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span><span class="dv">0</span><span class="op">}</span> ~ <span class="fu">Join</span> ~ (<span class="fu">Differences</span><span class="op">[</span>india<span class="op">[</span><span class="st">&quot;Values&quot;</span><span class="op">]]</span><span class="sc">/</span>india<span class="op">[</span><span class="st">&quot;Values&quot;</span><span class="op">][[</span>;;<span class="sc">-</span><span class="dv">2</span><span class="op">]]</span>)<span class="op">}]]</span>;</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ListPlot</span><span class="op">[</span>gr<span class="op">]</span></span></code></pre></div>
+<p><img src="img/ingr.png" /></p>
+<p>Average of these values comes out to be 0.018672 and so we set <span
+class="math inline"><em>r</em></span> to be that. Solving the above
+differential equation we get <span
+class="math inline"><em>p</em>(<em>t</em>) = 357.021<em>e</em><sup>0.018672<em>t</em></sup></span>,
+which is then compared with the data below:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="ex">=</span> gr<span class="op">[</span><span class="st">&quot;Values&quot;</span><span class="op">]</span> <span class="sc">//</span> <span class="fu">Mean</span> <span class="sc">//</span> <span class="fu">N</span>;</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">s</span><span class="op">[</span><span class="dv">1</span><span class="op">][</span><span class="at">t_</span><span class="op">]</span> <span class="ex">=</span> DSolveValue<span class="op">[{</span>p&#39;<span class="op">[</span><span class="fu">t</span><span class="op">]</span> <span class="ex">==</span> <span class="fu">r</span><span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="fu">p</span><span class="op">[</span><span class="fu">t</span><span class="op">],</span> <span class="fu">p</span><span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="ex">==</span> p0<span class="op">},</span> <span class="fu">p</span><span class="op">[</span><span class="fu">t</span><span class="op">],</span> <span class="fu">t</span><span class="op">]</span>;</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Show</span><span class="op">[</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ListPlot</span><span class="op">[</span>india<span class="op">],</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Plot</span><span class="op">[</span><span class="fu">s</span><span class="op">[</span><span class="dv">1</span><span class="op">][</span><span class="fu">t</span><span class="op">],</span> <span class="op">{</span><span class="fu">t</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">75</span><span class="op">}]]</span></span></code></pre></div>
+<p><img src="img/inc1.png" /></p>
+<p>This is good but not the best we’ll be having today. Notice that
+<span class="math inline"><em>r</em></span> here is supposed to be
+constant, whereas that is not the case in general. The growth rates
+shown above were not constant, hence we can try to fit a time dependent
+function to the growth rate data:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="op">[</span><span class="dv">2</span><span class="op">]</span><span class="ex">=</span> <span class="fu">NonlinearModelFit</span><span class="op">[</span>gr<span class="op">[</span><span class="st">&quot;Path&quot;</span><span class="op">],</span> a0 <span class="sc">+</span> a1t<span class="op">,</span> <span class="op">{</span>a0<span class="op">,</span> a1<span class="op">},</span> <span class="fu">t</span><span class="op">]</span>;</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Show</span><span class="op">[</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ListPlot</span><span class="op">[</span>gr<span class="op">],</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Plot</span><span class="op">[</span><span class="fu">r</span><span class="op">[</span><span class="dv">2</span><span class="op">][</span><span class="fu">t</span><span class="op">],</span> <span class="op">{</span><span class="fu">t</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">75</span><span class="op">}]]</span></span></code></pre></div>
+<p><img src="img/ingrlinf.png" /></p>
+<p>Now we can use this linear function in <span
+class="math inline"><em>r</em>(<em>t</em>)</span> in lieu of the
+constant <span class="math inline"><em>r</em></span> used above:</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">s</span><span class="op">[</span><span class="dv">2</span><span class="op">][</span><span class="at">t_</span><span class="op">]</span> <span class="ex">=</span> DSolveValue<span class="op">[{</span>p&#39;<span class="op">[</span><span class="fu">t</span><span class="op">]</span> <span class="ex">==</span> <span class="fu">r</span><span class="op">[</span><span class="dv">2</span><span class="op">]</span> <span class="op">[</span><span class="fu">t</span><span class="op">]</span> <span class="fu">p</span><span class="op">[</span><span class="fu">t</span><span class="op">],</span> <span class="fu">p</span><span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="ex">==</span> p0<span class="op">},</span> <span class="fu">p</span><span class="op">[</span><span class="fu">t</span><span class="op">],</span> <span class="fu">t</span><span class="op">]</span>;</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Show</span><span class="op">[</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ListPlot</span><span class="op">[</span>india<span class="op">],</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Plot</span><span class="op">[</span><span class="fu">s</span><span class="op">[</span><span class="dv">2</span><span class="op">][</span><span class="fu">t</span><span class="op">],</span> <span class="op">{</span><span class="fu">t</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">75</span><span class="op">}]]</span></span></code></pre></div>
+<p><img src="img/inc2.png" /></p>
+<p>This is clearly far better than the previous fit! However, notice
+that the growth rate does not really look like a linear curve rather a
+quadratic curve. And therefore:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="op">[</span><span class="dv">3</span><span class="op">]</span> <span class="ex">=</span> <span class="fu">NonlinearModelFit</span><span class="op">[</span>gr<span class="op">[</span><span class="st">&quot;Path&quot;</span><span class="op">],</span> a0 <span class="sc">+</span> a1 <span class="fu">t</span> <span class="sc">+</span> a2 <span class="fu">t</span><span class="sc">^</span><span class="dv">2</span><span class="op">,</span> <span class="op">{</span>a0<span class="op">,</span> a1<span class="op">,</span> a2<span class="op">},</span> <span class="fu">t</span><span class="op">]</span>;</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">s</span><span class="op">[</span><span class="dv">3</span><span class="op">][</span><span class="at">t_</span><span class="op">]</span> <span class="ex">=</span> DSolveValue<span class="op">[{</span>p&#39;<span class="op">[</span><span class="fu">t</span><span class="op">]</span> <span class="ex">==</span> <span class="fu">r</span><span class="op">[</span><span class="dv">3</span><span class="op">][</span><span class="fu">t</span><span class="op">]</span> <span class="fu">p</span><span class="op">[</span><span class="fu">t</span><span class="op">],</span> <span class="fu">p</span><span class="op">[</span><span class="dv">0</span><span class="op">]</span> <span class="ex">==</span> p0<span class="op">},</span> <span class="fu">p</span><span class="op">[</span><span class="fu">t</span><span class="op">],</span> <span class="fu">t</span><span class="op">]</span>;</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Show</span><span class="op">[</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ListPlot</span><span class="op">[</span>india<span class="op">],</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Plot</span><span class="op">[</span><span class="fu">s</span><span class="op">[</span><span class="dv">3</span><span class="op">][</span><span class="fu">t</span><span class="op">],</span> <span class="op">{</span><span class="fu">t</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">75</span><span class="op">}]]</span></span></code></pre></div>
+<p><img src="img/inc3.png" /></p>
+<p>Amazing! In the next post, I will be continuing this and discussing
+the logistics growth model using all three growth rates: constant,
+linear, and quadratic.</p>
+				<hr><br><br>
+				<p>
+				Thanks for reading. Return to see <a href="/pages/blog.html">all blog posts,</a> or to the <a href="/index.html">home page.</a>
+				</p>
+			</section>
+		</main>
+
+		<footer>Copyright &copy; 2025&ndash;26, Naman T.</footer>
+	</body>
+</html>

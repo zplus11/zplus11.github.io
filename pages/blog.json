@@ -1,5 +1,12 @@
 [
 	{
+		"title": "Population growth",
+		"date": "24 February, 2026",
+		"desc": "Demonstrating population growth dynamics with time dependent rates.",
+		"url": "population-growth.html",
+		"tags": ["wolfram", "maths"]
+	},
+	{
 		"title": "Entourages",
 		"date": "03 January, 2026",
 		"desc": "I share what little I have been able to understand, of an introduction to uniform spaces in topology.",
