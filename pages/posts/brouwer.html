@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Brouwer’s fixed point theorem for the disk</title>
+		<link rel="stylesheet" href="/style.css">
+
+		<style>
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #bc6433; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+		</style>
+
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+	</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-85NBEPVK2H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-85NBEPVK2H');
+</script>
+	<body>
+		<nav>
+			<img class="pfp" onclick="location.href='/'" src="/resources/profiles/Portrait.png" alt="pfp">
+			<ul>
+				<li><a href="/pages/blog.html">My blog</a></li>
+				<li><a href="/pages/mgroups.html">MGroups</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<section>
+				<p class=>
+				<a href="/pages/blog.html">Back</a>
+				</p>
+			</section>
+			<section class="blog__post">
+				<h1>Brouwer’s fixed point theorem for the disk</h1>
+				<p><i>01 March, 2026</i></p>
+				<hr><br><br>
+				<blockquote>
+<p><em>It is impossible to comb the hair on a sphere smooth.</em></p>
+<p>— Brouwer</p>
+</blockquote>
+<p>Brouwer’s fixed point theorem for the disks is probably one of the
+most important results in algebraic topology. Loosely speaking, it says
+that at least one point remains unaffected by any continuous
+transformation of a closed disk to itself. For one-variable functions,
+it translates to the following theorem:</p>
+<p><strong>Theorem.</strong> Let <span
+class="math inline"><em>f</em> : [0, 1] → [0, 1]</span> be any
+continuous map. Then <span class="math inline"><em>f</em></span> has at
+least one fixed point.</p>
+<p>Brouwer’s theorem stated formally:</p>
+<p><strong>Theorem.</strong> Any continuous map <span
+class="math inline"><em>f</em> : <em>D</em><sup>2</sup> → <em>D</em><sup>2</sup></span>
+has at least one fixed point.</p>
+<p>Its applications are divine. Suppose you take a sheet of paper, what
+are the ways in which this sheet can be mapped to itself?</p>
+<h2 id="fixed-points">Fixed points</h2>
+<p>In any map, a point <span class="math inline"><em>x</em></span> is
+said to be a fixed point if its image under the map is <span
+class="math inline"><em>x</em></span> itself. For example, consider the
+identity map <span class="math inline"><em>x</em> ↦ <em>x</em></span>.
+Since each point gets mapped to itself, we say that every point is a
+fixed point. Consider <span
+class="math inline"><em>x</em> ↦ <em>x</em><sup>2</sup></span>. The
+image of <span class="math inline">0</span> is <span
+class="math inline">0<sup>2</sup> = 0</span> so <span
+class="math inline">0</span> is a fixed point. On the other hand, <span
+class="math inline">1</span> is also a fixed point. But apart from these
+two, there are no fixed point. <span
+class="math inline">−1 ↦ (−1)<sup>2</sup> = 1 ≠ −1</span> so <span
+class="math inline">−1</span> is not a fixed point. Similarly we can see
+every other point maps to an image different than itself.</p>
+<p>Talking about the sheet of paper example, one way is to take the
+“image sheet” and put it on top of the “domain sheet” as it is. This is
+nothing but the identity map, each point gets mapped to itself so that
+every point is a fixed point. To visualise these examples, I consider
+this map in Mathematica:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>img<span class="op">[</span><span class="at">ref_</span><span class="op">][</span><span class="at">u_</span><span class="op">,</span><span class="at">v_</span><span class="op">]</span> <span class="ex">:=</span> </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span>(<span class="dv">1</span><span class="sc">-</span><span class="fu">u</span>) (<span class="dv">1</span><span class="sc">-</span><span class="fu">v</span>)<span class="op">,</span> <span class="fu">u</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">v</span>)<span class="op">,</span> <span class="fu">u</span> <span class="fu">v</span><span class="op">,</span> (<span class="dv">1</span><span class="sc">-</span><span class="fu">u</span>) <span class="fu">v</span><span class="op">}</span> . ref</span></code></pre></div>
+<p>This takes <code>ref</code>: image of 4 endpoints of the rectangle,
+and returns image of <span
+class="math inline">(<em>u</em>, <em>v</em>)</span> under the map
+sending the points (0,0), (1,0), (1,1), (0,1) to <code>ref</code>. For
+example now,</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>img<span class="op">[{{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">}}][</span><span class="fu">u</span><span class="op">,</span><span class="fu">v</span><span class="op">]</span> <span class="sc">//</span> <span class="fu">Simplify</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">(* {u, v} *)</span></span></code></pre></div>
+<p>hence the map sending reference points to itself, sends all points to
+themselves. In other words, we visualise this map by assigning to each
+point a colour based on <span
+class="math inline"><em>f</em>(<em>u</em>, <em>v</em>) − (<em>u</em>, <em>v</em>)</span>,
+so that points that are displaced “less” have a different colour than
+those that are displaced more. This will help us see where exactly the
+fixed points land. We see the square in terms of these colours to note
+that:</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">DensityPlot</span><span class="op">[</span><span class="fu">Norm</span><span class="op">[</span>img<span class="op">[{{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">}}][</span><span class="fu">u</span><span class="op">,</span> <span class="fu">v</span><span class="op">]</span> <span class="sc">-</span> <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="fu">v</span><span class="op">}],</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="fu">v</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">}]</span></span></code></pre></div>
+<figure>
+<img src="img/fp1.png" alt="Identity map from D^2 to itself." />
+<figcaption aria-hidden="true">Identity map from <span
+class="math inline"><em>D</em><sup>2</sup></span> to
+itself.</figcaption>
+</figure>
+<p>Nothing exciting here. Each point is getting mapped to itself, so the
+displacement is zero for all of them hence the same purple everywhere.
+We confirm that all of them are fixed points:</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Reduce</span><span class="op">[</span>img<span class="op">[{{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">}}][</span><span class="fu">u</span><span class="op">,</span> <span class="fu">v</span><span class="op">]</span> <span class="ex">==</span> <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="fu">v</span><span class="op">},</span> <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="fu">v</span><span class="op">}]</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">(* True *)</span></span></code></pre></div>
+<p>Now, let us consider a map that flips the square horizontally. That
+is,</p>
+<p><span
+class="math display">(0, 0) ↔︎ (0, 1),  (1, 0) ↔︎ (1, 1).</span></p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">DensityPlot</span><span class="op">[</span><span class="fu">Norm</span><span class="op">[</span>img<span class="op">[{{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">}}][</span><span class="fu">u</span><span class="op">,</span> <span class="fu">v</span><span class="op">]</span> <span class="sc">-</span> <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="fu">v</span><span class="op">}],</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="fu">v</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">}]</span></span></code></pre></div>
+<figure>
+<img src="img/fp2.png" alt="D^2 flipped horizontally." />
+<figcaption aria-hidden="true"><span
+class="math inline"><em>D</em><sup>2</sup></span> flipped
+horizontally.</figcaption>
+</figure>
+<p>Evidently, points that are at the line <span
+class="math inline"><em>v</em> = 1/2</span> do not get affected, and we
+see a purple strip based on them indicating that their displacement is
+near 0 (in fact equal to 0). Hence, all points on that line segment are
+fixed points:</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Reduce</span><span class="op">[</span>img<span class="op">[{{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">}}][</span><span class="fu">u</span><span class="op">,</span> <span class="fu">v</span><span class="op">]</span> <span class="ex">==</span> <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="fu">v</span><span class="op">},</span> <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="fu">v</span><span class="op">}]</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">(* v == 1/2 *)</span></span></code></pre></div>
+<p>Now, let us consider</p>
+<p><span
+class="math display">(0, 0) ↔︎ (1, 1),  (1, 0) ↔︎ (0, 1).</span></p>
+<p>and the result is:</p>
+<figure>
+<img src="img/fp3.png" alt="D^2 flipped in another way." />
+<figcaption aria-hidden="true"><span
+class="math inline"><em>D</em><sup>2</sup></span> flipped in another
+way.</figcaption>
+</figure>
+<p>Now, there is only one fixed point: <span
+class="math inline">(0.5, 0.5)</span>.</p>
+<h2 id="extension">Extension</h2>
+<p>I extend this exercise to the following:</p>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Manipulate</span><span class="op">[</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">DensityPlot</span><span class="op">[</span><span class="fu">Norm</span><span class="op">[</span>img<span class="op">[</span>pt<span class="op">][</span><span class="fu">u</span><span class="op">,</span><span class="fu">v</span><span class="op">]</span> <span class="sc">-</span> <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="fu">v</span><span class="op">}],</span> <span class="op">{</span><span class="fu">u</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="fu">v</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">ColorFunction</span> <span class="ot">-&gt;</span> <span class="fu">GrayLevel</span><span class="op">],</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{{</span>pt<span class="op">,</span> <span class="op">{{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">}}},</span> <span class="fu">Locator</span><span class="op">}]</span></span></code></pre></div>
+<p>which allows freely repositioning the end-points to allow for more
+detailed transformations. For example:</p>
+<figure>
+<img src="img/fp4.png" alt="Freely transforming the D^2." />
+<figcaption aria-hidden="true">Freely transforming the <span
+class="math inline"><em>D</em><sup>2</sup></span>.</figcaption>
+</figure>
+<p>This shrinks down the square to a quadrilateral determined by the 4
+highlighted points. A unique fixed point is apparent.</p>
+<h2 id="more-talk">More talk</h2>
+<p>This idea of transforming <span
+class="math inline"><em>D</em><sup>2</sup></span> goes beyond just
+scaling and translating. For example, as shown below:</p>
+<figure>
+<img src="img/paper.png"
+alt="Illustration (credits: Dennis Simanaitis, COMBED COCONUTS HAVE COWLICKS. https://simanaitissays.com/2015/01/19/combed-coconut-must-have-cowlicks" />
+<figcaption aria-hidden="true">Illustration (credits: Dennis Simanaitis,
+<em>COMBED COCONUTS HAVE COWLICKS.</em> <a
+href="https://simanaitissays.com/2015/01/19/combed-coconut-must-have-cowlicks">https://simanaitissays.com/2015/01/19/combed-coconut-must-have-cowlicks</a></figcaption>
+</figure>
+<p>if you crumble a piece of paper and place it atop itself, and think
+of the image of each point in the paper to be wherever it lands in the
+crumbled form, then again it is a continuous map from <span
+class="math inline"><em>D</em><sup>2</sup></span> to itself. Hence, we
+can invoke the theorem to say there exists <em>at least</em> one point
+that lands precisely on top of itself, no matter how the paper is
+crumbled.</p>
+<p>The theorem holds for any compact convex subspace of <span
+class="math inline">ℝ<sup><em>n</em></sup></span>. For example, it
+applies to the solid 3-ball <span
+class="math inline"><em>D</em><sup>3</sup></span>. A classical
+illustration is that if you stir a glass of water, there is at least one
+point in the fluid that ends up exactly where it started.</p>
+<hr />
+<p>If you enjoyed reading this blog post, I am glad. The code is
+available at <a href="/resources/mm/bfp.nb">bfp.nb</a>.</p>
+				<hr><br><br>
+				<p>
+				Thanks for reading. Return to see <a href="/pages/blog.html">all blog posts,</a> or to the <a href="/index.html">home page.</a>
+				</p>
+			</section>
+		</main>
+
+		<footer>Copyright &copy; 2025&ndash;26, Naman T.</footer>
+	</body>
+</html>

@@ -1,5 +1,12 @@
 [
 	{
+		"title": "Brouwer's fixed point theorem",
+		"date": "01 March, 2026",
+		"desc": "In this post I talk about the Brouwer's fixed point theorem for the closed disk.",
+		"url": "brouwer.html",
+		"tags": ["maths"]
+	},
+	{
 		"title": "Population growth",
 		"date": "24 February, 2026",
 		"desc": "Demonstrating population growth dynamics with time dependent rates.",
