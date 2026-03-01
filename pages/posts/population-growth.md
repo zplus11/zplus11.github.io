@@ -6,7 +6,7 @@ date: 24 February, 2026
 Population growth models are one of the most basic mathematical models and are often used to introduce the subject of modelling to newcomers. In this post I will present an introductory discussion on these models using real life dataset. I consider the Indian population during 1950&ndash;2025. I will be using Mathematica. First off, I show the data:
 
 ```mathematica
-india = TimeSeries@N@Transpose[{{1, 0}, {0, 10^-6}} .
+india = TimeSeries@N@Transpose[{ {1, 0}, {0, 10^-6} } .
 	Transpose[Import[NotebookDirectory[] <> "../data/ipop.csv", "CSV"]] - {1950, 0}]
 	(* scaling and translating the data *);
 p0 = india[0];
