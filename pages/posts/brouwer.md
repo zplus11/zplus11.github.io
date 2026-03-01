@@ -57,7 +57,7 @@ Now, let us consider a map that flips the square horizontally. That is,
 $$(0,0)\longleftrightarrow(0,1),\quad(1,0)\longleftrightarrow(1,1).$$
 
 ```mathematica
-DensityPlot[Norm[img[{ {0, 1}, {1, 1}, {1, 0}, {0, 0} }][u, v] - {u, v}],
+VectorPlot[img[{ {0, 1}, {1, 1}, {1, 0}, {0, 0} }][u, v] - {u, v},
 	{u, 0, 1}, {v, 0, 1}]
 ```
 
@@ -86,7 +86,7 @@ I extend this exercise to the following:
 
 ```mathematica
 Manipulate[
-	DensityPlot[Norm[img[pt][u,v] - {u, v}], {u, 0, 1}, {v, 0, 1},
+	VectorPlot[img[pt][u,v] - {u, v}, {u, 0, 1}, {v, 0, 1},
 	  ColorFunction -> GrayLevel],
 	{ {pt, { {0, 0}, {1, 0}, {1, 1}, {0, 1} } }, Locator}]
 ```
