@@ -32,14 +32,14 @@ img[ref_][u_,v_] :=
 This takes `ref`: image of 4 endpoints of the rectangle, and returns image of $(u,v)$ under the map sending the points (0,0), (1,0), (1,1), (0,1) to `ref`. For example now,
 
 ```mathematica
-img[{{0, 0}, {1, 0}, {1, 1}, {0, 1}}][u,v] // Simplify
+img[{ {0, 0}, {1, 0}, {1, 1}, {0, 1} }][u,v] // Simplify
 (* {u, v} *)
 ```
 
 hence the map sending reference points to itself, sends all points to themselves. In other words, we visualise this map by assigning to each point a colour based on $f(u,v)-(u,v)$, so that points that are displaced "less" have a different colour than those that are displaced more. This will help us see where exactly the fixed points land. We see the square in terms of these colours to note that:
 
 ```mathematica
-DensityPlot[Norm[img[{{0, 0}, {1, 0}, {1, 1}, {0, 1}}][u, v] - {u, v}],
+DensityPlot[Norm[img[{ {0, 0}, {1, 0}, {1, 1}, {0, 1} }][u, v] - {u, v}],
 	{u, 0, 1}, {v, 0, 1}]
 ```
 
@@ -48,7 +48,7 @@ DensityPlot[Norm[img[{{0, 0}, {1, 0}, {1, 1}, {0, 1}}][u, v] - {u, v}],
 Nothing exciting here. Each point is getting mapped to itself, so the displacement is zero for all of them hence the same purple everywhere. We confirm that all of them are fixed points:
 
 ```mathematica
-Reduce[img[{{0, 0}, {1, 0}, {1, 1}, {0, 1}}][u, v] == {u, v}, {u, v}]
+Reduce[img[{ {0, 0}, {1, 0}, {1, 1}, {0, 1} }][u, v] == {u, v}, {u, v}]
 (* True *)
 ```
 
@@ -57,7 +57,7 @@ Now, let us consider a map that flips the square horizontally. That is,
 $$(0,0)\longleftrightarrow(0,1),\quad(1,0)\longleftrightarrow(1,1).$$
 
 ```mathematica
-DensityPlot[Norm[img[{{0, 1}, {1, 1}, {1, 0}, {0, 0}}][u, v] - {u, v}],
+DensityPlot[Norm[img[{ {0, 1}, {1, 1}, {1, 0}, {0, 0} }][u, v] - {u, v}],
 	{u, 0, 1}, {v, 0, 1}]
 ```
 
@@ -66,7 +66,7 @@ DensityPlot[Norm[img[{{0, 1}, {1, 1}, {1, 0}, {0, 0}}][u, v] - {u, v}],
 Evidently, points that are at the line $v=1/2$ do not get affected, and we see a purple strip based on them indicating that their displacement is near 0 (in fact equal to 0). Hence, all points on that line segment are fixed points:
 
 ```mathematica
-Reduce[img[{{0, 1}, {1, 1}, {1, 0}, {0, 0}}][u, v] == {u, v}, {u, v}]
+Reduce[img[{ {0, 1}, {1, 1}, {1, 0}, {0, 0} }][u, v] == {u, v}, {u, v}]
 (* v == 1/2 *)
 ```
 
@@ -88,7 +88,7 @@ I extend this exercise to the following:
 Manipulate[
 	DensityPlot[Norm[img[pt][u,v] - {u, v}], {u, 0, 1}, {v, 0, 1},
 	  ColorFunction -> GrayLevel],
-	{{pt, {{0, 0}, {1, 0}, {1, 1}, {0, 1}}}, Locator}]
+	{ {pt, { {0, 0}, {1, 0}, {1, 1}, {0, 1} } }, Locator}]
 ```
 
 which allows freely repositioning the end-points to allow for more detailed transformations. For example:
