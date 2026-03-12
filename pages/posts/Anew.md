@@ -1,0 +1,53 @@
+---
+title: The least confusing set theory problem
+date: 12 March, 2026
+---
+
+As much confusing as it gets, set theory is crucial in mathematics: it forms the basis of almost all fields, in the sense that everything boils down to sets. Talk continuous functions: a function $f$ that is continuous on each point in the domain. The domain you say? that is a set. $f$ itself is a relation between sets. Continuity itself eventually becomes a statement about sets of points. So sets are important, and in this article I will discuss a problem concerning them. It goes:
+
+Given $X$ and $A$, can you find $A'$ that is in bijection with $A$, such that $A\cap X=\phi$? Put simply, we wish to construct, using $A$, an $A'$ which contains the "same number of" elements as $A$, but which does not contain anything in $X$. Sounds quite simple, and in fact intuitive enough. Surely we can, but how precisely is the question.
+
+Let us start with some example. Let $X=\{1,2,3\}$ and $A=\{a,b\}$. We need to fill $A'=\{\_,\_\}$ with elements not in $X$. Simple enough: we can take $A'=\{4,5\}$. But this is just a particular solution, we need a general solution. One way could be to somehow calculate the maximum (say $m$) of $X$ and add $m+1,m+2,\ldots$ according to however many elements there are in $A$. But this fails very easily, consider $X=\mathbb N=\{1,2,\ldots\}$. $m$ does not exist. Furthermore, how to calculate $m$ if, say, $X$ is $\{a,b\}$? This leads us to start using what we have at hand, namely $A$ and $X$, in order to construct $A'$.
+
+We need elements that are in bijection with $A$, so why not use elements of $A$ to construct $A'$? Let us note that if $A$ does not contain anything that is in $X$, we can simply take $A'=A$. So the problem comes from the case when $A\cap X\neq\phi$. Consider the set
+
+$$A_1=\Big\{\{a\}:a\in A\Big\}.$$
+
+If $A=\{1,2\}$, then this set becomes $\Big\{\{1\},\{2\}\Big\}$. $A\cap X$ need not be empty so we cannot use $A'=A$, but can we use $A'=A_1$? Well, no. Consider the following setting:
+
+$$X=\Big\{1,\{1\}\Big\},\quad A=\{1\},\quad A_1=\Big\{\{1\}\Big\}.$$
+
+Clearly $A$ contains 1 that is in $X$, but $X$ also contains $\{1\}$ so $A_1$ becomes an invalid choice. We really have no restriction on $X$, it can contain *anything* that can be contained in a set: namely everything. For the same reason, things like
+
+$$A_2=\{(a,0):a\in A\}$$
+
+fail as well. Take $X=\{0,(0,0)\}$ and $A=\{0\}$. Rather than tupling up $a$'s with 0, we may wish to tuple them with something that is NOT in $X$, say $b$, so that it becomes
+
+$$A_3=\{(a,b):a\in A\},$$
+
+but even that does not work. Take $X=\{1,(1,b)\}$ and $A=\{1\}$. $X$ doesn't contain $b$ but it can very well contain $(1,b)$.
+
+Nothing has worked so far. Now I present my best solution which I believe works out. I present a fact first: a set $X$ cannot contain itself. For otherwise, if we consider the simplest case of $X=\{X\}$ and if we were to write out $X$, we would go
+$$
+\begin{aligned}
+X&=\{X\} \\
+&=\{\{X\}\}\\
+&=\{\{\{X\}\}\}\\
+&=\;\vdots
+\end{aligned}
+$$
+which starts a miserable endless loop, indicating that $X$ is not really something legal. In simple words, $X$ cannot be defined in its own terms. This is equivalent to defining
+
+$$f(x):=g(x),\qquad g(x):=f(x)$$
+
+so that $f(0)$ starts an endless loop. Hence, we finally have something that can NOT belong to $X$: itself. We use (exploit) this fact to construct our $A'$. We can actually extend this idea as follows: let $X$ be a set, then any expression explicitly containing $X$ cannot belong to $X$. Therefore, any set, tuple, sum, product, or anything else that explicitly contains $X$ will never appear in $X$. These are standing mathematical facts (read more at $\langle$<a href="https://math.stackexchange.com/questions/1046863/how-can-a-set-contain-itself" target="_blank">How can a set contain itself?</a>$\rangle$). In general, if $B$ belongs to $A$, then $A$ cannot belong to $B$. Hence, we finally construct
+
+$$A'=\{\{a,X\}:a\in A\}$$
+
+which essentially "tags" $X$ with each $a$. $A'$ clearly has a bijection with $A$ via the map $a\mapsto \{a,X\}$, and nothing in $A'$ can ever belong to $X$. As as example, we have if $X=\{1,2,3\}$ and $A=\{1,2\}$ then $A'=\{\{1,X\},\{2,X\}\}$. We could totally have something like $A'=\{X_1,X_2\}$ which merely subscripts each $a$ in $A$, to $X$. In this case, we will have $A'=\Big\{\{1,2,3\}_1,\{1,2,3\}_2\Big\}$ in expanded form. Something like $A'=\{1+X,2+X\}$ could also totally work, where we don't define the addition, and only use $1+X$ as a notation.
+
+To go one step further, if the requirement was exhibiting elements that are neither in $X$ nor in $A$, nothing stops us from using something like
+
+$$A'=\{\{a,A,X\}:a\in A\}$$
+
+so that none of the 3-tuples can belong to $A$ or $X$, using the same reason of circular definition.

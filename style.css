@@ -56,7 +56,7 @@ header > *:first-child img { border: 2px solid grey; border-radius: 0.8rem; padd
 
 /* footer */
 
-footer { margin-top: 1rem; padding: 0.5rem 0; border-top: 1pt grey solid; font-size: var(--small) }
+footer { margin-top: 1rem; padding: 0.5rem 0; font-size: var(--small) }
 
 
 /* blogs */

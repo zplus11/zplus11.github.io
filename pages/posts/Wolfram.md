@@ -11,10 +11,6 @@ Wolfram Research maintains several public repositories to encourage community en
 
 This blog post will serve the purpose of bringing all of my contributions to these sites at a single place. I hope you enjoy them!
 
-#### Demonstrations
-
-- [SubgroupLatticeOfZn](https://demonstrations.wolfram.com/SubgroupLatticeOfZn)
-
 #### Paclets
 
 - [MGroups](https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups)
@@ -22,8 +18,13 @@ This blog post will serve the purpose of bringing all of my contributions to the
 #### Functions
 
 - [AutomorphicIntegerQ](https://resources.wolframcloud.com/FunctionRepository/resources/AutomorphicIntegerQ/)
-
-<!-- - Naman Taggar (2025), "RoughIntegerQ" Wolfram Function Repository. [resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/](https://resources.wolframcloud.com/FunctionRepository/resources/RoughIntegerQ/). -->
-
 - [SerflingFit](https://resources.wolframcloud.com/FunctionRepository/resources/SerflingFit/)
 - [ShowPolygonSymmetries](https://resources.wolframcloud.com/FunctionRepository/resources/ShowPolygonSymmetries/)
+
+#### Demonstrations
+
+- [Subgroup Lattice of <i>Z</i><sub><i>n</i></sub>](https://demonstrations.wolfram.com/SubgroupLatticeOfZn)
+
+#### Examples
+
+- [Brouwer's Fixed Point Theorem on a Square](https://resources.wolframcloud.com/ExampleRepository/resources/Brouwers-fixed-point-theorem/)

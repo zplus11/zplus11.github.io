@@ -1,5 +1,12 @@
 [
 	{
+		"title": "The least confusing set theory problem",
+		"date": "12 March, 2026",
+		"desc": "Sets are confusing, though they form the basis of most of mathematics. In this post I discuss an problem concerning them.",
+		"url": "anew.html",
+		"tags": ["maths"]
+	},
+	{
 		"title": "Brouwer's fixed point theorem",
 		"date": "01 March, 2026",
 		"desc": "In this post I talk about the Brouwer's fixed point theorem for the closed disk.",
@@ -11,14 +18,14 @@
 		"date": "24 February, 2026",
 		"desc": "Demonstrating population growth dynamics with time dependent rates.",
 		"url": "population-growth.html",
-		"tags": ["wolfram", "maths"]
+		"tags": ["maths", "mm"]
 	},
 	{
 		"title": "Entourages",
 		"date": "03 January, 2026",
 		"desc": "I share what little I have been able to understand, of an introduction to uniform spaces in topology.",
 		"url": "entourages.html",
-		"tags": ["wolfram", "maths"]
+		"tags": ["maths", "general"]
 	},
 	{
 		"title": "Interpolation",
@@ -39,7 +46,7 @@
 		"date": "17 July, 2025",
 		"desc": "Introductory blog post on multivariate calculus showcasing various visualisations I created.",
 		"url": "functions-of-multiple-variables.html",
-		"tags": ["maths"]
+		"tags": ["maths", "calculus"]
 	},
 	{
 		"title": "Demonstrations, Functions and Paclets",

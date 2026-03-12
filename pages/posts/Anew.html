@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>The least confusing set theory problem</title>
+		<link rel="stylesheet" href="/style.css">
+
+		<style>
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #bc6433; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+		</style>
+
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+	</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-85NBEPVK2H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-85NBEPVK2H');
+</script>
+	<body>
+		<nav>
+			<img class="pfp" onclick="location.href='/'" src="/resources/profiles/Portrait.png" alt="pfp">
+			<ul>
+				<li><a href="/pages/blog.html">My blog</a></li>
+				<li><a href="/pages/mgroups.html">MGroups</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<section>
+				<p class=>
+				<a href="/pages/blog.html">Back</a>
+				</p>
+			</section>
+			<section class="blog__post">
+				<h1>The least confusing set theory problem</h1>
+				<p><i>12 March, 2026</i></p>
+				<hr><br><br>
+				<p>As much confusing as it gets, set theory is crucial in mathematics:
+it forms the basis of almost all fields, in the sense that everything
+boils down to sets. Talk continuous functions: a function <span
+class="math inline"><em>f</em></span> that is continuous on each point
+in the domain. The domain you say? that is a set. <span
+class="math inline"><em>f</em></span> itself is a relation between sets.
+Continuity itself eventually becomes a statement about sets of points.
+So sets are important, and in this article I will discuss a problem
+concerning them. It goes:</p>
+<p>Given <span class="math inline"><em>X</em></span> and <span
+class="math inline"><em>A</em></span>, can you find <span
+class="math inline"><em>A</em>′</span> that is in bijection with <span
+class="math inline"><em>A</em></span>, such that <span
+class="math inline"><em>A</em> ∩ <em>X</em> = <em>ϕ</em></span>? Put
+simply, we wish to construct, using <span
+class="math inline"><em>A</em></span>, an <span
+class="math inline"><em>A</em>′</span> which contains the “same number
+of” elements as <span class="math inline"><em>A</em></span>, but which
+does not contain anything in <span
+class="math inline"><em>X</em></span>. Sounds quite simple, and in fact
+intuitive enough. Surely we can, but how precisely is the question.</p>
+<p>Let us start with some example. Let <span
+class="math inline"><em>X</em> = {1, 2, 3}</span> and <span
+class="math inline"><em>A</em> = {<em>a</em>, <em>b</em>}</span>. We
+need to fill <span class="math inline"><em>A</em>′ = {_, _}</span> with
+elements not in <span class="math inline"><em>X</em></span>. Simple
+enough: we can take <span
+class="math inline"><em>A</em>′ = {4, 5}</span>. But this is just a
+particular solution, we need a general solution. One way could be to
+somehow calculate the maximum (say <span
+class="math inline"><em>m</em></span>) of <span
+class="math inline"><em>X</em></span> and add <span
+class="math inline"><em>m</em> + 1, <em>m</em> + 2, …</span> according
+to however many elements there are in <span
+class="math inline"><em>A</em></span>. But this fails very easily,
+consider <span class="math inline"><em>X</em> = ℕ = {1, 2, …}</span>.
+<span class="math inline"><em>m</em></span> does not exist. Furthermore,
+how to calculate <span class="math inline"><em>m</em></span> if, say,
+<span class="math inline"><em>X</em></span> is <span
+class="math inline">{<em>a</em>, <em>b</em>}</span>? This leads us to
+start using what we have at hand, namely <span
+class="math inline"><em>A</em></span> and <span
+class="math inline"><em>X</em></span>, in order to construct <span
+class="math inline"><em>A</em>′</span>.</p>
+<p>We need elements that are in bijection with <span
+class="math inline"><em>A</em></span>, so why not use elements of <span
+class="math inline"><em>A</em></span> to construct <span
+class="math inline"><em>A</em>′</span>? Let us note that if <span
+class="math inline"><em>A</em></span> does not contain anything that is
+in <span class="math inline"><em>X</em></span>, we can simply take <span
+class="math inline"><em>A</em>′ = <em>A</em></span>. So the problem
+comes from the case when <span
+class="math inline"><em>A</em> ∩ <em>X</em> ≠ <em>ϕ</em></span>.
+Consider the set</p>
+<p><span
+class="math display"><em>A</em><sub>1</sub> = {{<em>a</em>} : <em>a</em> ∈ <em>A</em>}.</span></p>
+<p>If <span class="math inline"><em>A</em> = {1, 2}</span>, then this
+set becomes <span class="math inline">{{1}, {2}}</span>. <span
+class="math inline"><em>A</em> ∩ <em>X</em></span> need not be empty so
+we cannot use <span class="math inline"><em>A</em>′ = <em>A</em></span>,
+but can we use <span
+class="math inline"><em>A</em>′ = <em>A</em><sub>1</sub></span>? Well,
+no. Consider the following setting:</p>
+<p><span
+class="math display"><em>X</em> = {1, {1}},  <em>A</em> = {1},  <em>A</em><sub>1</sub> = {{1}}.</span></p>
+<p>Clearly <span class="math inline"><em>A</em></span> contains 1 that
+is in <span class="math inline"><em>X</em></span>, but <span
+class="math inline"><em>X</em></span> also contains <span
+class="math inline">{1}</span> so <span
+class="math inline"><em>A</em><sub>1</sub></span> becomes an invalid
+choice. We really have no restriction on <span
+class="math inline"><em>X</em></span>, it can contain <em>anything</em>
+that can be contained in a set: namely everything. For the same reason,
+things like</p>
+<p><span
+class="math display"><em>A</em><sub>2</sub> = {(<em>a</em>, 0) : <em>a</em> ∈ <em>A</em>}</span></p>
+<p>fail as well. Take <span
+class="math inline"><em>X</em> = {0, (0, 0)}</span> and <span
+class="math inline"><em>A</em> = {0}</span>. Rather than tupling up
+<span class="math inline"><em>a</em></span>’s with 0, we may wish to
+tuple them with something that is NOT in <span
+class="math inline"><em>X</em></span>, say <span
+class="math inline"><em>b</em></span>, so that it becomes</p>
+<p><span
+class="math display"><em>A</em><sub>3</sub> = {(<em>a</em>, <em>b</em>) : <em>a</em> ∈ <em>A</em>},</span></p>
+<p>but even that does not work. Take <span
+class="math inline"><em>X</em> = {1, (1, <em>b</em>)}</span> and <span
+class="math inline"><em>A</em> = {1}</span>. <span
+class="math inline"><em>X</em></span> doesn’t contain <span
+class="math inline"><em>b</em></span> but it can very well contain <span
+class="math inline">(1, <em>b</em>)</span>.</p>
+<p>Nothing has worked so far. Now I present my best solution which I
+believe works out. I present a fact first: a set <span
+class="math inline"><em>X</em></span> cannot contain itself. For
+otherwise, if we consider the simplest case of <span
+class="math inline"><em>X</em> = {<em>X</em>}</span> and if we were to
+write out <span class="math inline"><em>X</em></span>, we would go <span
+class="math display">$$
+\begin{aligned}
+X&amp;=\{X\} \\
+&amp;=\{\{X\}\}\\
+&amp;=\{\{\{X\}\}\}\\
+&amp;=\;\vdots
+\end{aligned}
+$$</span> which starts a miserable endless loop, indicating that <span
+class="math inline"><em>X</em></span> is not really something legal. In
+simple words, <span class="math inline"><em>X</em></span> cannot be
+defined in its own terms. This is equivalent to defining</p>
+<p><span
+class="math display"><em>f</em>(<em>x</em>) := <em>g</em>(<em>x</em>),   <em>g</em>(<em>x</em>) := <em>f</em>(<em>x</em>)</span></p>
+<p>so that <span class="math inline"><em>f</em>(0)</span> starts an
+endless loop. Hence, we finally have something that can NOT belong to
+<span class="math inline"><em>X</em></span>: itself. We use (exploit)
+this fact to construct our <span class="math inline"><em>A</em>′</span>.
+We can actually extend this idea as follows: let <span
+class="math inline"><em>X</em></span> be a set, then any expression
+explicitly containing <span class="math inline"><em>X</em></span> cannot
+belong to <span class="math inline"><em>X</em></span>. Therefore, any
+set, tuple, sum, product, or anything else that explicitly contains
+<span class="math inline"><em>X</em></span> will never appear in <span
+class="math inline"><em>X</em></span>. These are standing mathematical
+facts (read more at <span
+class="math inline">⟨</span><a href="https://math.stackexchange.com/questions/1046863/how-can-a-set-contain-itself" target="_blank">How
+can a set contain itself?</a><span class="math inline">⟩</span>). In
+general, if <span class="math inline"><em>B</em></span> belongs to <span
+class="math inline"><em>A</em></span>, then <span
+class="math inline"><em>A</em></span> cannot belong to <span
+class="math inline"><em>B</em></span>. Hence, we finally construct</p>
+<p><span
+class="math display"><em>A</em>′ = {{<em>a</em>, <em>X</em>} : <em>a</em> ∈ <em>A</em>}</span></p>
+<p>which essentially “tags” <span class="math inline"><em>X</em></span>
+with each <span class="math inline"><em>a</em></span>. <span
+class="math inline"><em>A</em>′</span> clearly has a bijection with
+<span class="math inline"><em>A</em></span> via the map <span
+class="math inline"><em>a</em> ↦ {<em>a</em>, <em>X</em>}</span>, and
+nothing in <span class="math inline"><em>A</em>′</span> can ever belong
+to <span class="math inline"><em>X</em></span>. As as example, we have
+if <span class="math inline"><em>X</em> = {1, 2, 3}</span> and <span
+class="math inline"><em>A</em> = {1, 2}</span> then <span
+class="math inline"><em>A</em>′ = {{1, <em>X</em>}, {2, <em>X</em>}}</span>.
+We could totally have something like <span
+class="math inline"><em>A</em>′ = {<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>}</span>
+which merely subscripts each <span class="math inline"><em>a</em></span>
+in <span class="math inline"><em>A</em></span>, to <span
+class="math inline"><em>X</em></span>. In this case, we will have <span
+class="math inline"><em>A</em>′ = {{1, 2, 3}<sub>1</sub>, {1, 2, 3}<sub>2</sub>}</span>
+in expanded form. Something like <span
+class="math inline"><em>A</em>′ = {1 + <em>X</em>, 2 + <em>X</em>}</span>
+could also totally work, where we don’t define the addition, and only
+use <span class="math inline">1 + <em>X</em></span> as a notation.</p>
+<p>To go one step further, if the requirement was exhibiting elements
+that are neither in <span class="math inline"><em>X</em></span> nor in
+<span class="math inline"><em>A</em></span>, nothing stops us from using
+something like</p>
+<p><span
+class="math display"><em>A</em>′ = {{<em>a</em>, <em>A</em>, <em>X</em>} : <em>a</em> ∈ <em>A</em>}</span></p>
+<p>so that none of the 3-tuples can belong to <span
+class="math inline"><em>A</em></span> or <span
+class="math inline"><em>X</em></span>, using the same reason of circular
+definition.</p>
+				<br><br><hr>
+				<p>
+				Thanks for reading. Return to see <a href="/pages/blog.html">all blog posts,</a> or to the <a href="/index.html">home page.</a>
+				</p>
+			</section>
+		</main>
+		<footer>Copyright &copy; 2025&ndash;26, Naman T.</footer>
+	</body>
+</html>
