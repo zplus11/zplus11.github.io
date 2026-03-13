@@ -66,7 +66,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 			</section>
 			<section class="blog__post">
 				<h1>The least confusing set theory problem</h1>
-				<p><i>12 March, 2026</i></p>
+				<p><i>13 March, 2026</i></p>
 				<hr><br><br>
 				<p>As much confusing as it gets, set theory is crucial in mathematics:
 it forms the basis of almost all fields, in the sense that everything
@@ -81,15 +81,20 @@ concerning them. It goes:</p>
 class="math inline"><em>A</em></span>, can you find <span
 class="math inline"><em>A</em>′</span> that is in bijection with <span
 class="math inline"><em>A</em></span>, such that <span
-class="math inline"><em>A</em> ∩ <em>X</em> = <em>ϕ</em></span>? Put
-simply, we wish to construct, using <span
+class="math inline"><em>A</em>′ ∩ <em>X</em> = <em>ϕ</em></span>?</p>
+<p>Put simply, we wish to construct, using <span
 class="math inline"><em>A</em></span>, an <span
 class="math inline"><em>A</em>′</span> which contains the “same number
 of” elements as <span class="math inline"><em>A</em></span>, but which
 does not contain anything in <span
 class="math inline"><em>X</em></span>. Sounds quite simple, and in fact
-intuitive enough. Surely we can, but how precisely is the question.</p>
-<p>Let us start with some example. Let <span
+intuitive enough. Surely we can, but how precisely is the question. This
+article is actually based on a class discussion, and the question
+appears in the proof of <em>Stone–Cech compactification</em> theorem,
+done in the course of General Topology taught by
+<a href="https://sites.google.com/view/nagarwal/home" target="_blank">Prof. Nikita
+Agarwal.</a></p>
+<p>Now, let us start with an example. Let <span
 class="math inline"><em>X</em> = {1, 2, 3}</span> and <span
 class="math inline"><em>A</em> = {<em>a</em>, <em>b</em>}</span>. We
 need to fill <span class="math inline"><em>A</em>′ = {_, _}</span> with
@@ -159,7 +164,8 @@ class="math inline"><em>A</em> = {1}</span>. <span
 class="math inline"><em>X</em></span> doesn’t contain <span
 class="math inline"><em>b</em></span> but it can very well contain <span
 class="math inline">(1, <em>b</em>)</span>.</p>
-<p>Nothing has worked so far. Now I present my best solution which I
+<p>Nothing has worked so far (see <strong>Alternate
+construction</strong> below). Now I present my best solution which I
 believe works out. I present a fact first: a set <span
 class="math inline"><em>X</em></span> cannot contain itself. For
 otherwise, if we consider the simplest case of <span
@@ -189,33 +195,36 @@ belong to <span class="math inline"><em>X</em></span>. Therefore, any
 set, tuple, sum, product, or anything else that explicitly contains
 <span class="math inline"><em>X</em></span> will never appear in <span
 class="math inline"><em>X</em></span>. These are standing mathematical
-facts (read more at <span
-class="math inline">⟨</span><a href="https://math.stackexchange.com/questions/1046863/how-can-a-set-contain-itself" target="_blank">How
-can a set contain itself?</a><span class="math inline">⟩</span>). In
-general, if <span class="math inline"><em>B</em></span> belongs to <span
+facts (read more at <span class="math inline">⟨</span><a
+href="https://math.stackexchange.com/questions/1046863/how-can-a-set-contain-itself"><strong><em>How
+can a set contain itself? <span
+class="math inline">↗</span></em></strong></a><span
+class="math inline">⟩</span>). In general, if <span
+class="math inline"><em>B</em></span> belongs to <span
 class="math inline"><em>A</em></span>, then <span
 class="math inline"><em>A</em></span> cannot belong to <span
 class="math inline"><em>B</em></span>. Hence, we finally construct</p>
 <p><span
-class="math display"><em>A</em>′ = {{<em>a</em>, <em>X</em>} : <em>a</em> ∈ <em>A</em>}</span></p>
+class="math display"><em>A</em><sub>4</sub> = {{<em>a</em>, <em>X</em>} : <em>a</em> ∈ <em>A</em>}</span></p>
 <p>which essentially “tags” <span class="math inline"><em>X</em></span>
 with each <span class="math inline"><em>a</em></span>. <span
-class="math inline"><em>A</em>′</span> clearly has a bijection with
-<span class="math inline"><em>A</em></span> via the map <span
-class="math inline"><em>a</em> ↦ {<em>a</em>, <em>X</em>}</span>, and
-nothing in <span class="math inline"><em>A</em>′</span> can ever belong
-to <span class="math inline"><em>X</em></span>. As as example, we have
-if <span class="math inline"><em>X</em> = {1, 2, 3}</span> and <span
+class="math inline"><em>A</em><sub>4</sub></span> clearly has a
+bijection with <span class="math inline"><em>A</em></span> via the map
+<span class="math inline"><em>a</em> ↦ {<em>a</em>, <em>X</em>}</span>,
+and nothing in <span class="math inline"><em>A</em><sub>4</sub></span>
+can ever belong to <span class="math inline"><em>X</em></span>. As as
+example, we have if <span
+class="math inline"><em>X</em> = {1, 2, 3}</span> and <span
 class="math inline"><em>A</em> = {1, 2}</span> then <span
-class="math inline"><em>A</em>′ = {{1, <em>X</em>}, {2, <em>X</em>}}</span>.
+class="math inline"><em>A</em><sub>4</sub> = {{1, <em>X</em>}, {2, <em>X</em>}}</span>.
 We could totally have something like <span
-class="math inline"><em>A</em>′ = {<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>}</span>
+class="math inline"><em>A</em><sub>4</sub> = {<em>X</em><sub>1</sub>, <em>X</em><sub>2</sub>}</span>
 which merely subscripts each <span class="math inline"><em>a</em></span>
 in <span class="math inline"><em>A</em></span>, to <span
 class="math inline"><em>X</em></span>. In this case, we will have <span
-class="math inline"><em>A</em>′ = {{1, 2, 3}<sub>1</sub>, {1, 2, 3}<sub>2</sub>}</span>
+class="math inline"><em>A</em><sub>4</sub> = {{1, 2, 3}<sub>1</sub>, {1, 2, 3}<sub>2</sub>}</span>
 in expanded form. Something like <span
-class="math inline"><em>A</em>′ = {1 + <em>X</em>, 2 + <em>X</em>}</span>
+class="math inline"><em>A</em><sub>4</sub> = {1 + <em>X</em>, 2 + <em>X</em>}</span>
 could also totally work, where we don’t define the addition, and only
 use <span class="math inline">1 + <em>X</em></span> as a notation.</p>
 <p>To go one step further, if the requirement was exhibiting elements
@@ -223,11 +232,61 @@ that are neither in <span class="math inline"><em>X</em></span> nor in
 <span class="math inline"><em>A</em></span>, nothing stops us from using
 something like</p>
 <p><span
-class="math display"><em>A</em>′ = {{<em>a</em>, <em>A</em>, <em>X</em>} : <em>a</em> ∈ <em>A</em>}</span></p>
+class="math display"><em>A</em><sub>4</sub> = {{<em>a</em>, <em>A</em>, <em>X</em>} : <em>a</em> ∈ <em>A</em>}</span></p>
 <p>so that none of the 3-tuples can belong to <span
 class="math inline"><em>A</em></span> or <span
 class="math inline"><em>X</em></span>, using the same reason of circular
 definition.</p>
+<h2 id="alternate-construction">Alternate construction</h2>
+<p>The candidates <span
+class="math inline"><em>A</em><sub>1</sub></span>, <span
+class="math inline"><em>A</em><sub>2</sub></span>, <span
+class="math inline"><em>A</em><sub>3</sub></span> were proposed during
+the lecture itself. I came up with <span
+class="math inline"><em>A</em><sub>4</sub></span> above and shared the
+idea with my professor, subsequent to which she proposed the following
+alternate construction: let <span class="math inline"><em>T</em></span>
+be the set of all 2-tuples appearing in <span
+class="math inline"><em>X</em></span>, and let <span
+class="math inline"><em>S</em></span> be <span
+class="math inline">{<em>y</em> : (<em>x</em>, <em>y</em>) ∈ <em>T</em>}</span>.
+Then, choose a <span class="math inline"><em>z</em></span> outside of
+<span class="math inline"><em>S</em></span>. If <span
+class="math inline"><em>S</em></span> happens to be empty, then <span
+class="math inline"><em>z</em></span> can be anything. Finally, we may
+define</p>
+<p><span
+class="math display"><em>A</em><sub>3b</sub> = {(<em>a</em>, <em>z</em>) : <em>a</em> ∈ <em>A</em>}.</span></p>
+<p>Clearly <span class="math inline"><em>A</em></span> is in bijection
+with <span class="math inline"><em>A</em><sub>3b</sub></span>. Also,
+anything in <span class="math inline"><em>A</em><sub>3b</sub></span> is
+a 2-tuple having <span class="math inline"><em>z</em></span> at the
+second ordinate, and by design no such thing belongs to <span
+class="math inline"><em>X</em></span>. Hence <span
+class="math inline"><em>A</em><sub>3b</sub> ∩ <em>X</em> = <em>ϕ</em></span>,
+so that <span class="math inline"><em>A</em><sub>3b</sub></span> is also
+a possible solution!</p>
+<h2 id="end-note">End note</h2>
+<p>Both solutions, namely <span
+class="math inline"><em>A</em><sub>4</sub></span> and <span
+class="math inline"><em>A</em><sub>3b</sub></span>, reflect two
+different mathematical philosophies. The distinctive feature of <span
+class="math inline"><em>A</em><sub>4</sub></span> is that its
+construction depends only on <span
+class="math inline"><em>A</em></span>; the set <span
+class="math inline"><em>X</em></span> plays no role and may be
+arbitrary. In this sense, <span
+class="math inline"><em>A</em><sub>4</sub></span> acts as a genuinely
+general solution, since it works uniformly for every possible choice of
+<span class="math inline"><em>X</em></span> without any further
+arragements required. By contrast, <span
+class="math inline"><em>A</em><sub>3b</sub></span> arises from a more
+targeted line of reasoning. It is obtained by identifying precisely why
+<span class="math inline"><em>A</em><sub>3</sub></span> fails and then
+modifying the construction just enough to correct that defect. While the
+former approach may be “elegant,” the latter demonstrates an equally
+important aspect of mathematical reasoning: identifying the exact error
+and minimally repairing it.</p>
 				<br><br><hr>
 				<p>
 				Thanks for reading. Return to see <a href="/pages/blog.html">all blog posts,</a> or to the <a href="/index.html">home page.</a>
