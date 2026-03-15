@@ -107,6 +107,4 @@ if you crumble a piece of paper and place it atop itself, and think of the image
 
 The theorem holds for any compact convex subspace of $\mathbb R^n$. For example, it applies to the solid 3-ball $D^3$. A classical illustration is that if you stir a glass of water, there is at least one point in the fluid that ends up exactly where it started.
 
----
-
 If you enjoyed reading this blog post, I am glad. The code is available at [bfp.nb](/resources/mm/bfp.nb).

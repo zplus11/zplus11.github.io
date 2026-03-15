@@ -92,3 +92,4 @@ blockquote { border-left: var(--grey) solid 2px; font-style: italic; color: var(
 	.lat { display: flex }
 	.lat img { max-width: 60%; margin-inline: auto; margin-left: 2rem }
 }
+.blog__content > *:last-child::after { font-weight: bold; content: "\25CB"; float: right }
