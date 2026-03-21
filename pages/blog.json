@@ -1,5 +1,12 @@
 [
 	{
+		"title": "Derivatives in multivariate calculus",
+		"date": "21 March, 2026",
+		"desc": "Second article on multivariate calculus showcasing various also visualisations that I created.",
+		"url": "derivatives-in-multivariate-calculus.html",
+		"tags": ["maths", "calculus"]
+	},
+	{
 		"title": "The least confusing set theory problem",
 		"date": "13 March, 2026",
 		"desc": "Sets are confusing, though they form the basis of most of mathematics. In this post I discuss an problem concerning them.",

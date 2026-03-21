@@ -1,6 +1,6 @@
 ---
-title: Derivatives in Multivariate Calculus
-date: XX August, 2025
+title: Derivatives in multivariate calculus
+date: 21 March, 2026
 ---
 
 > *Shall we then err in regarding that as the true science of
@@ -89,7 +89,13 @@ Similarly, the other parts can be solved. It is worth noting that the mixed part
 A broader type of derivatives are the directional derivatives, which are calculated for a function in a given direction. In this sense, $$\pd fx$$ is the derivative of $f$ along the vector $1\hat i + 0 \hat j$. In extension to that, directional derivative along the vector $\vec v=a\hat i + b \hat j$ would be the rate of change in $f$ in the direction of this vector. It is denoted by $\dir vf$. In figure \ref{dirderiv_visualised}, the plane goes in the direction of $\vec v$, and the red coloured curve is its intersection with $f$. Then, $\dir vf$ is slope of the tangent on this curve at the concerned point.
 
 ![](img/dd1.png)
-![Figure 2: Directional derivative.](img/dd1.png)
+![Figure 2: Directional derivative.](img/dd2.png)
+
+In this sense, we may note that the partial derivative $$\pd fx$$ is nothing but directional derivative in the direction $\hat i$, for example. The mathematical definition of directional direction is as follows:
+
+$$
+\dir{a\hat i + b \hat j}f=\frac{f(x+ha,y+hb)-f(x,y)}{h}.
+$$
 
 ---
 

@@ -3,6 +3,8 @@ title: The least confusing set theory problem
 date: 13 March, 2026
 ---
 
+Copyright (c) all rights reserved.
+
 As much confusing as it gets, set theory is crucial in mathematics: it forms the basis of almost all fields, in the sense that everything boils down to sets. Talk continuous functions: a function $f$ that is continuous on each point in the domain. The domain you say? that is a set. $f$ itself is a relation between sets. Continuity itself eventually becomes a statement about sets of points. So sets are important, and in this article I will discuss a problem concerning them. It goes:
 
 Given $X$ and $A$, can you find $A'$ that is in bijection with $A$, such that $A'\cap X=\phi$?
