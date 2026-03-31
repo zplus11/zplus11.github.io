@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Epidemiology</title>
+		<link rel="stylesheet" href="/style.css">
+
+		<style>
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #bc6433; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+		</style>
+
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+	</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-85NBEPVK2H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-85NBEPVK2H');
+</script>
+	<body>
+		<nav>
+			<img class="pfp" onclick="location.href='/'" src="/resources/profiles/Portrait.png" alt="pfp">
+			<ul>
+				<li><a href="/pages/blog.html">My blog</a></li>
+				<li><a href="/pages/mgroups.html">MGroups</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<section>
+				<p class=>
+				<a href="/pages/blog.html">Back</a>
+				</p>
+			</section>
+			<section class="blog__post">
+				<div class="blog__content">
+				<h1>Epidemiology</h1>
+				<p><i>22 March, 2026</i></p>
+				<hr><br><br>
+				<p>In <a href="/pages/posts/population-growth.html">Population
+Growth</a> I introduced a simple model for how populations evolve over
+time. But real-world systems are rarely that simple. In this post, I
+shift focus to epidemiology, where we model how diseases spread using
+the SIR framework and a very natural extension of it.</p>
+<h2 id="sir-model">SIR model</h2>
+<p>SIR model governs the spread of disease in a population containing
+<span class="math inline"><em>N</em></span> people. Categorise everyone
+into three groups: susceptible (S), infectives (I), and recovered (R).
+The flow is as follows:</p>
+<pre><code>-----      ß     -----      a     -----
+| S |  --------&gt; | I |  --------&gt; | R |
+-----            -----            -----</code></pre>
+<p>that is, people move from S into I at a rate of <span
+class="math inline"><em>β</em></span>, and from I into R at a rate of
+<span class="math inline"><em>γ</em></span>. These are called the rates
+of infection and recovery, respectively. In differential equations, we
+write</p>
+<p><span
+class="math display"><em>S</em>′ = −<em>β</em><em>S</em><em>I</em>,   <em>I</em>′ = <em>β</em><em>S</em><em>I</em> − <em>α</em><em>I</em>,   <em>R</em>′ = <em>α</em><em>I</em>.</span></p>
+<p><span class="math inline"><em>β</em></span> and <span
+class="math inline"><em>α</em></span> are usually predicted using data.
+The total population <span class="math inline"><em>N</em></span> is
+assumed to be constant, that is <span
+class="math inline"><em>N</em> = <em>S</em> + <em>I</em> + <em>R</em></span>
+at all points in time. A central parameter is the reproduction number
+which captures the balance between infection and recovery. For SIR model
+we have <span
+class="math inline"><em>R</em><sub>0</sub> = <em>β</em>/<em>γ</em></span>.
+If <span class="math inline"><em>β</em> &gt; <em>γ</em></span>, the
+infection rises and if <span
+class="math inline"><em>γ</em> &lt; <em>β</em></span>, it dies out.
+Solve and plot the system of equations to get:</p>
+<p><img src="img/sirs.png" alt="Susceptibles" /> <img src="img/siri.png"
+alt="Infectives" /> <img src="img/sirr.png" alt="Recovered" /></p>
+<p>For any value of <span class="math inline"><em>β</em></span> and
+<span class="math inline"><em>γ</em></span>, the dynamics look
+monotonous. Infection rises upto a point, and then starts decreasing to
+eventually vanish. However, in real life that is not always the case. We
+show some examples of actual infection trajectories in some countries
+below:</p>
+<figure>
+<img src="img/countries.png"
+alt="COVID infection in various countries (source: John Hopkins University)." />
+<figcaption aria-hidden="true">COVID infection in various countries
+(source: John Hopkins University).</figcaption>
+</figure>
+<p>Various models exist in the literature regarding disease spread, but
+one from an exploratory point of view that has caught my attention is
+[<a href="https://doi.org/10.1371/journal.pone.0265815">1</a>]. They
+incorporate several new additions to the system of equations discussed
+above, and their model is as follows:</p>
+<p><span class="math display">$$\begin{aligned}
+\frac{dS}{dt} &amp;= -\beta S(t) I(t) + f(t), \\
+\frac{dI}{dt} &amp;= \beta S(t) I(t) - \gamma I(t) + g(t), \\
+\frac{dR}{dt} &amp;= \gamma I(t) + h(t).
+\end{aligned}$$</span></p>
+<p>where <span class="math inline"><em>f</em>(<em>t</em>)</span> is
+people moving in/out without infection, <span
+class="math inline"><em>g</em>(<em>t</em>)</span> is infections coming
+from outside, <span class="math inline"><em>g</em>(<em>t</em>)</span> is
+recovered returning from outside. To avoid over-fitting, the functions
+<span class="math inline"><em>f</em>, <em>g</em>, <em>h</em></span> are
+given the following forms:</p>
+<p><span class="math display">$$\begin{aligned}
+f(t) &amp;= \lambda_1 t + \lambda_2, \\
+g(t) &amp;= a_1 b_1 \cos(b_1 t + c_1)
+     + a_2 b_2 \cos(b_2 t + c_2)
+     + a_3 b_3 \cos(b_3 t + c_3), \\
+h(t) &amp;= p_1 t + p_2.
+\end{aligned}$$</span></p>
+<h2 id="references">References</h2>
+<p>[1] AlQadi H, Bani-Yaghoub M (2022) Incorporating global dynamics to
+improve the accuracy of disease models: Example of a COVID-19 SIR model.
+PLOS ONE 17(4): e0265815. doi: <a
+href="https://doi.org/10.1371/journal.pone.0265815">10.1371/journal.pone.0265815</a></p>
+				</div>
+				<br><br><hr>
+				<p>
+				Thanks for reading. Return to see <a href="/pages/blog.html">all blog posts,</a> or to the <a href="/index.html">home page.</a>
+				</p>
+			</section>
+		</main>
+		<footer>Copyright &copy; 2025&ndash;26, Naman T.</footer>
+	</body>
+</html>

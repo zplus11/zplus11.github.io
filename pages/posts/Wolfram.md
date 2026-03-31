@@ -13,7 +13,8 @@ This blog post will serve the purpose of bringing all of my contributions to the
 
 #### Paclets
 
-- [MGroups](https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups)
+- [GERF](https://resources.wolframcloud.com/PacletRepository/resources/Taggar/GERF/) - implementation of GERF expansion technique for solving integral order NLPDEs
+- [MGroups](https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups) - pedagogy-oriented computation group theory in Mathematica
 
 #### Functions
 
