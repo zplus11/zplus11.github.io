@@ -1,5 +1,12 @@
 [
 	{
+		"title": "Billiards",
+		"date": "06 April, 2026",
+		"desc": "How the ball moves &mdash; visualised.",
+		"url": "bill.html",
+		"tags": ["maths", "fun"]
+	},
+	{
 		"title": "Derivatives in multivariate calculus",
 		"date": "21 March, 2026",
 		"desc": "Second article on multivariate calculus showcasing various also visualisations that I created.",
@@ -18,7 +25,7 @@
 		"date": "01 March, 2026",
 		"desc": "In this post I talk about the Brouwer's fixed point theorem for the closed disk.",
 		"url": "brouwer.html",
-		"tags": ["maths"]
+		"tags": ["maths", "fun"]
 	},
 	{
 		"title": "Population growth",
@@ -39,7 +46,7 @@
 		"date": "26 October, 2025",
 		"desc": "Fun with interpolation.",
 		"url": "interpolation.html",
-		"tags": ["wolfram", "maths"]
+		"tags": ["wolfram", "maths", "fun"]
 	},
 	{
 		"title": "Dihedrals with Mathematica",
@@ -74,7 +81,7 @@
 		"date": "22 March, 2025",
 		"desc": "I fitted a logistics growth model to the rank vs. marks dynamics in IITJAM 2025 Examination.",
 		"url": "JAM25-Logistics.html",
-		"tags": ["maths"]
+		"tags": ["maths", "fun"]
 	},
 	{
 		"title": "Salaries of Professors",

@@ -1,0 +1,163 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 14.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[      5599,        153]
+NotebookOptionsPosition[      5016,        135]
+NotebookOutlinePosition[      5419,        151]
+CellTagsIndexPosition[      5376,        148]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"f", "[", 
+   RowBox[{"u_", ",", "L_"}], "]"}], ":=", 
+  RowBox[{"L", "-", 
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     RowBox[{"Mod", "[", 
+      RowBox[{"u", ",", 
+       RowBox[{"2", "L"}]}], "]"}], "-", "L"}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"x", "[", 
+   RowBox[{"x0_", ",", "\[Theta]_", ",", "t_"}], "]"}], ":=", 
+  RowBox[{"f", "[", 
+   RowBox[{
+    RowBox[{"x0", "+", 
+     RowBox[{"t", " ", 
+      RowBox[{"Cos", "[", "\[Theta]", "]"}]}]}], ",", "2"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"y", "[", 
+   RowBox[{"y0_", ",", "\[Theta]_", ",", "t_"}], "]"}], ":=", 
+  RowBox[{"f", "[", 
+   RowBox[{
+    RowBox[{"y0", "+", 
+     RowBox[{"t", " ", 
+      RowBox[{"Sin", "[", "\[Theta]", "]"}]}]}], ",", "1"}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"pos", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x0_", ",", "y0_"}], "}"}], ",", "\[Theta]_"}], "]"}], "[", 
+   "t_", "]"}], ":=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "[", 
+     RowBox[{"x0", ",", "\[Theta]", ",", "t"}], "]"}], ",", 
+    RowBox[{"y", "[", 
+     RowBox[{"y0", ",", "\[Theta]", ",", "t"}], "]"}]}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.984450896100191*^9, 3.984450961725294*^9}, {
+  3.9844510000223045`*^9, 3.984451072593212*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"6f1865a2-990a-c04d-a90c-46cd88b842c1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"ParametricPlot", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"pos", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "0"}], "}"}], ",", 
+        RowBox[{"\[Pi]", "/", "3"}]}], "]"}], "[", "t", "]"}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "t0"}], "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Axes", "->", "False"}], ",", 
+     RowBox[{"PlotRange", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"0", ",", "2"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "1"}], "}"}]}], "}"}]}]}], "\[IndentingNewLine]", 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{"t0", ",", "0", ",", "100"}], "}"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.9844510811412487`*^9, 3.984451236489153*^9}, {
+  3.984451282477993*^9, 
+  3.984451285319462*^9}},ExpressionUUID->"085c48bf-2500-7844-875f-\
+e4a947bd1aed"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`t0$$ = 95., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`t0$$], 0, 100, ControlType -> Manipulator}}, 
+    Typeset`size$$ = {360., {87.13403309800196, 92.86596690199804}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = True, 
+    Typeset`keyframeActionsQ$$ = False, Typeset`keyframeList$$ = {}}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`t0$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$, Typeset`keyframeActionsQ$$, 
+        Typeset`keyframeList$$}, "Body" :> ParametricPlot[
+        $CellContext`pos[{0, 0}, Pi/3][$CellContext`t], {$CellContext`t, 
+         0, $CellContext`t0$$}, Axes -> False, PlotRange -> {{0, 2}, {0, 1}}],
+       "Specifications" :> {{$CellContext`t0$$, 0, 100}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{402.6, {142.71487294175196`, 148.44680674574803`}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.9844510998959503`*^9, 3.984451236880844*^9}},
+ CellLabel->"Out[27]=",ExpressionUUID->"277fe295-12fc-174a-83ab-6c857ef9e103"]
+}, Open  ]]
+},
+WindowSize->{1024.5, 507.75},
+WindowMargins->{{-6, Automatic}, {Automatic, -6}},
+FrontEndVersion->"14.3 for Microsoft Windows (64-bit) (July 8, 2025)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"2ef3ea0f-617c-7d45-a75e-57542db89a66"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[554, 20, 1401, 41, 85, "Input",ExpressionUUID->"6f1865a2-990a-c04d-a90c-46cd88b842c1"],
+Cell[CellGroupData[{
+Cell[1980, 65, 1078, 29, 161, "Input",ExpressionUUID->"085c48bf-2500-7844-875f-e4a947bd1aed"],
+Cell[3061, 96, 1939, 36, 308, "Output",ExpressionUUID->"277fe295-12fc-174a-83ab-6c857ef9e103"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

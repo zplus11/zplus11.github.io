@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Billiards</title>
+		<link rel="stylesheet" href="/style.css">
+
+		<style>
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #bc6433; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+		</style>
+
+		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
+	</head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-85NBEPVK2H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-85NBEPVK2H');
+</script>
+	<body>
+		<nav>
+			<img class="pfp" onclick="location.href='/'" src="/resources/profiles/Portrait.png" alt="pfp">
+			<ul>
+				<li><a href="/pages/blog.html">My blog</a></li>
+				<li><a href="/pages/mgroups.html">MGroups</a></li>
+			</ul>
+		</nav>
+
+		<main>
+			<section>
+				<p class=>
+				<a href="/pages/blog.html">Back</a>
+				</p>
+			</section>
+			<section class="blog__post">
+				<div class="blog__content">
+				<h1>Billiards</h1>
+				<p><i>06 April, 2026</i></p>
+				<hr><br><br>
+				<figure>
+<img src="img/table.jpeg"
+alt="Billiards table. Source: 8 Ball Pool game by Miniclip" />
+<figcaption aria-hidden="true">Billiards table. Source: 8 Ball Pool game
+by Miniclip</figcaption>
+</figure>
+<p>The modulus function <span
+class="math inline"><em>x</em> ↦ |<em>x</em>|</span> does more than just
+returning the absolute value of a number. When plotted, its graph
+represents sort of (exactly) a reflection:</p>
+<figure>
+<img src="img/modf.png" alt="Graph of modulus function." />
+<figcaption aria-hidden="true">Graph of modulus function.</figcaption>
+</figure>
+<p>This idea can be generalised in order to model the path that a ball
+of billiards takes in an ideal (no friction, etc) environment. Starting
+with a single dimension, suppose we have an interval of length <span
+class="math inline"><em>L</em></span>:</p>
+<pre><code>0 ------------------------- L</code></pre>
+<p>To trace reflections along this line, as such:</p>
+<pre><code> 0 -----------&gt;------------ L
+                          |
+2L -----------&lt;------------ L
+   |
+2L -----------&gt;------------ 3L
+                          |
+        ... --&lt;------------ 3L</code></pre>
+<p>a simple function such as <span
+class="math inline"><em>f</em> = <em>t</em> ↦ <em>L</em> − |(<em>t</em> mod  2<em>L</em>) − <em>L</em>|</span>
+can do, so that when <span class="math inline"><em>L</em> = 1</span> we
+notice</p>
+<ul>
+<li><span class="math inline">0 ↦ 1 − |0 − 1| = 0</span></li>
+<li><span
+class="math inline">1/2 ↦ 1 − |1/2 − 1| = 1 − 1/2 = 1/2</span></li>
+<li><span
+class="math inline">3/2 ↦ 1 − |3/2 − 1| = 1 − 1/2 = 1/2</span></li>
+<li><span class="math inline">2 ↦ 1 − |2 − 1| = 1 − 1 = 0</span></li>
+</ul>
+<p>which is the required behaviour. Now, the only thing that remains is
+to do the same thing for 2 separate dimensions and combine them. Suppose
+the starting point on the billiards table is <span
+class="math inline">(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</span>
+and the movement begins in the direction of angle <span
+class="math inline"><em>θ</em></span>. Let the billiards table be of
+length <span class="math inline"><em>a</em></span> and width <span
+class="math inline"><em>b</em></span>. Consider the parametric straight
+lines</p>
+<p><span
+class="math display"><em>x</em>(<em>t</em>) = <em>x</em><sub>0</sub> + <em>t</em>cos <em>θ</em></span></p>
+<p>and</p>
+<p><span
+class="math display"><em>y</em>(<em>t</em>) = <em>y</em><sub>0</sub> + <em>t</em>sin <em>θ</em></span></p>
+<p>in the <span class="math inline"><em>x</em><em>y</em></span>-plane.
+We apply <span class="math inline"><em>f</em></span> on both of these to
+obtain <span
+class="math inline"><em>X</em>(<em>t</em>) = <em>f</em>(<em>x</em>(<em>t</em>), <em>a</em>)</span>
+and <span
+class="math inline"><em>Y</em>(<em>t</em>) = <em>f</em>(<em>y</em>(<em>t</em>), <em>b</em>)</span>.
+That’s it. Now, suppose <span
+class="math inline">(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>) = (0, 0)</span>,
+<span class="math inline"><em>θ</em> = 0</span> and <span
+class="math inline"><em>t</em> ∈ [0, 20]</span>, the trajectory is as
+follows:</p>
+<figure>
+<img src="img/bill1.png" alt="(x_0,y_0)=(0,0) and \theta=0." />
+<figcaption aria-hidden="true"><span
+class="math inline">(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>) = (0, 0)</span>
+and <span class="math inline"><em>θ</em> = 0</span>.</figcaption>
+</figure>
+<p>Not very exciting! Let us try to change the angle a little:</p>
+<figure>
+<img src="img/bill2.png" alt="(x_0,y_0)=(0,0) and \theta=\pi/3." />
+<figcaption aria-hidden="true"><span
+class="math inline">(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>) = (0, 0)</span>
+and <span
+class="math inline"><em>θ</em> = <em>π</em>/3</span>.</figcaption>
+</figure>
+<p>When <span
+class="math inline"><em>b</em>/<em>a</em>tan <em>θ</em></span> is
+rational, say 1/2, after finite number of reflections the path repeats:
+we need <span class="math inline"><em>θ</em></span> such that <span
+class="math inline">2tan <em>θ</em> = 1/2</span>. <span
+class="math inline"><em>θ</em> = tan<sup>−1</sup>(1/4)</span> works:</p>
+<figure>
+<img src="img/bill3.png"
+alt="(x_0,y_0)=(0,0), \theta=tan^{-1}(1/4), t\in[0,100]." />
+<figcaption aria-hidden="true"><span
+class="math inline">(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>) = (0, 0)</span>,
+<span
+class="math inline"><em>θ</em> = <em>t</em><em>a</em><em>n</em><sup>−1</sup>(1/4)</span>,
+<span class="math inline"><em>t</em> ∈ [0, 100]</span>.</figcaption>
+</figure>
+<p>or</p>
+<figure>
+<img src="img/bill4.png"
+alt="(x_0,y_0)=(0,0), \theta=tan^{-1}(3/8), t\in[0,100]." />
+<figcaption aria-hidden="true"><span
+class="math inline">(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>) = (0, 0)</span>,
+<span
+class="math inline"><em>θ</em> = <em>t</em><em>a</em><em>n</em><sup>−1</sup>(3/8)</span>,
+<span class="math inline"><em>t</em> ∈ [0, 100]</span>.</figcaption>
+</figure>
+<p>whereas otherwise, the result is more interesting:</p>
+<figure>
+<img src="img/bill5.png"
+alt="(x_0,y_0)=(0,0), \theta=1, t\in[0,100]." />
+<figcaption aria-hidden="true"><span
+class="math inline">(<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>) = (0, 0)</span>,
+<span class="math inline"><em>θ</em> = 1</span>, <span
+class="math inline"><em>t</em> ∈ [0, 100]</span>.</figcaption>
+</figure>
+<p>If you liked this, the code is available in this mathematica
+notebook: <a href="/resources/mm/bill.nb">bill.nb</a>.</p>
+				</div>
+				<br><br><hr>
+				<p>
+				Thanks for reading. Return to see <a href="/pages/blog.html">all blog posts,</a> or to the <a href="/index.html">home page.</a>
+				</p>
+			</section>
+		</main>
+		<footer>Copyright &copy; 2025&ndash;26, Naman T.</footer>
+	</body>
+</html>
