@@ -6,6 +6,13 @@
 		<title>Derivatives in multivariate calculus</title>
 		<link rel="stylesheet" href="/style.css">
 
+<script>
+  window.MathJax = {
+    options: {
+      processHtmlClass: 'sidenote'
+    }
+  };
+</script>
 		<style>
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -78,17 +85,16 @@ furnishes, for its practical applications, methods of perfect
 generality? …</em></p>
 <p>— Boole</p>
 </blockquote>
-<h2 id="preface">Preface</h2>
-<p>This is the second article in the series “Some Notes on Multivariate
-Calculus,” based on the course I studied in 2024 taught by my professor
+<h2 id="rates-of-change">Rates of Change</h2>
+<p>In<span class="sidenote"><strong>Preface.</strong> This is the second
+article in the series “Some Notes on Multivariate Calculus,” based on
+the course I studied in 2024 taught by my professor
 <a href="https://sgtbkhalsadu.ac.in/academics/departments/Mathematics/faculty-detail/97/" target="_blank">Amarpreet
 ma’am.</a> It is largely due of her consistent encouragement and
 powerful motivation that these notes could be compiled in the form
 presented here. To read the first article, visit <a
-href="functions-of-multiple-variables.html">this page</a>.</p>
-<h2 id="rates-of-change">Rates of Change</h2>
-<p>In a one variable function <span
-class="math inline"><em>f</em></span> of <span
+href="functions-of-multiple-variables.html">this page</a>.</span> a one
+variable function <span class="math inline"><em>f</em></span> of <span
 class="math inline"><em>x</em></span>, the derivative is the rate of
 change in <span class="math inline"><em>f</em></span> with respect to
 <span class="math inline"><em>x</em></span>. For two variable functions
@@ -191,10 +197,10 @@ y)}{\Delta x} \\
 y^2\big)}}{\Delta x} \\
                  &amp;= -y.
 \end{aligned}$$</span></p>
-<p>Similarly, the other parts can be solved. It is worth noting that the
-mixed partials in this case will not be equal to each other. However,
-this does not violate the theorem on mixed partials equality since the
-function in question is not continuous.</p>
+<p>Similarly, the other parts can be solved.<span class="sidenote">It is
+worth noting that the mixed partials in this case will not be equal to
+each other. However, this does not violate the theorem on mixed partials
+equality since the function in question is not continuous.</span></p>
 <h2 id="directional-derivatives">Directional Derivatives</h2>
 <p>A broader type of derivatives are the directional derivatives, which
 are calculated for a function in a given direction. In this sense, <span
@@ -211,17 +217,18 @@ the plane goes in the direction of <span
 class="math inline"><em>v</em></span>, and the red coloured curve is its
 intersection with <span class="math inline"><em>f</em></span>. Then,
 <span class="math inline">𝒟<sub><em>v</em></sub><em>f</em></span> is
-slope of the tangent on this curve at the concerned point.</p>
-<p><img src="img/dd1.png" /> <img src="img/dd2.png"
-alt="Figure 2: Directional derivative." /></p>
-<p>In this sense, we may note that the partial derivative <span
+slope of the tangent on this curve at the concerned point.<span
+class="sidenote">In this sense of directional derivatives, we may note
+that the partial derivative <span
 class="math display">$$\frac{\partial^{} f}{\partial x^{}}$$</span> is
 nothing but directional derivative in the direction <span
-class="math inline"><em>î</em></span>, for example. The mathematical
-definition of directional direction is as follows:</p>
+class="math inline"><em>î</em></span>, for example.</span> The
+mathematical definition of directional direction is as follows:</p>
 <p><span class="math display">$$
 \mathcal D_{a\hat i + b \hat j}f=\frac{f(x+ha,y+hb)-f(x,y)}{h}.
 $$</span></p>
+<p><img src="img/dd1.png" /> <img src="img/dd2.png"
+alt="Figure 2: Directional derivative." /></p>
 <hr />
 <p>This is the second article in the series “Some Notes on Multivariate
 Calculus.” If you enjoyed reading it, I am glad. For any feedback or

@@ -9,11 +9,8 @@ In this post, I'll define a set of rules that simulate the operation of a dihedr
 $$\{r^0,r^1,\ldots,r^{n-1},s,rs,\ldots,r^{n-1}s\}.$$
 The operation among these elements is defined by the following set of rules: $r^0$ being the identity, for any $x$ we have $r^0x = xr^0=x$. Among all rotations, $r^ir^j = r^{(i+j)\bmod n}$ holds. Now, $s$ being the reflection along the axis oriented at 0 degrees, we have $s^2=r^0$. Finally, $sr^i=r^{n-i}s$.
 
-Using these rules, any product of elements in $D_n$ can be reduced to one of the elements of $D_n$ itself. For example,
-$$r^3sr^1=r^3r^{n-1}s=r^{3+n-1}s=r^2s.$$
-Our motive is to define these patterns in Mathematica so that such computations can be automatically done. For it, we will use the `**` symbol of Mathematica that stands for `NonCommutativeMultiply` so that $xy$ should not be confused for $yx$.
-
-We will denote a rotation $r^i$ by `Rot[r, i]` to secure more control over the operation, although it will be formatted as is. We also define $n=4$ during this experiment.
+Using these rules, any product of elements in $D_n$ can be reduced to one of the elements of $D_n$ itself.^[For example, $r^3sr^1=r^3r^{n-1}s=r^{3+n-1}s=r^2s.$]
+Our motive is to define these patterns in Mathematica so that such computations can be automatically done. For it, we will use the `**` symbol of Mathematica that stands for `NonCommutativeMultiply` so that $xy$ should not be confused for $yx$.^[We will denote a rotation $r^i$ by `Rot[r, i]` to secure more control over the operation, although it will be formatted as is. We also define $n=4$ during this experiment.] We set our context:
 
 ```mathematica
 ClearAll[Rot, r, s]

@@ -9,18 +9,13 @@ date: 17 July, 2025
 
 \def\index#1{}
 
-## Preface
-
-This is the first article in the series "Some Notes on Multivariate Calculus," based on the course I studied in 2024 taught by my professor <a href="https://sgtbkhalsadu.ac.in/academics/departments/Mathematics/faculty-detail/97/" target="_blank">Amarpreet ma'am.</a> It is largely due of her consistent encouragement and powerful motivation that these notes could be compiled in the form presented here.
-
 ## Introduction
 
-Calculus\index{calculus} is the study of small changes. Multivariate Calculus\index{multivariate calculus} is the study of small changes in functions of multiple variables, such as those defined from $\mathbb R^2$ to $\mathbb R$ by some definition that maps each $(x,y)$ in the domain set to its image given by $f(x,y)$. Every point in the domain (usually a subset of the $xy$-plane\index{$xy$-plane}; figure 1) gets mapped to a real number in $\mathbb R$, along the $z$-axis. Formally, we define the graph of $f(x,y)$\index{$f(x,y)$} to be the collection of all three tuples $(x,y,z)$ such that $(x,y)$ belongs to the domain of $f$ and $z=f(x,y)$. Hence the graph of $f(x,y)$ is a surface in $\mathbb R^3$ whose projection onto the $xy$-plane is the domain $D$.
+Calculus\index{calculus}^[This is the first article in the series "Some Notes on Multivariate Calculus," based on the course I studied in 2024 taught by my professor <a href="https://sgtbkhalsadu.ac.in/academics/departments/Mathematics/faculty-detail/97/" target="_blank">Amarpreet ma'am.</a> It is largely due of her consistent encouragement and powerful motivation that these notes could be compiled in the form presented here.] is the study of small changes. Multivariate Calculus\index{multivariate calculus} is the study of small changes in functions of multiple variables, such as those defined from $\mathbb R^2$ to $\mathbb R$ by some definition that maps each $(x,y)$ in the domain set to its image given by $f(x,y)$.^[For example, consider $f(x, y) = 10-x^2-y^2$ for every $(x, y) \in \mathbb R^2$.  Here $(0,0)$ gets mapped to $10-0^2-0^2 = 10$, $(1, 2)$ gets mapped to $10-1^2-2^2 = 5$, and so on.] Every point in the domain (usually a subset of the $xy$-plane\index{$xy$-plane}; figure 1) gets mapped to a real number in $\mathbb R$, along the $z$-axis. Formally, we define the graph of $f(x,y)$\index{$f(x,y)$} to be the collection of all three tuples $(x,y,z)$ such that $(x,y)$ belongs to the domain of $f$ and $z=f(x,y)$. Hence the graph of $f(x,y)$ is a surface in $\mathbb R^3$ whose projection onto the $xy$-plane is the domain $D$.
 
 ![Figure 1: Functions in one (top) and two (bottom) variables.](img/mvc1.png)
 
-For example, consider $f(x, y) = 10-x^2-y^2$ for every $(x, y) \in \mathbb R^2$.  Here $(0,0)$ gets mapped to $10-0^2-0^2 = 10$, $(1, 2)$ gets mapped to $10-1^2-2^2 = 5$, and so on.
-Along that line, for a constant $c$, the plane $z=c$ intersects the surface $z=f(x,y)$ at $f(x,y)=c$. Such an intersection is called the "trace\index{trace} of graph of $f$" in the plane $z=c$. And further, the level curve\index{Level curve} of $f$ at $c$ is the set of all points $(x,y)$ in the $xy$-plane that satisfy $f(x,y)=c$. In figure 2, the blue disk is trace whereas red disk is the level curve.
+Along that line, for a constant $c$, the plane $z=c$ intersects the surface $z=f(x,y)$ at $f(x,y)=c$.^[In figure 2, the blue disk is trace whereas red disk is the level curve.] Such an intersection is called the "trace\index{trace} of graph of $f$" in the plane $z=c$. And further, the level curve\index{Level curve} of $f$ at $c$ is the set of all points $(x,y)$ in the $xy$-plane that satisfy $f(x,y)=c$.
 
 ![Figure 2: Trace and level curves.](img/trace.png)
 
@@ -33,7 +28,7 @@ for $r$ being the certain distance and $(a,b)$ being the point at center. If the
 ![Figure 3: Open set in 2 dimensions.](img/openset2d.png)
 
 Furthering this discussion, a point is said to be an interior point of a set $S$ in $\mathbb R^2$ if some open disk\index{open disk} centered at that point is contained entirely in $S$.
-If the set $S$ is empty or if each of its points is an interior point, it is said to be open. A point is said to be a boundary point\index{boundary point} of $S$ if every open disk centered at the point contains at least one element that is in $S$ and at least one element that is not in $S$, and in fact, infinitely many such points. $S$ is said to be closed if it includes its boundary, i.e., if it includes all of its boundary points. By convention, the empty set and the universal set of this context --- $\mathbb R^2$ --- are both open as well as closed.
+If the set $S$ is empty or if each of its points is an interior point, it is said to be open. A point is said to be a boundary point\index{boundary point} of $S$ if every open disk centered at the point contains at least one element that is in $S$ and at least one element that is not in $S$, and in fact, infinitely many such points. $S$ is said to be closed if it includes its boundary, i.e., if it includes all of its boundary points. The empty set and the universal set (full space) are both open as well as closed.^[The reasons are interesting: a set is called open if every point in it has a neighbourhood contained in the set itself. For $X$, each point has $X$. For $\phi$, well, the statement is vacuously true.]
 
 In the same way, we can proceed further onto the next dimension and define open spheres\index{open sphere} in $\mathbb R^3$. Consider a point $P(a,b,c)$, then the open sphere centered at it will be the set
 $$
@@ -48,14 +43,14 @@ with $r$ being the radius of such sphere. For this sphere again, we can similarl
 
 ## Limit
 
-For a function of 2 variables, we now define its limit. The mathematical definition is as follows:---
+For a function of 2 variables, we now define its limit. The mathematical definition is as follows:---^[Notice the **geometrical interpretation** of this definition in figure 4: no matter how much the two parallel planes are to be brought together, there always exists such radius of the disk that of every point of domain within that disk, the image lies between those planes.]
 
 **Definition** *(Limit).*
 We say that $\displaystyle\lim_{(x, y)\to(x_0,y_0)} f(x,y) = l$ if and only if $\forall\epsilon>0, \exists\delta>0$ such that whenever
 $$0< \sqrt{(x-x_0)^2 + (y-y_0)^2} < \delta,$$
 we have $|f(x,y) - l|<\epsilon$.
 
-In figure 4, radius of the disk represents $\delta$, and the 2 planes are at a distance of $2\epsilon$ having $l$ at the center. Notice the **geometrical interpretation** of this definition: no matter how much the two parallel planes are to be brought together, there always exists such radius of the disk that of every point of domain within that disk, the image lies between those planes.
+In figure 4, radius of the disk represents $\delta$, and the 2 planes are at a distance of $2\epsilon$ having $l$ at the center.
 
 ![Figure 4: Limit of a 2 variable function.](img/limit.png)
 
@@ -92,10 +87,12 @@ and note that the limit is dependent on $m$, hence also on the path we choose. T
 
 ## Polar Transformations
 
-For functions involving $x^2+y^2$, we may use polar transformations\index{polar transformation} given by
+For functions involving $x^2+y^2$, we^[Wherever the said term $x^2+y^2$ is spotted, one almost always would want to convert the limit into polar coordinates.] may use polar transformations\index{polar transformation} given by
+
 $$x=r\cos\theta, \quad \mathrm{and,}\quad y=r\sin\theta$$
+
 where $x^2=x^2+y^2$, to evaluate the limit which becomes
-$$\lim_{r\to0} f(r\cos\theta, r\sin\theta).$$ Polar coordinates usually make the evaluation of such limits extremely easy. Wherever the said term $x^2+y^2$ is spotted, one almost always would want to convert the limit into polar coordinates.
+$$\lim_{r\to0} f(r\cos\theta, r\sin\theta).$$ Polar coordinates usually make the evaluation of such limits extremely easy.
 
 For example, to find
 $$\lim_{(x,y)\to(0,0)}\frac{\tan(x^2+y^2)}{x^2+y^2},$$
@@ -140,7 +137,7 @@ is not continuous at $(0,0)$.
 
 ![Figure 5: Discontinuity.](img/discont.png)
 
-This is because it fails the very first requirement for continuity --- existence of limit. Along $x=0$, the limit is zero. However, along the path $x=y^2$, the limit comes out to be $1/2$. These limits can be noticed in the plot of this function. Discontinuity can also be visibly seen, as the graph is fairly disturbed at $(0,0)$ (see figure 5).
+This is because it fails the very first requirement for continuity --- existence of limit. Along $x=0$, the limit is zero. However, along the path $x=y^2$, the limit comes out to be $1/2$.^[These limits can be noticed in the plot of this function. Discontinuity can also be visibly seen, as the graph is fairly disturbed at $(0,0)$ (see figure 5).]
 
 Consider
 $$f(x,y) = \frac{x-y}{x^2+y^2}.$$

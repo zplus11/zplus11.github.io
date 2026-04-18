@@ -9,7 +9,7 @@ On a set $X$, an entourage (upto my understanding, I have just begun business wi
 
 ![An entourage for $\mathbb R$.](img/entourage.png)
 
-With entourages, we now have a notion of distance. In particular, we call $x$ and $y$ to be $U$-"close" to each other if the point $(x,y)$ belongs to the entourage $U$. Now, we can call a sequence $x_n$ to be $U$-Cauchy if there exists some $N\in \mathbb N$ such that $(x_m,x_n)$ belongs to $U$ for each $m,n\ge N$. That is all I have to share. Below I present some graphs in Mathematica.
+With entourages, we now have a notion of distance. In particular, we call $x$ and $y$ to be $U$-"close" to each other if the point $(x,y)$ belongs to the entourage $U$.^[Now, we can call a sequence $x_n$ to be $U$-Cauchy if there exists some $N\in \mathbb N$ such that $(x_m,x_n)$ belongs to $U$ for each $m,n\ge N$. That is all I have to share.] Below I present some graphs in Mathematica.
 
 Some entourage-defining functions:
 

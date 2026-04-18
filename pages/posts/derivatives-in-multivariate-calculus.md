@@ -18,13 +18,10 @@ date: 21 March, 2026
 \newcommand\dir[1]{\mathcal D_{\vec{#1}}}
 \def\vec#1{#1}
 
-## Preface
-
-This is the second article in the series "Some Notes on Multivariate Calculus," based on the course I studied in 2024 taught by my professor <a href="https://sgtbkhalsadu.ac.in/academics/departments/Mathematics/faculty-detail/97/" target="_blank">Amarpreet ma'am.</a> It is largely due of her consistent encouragement and powerful motivation that these notes could be compiled in the form presented here. To read the first article, visit [this page](functions-of-multiple-variables.html).
-
 ## Rates of Change
 
-In a one variable function $f$ of $x$, the derivative\index{derivative} is the rate of change in $f$ with respect to $x$. For two variable functions also, we talk of changes. Unlike one variable functions where the change in $x$ is in certain direction (namely from $x$ to $x+\Delta x$), for two variable functions there can be infinite ways in which the input variables can advance. Two of the most basic ways are along the positive sides of $x$ and $y$ axes. Changes along these are called Partial Derivatives\index{partial derivative}. As the name suggests, partial derivatives only speak about the rates of partial change in the function. That is, the change due to increase in only one of the variables, at a time.
+In^[**Preface.** This is the second article in the series "Some Notes on Multivariate Calculus," based on the course I studied in 2024 taught by my professor <a href="https://sgtbkhalsadu.ac.in/academics/departments/Mathematics/faculty-detail/97/" target="_blank">Amarpreet ma'am.</a> It is largely due of her consistent encouragement and powerful motivation that these notes could be compiled in the form presented here. To read the first article, visit [this page](functions-of-multiple-variables.html).]
+a one variable function $f$ of $x$, the derivative\index{derivative} is the rate of change in $f$ with respect to $x$. For two variable functions also, we talk of changes. Unlike one variable functions where the change in $x$ is in certain direction (namely from $x$ to $x+\Delta x$), for two variable functions there can be infinite ways in which the input variables can advance. Two of the most basic ways are along the positive sides of $x$ and $y$ axes. Changes along these are called Partial Derivatives\index{partial derivative}. As the name suggests, partial derivatives only speak about the rates of partial change in the function. That is, the change due to increase in only one of the variables, at a time.
 
 ![Figure 1: Partial derivatives of a function.](img/pd.png)
 ![Figure 1 ctnd.](img/pdsmall.png)
@@ -82,20 +79,18 @@ $$\begin{aligned}
     			 &= -y.
 \end{aligned}$$
 
-Similarly, the other parts can be solved. It is worth noting that the mixed partials\index{mixed partials} in this case will not be equal to each other. However, this does not violate the theorem on mixed partials equality since the function in question is not continuous.
+Similarly, the other parts can be solved.^[It is worth noting that the mixed partials\index{mixed partials} in this case will not be equal to each other. However, this does not violate the theorem on mixed partials equality since the function in question is not continuous.]
 
 ## Directional Derivatives
 
-A broader type of derivatives are the directional derivatives, which are calculated for a function in a given direction. In this sense, $$\pd fx$$ is the derivative of $f$ along the vector $1\hat i + 0 \hat j$. In extension to that, directional derivative along the vector $\vec v=a\hat i + b \hat j$ would be the rate of change in $f$ in the direction of this vector. It is denoted by $\dir vf$. In figure \ref{dirderiv_visualised}, the plane goes in the direction of $\vec v$, and the red coloured curve is its intersection with $f$. Then, $\dir vf$ is slope of the tangent on this curve at the concerned point.
-
-![](img/dd1.png)
-![Figure 2: Directional derivative.](img/dd2.png)
-
-In this sense, we may note that the partial derivative $$\pd fx$$ is nothing but directional derivative in the direction $\hat i$, for example. The mathematical definition of directional direction is as follows:
+A broader type of derivatives are the directional derivatives, which are calculated for a function in a given direction. In this sense, $$\pd fx$$ is the derivative of $f$ along the vector $1\hat i + 0 \hat j$. In extension to that, directional derivative along the vector $\vec v=a\hat i + b \hat j$ would be the rate of change in $f$ in the direction of this vector. It is denoted by $\dir vf$. In figure \ref{dirderiv_visualised}, the plane goes in the direction of $\vec v$, and the red coloured curve is its intersection with $f$. Then, $\dir vf$ is slope of the tangent on this curve at the concerned point.^[In this sense of directional derivatives, we may note that the partial derivative $$\pd fx$$ is nothing but directional derivative in the direction $\hat i$, for example.] The mathematical definition of directional direction is as follows:
 
 $$
 \dir{a\hat i + b \hat j}f=\frac{f(x+ha,y+hb)-f(x,y)}{h}.
 $$
+
+![](img/dd1.png)
+![Figure 2: Directional derivative.](img/dd2.png)
 
 ---
 

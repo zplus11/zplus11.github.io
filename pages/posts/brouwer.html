@@ -6,6 +6,13 @@
 		<title>Brouwer’s fixed point theorem for the disk</title>
 		<link rel="stylesheet" href="/style.css">
 
+<script>
+  window.MathJax = {
+    options: {
+      processHtmlClass: 'sidenote'
+    }
+  };
+</script>
 		<style>
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -82,19 +89,20 @@ it translates to the following theorem:</p>
 class="math inline"><em>f</em> : [0, 1] → [0, 1]</span> be any
 continuous map. Then <span class="math inline"><em>f</em></span> has at
 least one fixed point.</p>
-<p>Brouwer’s theorem stated formally:</p>
+<p>Brouwer’s theorem stated formally:<span class="sidenote">The
+applications of this theorem are divine. Suppose you take a sheet of
+paper, what are the ways in which this sheet can be mapped to
+itself?</span></p>
 <p><strong>Theorem.</strong> Any continuous map <span
-class="math inline"><em>f</em> : <em>D</em><sup>2</sup> → <em>D</em><sup>2</sup></span>
+class="math inline"><em>f</em> : <em>D</em><sup><em>n</em></sup> → <em>D</em><sup><em>n</em></sup></span>
 has at least one fixed point.</p>
-<p>Its applications are divine. Suppose you take a sheet of paper, what
-are the ways in which this sheet can be mapped to itself?</p>
 <h2 id="fixed-points">Fixed points</h2>
 <p>In any map, a point <span class="math inline"><em>x</em></span> is
 said to be a fixed point if its image under the map is <span
 class="math inline"><em>x</em></span> itself. For example, consider the
 identity map <span class="math inline"><em>x</em> ↦ <em>x</em></span>.
 Since each point gets mapped to itself, we say that every point is a
-fixed point. Consider <span
+fixed point.<span class="sidenote">Consider <span
 class="math inline"><em>x</em> ↦ <em>x</em><sup>2</sup></span>. The
 image of <span class="math inline">0</span> is <span
 class="math inline">0<sup>2</sup> = 0</span> so <span
@@ -103,7 +111,7 @@ class="math inline">1</span> is also a fixed point. But apart from these
 two, there are no fixed point. <span
 class="math inline">−1 ↦ (−1)<sup>2</sup> = 1 ≠ −1</span> so <span
 class="math inline">−1</span> is not a fixed point. Similarly we can see
-every other point maps to an image different than itself.</p>
+every other point maps to an image different than itself.</span></p>
 <p>Talking about the sheet of paper example, one way is to take the
 “image sheet” and put it on top of the “domain sheet” as it is. This is
 nothing but the identity map, each point gets mapped to itself so that
@@ -198,10 +206,10 @@ class="math inline"><em>D</em><sup>2</sup></span> goes beyond just
 scaling and translating. For example, as shown below:</p>
 <figure>
 <img src="img/paper.png"
-alt="Illustration (credits: Dennis Simanaitis, COMBED COCONUTS HAVE COWLICKS. https://simanaitissays.com/2015/01/19/combed-coconut-must-have-cowlicks" />
+alt="Illustration (credits: Dennis Simanaitis, COMBED COCONUTS HAVE COWLICKS. https://simanaitissays.com/2015/01/19/combed-coconut-must-have-cowlicks)" />
 <figcaption aria-hidden="true">Illustration (credits: Dennis Simanaitis,
 <em>COMBED COCONUTS HAVE COWLICKS.</em> <a
-href="https://simanaitissays.com/2015/01/19/combed-coconut-must-have-cowlicks">https://simanaitissays.com/2015/01/19/combed-coconut-must-have-cowlicks</a></figcaption>
+href="https://simanaitissays.com/2015/01/19/combed-coconut-must-have-cowlicks">https://simanaitissays.com/2015/01/19/combed-coconut-must-have-cowlicks</a>)</figcaption>
 </figure>
 <p>if you crumble a piece of paper and place it atop itself, and think
 of the image of each point in the paper to be wherever it lands in the
@@ -209,13 +217,12 @@ crumbled form, then again it is a continuous map from <span
 class="math inline"><em>D</em><sup>2</sup></span> to itself. Hence, we
 can invoke the theorem to say there exists <em>at least</em> one point
 that lands precisely on top of itself, no matter how the paper is
-crumbled.</p>
-<p>The theorem holds for any compact convex subspace of <span
-class="math inline">ℝ<sup><em>n</em></sup></span>. For example, it
-applies to the solid 3-ball <span
+crumbled.<span class="sidenote">The theorem holds for any compact convex
+subspace of <span class="math inline">ℝ<sup><em>n</em></sup></span>. For
+example, it applies to the solid 3-ball <span
 class="math inline"><em>D</em><sup>3</sup></span>. A classical
 illustration is that if you stir a glass of water, there is at least one
-point in the fluid that ends up exactly where it started.</p>
+point in the fluid that ends up exactly where it started.</span></p>
 <p>If you enjoyed reading this blog post, I am glad. The code is
 available at <a href="/resources/mm/bfp.nb">bfp.nb</a>.</p>
 				</div>

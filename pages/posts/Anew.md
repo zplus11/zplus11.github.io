@@ -9,7 +9,7 @@ As much confusing as it gets, set theory is crucial in mathematics: it forms the
 
 Given $X$ and $A$, can you find $A'$ that is in bijection with $A$, such that $A'\cap X=\phi$?
 
-Put simply, we wish to construct, using $A$, an $A'$ which contains the "same number of" elements as $A$, but which does not contain anything in $X$. Sounds quite simple, and in fact intuitive enough. Surely we can, but how precisely is the question. This article is actually based on a class discussion, and the question appears in the proof of *Stone&ndash;Cech compactification* theorem, done in the course of General Topology taught by <a href="https://sites.google.com/view/nagarwal/home" target="_blank">Prof. Nikita Agarwal.</a>
+Put simply, we wish to construct, using $A$, an $A'$ which contains the "same number of" elements as $A$, but which does not contain anything in $X$. Sounds quite simple, and in fact intuitive enough. Surely we can, but how precisely is the question.^[This article is actually based on a class discussion, and the question appears in the proof of *Stone&ndash;Cech compactification* theorem, done in the course of General Topology taught by <a href="https://sites.google.com/view/nagarwal/home" target="_blank">Prof. Nikita Agarwal.</a>]
 
 Now, let us start with an example. Let $X=\{1,2,3\}$ and $A=\{a,b\}$. We need to fill $A'=\{\_,\_\}$ with elements not in $X$. Simple enough: we can take $A'=\{4,5\}$. But this is just a particular solution, we need a general solution. One way could be to somehow calculate the maximum (say $m$) of $X$ and add $m+1,m+2,\ldots$ according to however many elements there are in $A$. But this fails very easily, consider $X=\mathbb N=\{1,2,\ldots\}$. $m$ does not exist. Furthermore, how to calculate $m$ if, say, $X$ is $\{a,b\}$? This leads us to start using what we have at hand, namely $A$ and $X$, in order to construct $A'$.
 
@@ -31,7 +31,7 @@ $$A_3=\{(a,b):a\in A\},$$
 
 but even that does not work. Take $X=\{1,(1,b)\}$ and $A=\{1\}$. $X$ doesn't contain $b$ but it can very well contain $(1,b)$.
 
-Nothing has worked so far (see **Alternate construction** below). Now I present my best solution which I believe works out. I present a fact first: a set $X$ cannot contain itself. For otherwise, if we consider the simplest case of $X=\{X\}$ and if we were to write out $X$, we would go
+Nothing has worked so far. Now I present my best solution which I believe works out. I present a fact first: a set $X$ cannot contain itself. For otherwise, if we consider the simplest case of $X=\{X\}$ and if we were to write out $X$, we would go
 $$
 \begin{aligned}
 X&=\{X\} \\
@@ -48,7 +48,7 @@ so that $f(0)$ starts an endless loop. Hence, we finally have something that can
 
 $$A_4=\{\{a,X\}:a\in A\}$$
 
-which essentially "tags" $X$ with each $a$. $A_4$ clearly has a bijection with $A$ via the map $a\mapsto \{a,X\}$, and nothing in $A_4$ can ever belong to $X$. As as example, we have if $X=\{1,2,3\}$ and $A=\{1,2\}$ then $A_4=\{\{1,X\},\{2,X\}\}$. We could totally have something like $A_4=\{X_1,X_2\}$ which merely subscripts each $a$ in $A$, to $X$. In this case, we will have $A_4=\Big\{\{1,2,3\}_1,\{1,2,3\}_2\Big\}$ in expanded form. Something like $A_4=\{1+X,2+X\}$ could also totally work, where we don't define the addition, and only use $1+X$ as a notation.
+which essentially "tags" $X$ with each $a$. $A_4$ clearly has a bijection with $A$ via the map $a\mapsto \{a,X\}$, and nothing in $A_4$ can ever belong to $X$. As as example, we have if $X=\{1,2,3\}$ and $A=\{1,2\}$ then $A_4=\{\{1,X\},\{2,X\}\}$. We could totally have something like $A_4=\{X_1,X_2\}$ which merely subscripts each $a$ in $A$, to $X$.^[In this case, we will have $A_4=\Big\{\{1,2,3\}_1,\{1,2,3\}_2\Big\}$ in expanded form. Something like $A_4=\{1+X,2+X\}$ could also totally work, where we don't define the addition, and only use $1+X$ as a notation.]
 
 To go one step further, if the requirement was exhibiting elements that are neither in $X$ nor in $A$, nothing stops us from using something like
 

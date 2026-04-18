@@ -6,6 +6,13 @@
 		<title>Epidemiology</title>
 		<link rel="stylesheet" href="/style.css">
 
+<script>
+  window.MathJax = {
+    options: {
+      processHtmlClass: 'sidenote'
+    }
+  };
+</script>
 		<style>
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -69,16 +76,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 				<h1>Epidemiology</h1>
 				<p><i>22 March, 2026</i></p>
 				<hr><br><br>
-				<p>In <a href="/pages/posts/population-growth.html">Population
-Growth</a> I introduced a simple model for how populations evolve over
-time. But real-world systems are rarely that simple. In this post, I
-shift focus to epidemiology, where we model how diseases spread using
-the SIR framework and a very natural extension of it.</p>
-<h2 id="sir-model">SIR model</h2>
-<p>SIR model governs the spread of disease in a population containing
-<span class="math inline"><em>N</em></span> people. Categorise everyone
-into three groups: susceptible (S), infectives (I), and recovered (R).
-The flow is as follows:</p>
+				<h2 id="sir-model">SIR model</h2>
+<p>SIR<span class="sidenote">In <a
+href="/pages/posts/population-growth.html">Population Growth</a> I
+introduced a simple model for how populations evolve over time. But
+real-world systems are rarely that simple. In this post, I shift focus
+to epidemiology, where we model how diseases spread using the SIR
+framework and a very natural extension of it.</span> model governs the
+spread of disease in a population containing <span
+class="math inline"><em>N</em></span> people. Categorise everyone into
+three groups: susceptible (S), infectives (I), and recovered (R). The
+flow is as follows:</p>
 <pre><code>-----      ß     -----      a     -----
 | S |  --------&gt; | I |  --------&gt; | R |
 -----            -----            -----</code></pre>
@@ -97,11 +105,12 @@ class="math inline"><em>N</em> = <em>S</em> + <em>I</em> + <em>R</em
 at all points in time. A central parameter is the reproduction number
 which captures the balance between infection and recovery. For SIR model
 we have <span
-class="math inline"><em>R</em><sub>0</sub> = <em>β</em>/<em>γ</em></span>.
-If <span class="math inline"><em>β</em> &gt; <em>γ</em></span>, the
-infection rises and if <span
-class="math inline"><em>γ</em> &lt; <em>β</em></span>, it dies out.
-Solve and plot the system of equations to get:</p>
+class="math inline"><em>R</em><sub>0</sub> = <em>β</em>/<em>γ</em></span>.<span
+class="sidenote">If <span
+class="math inline"><em>β</em> &gt; <em>γ</em></span>, the infection
+rises and if <span
+class="math inline"><em>γ</em> &lt; <em>β</em></span>, it dies
+out.</span> Solve and plot the system of equations to get:</p>
 <p><img src="img/sirs.png" alt="Susceptibles" /> <img src="img/siri.png"
 alt="Infectives" /> <img src="img/sirr.png" alt="Recovered" /></p>
 <p>For any value of <span class="math inline"><em>β</em></span> and

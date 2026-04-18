@@ -6,6 +6,13 @@
 		<title>Billiards</title>
 		<link rel="stylesheet" href="/style.css">
 
+<script>
+  window.MathJax = {
+    options: {
+      processHtmlClass: 'sidenote'
+    }
+  };
+</script>
 		<style>
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -78,17 +85,23 @@ by Miniclip</figcaption>
 <p>The modulus function <span
 class="math inline"><em>x</em> ↦ |<em>x</em>|</span> does more than just
 returning the absolute value of a number. When plotted, its graph
-represents sort of (exactly) a reflection:</p>
+represents sort of (exactly) a reflection:<span class="sidenote">The
+modulus function <span class="math inline">|<em>x</em>|</span> gives
+distance from 0, ignoring direction. Graphically, it folds the negative
+axis onto the positive.</span></p>
 <figure>
 <img src="img/modf.png" alt="Graph of modulus function." />
 <figcaption aria-hidden="true">Graph of modulus function.</figcaption>
 </figure>
 <p>This idea can be generalised in order to model the path that a ball
-of billiards takes in an ideal (no friction, etc) environment. Starting
-with a single dimension, suppose we have an interval of length <span
-class="math inline"><em>L</em></span>:</p>
+of billiards takes in an ideal (infinite force, no friction, etc)
+environment. Starting with a single dimension, suppose we have an
+interval of length <span class="math inline"><em>L</em></span>:</p>
 <pre><code>0 ------------------------- L</code></pre>
-<p>To trace reflections along this line, as such:</p>
+<p>To trace reflections along this line, as such:<span
+class="sidenote">Here, each “bounce” is just the same straight motion
+viewed in a folded interval. In particular, we are not editing the path
+but the space. The path is still a straight line.</span></p>
 <pre><code> 0 -----------&gt;------------ L
                           |
 2L -----------&lt;------------ L
@@ -97,7 +110,7 @@ class="math inline"><em>L</em></span>:</p>
                           |
         ... --&lt;------------ 3L</code></pre>
 <p>a simple function such as <span
-class="math inline"><em>f</em> = <em>t</em> ↦ <em>L</em> − |(<em>t</em> mod  2<em>L</em>) − <em>L</em>|</span>
+class="math inline"><em>f</em>(<em>t</em>, <em>L</em>) = <em>L</em> − |(<em>t</em> mod  2<em>L</em>) − <em>L</em>|</span>
 can do, so that when <span class="math inline"><em>L</em> = 1</span> we
 notice</p>
 <ul>

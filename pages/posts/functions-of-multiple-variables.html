@@ -6,6 +6,13 @@
 		<title>Functions of Multiple Variables</title>
 		<link rel="stylesheet" href="/style.css">
 
+<script>
+  window.MathJax = {
+    options: {
+      processHtmlClass: 'sidenote'
+    }
+  };
+</script>
 		<style>
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -74,22 +81,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 it must go off.</em></p>
 <p>— Anton Chekhov</p>
 </blockquote>
-<h2 id="preface">Preface</h2>
-<p>This is the first article in the series “Some Notes on Multivariate
-Calculus,” based on the course I studied in 2024 taught by my professor
+<h2 id="introduction">Introduction</h2>
+<p>Calculus<span class="sidenote">This is the first article in the
+series “Some Notes on Multivariate Calculus,” based on the course I
+studied in 2024 taught by my professor
 <a href="https://sgtbkhalsadu.ac.in/academics/departments/Mathematics/faculty-detail/97/" target="_blank">Amarpreet
 ma’am.</a> It is largely due of her consistent encouragement and
 powerful motivation that these notes could be compiled in the form
-presented here.</p>
-<h2 id="introduction">Introduction</h2>
-<p>Calculus is the study of small changes. Multivariate Calculus is the
-study of small changes in functions of multiple variables, such as those
-defined from <span class="math inline">ℝ<sup>2</sup></span> to <span
+presented here.</span> is the study of small changes. Multivariate
+Calculus is the study of small changes in functions of multiple
+variables, such as those defined from <span
+class="math inline">ℝ<sup>2</sup></span> to <span
 class="math inline">ℝ</span> by some definition that maps each <span
 class="math inline">(<em>x</em>, <em>y</em>)</span> in the domain set to
 its image given by <span
-class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)</span>. Every
-point in the domain (usually a subset of the <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>)</span>.<span
+class="sidenote">For example, consider <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = 10 − <em>x</em><sup>2</sup> − <em>y</em><sup>2</sup></span>
+for every <span
+class="math inline">(<em>x</em>, <em>y</em>) ∈ ℝ<sup>2</sup></span>.
+Here <span class="math inline">(0, 0)</span> gets mapped to <span
+class="math inline">10 − 0<sup>2</sup> − 0<sup>2</sup> = 10</span>,
+<span class="math inline">(1, 2)</span> gets mapped to <span
+class="math inline">10 − 1<sup>2</sup> − 2<sup>2</sup> = 5</span>, and
+so on.</span> Every point in the domain (usually a subset of the <span
 class="math inline"><em>x</em><em>y</em></span>-plane; figure 1) gets
 mapped to a real number in <span class="math inline">ℝ</span>, along the
 <span class="math inline"><em>z</em></span>-axis. Formally, we define
@@ -112,31 +127,22 @@ alt="Figure 1: Functions in one (top) and two (bottom) variables." />
 <figcaption aria-hidden="true">Figure 1: Functions in one (top) and two
 (bottom) variables.</figcaption>
 </figure>
-<p>For example, consider <span
-class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = 10 − <em>x</em><sup>2</sup> − <em>y</em><sup>2</sup></span>
-for every <span
-class="math inline">(<em>x</em>, <em>y</em>) ∈ ℝ<sup>2</sup></span>.
-Here <span class="math inline">(0, 0)</span> gets mapped to <span
-class="math inline">10 − 0<sup>2</sup> − 0<sup>2</sup> = 10</span>,
-<span class="math inline">(1, 2)</span> gets mapped to <span
-class="math inline">10 − 1<sup>2</sup> − 2<sup>2</sup> = 5</span>, and
-so on. Along that line, for a constant <span
+<p>Along that line, for a constant <span
 class="math inline"><em>c</em></span>, the plane <span
 class="math inline"><em>z</em> = <em>c</em></span> intersects the
 surface <span
 class="math inline"><em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>)</span>
 at <span
-class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>c</em></span>.
-Such an intersection is called the “trace of graph of <span
-class="math inline"><em>f</em></span>” in the plane <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>c</em></span>.<span
+class="sidenote">In figure 2, the blue disk is trace whereas red disk is
+the level curve.</span> Such an intersection is called the “trace of
+graph of <span class="math inline"><em>f</em></span>” in the plane <span
 class="math inline"><em>z</em> = <em>c</em></span>. And further, the
 level curve of <span class="math inline"><em>f</em></span> at <span
 class="math inline"><em>c</em></span> is the set of all points <span
 class="math inline">(<em>x</em>, <em>y</em>)</span> in the <span
 class="math inline"><em>x</em><em>y</em></span>-plane that satisfy <span
-class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>c</em></span>.
-In figure 2, the blue disk is trace whereas red disk is the level
-curve.</p>
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>c</em></span>.</p>
 <figure>
 <img src="img/trace.png" alt="Figure 2: Trace and level curves." />
 <figcaption aria-hidden="true">Figure 2: Trace and level
@@ -175,10 +181,14 @@ open disk centered at the point contains at least one element that is in
 that is not in <span class="math inline"><em>S</em></span>, and in fact,
 infinitely many such points. <span class="math inline"><em>S</em></span>
 is said to be closed if it includes its boundary, i.e., if it includes
-all of its boundary points. By convention, the empty set and the
-universal set of this context — <span
-class="math inline">ℝ<sup>2</sup></span> — are both open as well as
-closed.</p>
+all of its boundary points. The empty set and the universal set (full
+space) are both open as well as closed.<span class="sidenote">The
+reasons are interesting: a set is called open if every point in it has a
+neighbourhood contained in the set itself. For <span
+class="math inline"><em>X</em></span>, each point has <span
+class="math inline"><em>X</em></span>. For <span
+class="math inline"><em>ϕ</em></span>, well, the statement is vacuously
+true.</span></p>
 <p>In the same way, we can proceed further onto the next dimension and
 define open spheres in <span class="math inline">ℝ<sup>3</sup></span>.
 Consider a point <span
@@ -198,7 +208,12 @@ class="math inline">ℝ<sup>2</sup></span> above. Most properties carry
 forward with the necessary amendments.</p>
 <h2 id="limit">Limit</h2>
 <p>For a function of 2 variables, we now define its limit. The
-mathematical definition is as follows:—</p>
+mathematical definition is as follows:—<span class="sidenote">Notice the
+<strong>geometrical interpretation</strong> of this definition in figure
+4: no matter how much the two parallel planes are to be brought
+together, there always exists such radius of the disk that of every
+point of domain within that disk, the image lies between those
+planes.</span></p>
 <p><strong>Definition</strong> <em>(Limit).</em> We say that <span
 class="math inline">lim<sub>(<em>x</em>, <em>y</em>) → (<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</sub><em>f</em>(<em>x</em>, <em>y</em>) = <em>l</em></span>
 if and only if <span
@@ -209,11 +224,7 @@ class="math inline">|<em>f</em>(<em>x</em>, <em>y</em>) − <em>l</em>| 
 <p>In figure 4, radius of the disk represents <span
 class="math inline"><em>δ</em></span>, and the 2 planes are at a
 distance of <span class="math inline">2<em>ϵ</em></span> having <span
-class="math inline"><em>l</em></span> at the center. Notice the
-<strong>geometrical interpretation</strong> of this definition: no
-matter how much the two parallel planes are to be brought together,
-there always exists such radius of the disk that of every point of
-domain within that disk, the image lies between those planes.</p>
+class="math inline"><em>l</em></span> at the center.</p>
 <figure>
 <img src="img/limit.png"
 alt="Figure 4: Limit of a 2 variable function." />
@@ -288,17 +299,18 @@ Therefore, it does not exist.</p>
 <h2 id="polar-transformations">Polar Transformations</h2>
 <p>For functions involving <span
 class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup></span>,
-we may use polar transformations given by <span
-class="math display"><em>x</em> = <em>r</em>cos <em>θ</em>,  and,  <em>y</em> = <em>r</em>sin <em>θ</em></span>
-where <span
+we<span class="sidenote">Wherever the said term <span
+class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup></span>
+is spotted, one almost always would want to convert the limit into polar
+coordinates.</span> may use polar transformations given by</p>
+<p><span
+class="math display"><em>x</em> = <em>r</em>cos <em>θ</em>,  and,  <em>y</em> = <em>r</em>sin <em>θ</em></span></p>
+<p>where <span
 class="math inline"><em>x</em><sup>2</sup> = <em>x</em><sup>2</sup> + <em>y</em><sup>2</sup></span>,
 to evaluate the limit which becomes <span
 class="math display">lim<sub><em>r</em> → 0</sub><em>f</em>(<em>r</em>cos <em>θ</em>, <em>r</em>sin <em>θ</em>).</span>
 Polar coordinates usually make the evaluation of such limits extremely
-easy. Wherever the said term <span
-class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup></span>
-is spotted, one almost always would want to convert the limit into polar
-coordinates.</p>
+easy.</p>
 <p>For example, to find <span
 class="math display">$$\lim_{(x,y)\to(0,0)}\frac{\tan(x^2+y^2)}{x^2+y^2},$$</span>
 we may use polar transformations so that the limit becomes <span
@@ -359,10 +371,11 @@ existence of limit. Along <span
 class="math inline"><em>x</em> = 0</span>, the limit is zero. However,
 along the path <span
 class="math inline"><em>x</em> = <em>y</em><sup>2</sup></span>, the
-limit comes out to be <span class="math inline">1/2</span>. These limits
-can be noticed in the plot of this function. Discontinuity can also be
-visibly seen, as the graph is fairly disturbed at <span
-class="math inline">(0, 0)</span> (see figure 5).</p>
+limit comes out to be <span class="math inline">1/2</span>.<span
+class="sidenote">These limits can be noticed in the plot of this
+function. Discontinuity can also be visibly seen, as the graph is fairly
+disturbed at <span class="math inline">(0, 0)</span> (see figure
+5).</span></p>
 <p>Consider <span class="math display">$$f(x,y) =
 \frac{x-y}{x^2+y^2}.$$</span> Note that both the numerator and
 denominator are continuous functions of <span

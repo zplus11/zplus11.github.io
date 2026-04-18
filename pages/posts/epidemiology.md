@@ -3,11 +3,9 @@ title: Epidemiology
 date: 22 March, 2026
 ---
 
-In [Population Growth](/pages/posts/population-growth.html) I introduced a simple model for how populations evolve over time. But real-world systems are rarely that simple. In this post, I shift focus to epidemiology, where we model how diseases spread using the SIR framework and a very natural extension of it.
-
 ## SIR model
 
-SIR model governs the spread of disease in a population containing $N$ people. Categorise everyone into three groups: susceptible (S), infectives (I), and recovered (R). The flow is as follows:
+SIR^[In [Population Growth](/pages/posts/population-growth.html) I introduced a simple model for how populations evolve over time. But real-world systems are rarely that simple. In this post, I shift focus to epidemiology, where we model how diseases spread using the SIR framework and a very natural extension of it.] model governs the spread of disease in a population containing $N$ people. Categorise everyone into three groups: susceptible (S), infectives (I), and recovered (R). The flow is as follows:
 
 ```
 -----      ß     -----      a     -----
@@ -19,7 +17,7 @@ that is, people move from S into I at a rate of $\beta$, and from I into R at a 
 
 $$S'=-\beta SI,\qquad I'=\beta SI-\alpha I,\qquad R'=\alpha I.$$
 
-$\beta$ and $\alpha$ are usually predicted using data. The total population $N$ is assumed to be constant, that is $N=S+I+R$ at all points in time. A central parameter is the reproduction number which captures the balance between infection and recovery. For SIR model we have $R_0=\beta/\gamma$. If $\beta>\gamma$, the infection rises and if $\gamma<\beta$, it dies out. Solve and plot the system of equations to get:
+$\beta$ and $\alpha$ are usually predicted using data. The total population $N$ is assumed to be constant, that is $N=S+I+R$ at all points in time. A central parameter is the reproduction number which captures the balance between infection and recovery. For SIR model we have $R_0=\beta/\gamma$.^[If $\beta>\gamma$, the infection rises and if $\gamma<\beta$, it dies out.] Solve and plot the system of equations to get:
 
 ![Susceptibles](img/sirs.png)
 ![Infectives](img/siri.png)

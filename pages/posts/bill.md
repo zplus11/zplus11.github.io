@@ -5,17 +5,17 @@ date: 06 April, 2026
 
 ![Billiards table. Source: 8 Ball Pool game by Miniclip](img/table.jpeg)
 
-The modulus function $x\mapsto|x|$ does more than just returning the absolute value of a number. When plotted, its graph represents sort of (exactly) a reflection:
+The modulus function $x\mapsto|x|$ does more than just returning the absolute value of a number. When plotted, its graph represents sort of (exactly) a reflection:^[The modulus function $|x|$ gives distance from 0, ignoring direction. Graphically, it folds the negative axis onto the positive.]
 
 ![Graph of modulus function.](img/modf.png)
 
-This idea can be generalised in order to model the path that a ball of billiards takes in an ideal (no friction, etc) environment. Starting with a single dimension, suppose we have an interval of length $L$:
+This idea can be generalised in order to model the path that a ball of billiards takes in an ideal (infinite force, no friction, etc) environment. Starting with a single dimension, suppose we have an interval of length $L$:
 
 ```
 0 ------------------------- L
 ```
 
-To trace reflections along this line, as such:
+To trace reflections along this line, as such:^[Here, each "bounce" is just the same straight motion viewed in a folded interval. In particular, we are not editing the path but the space. The path is still a straight line.]
 
 ```
  0 ----------->------------ L
@@ -27,7 +27,7 @@ To trace reflections along this line, as such:
         ... --<------------ 3L
 ```
 
-a simple function such as $f = t\mapsto L - |(t \bmod2L) - L|$ can do, so that when $L=1$ we notice
+a simple function such as $f(t,L) = L - |(t \bmod2L) - L|$ can do, so that when $L=1$ we notice
 
 - $0\mapsto 1 - |0-1| = 0$
 - $1/2\mapsto 1 - |1/2-1| = 1-1/2 = 1/2$
