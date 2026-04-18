@@ -9,16 +9,17 @@
 	--red: #CC1E1D;
 	--brown: #730B0B;
 	--grey: #615F5F;
-	--font: "MPLUSRounded1c";
-	--bg: #FFFBF5;
-	--fg: #232326
+	--font: default;
+	--bg: white;
+	--fg: black
 }
 *, *::before, *::after {
 	box-sizing: inherit
 }
-html { font-size: 20px; font-family: var(--font); color: var(--fg); background-color: var(--bg); font-weight: 400 }
-@media (max-width: 512px) { html { font-size: 18px } }
+html { font-size: 21px; font-family: var(--font); color: var(--fg); background-color: var(--bg); font-weight: 400 }
+@media (max-width: 512px) { html { font-size: 20px } }
 a { color: var(--orange); font-family: inherit; text-decoration: none; font-weight: 500 }
+a:hover { font-weight: bold }
 a:visited { color: var(--blue) }
 
 
@@ -94,7 +95,8 @@ blockquote { border-left: var(--grey) solid 2px; font-style: italic; color: var(
 }
 .blog__content > *:last-child::after { font-weight: bold; content: "\25CB"; float: right }
 
-.sidenote { 
+.sidenote {
 	float: right; max-width: clamp(115px, 25vw, 250px); margin: 15px; margin-right: -15px;
-	border-left: var(--brown) 2px solid; padding: 0 10px; font-size: var(--small); color: var(--grey)
+	border-left: var(--brown) 2px solid; padding: 0 10px; font-size: var(--small); color: var(--grey);
+	font-style: italic
 }
