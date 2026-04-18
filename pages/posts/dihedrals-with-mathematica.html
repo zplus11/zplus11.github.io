@@ -62,6 +62,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 			<ul>
 				<li><a href="/pages/blog.html">My blog</a></li>
 				<li><a href="/pages/mgroups.html">MGroups</a></li>
+				<li><a href="/pages/cv.html">CV</a></li>
 			</ul>
 		</nav>
 
@@ -97,24 +98,24 @@ reflection along the axis oriented at 0 degrees, we have <span
 class="math inline"><em>s</em><sup>2</sup> = <em>r</em><sup>0</sup></span>.
 Finally, <span
 class="math inline"><em>s</em><em>r</em><sup><em>i</em></sup> = <em>r</em><sup><em>n</em> − <em>i</em></sup><em>s</em></span>.</p>
-<p>Using these rules, any product of elements in <span
+<p>Using<span class="sidenote">For example, <span
+class="math inline"><em>r</em><sup>3</sup><em>s</em><em>r</em><sup>1</sup> = <em>r</em><sup>3</sup><em>r</em><sup><em>n</em> − 1</sup><em>s</em> = <em>r</em><sup>3 + <em>n</em> − 1</sup><em>s</em> = <em>r</em><sup>2</sup><em>s</em>.</span></span>
+these rules, any product of elements in <span
 class="math inline"><em>D</em><sub><em>n</em></sub></span> can be
 reduced to one of the elements of <span
-class="math inline"><em>D</em><sub><em>n</em></sub></span> itself.<span
-class="sidenote">For example, <span
-class="math inline"><em>r</em><sup>3</sup><em>s</em><em>r</em><sup>1</sup> = <em>r</em><sup>3</sup><em>r</em><sup><em>n</em> − 1</sup><em>s</em> = <em>r</em><sup>3 + <em>n</em> − 1</sup><em>s</em> = <em>r</em><sup>2</sup><em>s</em>.</span></span>
-Our motive is to define these patterns in Mathematica so that such
+class="math inline"><em>D</em><sub><em>n</em></sub></span> itself. Our
+motive is to define these patterns in Mathematica so that such
 computations can be automatically done. For it, we will use the
 <code>**</code> symbol of Mathematica that stands for
 <code>NonCommutativeMultiply</code> so that <span
 class="math inline"><em>x</em><em>y</em></span> should not be confused
-for <span class="math inline"><em>y</em><em>x</em></span>.<span
-class="sidenote">We will denote a rotation <span
+for <span class="math inline"><em>y</em><em>x</em></span>. We will
+denote a rotation <span
 class="math inline"><em>r</em><sup><em>i</em></sup></span> by
 <code>Rot[r, i]</code> to secure more control over the operation,
 although it will be formatted as is. We also define <span
-class="math inline"><em>n</em> = 4</span> during this experiment.</span>
-We set our context:</p>
+class="math inline"><em>n</em> = 4</span> during this experiment. We set
+our context:</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ClearAll</span><span class="op">[</span>Rot<span class="op">,</span> <span class="fu">r</span><span class="op">,</span> <span class="fu">s</span><span class="op">]</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">n</span> <span class="ex">:=</span> <span class="dv">4</span></span></code></pre></div>

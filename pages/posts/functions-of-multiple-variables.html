@@ -62,6 +62,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 			<ul>
 				<li><a href="/pages/blog.html">My blog</a></li>
 				<li><a href="/pages/mgroups.html">MGroups</a></li>
+				<li><a href="/pages/cv.html">CV</a></li>
 			</ul>
 		</nav>
 
@@ -82,9 +83,9 @@ it must go off.</em></p>
 <p>— Anton Chekhov</p>
 </blockquote>
 <h2 id="introduction">Introduction</h2>
-<p>Calculus<span class="sidenote">This is the first article in the
-series “Some Notes on Multivariate Calculus,” based on the course I
-studied in 2024 taught by my professor
+<p>Calculus<span class="sidenote"><strong>Preface.</strong> This is the
+first article in the series “Some Notes on Multivariate Calculus,” based
+on the course I studied in 2024 taught by my professor
 <a href="https://sgtbkhalsadu.ac.in/academics/departments/Mathematics/faculty-detail/97/" target="_blank">Amarpreet
 ma’am.</a> It is largely due of her consistent encouragement and
 powerful motivation that these notes could be compiled in the form
@@ -182,13 +183,12 @@ that is not in <span class="math inline"><em>S</em></span>, and in fact,
 infinitely many such points. <span class="math inline"><em>S</em></span>
 is said to be closed if it includes its boundary, i.e., if it includes
 all of its boundary points. The empty set and the universal set (full
-space) are both open as well as closed.<span class="sidenote">The
-reasons are interesting: a set is called open if every point in it has a
-neighbourhood contained in the set itself. For <span
-class="math inline"><em>X</em></span>, each point has <span
-class="math inline"><em>X</em></span>. For <span
+space) are both open as well as closed. The reasons are interesting: a
+set is called open if every point in it has a neighbourhood contained in
+the set itself. For <span class="math inline"><em>X</em></span>, each
+point has <span class="math inline"><em>X</em></span>. For <span
 class="math inline"><em>ϕ</em></span>, well, the statement is vacuously
-true.</span></p>
+true.</p>
 <p>In the same way, we can proceed further onto the next dimension and
 define open spheres in <span class="math inline">ℝ<sup>3</sup></span>.
 Consider a point <span
@@ -208,12 +208,7 @@ class="math inline">ℝ<sup>2</sup></span> above. Most properties carry
 forward with the necessary amendments.</p>
 <h2 id="limit">Limit</h2>
 <p>For a function of 2 variables, we now define its limit. The
-mathematical definition is as follows:—<span class="sidenote">Notice the
-<strong>geometrical interpretation</strong> of this definition in figure
-4: no matter how much the two parallel planes are to be brought
-together, there always exists such radius of the disk that of every
-point of domain within that disk, the image lies between those
-planes.</span></p>
+mathematical definition is as follows:—</p>
 <p><strong>Definition</strong> <em>(Limit).</em> We say that <span
 class="math inline">lim<sub>(<em>x</em>, <em>y</em>) → (<em>x</em><sub>0</sub>, <em>y</em><sub>0</sub>)</sub><em>f</em>(<em>x</em>, <em>y</em>) = <em>l</em></span>
 if and only if <span
@@ -221,7 +216,11 @@ class="math inline">∀<em>ϵ</em> &gt; 0, ∃<em>δ</em> &gt; 0</span
 that whenever <span class="math display">$$0&lt; \sqrt{(x-x_0)^2 +
 (y-y_0)^2} &lt; \delta,$$</span> we have <span
 class="math inline">|<em>f</em>(<em>x</em>, <em>y</em>) − <em>l</em>| &lt; <em>ϵ</em></span>.</p>
-<p>In figure 4, radius of the disk represents <span
+<p>Notice the <strong>geometrical interpretation</strong> of this
+definition in figure 4: no matter how much the two parallel planes are
+to be brought together, there always exists such radius of the disk that
+of every point of domain within that disk, the image lies between those
+planes. In figure 4, radius of the disk represents <span
 class="math inline"><em>δ</em></span>, and the 2 planes are at a
 distance of <span class="math inline">2<em>ϵ</em></span> having <span
 class="math inline"><em>l</em></span> at the center.</p>
@@ -368,14 +367,13 @@ class="math inline">(0, 0)</span>.</p>
 </figure>
 <p>This is because it fails the very first requirement for continuity —
 existence of limit. Along <span
-class="math inline"><em>x</em> = 0</span>, the limit is zero. However,
-along the path <span
+class="math inline"><em>x</em> = 0</span>,<span class="sidenote">These
+limits can be noticed in the plot of this function. Discontinuity can
+also be visibly seen, as the graph is fairly disturbed at <span
+class="math inline">(0, 0)</span> (see figure 5).</span> the limit is
+zero. However, along the path <span
 class="math inline"><em>x</em> = <em>y</em><sup>2</sup></span>, the
-limit comes out to be <span class="math inline">1/2</span>.<span
-class="sidenote">These limits can be noticed in the plot of this
-function. Discontinuity can also be visibly seen, as the graph is fairly
-disturbed at <span class="math inline">(0, 0)</span> (see figure
-5).</span></p>
+limit comes out to be <span class="math inline">1/2</span>.</p>
 <p>Consider <span class="math display">$$f(x,y) =
 \frac{x-y}{x^2+y^2}.$$</span> Note that both the numerator and
 denominator are continuous functions of <span

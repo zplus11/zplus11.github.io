@@ -18,7 +18,7 @@ Brouwer's theorem stated formally:^[The applications of this theorem are divine.
 
 ## Fixed points
 
-In any map, a point $x$ is said to be a fixed point if its image under the map is $x$ itself. For example, consider the identity map $x\mapsto x$. Since each point gets mapped to itself, we say that every point is a fixed point.^[Consider $x\mapsto x^2$. The image of $0$ is $0^2=0$ so $0$ is a fixed point. On the other hand, $1$ is also a fixed point. But apart from these two, there are no fixed point. $-1\mapsto (-1)^2=1\not=-1$ so $-1$ is not a fixed point. Similarly we can see every other point maps to an image different than itself.]
+In any map, a point $x$ is said to be a fixed point if its image under the map is $x$ itself. For example, consider the identity map $x\mapsto x$. Since each point gets mapped to itself, we say that every point is a fixed point. Consider $x\mapsto x^2$. The image of $0$ is $0^2=0$ so $0$ is a fixed point. On the other hand, $1$ is also a fixed point. But apart from these two, there are no fixed point. $-1\mapsto (-1)^2=1\not=-1$ so $-1$ is not a fixed point. Similarly we can see every other point maps to an image different than itself.
 
 Talking about the sheet of paper example, one way is to take the "image sheet" and put it on top of the "domain sheet" as it is. This is nothing but the identity map, each point gets mapped to itself so that every point is a fixed point. To visualise these examples, I consider this map in Mathematica:
 
@@ -101,6 +101,6 @@ This idea of transforming $D^2$ goes beyond just scaling and translating. For ex
 
 ![Illustration (credits: Dennis Simanaitis, *COMBED COCONUTS HAVE COWLICKS.* [https://simanaitissays.com/2015/01/19/combed-coconut-must-have-cowlicks](https://simanaitissays.com/2015/01/19/combed-coconut-must-have-cowlicks))](img/paper.png)
 
-if you crumble a piece of paper and place it atop itself, and think of the image of each point in the paper to be wherever it lands in the crumbled form, then again it is a continuous map from $D^2$ to itself. Hence, we can invoke the theorem to say there exists *at least* one point that lands precisely on top of itself, no matter how the paper is crumbled.^[The theorem holds for any compact convex subspace of $\mathbb R^n$. For example, it applies to the solid 3-ball $D^3$. A classical illustration is that if you stir a glass of water, there is at least one point in the fluid that ends up exactly where it started.]
+if you crumble a piece of paper and place it atop itself, and think of the image of each point in the paper to be wherever it lands in the crumbled form, then again it is a continuous map from $D^2$ to itself. Hence, we can invoke the theorem to say there exists *at least* one point that lands precisely on top of itself, no matter how the paper is crumbled. The theorem holds for any compact convex subspace of $\mathbb R^n$. For example, it applies to the solid 3-ball $D^3$. A classical illustration is that if you stir a glass of water, there is at least one point in the fluid that ends up exactly where it started.
 
 If you enjoyed reading this blog post, I am glad. The code is available at [bfp.nb](/resources/mm/bfp.nb).

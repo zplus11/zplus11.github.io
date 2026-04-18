@@ -9,18 +9,17 @@
 	--red: #CC1E1D;
 	--brown: #730B0B;
 	--grey: #615F5F;
-	--font: default;
 	--bg: white;
 	--fg: black
 }
 *, *::before, *::after {
 	box-sizing: inherit
 }
-html { font-size: 21px; font-family: var(--font); color: var(--fg); background-color: var(--bg); font-weight: 400 }
-@media (max-width: 512px) { html { font-size: 20px } }
+html { font-size: 20px; font-family: var(--font); color: var(--fg); background-color: var(--bg); font-weight: 400 }
+@media (max-width: 512px) { html { font-size: 16px } }
 a { color: var(--orange); font-family: inherit; text-decoration: none; font-weight: 500 }
-a:hover { font-weight: bold }
 a:visited { color: var(--blue) }
+a:hover { font-weight: bold }
 
 
 /* navigation */
@@ -66,7 +65,7 @@ footer { margin-top: 1rem; padding: 0.5rem 0; font-size: var(--small) }
 .blog-date { font-style: italic; opacity: 0.7; margin: 0; padding: 0; font-size: var(--small) }
 .blog-tags span { padding: 0.15rem 0.4rem; margin-right: 0.3rem; border-radius: 4px; font-size: var(--small) }
 .blog__card p { margin: 0 }
-#tag-filter button { border: none; padding: 0.3rem 0.6rem; margin-right: 0.3rem; cursor: pointer; border-radius: 4px }
+#tag-filter button { border: none; padding: 0.3rem 0.6rem; margin-right: 0.3rem; cursor: pointer; border-radius: 4px; margin-bottom: 0.3rem }
 #tag-filter button:hover { }
 
 table, th, td { border-collapse: collapse; padding: 2px 7px }
@@ -75,7 +74,7 @@ table th { border-bottom: solid var(--red) 2px }
 img { max-width: 100% }
 @media (min-width: 700px) { img { max-width: 70% } }
 #s5g { max-width: 100% }
-pre { max-height: 100%; overflow: auto; border-left: solid var(--brown) 4px; border-radius: 4px; background-color: rgba(1, 1, 1, 0.05) }
+pre { max-height: 100%; overflow: auto; border-left: solid var(--brown) 2px; border-radius: 4px; background-color: rgba(1, 1, 1, 0.02) }
 pre code { display: block; white-space: pre; padding: 1em }
 code { font-size: var(--small) }
 
@@ -95,8 +94,8 @@ blockquote { border-left: var(--grey) solid 2px; font-style: italic; color: var(
 }
 .blog__content > *:last-child::after { font-weight: bold; content: "\25CB"; float: right }
 
-.sidenote {
+.sidenote { 
 	float: right; max-width: clamp(115px, 25vw, 250px); margin: 15px; margin-right: -15px;
-	border-left: var(--brown) 2px solid; padding: 0 10px; font-size: var(--small); color: var(--grey);
+	border-left: var(--grey) 2px solid; padding: 0 10px; font-size: var(--small); color: var(--grey);
 	font-style: italic
 }

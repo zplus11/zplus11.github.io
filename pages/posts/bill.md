@@ -5,7 +5,7 @@ date: 06 April, 2026
 
 ![Billiards table. Source: 8 Ball Pool game by Miniclip](img/table.jpeg)
 
-The modulus function $x\mapsto|x|$ does more than just returning the absolute value of a number. When plotted, its graph represents sort of (exactly) a reflection:^[The modulus function $|x|$ gives distance from 0, ignoring direction. Graphically, it folds the negative axis onto the positive.]
+The^[The modulus function $|x|$ gives distance from 0, ignoring direction. Graphically, it folds the negative axis onto the positive.] modulus function $x\mapsto|x|$ does more than just returning the absolute value of a number. When plotted, its graph represents sort of (exactly) a reflection:
 
 ![Graph of modulus function.](img/modf.png)
 

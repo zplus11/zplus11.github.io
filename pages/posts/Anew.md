@@ -48,7 +48,7 @@ so that $f(0)$ starts an endless loop. Hence, we finally have something that can
 
 $$A_4=\{\{a,X\}:a\in A\}$$
 
-which essentially "tags" $X$ with each $a$. $A_4$ clearly has a bijection with $A$ via the map $a\mapsto \{a,X\}$, and nothing in $A_4$ can ever belong to $X$. As as example, we have if $X=\{1,2,3\}$ and $A=\{1,2\}$ then $A_4=\{\{1,X\},\{2,X\}\}$. We could totally have something like $A_4=\{X_1,X_2\}$ which merely subscripts each $a$ in $A$, to $X$.^[In this case, we will have $A_4=\Big\{\{1,2,3\}_1,\{1,2,3\}_2\Big\}$ in expanded form. Something like $A_4=\{1+X,2+X\}$ could also totally work, where we don't define the addition, and only use $1+X$ as a notation.]
+which^[In this case, we will have $A_4=\Big\{\{1,2,3\}_1,\{1,2,3\}_2\Big\}$ in expanded form. Something like $A_4=\{1+X,2+X\}$ could also totally work, where we don't define the addition, and only use $1+X$ as a notation.] essentially "tags" $X$ with each $a$. $A_4$ clearly has a bijection with $A$ via the map $a\mapsto \{a,X\}$, and nothing in $A_4$ can ever belong to $X$. As as example, we have if $X=\{1,2,3\}$ and $A=\{1,2\}$ then $A_4=\{\{1,X\},\{2,X\}\}$. We could totally have something like $A_4=\{X_1,X_2\}$ which merely subscripts each $a$ in $A$, to $X$.
 
 To go one step further, if the requirement was exhibiting elements that are neither in $X$ nor in $A$, nothing stops us from using something like
 

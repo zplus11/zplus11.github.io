@@ -79,11 +79,11 @@ $$\begin{aligned}
     			 &= -y.
 \end{aligned}$$
 
-Similarly, the other parts can be solved.^[It is worth noting that the mixed partials\index{mixed partials} in this case will not be equal to each other. However, this does not violate the theorem on mixed partials equality since the function in question is not continuous.]
+Similarly, the other parts can be solved. It is worth noting that the mixed partials\index{mixed partials} in this case will not be equal to each other. However, this does not violate the theorem on mixed partials equality since the function in question is not continuous.
 
 ## Directional Derivatives
 
-A broader type of derivatives are the directional derivatives, which are calculated for a function in a given direction. In this sense, $$\pd fx$$ is the derivative of $f$ along the vector $1\hat i + 0 \hat j$. In extension to that, directional derivative along the vector $\vec v=a\hat i + b \hat j$ would be the rate of change in $f$ in the direction of this vector. It is denoted by $\dir vf$. In figure \ref{dirderiv_visualised}, the plane goes in the direction of $\vec v$, and the red coloured curve is its intersection with $f$. Then, $\dir vf$ is slope of the tangent on this curve at the concerned point.^[In this sense of directional derivatives, we may note that the partial derivative $$\pd fx$$ is nothing but directional derivative in the direction $\hat i$, for example.] The mathematical definition of directional direction is as follows:
+A broader type of derivatives are the directional derivatives, which are calculated for a function in a given direction. In this sense, $$\pd fx$$ is the derivative of $f$ along the vector $1\hat i + 0 \hat j$.^[In this sense of directional derivatives, we may note that the partial derivative $$\pd fx$$ is nothing but directional derivative in the direction $\hat i$, for example.] In extension to that, directional derivative along the vector $\vec v=a\hat i + b \hat j$ would be the rate of change in $f$ in the direction of this vector. It is denoted by $\dir vf$. In figure \ref{dirderiv_visualised}, the plane goes in the direction of $\vec v$, and the red coloured curve is its intersection with $f$. Then, $\dir vf$ is slope of the tangent on this curve at the concerned point. The mathematical definition of directional direction is as follows:
 
 $$
 \dir{a\hat i + b \hat j}f=\frac{f(x+ha,y+hb)-f(x,y)}{h}.
