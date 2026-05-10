@@ -17,9 +17,10 @@ document.addEventListener("DOMContentLoaded", function () {
 						blogCard.classList.add("blog__card");
 
 						blogCard.innerHTML = `
- <a href="posts/${blog.url}" class="blog-link">${blog.title}</a> <span class="blog-date">${blog.date}</span>
-  <p style="margin-left: 1rem">${blog.desc}</p>
-`;
+						<div class="dropcap">
+					<a href="posts/${blog.url}">${blog.title}</a>
+					<span class="blog-date">${blog.date}</span> <br>
+					<span class="blog-desc">${blog.desc}</p>`;
 
 						blogList.appendChild(blogCard);
 					}
