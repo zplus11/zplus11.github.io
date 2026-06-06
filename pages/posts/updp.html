@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>THE universal property of direct products</title>
 		<link rel="stylesheet" href="/style.css">
-
 <script>
   window.MathJax = {
     options: {
@@ -75,13 +74,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 			<section class="blog__post">
 				<div class="blog__content">
 				<h1>THE universal property of direct products</h1>
-				<p><i>07 May, 2026</i></p>
+				<p><i>22 May, 2026</i></p>
 				<hr><br><br>
-				<script type="module">
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
-mermaid.initialize({ startOnLoad: true });
-</script>
-<p>I am studying module theory this semester, and noticeably I couldn’t
+				<p>I studied module theory the past semester, and noticeably I couldn’t
 find the “complete version” universal property of direct products
 anywhere I’ve looked so far. That is the version we studied in this
 course. I am thus going to write it out here.</p>
@@ -108,17 +103,47 @@ such that <span
 class="math inline"><em>f</em><sub><em>α</em></sub> = <em>ϕ</em><em>p</em><sub><em>α</em></sub></span>
 for each <span class="math inline"><em>α</em> ∈ <em>J</em></span>.</p>
 <p><em>Proof.</em> We first prove the forward part. Let <span
-class="math inline"><em>M</em> ≅ ∏<sub><em>α</em></sub><em>M</em><sub><em>α</em></sub></span>.
-We prove existence of the required family of R-homs <span
-class="math inline">{<em>p</em><sub><em>α</em></sub>}</span>.</p>
-<p><span class="math display">$$
-\begin{tikzcd}
-M \arrow[r,"f"] \arrow[d,"g"]
-&amp; N \arrow[d,"h"] \\
-P \arrow[r,"k"]
-&amp; Q
-\end{tikzcd}
-$$</span></p>
+class="math inline"><em>ρ</em> : <em>M</em> → ∏<sub><em>α</em></sub><em>M</em><sub><em>α</em></sub></span>
+be an isomorphism. We prove existence of the required family of R-homs
+<span class="math inline">{<em>p</em><sub><em>α</em></sub>}</span>. Let
+<span
+class="math inline"><em>π</em><sub><em>β</em></sub> : ∏<sub><em>α</em></sub><em>M</em><sub><em>α</em></sub> → <em>M</em><sub><em>β</em></sub></span>
+be the canonical projections. We propose that <span
+class="math inline"><em>p</em><sub><em>α</em></sub> = <em>π</em><sub><em>α</em></sub> ∘ <em>ρ</em></span>
+satisfy the given property.</p>
+<figure>
+<img src="img/updp1.svg"
+alt="Diagram resembling the maps between $M, \prod_\alpha M_\alpha, and M_\beta." />
+<figcaption aria-hidden="true">Diagram resembling the maps between $M,
+<span
+class="math inline">∏<sub><em>α</em></sub><em>M</em><sub><em>α</em></sub></span>,
+and <span
+class="math inline"><em>M</em><sub><em>β</em></sub></span>.</figcaption>
+</figure>
+<p>To show that this proposed family <span
+class="math inline">{<em>p</em><sub><em>α</em></sub>}</span> satisfies
+the given property, we let <span class="math inline"><em>A</em></span>
+be any other <span class="math inline"><em>R</em></span>-module and
+<span
+class="math inline">{<em>f</em><sub><em>α</em></sub> : <em>A</em> → <em>M</em><sub><em>α</em></sub>}</span>
+be an associated family of <span
+class="math inline"><em>R</em></span>-homs.</p>
+<figure>
+<img src="img/updp2.svg" alt="Extended diagram" />
+<figcaption aria-hidden="true">Extended diagram</figcaption>
+</figure>
+<p>We produce the required <span
+class="math inline"><em>ϕ</em> : <em>A</em> → <em>M</em></span>. First
+consider <span
+class="math inline"><em>η</em> : <em>A</em> → ∏<sub><em>α</em></sub><em>M</em><sub><em>α</em></sub></span>
+defined by</p>
+<p><span
+class="math display"><em>η</em>(<em>a</em>) := (<em>f</em><sub><em>α</em></sub>(<em>a</em>))<sub><em>α</em></sub>.</span></p>
+<p>Since each <span
+class="math inline"><em>f</em><sub><em>α</em></sub></span> is an <span
+class="math inline"><em>R</em></span>-hom therefore so is <span
+class="math inline"><em>η</em></span>. Then define <span
+class="math inline"><em>ϕ</em> = <em>ρ</em><sup>−1</sup> ∘ <em>η</em></span>.</p>
 				</div>
 				<br><br><hr>
 				<p>

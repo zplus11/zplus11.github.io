@@ -5,7 +5,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Entourages</title>
 		<link rel="stylesheet" href="/style.css">
-
 <script>
   window.MathJax = {
     options: {
@@ -111,16 +110,9 @@ call <span class="math inline"><em>x</em></span> and <span
 class="math inline"><em>y</em></span> to be <span
 class="math inline"><em>U</em></span>-“close” to each other if the point
 <span class="math inline">(<em>x</em>, <em>y</em>)</span> belongs to the
-entourage <span class="math inline"><em>U</em></span>.<span
-class="sidenote">Now, we can call a sequence <span
-class="math inline"><em>x</em><sub><em>n</em></sub></span> to be <span
-class="math inline"><em>U</em></span>-Cauchy if there exists some <span
-class="math inline"><em>N</em> ∈ ℕ</span> such that <span
-class="math inline">(<em>x</em><sub><em>m</em></sub>, <em>x</em><sub><em>n</em></sub>)</span>
-belongs to <span class="math inline"><em>U</em></span> for each <span
-class="math inline"><em>m</em>, <em>n</em> ≥ <em>N</em></span>. That is
-all I have to share.</span> Below I present some graphs in
-Mathematica.</p>
+entourage <span class="math inline"><em>U</em></span>.<a href="#fn1"
+class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>
+Below I present some graphs in Mathematica.</p>
 <p>Some entourage-defining functions:</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">d</span><span class="op">[</span><span class="dv">1</span><span class="op">,</span> <span class="at">a_</span><span class="op">][{</span><span class="at">x_</span><span class="op">,</span> <span class="at">y_</span><span class="op">}]</span> <span class="ex">:=</span> <span class="fu">Abs</span><span class="op">[</span><span class="fu">x</span> <span class="sc">-</span> <span class="fu">y</span><span class="op">]</span> &lt;<span class="ex">=</span> <span class="fu">a</span></span>
@@ -171,6 +163,21 @@ green by <code>d[4,0.15,Cos]</code> and blue is the “composition” of
 both of these.</p>
 <p><img src="img/entg.png" /></p>
 <p>Thanks.</p>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Now, we can call a sequence <span
+class="math inline"><em>x</em><sub><em>n</em></sub></span> to be <span
+class="math inline"><em>U</em></span>-Cauchy if there exists some <span
+class="math inline"><em>N</em> ∈ ℕ</span> such that <span
+class="math inline">(<em>x</em><sub><em>m</em></sub>, <em>x</em><sub><em>n</em></sub>)</span>
+belongs to <span class="math inline"><em>U</em></span> for each <span
+class="math inline"><em>m</em>, <em>n</em> ≥ <em>N</em></span>. That is
+all I have to share.<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
 				</div>
 				<br><br><hr>
 				<p>
