@@ -66,7 +66,7 @@ bezier[pts_List, t_] := Nest[f[t], pts, Length@pts - 1]
 Now time for some visualisations.
 
 ```mathematica
-pts = {{0, 0}, {1, 1}};
+pts = { {0, 0}, {1, 1} };
 ParametricPlot[
 	bezier[pts,t],
 	{t, 0, 1},
@@ -76,7 +76,7 @@ ParametricPlot[
 ![Linear case.](img/blin.png)
 
 ```mathematica
-pts = {{3, 1}, {0, 0}, {3, -1}};
+pts = { {3, 1}, {0, 0}, {3, -1} };
 (* same as above *)
 ```
 
@@ -85,7 +85,7 @@ pts = {{3, 1}, {0, 0}, {3, -1}};
 A more general case:
 
 ```mathematica
-pts = {{0, 0}, {1, 1}, {2, -1}, {3, 0}, {5, 2}, {6, -1}, {7, 3}};
+pts = { {0, 0}, {1, 1}, {2, -1}, {3, 0}, {5, 2}, {6, -1}, {7, 3} };
 (* same as above *)
 ```
 
@@ -94,10 +94,10 @@ pts = {{0, 0}, {1, 1}, {2, -1}, {3, 0}, {5, 2}, {6, -1}, {7, 3}};
 Very interestingly, due to the way we have written this setup, merely changing the points to 3D points results in a 3D curve. For example:
 
 ```mathematica
-pts = {{0, 0, 0}, {1, 1, 1}, {2, -1, 1}, {3, 0, 2}};
+pts = { {0, 0, 0}, {1, 1, 1}, {2, -1, 1}, {3, 0, 2} };
 (* same as above *)
 ```
 
 ![](img/b3d.png)
 
-Amazing to see that linear functions and compositions thereof result in the higher dimensional curves.
+Amazing to see that linear functions and compositions thereof result in the higher dimensional curves. If you liked this, I am glad. The code is available in [nb file](/resources/mm/bez.nb).
