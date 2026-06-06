@@ -61,7 +61,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 			<ul>
 				<li><a href="/pages/blog.html">My blog</a></li>
 				<li><a href="/pages/mgroups.html">MGroups</a></li>
-				<li><a href="/pages/cv.html">CV</a></li>
 			</ul>
 		</nav>
 
@@ -82,10 +81,15 @@ it must go off.</em></p>
 <p>— Anton Chekhov</p>
 </blockquote>
 <h2 id="introduction">Introduction</h2>
-<p>Calculus<a href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a> is the study of small changes.
-Multivariate Calculus is the study of small changes in functions of
-multiple variables, such as those defined from <span
+<p>Calculus<span class="sidenote"><strong>Preface.</strong> This is the
+first article in the series “Some Notes on Multivariate Calculus,” based
+on the course I studied in 2024 taught by my professor
+<a href="https://sgtbkhalsadu.ac.in/academics/departments/Mathematics/faculty-detail/97/" target="_blank">Amarpreet
+ma’am.</a> It is largely due of her consistent encouragement and
+powerful motivation that these notes could be compiled in the form
+presented here.</span> is the study of small changes. Multivariate
+Calculus is the study of small changes in functions of multiple
+variables, such as those defined from <span
 class="math inline">ℝ<sup>2</sup></span> to <span
 class="math inline">ℝ</span> by some definition that maps each <span
 class="math inline">(<em>x</em>, <em>y</em>)</span> in the domain set to
@@ -128,14 +132,14 @@ class="math inline"><em>z</em> = <em>c</em></span> intersects the
 surface <span
 class="math inline"><em>z</em> = <em>f</em>(<em>x</em>, <em>y</em>)</span>
 at <span
-class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>c</em></span>.<a
-href="#fn2" class="footnote-ref" id="fnref2"
-role="doc-noteref"><sup>2</sup></a> Such an intersection is called the
-“trace of graph of <span class="math inline"><em>f</em></span>” in the
-plane <span class="math inline"><em>z</em> = <em>c</em></span>. And
-further, the level curve of <span class="math inline"><em>f</em></span>
-at <span class="math inline"><em>c</em></span> is the set of all points
-<span class="math inline">(<em>x</em>, <em>y</em>)</span> in the <span
+class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>c</em></span>.<span
+class="sidenote">In figure 2, the blue disk is trace whereas red disk is
+the level curve.</span> Such an intersection is called the “trace of
+graph of <span class="math inline"><em>f</em></span>” in the plane <span
+class="math inline"><em>z</em> = <em>c</em></span>. And further, the
+level curve of <span class="math inline"><em>f</em></span> at <span
+class="math inline"><em>c</em></span> is the set of all points <span
+class="math inline">(<em>x</em>, <em>y</em>)</span> in the <span
 class="math inline"><em>x</em><em>y</em></span>-plane that satisfy <span
 class="math inline"><em>f</em>(<em>x</em>, <em>y</em>) = <em>c</em></span>.</p>
 <figure>
@@ -292,9 +296,10 @@ Therefore, it does not exist.</p>
 <h2 id="polar-transformations">Polar Transformations</h2>
 <p>For functions involving <span
 class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup></span>,
-we<a href="#fn3" class="footnote-ref" id="fnref3"
-role="doc-noteref"><sup>3</sup></a> may use polar transformations given
-by</p>
+we<span class="sidenote">Wherever the said term <span
+class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup></span>
+is spotted, one almost always would want to convert the limit into polar
+coordinates.</span> may use polar transformations given by</p>
 <p><span
 class="math display"><em>x</em> = <em>r</em>cos <em>θ</em>,  and,  <em>y</em> = <em>r</em>sin <em>θ</em></span></p>
 <p>where <span
@@ -360,9 +365,11 @@ class="math inline">(0, 0)</span>.</p>
 </figure>
 <p>This is because it fails the very first requirement for continuity —
 existence of limit. Along <span
-class="math inline"><em>x</em> = 0</span>,<a href="#fn4"
-class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> the
-limit is zero. However, along the path <span
+class="math inline"><em>x</em> = 0</span>,<span class="sidenote">These
+limits can be noticed in the plot of this function. Discontinuity can
+also be visibly seen, as the graph is fairly disturbed at <span
+class="math inline">(0, 0)</span> (see figure 5).</span> the limit is
+zero. However, along the path <span
 class="math inline"><em>x</em> = <em>y</em><sup>2</sup></span>, the
 limit comes out to be <span class="math inline">1/2</span>.</p>
 <p>Consider <span class="math display">$$f(x,y) =
@@ -392,32 +399,6 @@ page.</a> For any feedback or discussion, please contact me via email at
 namtgr at gmail dot com. The graphs for this article were created using
 Mathematica. A notebook containing them can be found at <a
 href="/resources/mm/fmv.nb">this link</a>.</p>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p><strong>Preface.</strong> This is the first article in
-the series “Some Notes on Multivariate Calculus,” based on the course I
-studied in 2024 taught by my professor
-<a href="https://sgtbkhalsadu.ac.in/academics/departments/Mathematics/faculty-detail/97/" target="_blank">Amarpreet
-ma’am.</a> It is largely due of her consistent encouragement and
-powerful motivation that these notes could be compiled in the form
-presented here.<a href="#fnref1" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>In figure 2, the blue disk is trace whereas red disk is
-the level curve.<a href="#fnref2" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p>Wherever the said term <span
-class="math inline"><em>x</em><sup>2</sup> + <em>y</em><sup>2</sup></span>
-is spotted, one almost always would want to convert the limit into polar
-coordinates.<a href="#fnref3" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p>These limits can be noticed in the plot of this
-function. Discontinuity can also be visibly seen, as the graph is fairly
-disturbed at <span class="math inline">(0, 0)</span> (see figure 5).<a
-href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 				</div>
 				<br><br><hr>
 				<p>

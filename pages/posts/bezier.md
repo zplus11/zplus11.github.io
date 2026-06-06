@@ -1,9 +1,9 @@
 ---
 title: Bezier curves
 date: 06 May, 2026
+header-includes:
+  - \DeclareMathOperator\Bez{Bez}
 ---
-
-\DeclareMathOperator\Bez{Bez}
 
 Bezier curves are used to model smooth curves of various degrees. A discrete often finite set of points are used to "control" the curve, in the sense that the resulting curve is a smooth approximation of the poligonal path obtained by joining said points end to end. The simplest Bezier curve (linear case) is obtained by using 2 given points $P_0$ and $P_1$. Resultant is merely joining $P_0$ with $P_1$, that is
 
@@ -63,6 +63,13 @@ f[t_][batch_] := join[#, t] & /@ Partition[batch, 2, 1]
 bezier[pts_List, t_] := Nest[f[t], pts, Length@pts - 1]
 ```
 
+The `bezier` function returns the parametric coordinates of the Bezier curve respecting the given control points `pts`. For example, with `pts = { {1, 2}, {0, -1}, {-3, 4}, {10, 11} }` we can obtain
+
+```mathematica
+bezier[{ {1, 2}, {0, -1}, {-3, 4}, {10, 11} }, t] // Simplify
+(* {1-3 t-6 t^2+18 t^3,2-9 t+24 t^2-6 t^3} *)
+```
+
 Now time for some visualisations.
 
 ```mathematica
@@ -100,4 +107,4 @@ pts = { {0, 0, 0}, {1, 1, 1}, {2, -1, 1}, {3, 0, 2} };
 
 ![](img/b3d.png)
 
-Amazing to see that linear functions and compositions thereof result in the higher dimensional curves. If you liked this, I am glad. The code is available in [nb file](/resources/mm/bez.nb).
+Amazing to see that linear functions and compositions thereof result in the higher dimensional curves. If you liked this, I am glad. The code is available in [this .nb file](/resources/mm/bez.nb).

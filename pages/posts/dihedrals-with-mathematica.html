@@ -61,7 +61,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 			<ul>
 				<li><a href="/pages/blog.html">My blog</a></li>
 				<li><a href="/pages/mgroups.html">MGroups</a></li>
-				<li><a href="/pages/cv.html">CV</a></li>
 			</ul>
 		</nav>
 
@@ -97,10 +96,11 @@ reflection along the axis oriented at 0 degrees, we have <span
 class="math inline"><em>s</em><sup>2</sup> = <em>r</em><sup>0</sup></span>.
 Finally, <span
 class="math inline"><em>s</em><em>r</em><sup><em>i</em></sup> = <em>r</em><sup><em>n</em> − <em>i</em></sup><em>s</em></span>.</p>
-<p>Using<a href="#fn1" class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a> these rules, any product of elements
-in <span class="math inline"><em>D</em><sub><em>n</em></sub></span> can
-be reduced to one of the elements of <span
+<p>Using<span class="sidenote">For example, <span
+class="math inline"><em>r</em><sup>3</sup><em>s</em><em>r</em><sup>1</sup> = <em>r</em><sup>3</sup><em>r</em><sup><em>n</em> − 1</sup><em>s</em> = <em>r</em><sup>3 + <em>n</em> − 1</sup><em>s</em> = <em>r</em><sup>2</sup><em>s</em>.</span></span>
+these rules, any product of elements in <span
+class="math inline"><em>D</em><sub><em>n</em></sub></span> can be
+reduced to one of the elements of <span
 class="math inline"><em>D</em><sub><em>n</em></sub></span> itself. Our
 motive is to define these patterns in Mathematica so that such
 computations can be automatically done. For it, we will use the
@@ -166,15 +166,6 @@ class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb
 <span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">r</span><span class="sc">^</span><span class="dv">3</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">**</span> <span class="fu">s</span> <span class="sc">**</span> <span class="fu">r</span><span class="sc">^</span><span class="dv">1</span> <span class="sc">**</span> <span class="fu">s</span> <span class="co">(* r^0 *)</span></span></code></pre></div>
 <p>The code is available in this mathematica notebook: <a
 href="/resources/mm/dih.nb">dih.nb</a>.</p>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
-<ol>
-<li id="fn1"><p>For example, <span
-class="math inline"><em>r</em><sup>3</sup><em>s</em><em>r</em><sup>1</sup> = <em>r</em><sup>3</sup><em>r</em><sup><em>n</em> − 1</sup><em>s</em> = <em>r</em><sup>3 + <em>n</em> − 1</sup><em>s</em> = <em>r</em><sup>2</sup><em>s</em>.</span><a
-href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 				</div>
 				<br><br><hr>
 				<p>

@@ -61,7 +61,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 			<ul>
 				<li><a href="/pages/blog.html">My blog</a></li>
 				<li><a href="/pages/mgroups.html">MGroups</a></li>
-				<li><a href="/pages/cv.html">CV</a></li>
 			</ul>
 		</nav>
 
@@ -145,21 +144,29 @@ curve respecting any given control points:</p>
 <div class="sourceCode" id="cb4"><pre
 class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">f</span><span class="op">[</span><span class="at">t_</span><span class="op">][</span><span class="at">batch_</span><span class="op">]</span> <span class="ex">:=</span> <span class="fu">join</span><span class="op">[</span>#<span class="op">,</span> <span class="fu">t</span><span class="op">]</span> &amp; <span class="sc">/</span>@ <span class="fu">Partition</span><span class="op">[</span>batch<span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">1</span><span class="op">]</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>bezier<span class="op">[</span><span class="at">pts_</span>List<span class="op">,</span> <span class="at">t_</span><span class="op">]</span> <span class="ex">:=</span> <span class="fu">Nest</span><span class="op">[</span><span class="fu">f</span><span class="op">[</span><span class="fu">t</span><span class="op">],</span> pts<span class="op">,</span> Length@pts <span class="sc">-</span> <span class="dv">1</span><span class="op">]</span></span></code></pre></div>
-<p>Now time for some visualisations.</p>
+<p>The <code>bezier</code> function returns the parametric coordinates
+of the Bezier curve respecting the given control points
+<code>pts</code>. For example, with
+<code>pts = { {1, 2}, {0, -1}, {-3, 4}, {10, 11} }</code> we can
+obtain</p>
 <div class="sourceCode" id="cb5"><pre
-class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>pts <span class="ex">=</span> <span class="op">{</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">}</span> <span class="op">}</span>;</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ParametricPlot</span><span class="op">[</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    bezier<span class="op">[</span>pts<span class="op">,</span><span class="fu">t</span><span class="op">],</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span><span class="fu">t</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Epilog</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="fu">Point</span> <span class="sc">/</span>@ pts<span class="op">,</span> <span class="fu">Gray</span><span class="op">,</span> <span class="fu">Line</span> <span class="sc">/</span>@ <span class="fu">Partition</span><span class="op">[</span>pts<span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">1</span><span class="op">]}</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>bezier<span class="op">[{</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="sc">-</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">},</span> <span class="op">{</span><span class="dv">10</span><span class="op">,</span> <span class="dv">11</span><span class="op">}</span> <span class="op">},</span> <span class="fu">t</span><span class="op">]</span> <span class="sc">//</span> <span class="fu">Simplify</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">(* {1-3 t-6 t^2+18 t^3,2-9 t+24 t^2-6 t^3} *)</span></span></code></pre></div>
+<p>Now time for some visualisations.</p>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pts <span class="ex">=</span> <span class="op">{</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">}</span> <span class="op">}</span>;</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ParametricPlot</span><span class="op">[</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    bezier<span class="op">[</span>pts<span class="op">,</span><span class="fu">t</span><span class="op">],</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="op">{</span><span class="fu">t</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Epilog</span> <span class="ot">-&gt;</span> <span class="op">{</span><span class="fu">Point</span> <span class="sc">/</span>@ pts<span class="op">,</span> <span class="fu">Gray</span><span class="op">,</span> <span class="fu">Line</span> <span class="sc">/</span>@ <span class="fu">Partition</span><span class="op">[</span>pts<span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">1</span><span class="op">]}</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="op">]</span></span></code></pre></div>
 <figure>
 <img src="img/blin.png" alt="Linear case." />
 <figcaption aria-hidden="true">Linear case.</figcaption>
 </figure>
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>pts <span class="ex">=</span> <span class="op">{</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">}</span> <span class="op">}</span>;</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">(* same as above *)</span></span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pts <span class="ex">=</span> <span class="op">{</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">}</span> <span class="op">}</span>;</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">(* same as above *)</span></span></code></pre></div>
 <figure>
 <img src="img/bqua.png"
 alt="Quadratic case. Note that the curve doesn’t pass through (0,0) even though that is a control point!" />
@@ -168,19 +175,19 @@ doesn’t pass through <span class="math inline">(0, 0)</span> even though
 that is a control point!</figcaption>
 </figure>
 <p>A more general case:</p>
-<div class="sourceCode" id="cb7"><pre
-class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pts <span class="ex">=</span> <span class="op">{</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">2</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">5</span><span class="op">,</span> <span class="dv">2</span><span class="op">},</span> <span class="op">{</span><span class="dv">6</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">7</span><span class="op">,</span> <span class="dv">3</span><span class="op">}</span> <span class="op">}</span>;</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co">(* same as above *)</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pts <span class="ex">=</span> <span class="op">{</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">2</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">5</span><span class="op">,</span> <span class="dv">2</span><span class="op">},</span> <span class="op">{</span><span class="dv">6</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">7</span><span class="op">,</span> <span class="dv">3</span><span class="op">}</span> <span class="op">}</span>;</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">(* same as above *)</span></span></code></pre></div>
 <p><img src="img/bgen.png" /></p>
 <p>Very interestingly, due to the way we have written this setup, merely
 changing the points to 3D points results in a 3D curve. For example:</p>
-<div class="sourceCode" id="cb8"><pre
-class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pts <span class="ex">=</span> <span class="op">{</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">2</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">}</span> <span class="op">}</span>;</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">(* same as above *)</span></span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pts <span class="ex">=</span> <span class="op">{</span> <span class="op">{</span><span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">0</span><span class="op">},</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">2</span><span class="op">,</span> <span class="sc">-</span><span class="dv">1</span><span class="op">,</span> <span class="dv">1</span><span class="op">},</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">}</span> <span class="op">}</span>;</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co">(* same as above *)</span></span></code></pre></div>
 <p><img src="img/b3d.png" /></p>
 <p>Amazing to see that linear functions and compositions thereof result
 in the higher dimensional curves. If you liked this, I am glad. The code
-is available in <a href="/resources/mm/bez.nb">nb file</a>.</p>
+is available in <a href="/resources/mm/bez.nb">this .nb file</a>.</p>
 				</div>
 				<br><br><hr>
 				<p>
