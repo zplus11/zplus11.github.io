@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 						<div class="dropcap">
 					<a href="posts/${blog.url}">${blog.title}</a>
 					<span class="blog-date">${blog.date}</span> <br>
-					<span class="blog-desc">${blog.desc}</p>`;
+					<span class="blog-desc">${blog.desc}</span></div>`;
 
 						blogList.appendChild(blogCard);
 					}

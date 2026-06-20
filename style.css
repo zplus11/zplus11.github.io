@@ -60,7 +60,9 @@ header > figure { flex: 1 }
 
 /* blogs */
 
-#blogs__list > .blog__card { margin: 1rem 0 }
+#blogs__list { columns: 3 200px; column-gap: 1.5rem; margin: 1rem 0 }
+#blogs__list > .blog__card { break-inside: avoid; margin: 1rem 0 }
+#blogs__list > .blog__card:first-child { margin-top: 0 }
 .dropcap::first-letter {
 	float: left;
 	font-size: 2.7rem;
