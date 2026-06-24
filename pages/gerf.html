@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>taggar.me > gerf</title>
+		<link rel="stylesheet" href="/style.css">
+	</head>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-85NBEPVK2H"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-85NBEPVK2H');
+	</script>
+	<body>
+		<nav>
+			<img class="pfp" onclick="location.href='/'" src="/resources/profiles/Portrait.png" alt="pfp">
+			<ul>
+				<li><a href="/pages/blog.html">My blog</a></li> 
+				<li><a href="/pages/gerf.html">GERF</a></li>
+				<li><a href="/pages/mgroups.html">MGroups</a></li>
+			</ul>
+		</nav>
+
+		<main style="font-size: Floor[100. Inherited]%;">
+			
+
+			<h2>Introduction</h2>
+
+			<p class="Text">
+			GERF is a Mathematica paclet that implements the Generalized Exponential Rational Function (GERF, [1]) expansion technique that helps acquire exact solutions of nonlinear partial differential equations. It transforms the PDE into an ordinary differential equation through a wave transformation and assumes the solution can be expressed as a finite polynomial in a generalized exponential rational function, called the ansatz or the trial solution. Substituting the ansatz into the reduced equation yields an algebraic system whose solutions provide exact closed-form wave solutions.
+			</p>
+
+
+
+			<p class="Text">
+			The method has emerged as an effective tool for obtaining exact solutions of NLPDEs. It has been successfully applied to a wide range of models arising in mathematical physics and applied mathematics, including various KP-, ZK-, BBM-, BLMP-, Klein&ndash;Gordon-, Riemann wave-, and spin-chain-type equations. By employing a rational ansatz constructed from exponential functions, the method provides a unified framework capable of generating diverse classes of solutions, such as hyperbolic, trigonometric, and rational wave structures. Its flexibility and broad applicability have contributed to its growing use in recent studies of nonlinear wave phenomena. Some applications of the method are mentioned in [2-5].
+			</p>
+
+
+
+			<p class="Text">
+			The package is available at the <a href="https://resources.wolframcloud.com/PacletRepository/resources/Taggar/GERF/">Wolfram paclet repository</a> and development takes place at <a href="https://github.com/zplus11/GERF/">Github.</a> Contributions are more than welcome! Current version is 1.2.0. If you use this package for research, see <a href="#citation">Citation</a> below!
+			</p>
+
+
+
+			<h2 class="Section">
+			Installation
+			</h2>
+
+
+
+			<p class="Text">
+			The paclet can be installed by running:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_1.png" alt="nlpde_1.png" width="202" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_2.gif" alt="nlpde_2.gif" width="251" height="42" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			To load it, run:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_3.png" alt="nlpde_3.png" width="105" height="15" style="vertical-align:middle" />
+			</p>
+
+			<h2 class="Section">
+			Overlook of the method
+			</h2>
+
+
+
+			<p class="Text">
+			Suppose we begin with the (1+1)-dimensional Burgers&rsquo; equation:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_4.png" alt="nlpde_4.png" width="395" height="16" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Introducing the wave transformation <span><span>&eta;=a x+b t</span></span>, we obtain the corresponding ODE
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_5.gif" alt="nlpde_5.gif" width="261" height="34" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_6.png" alt="nlpde_6.png" width="240" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Applying balance principle on <span><span>U''(&eta;)</span></span> and <span><span>U(&eta;)U'(&eta;)</span></span> we get <span><span>N+2=N+N+1</span></span> to obtain <span><em>N</em><em>=</em><em>1</em></span>, hence a trial solution takes the following form:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_7.png" alt="nlpde_7.png" width="191" height="33" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			where <span><em>R</em><em>(</em><em>&eta;</em><em>)</em></span> is a generalized exponential rational function, say
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_8.png" alt="nlpde_8.png" width="101" height="30" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			although ordinarily more general forms are considered. Substituting <span><span><img src="HTMLFiles/nlpde_9.png" alt="nlpde_9.png" width="13" height="19" style="vertical-align:middle" /></span></span> in the ODE we obtain the auxiliary polynomial:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_10.png" alt="nlpde_10.png" width="116" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_11.png" alt="nlpde_11.png" width="715" height="35" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Simplifying and collecting coefficients of <span><span><img src="HTMLFiles/nlpde_12.png" alt="nlpde_12.png" width="13" height="19" style="vertical-align:middle" /></span></span> and its various powers:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_13.png" alt="nlpde_13.png" width="249" height="53" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_14.png" alt="nlpde_14.png" width="781" height="39" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Simultaneously equating these to 0 returns in various solutions:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_15.png" alt="nlpde_15.png" width="231" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_16.png" alt="nlpde_16.png" width="617" height="39" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			which result in corresponding closed-form solutions of the Burgers&rsquo; equation.
+			</p>
+
+
+
+			<h2 class="Section">
+			Application of GERF paclet
+			</h2>
+
+
+
+			<p class="Text">
+			This whole process has been streamlined using the GERF paclet. For example, to obtain the solutions demonstrated above, one may simply do:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_17.png" alt="nlpde_17.png" width="190" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_18.png" alt="nlpde_18.png" width="252" height="34" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Here, <span><span><img src="HTMLFiles/nlpde_19.png" alt="nlpde_19.png" width="17" height="19" style="vertical-align:middle" /></span></span> represents what <span><span><img src="HTMLFiles/nlpde_20.png" alt="nlpde_20.png" width="10" height="19" style="vertical-align:middle" /></span></span> above was, and <span><span><img src="HTMLFiles/nlpde_21.png" alt="nlpde_21.png" width="39" height="19" style="vertical-align:middle" /></span></span>, <span><span><img src="HTMLFiles/nlpde_22.png" alt="nlpde_22.png" width="37" height="19" style="vertical-align:middle" /></span></span>.
+			</p>
+
+
+
+			<p class="Text">
+			Plotting the solution for appropriate constant values:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_23.png" alt="nlpde_23.png" width="356" height="112" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_24.gif" alt="nlpde_24.gif" width="360" height="286" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Taking another example: Calogero&ndash;Bogoyavlenskii&ndash;Schiff equation in <span><span>(2+1)</span></span>-dimensions:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_25.png" alt="nlpde_25.png" width="709" height="16" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Solve it using a different form of the generalized exponential rational function, and a custom wave transformation of <span><span>&eta;=x+y-c t</span></span>:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_26.png" alt="nlpde_26.png" width="361" height="133" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_27.png" alt="nlpde_27.png" width="820" height="35" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Plot it:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_28.png" alt="nlpde_28.png" width="200" height="113" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_29.gif" alt="nlpde_29.gif" width="360" height="290" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Note that the rational function above is nothing but exponential form of <span>tan<em>(</em><em>&eta;</em><em>)</em></span>; one could also use:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_30.png" alt="nlpde_30.png" width="358" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_31.png" alt="nlpde_31.png" width="654" height="61" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			wherein the package automatically converts <span>tan<em>(</em><em>&eta;</em><em>)</em></span> to its exponential form. It is worth noting that not all rational functions result in meaningful solutions:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_32.png" alt="nlpde_32.png" width="358" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_33.png" alt="nlpde_33.png" width="16" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			although more complicated forms could work:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_34.png" alt="nlpde_34.png" width="517" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_35.png" alt="nlpde_35.png" width="750" height="38" style="vertical-align:middle" />
+			</p>
+
+			<h3 class="Subsection">
+			Fractional ordered equations
+			</h3>
+
+
+
+			<p class="Text">
+			Not only integral but fractional ordered equations can also be solved. Consider the fractional version of burgers equation:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_36.png" alt="nlpde_36.png" width="646" height="17" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			With <span><em>&delta;</em><em>=</em><em>1</em></span>, we solve using GERFSolve:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_37.png" alt="nlpde_37.png" width="208" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_38.png" alt="nlpde_38.png" width="794" height="338" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Plot one of these for different values of &alpha;:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_39.png" alt="nlpde_39.png" width="270" height="174" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<script type="text/javascript" src="http://www.wolfram.com/cdf-player/plugin/v2.1/cdfplugin.js"></script>
+			<script type="text/javascript">
+				var cdf = new cdfplugin();
+				cdf.embed('HTMLFiles/nlpde_40.cdf', 0, 0);
+			</script>
+			</p>
+
+			<h3 class="Subsection">
+			Nonlinear ODEs
+			</h3>
+
+
+
+			<p class="Text">
+			Conversion of the given NLPDE into an NLODE is one of the steps for this method. As such, the package can also deal directly with an ODE input itself. Recall the ODE that we discussed earlier:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_41.png" alt="nlpde_41.png" width="21" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_42.png" alt="nlpde_42.png" width="240" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			It can be solved using the trial wave transformation of <span><span>&eta;=1&eta;</span></span>:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_43.png" alt="nlpde_43.png" width="301" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_44.png" alt="nlpde_44.png" width="370" height="29" style="vertical-align:middle" />
+			</p>
+
+			<h3 class="Subsection">
+			Systems of equations
+			</h3>
+
+
+
+			<p class="Text">
+			The package also caters to systems of NLPDEs. For example, consider the coupled system:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_45.png" alt="nlpde_45.png" width="568" height="17" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Solving it yields:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_46.png" alt="nlpde_46.png" width="258" height="15" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_47.png" alt="nlpde_47.png" width="927" height="547" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Plotting one of them:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_48.png" alt="nlpde_48.png" width="469" height="139" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_49.gif" alt="nlpde_49.gif" width="425" height="298" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			Another example is the model discussed in [5], given as:
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_50.png" alt="nlpde_50.png" width="737" height="126" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			For ease of computation, let us take <span><span>&alpha;=a=b=1</span></span>. Then,
+			</p>
+
+
+
+			<p class="Input">
+			<img src="HTMLFiles/nlpde_51.png" alt="nlpde_51.png" width="646" height="53" style="vertical-align:middle" />
+			</p>
+
+			<p class="Output">
+			<img src="HTMLFiles/nlpde_52.png" alt="nlpde_52.png" width="906" height="128" style="vertical-align:middle" />
+			</p>
+
+			<p class="Text">
+			This is already comparable to the solutions that the authors have found in their work.
+			</p>
+
+
+
+			<h2 class="Section">
+			Concluding remarks
+			</h2>
+
+
+
+			<p class="Text">
+			The GERF paclet provides a practical and automated implementation of the GERF method for obtaining exact solutions of nonlinear differential equations. As demonstrated, it supports ordinary, partial, fractional-order, and systems of equations while allowing flexibility in the choice of wave transformations and rational functions. Given the growing popularity of the GERF method and the plethora of research articles that are published left and right using it across diverse nonlinear models, an accessible computational implementation is of considerable value. By reducing the algebraic burden of the method and enabling rapid experimentation, the paclet serves as a useful tool for researchers working on exact analytical solutions of nonlinear differential equations.
+			</p>
+
+
+
+			<h2 class="section" id="citation">
+			Citation
+			</h2>
+
+			<p>If you use this GERF package for research, kindly cite:</p>
+
+			<p>Naman T. (2026). zplus11/gerf: v1.2.1 (v1.2.1). Zenodo. <a href="https://doi.org/10.5281/zenodo.20706334">https://doi.org/10.5281/zenodo.20706334</a></p>
+
+
+
+
+
+			<h2 class="section">
+			References
+			</h2>
+
+
+
+			<p class="Text">
+			[1] Ghanbari B and Inc M 2018 A new generalized exponential rational function method to find exact special solutions for the resonance nonlinear Schr&ouml;dinger equation <span style='font-style: italic;'>Eur. Phys. J.</span> Plus <span style='font-weight: bold;'>133</span> 142
+			</p>
+
+
+
+			<p class="Text">
+			[2] Rasool T, Hussain R, Rezazadeh H and Gholami D 2023 The plethora of exact and explicit soliton solutions of the hyperbolic local (4+1)-dimensional blmp model via gerf method <span style='font-style: italic;'>Res. Phys.</span> <span style='font-weight: bold;'>46</span> 106298
+			</p>
+
+
+
+			<p class="Text">
+			[3] Sa&or;glam &Ouml;zkan Y 2021 The generalized exponential rational function and elzaki&ndash;adomian decomposition method for the heisen-berg ferromagnetic spin chain equation <span style='font-style: italic;'>Mod. Phys. Lett.</span> B <span style='font-weight: bold;'>35</span> 2150200
+			</p>
+
+
+
+			<p class="Text">
+			[4] Kumar S, Dhiman S K and Chauhan A 2023 Analysis of lie invariance, analytical solutions, conservation laws and a variety of wave profiles for the (2+1)-dimensional riemann wave model arising from ocean tsunamis and seismic sea waves <span style='font-style: italic;'>Eur. Phys. J. Plus</span> <span style='font-weight: bold;'>138</span> 622
+			</p>
+
+
+
+			<p class="Text">
+			[5] Sachin Kumar, Nikita Mann, Harsha Kharbanda et al. Dynamical behavior of analytical soliton solutions, bifurcation analysis, and quasi-periodic solution to the (2+1)-dimensional Konopelchenko-Dubrovsky (KD) system, 30 November 2022, PREPRINT (Version 1) available at <span style='font-style: italic;'>Research Square</span>
+			</p>
+
+
+
+
+
+
+			<div style="font-family:Helvetica; font-size:11px; width:100%; border:1px none #999999; border-top-style:solid; padding-top:2px; margin-top:20px;">
+				<a href="http://www.wolfram.com/language/" style="color:#000; text-decoration:none;">
+					<span style="color:#555555">Created with the Wolfram Language</span> 
+				</a>
+			</div>
+		</main>
+
+		<script src="/script.js"></script>
+		<footer>Copyright &copy; 2025&ndash;26, Naman T.</footer>
+	</body>
+</html>
