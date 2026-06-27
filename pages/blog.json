@@ -1,4 +1,11 @@
-[	
+[
+	{
+		"title": "<tt>GroupHomomorphism</tt>",
+		"date": "00 mon, 2026",
+		"desc": "My implementation of group homomorphisms for Mathematica",
+		"url": "hom.html",
+		"tags": ["maths", "wolfram"]
+	},
 	{
 		"title": "The art of being disjoint",
 		"date": "20 June, 2026",
