@@ -3,21 +3,25 @@ title: Demonstrations, Functions and Paclets
 date: 25 June, 2025
 ---
 
-Wolfram Research maintains several public repositories to encourage community engagement, sharing of knowledge, and collaborative development in the Wolfram Language ecosystem. Key repositories include
+Wolfram Research maintains several public repositories to encourage community engagement and sharing of useful resources one may create. Key repositories include
 
-- the demonstrations project showcasing interactive visualisations and educational models built with the Wolfram Language;
-- the function repository which is a curated collection of user-submitted and Wolfram-authored functions; and
-- the paclet repository hosting paclets (modular packages) that can include functions, documentation, resources, and even GUI tools.
+- the demonstrations project showcasing interactive visualisations and educational models;
+- the function repository which is a curated collection of user-submitted and Wolfram-authored functions;
+- the paclet repository hosting paclets (packages) that can include functions, documentation, resources, and even GUI tools; and
+- and more.
 
 This blog post will serve the purpose of bringing all of my contributions to these sites at a single place. I hope you enjoy them!
 
 #### Paclets
 
-- [GERF](https://resources.wolframcloud.com/PacletRepository/resources/Taggar/GERF/) - implementation of GERF expansion technique for solving integral order NLPDEs
+- [GERF](https://resources.wolframcloud.com/PacletRepository/resources/Taggar/GERF/) - implementation of GERF expansion technique for solving NLPDEs
 - [MGroups](https://resources.wolframcloud.com/PacletRepository/resources/Taggar/MGroups) - pedagogy-oriented computation group theory in Mathematica
 
 #### Functions
 
+- [GroupHomomorphism](https://www.wolframcloud.com/obj/namantaggar11/DeployedResources/Function/GroupHomomorphism/) - pending review
+- [ConformableD](https://www.wolframcloud.com/obj/namantaggar11/DeployedResources/Function/ConformableD/) - pending review
+- [MatrixConditionNumber](https://www.wolframcloud.com/obj/namantaggar11/DeployedResources/Function/MatrixConditionNumber/) - pending review
 - [AutomorphicIntegerQ](https://resources.wolframcloud.com/FunctionRepository/resources/AutomorphicIntegerQ/)
 - [SerflingFit](https://resources.wolframcloud.com/FunctionRepository/resources/SerflingFit/)
 - [ShowPolygonSymmetries](https://resources.wolframcloud.com/FunctionRepository/resources/ShowPolygonSymmetries/)
@@ -30,3 +34,5 @@ This blog post will serve the purpose of bringing all of my contributions to the
 #### Demonstrations
 
 - [Subgroup Lattice of <i>Z</i><sub><i>n</i></sub>](https://demonstrations.wolfram.com/SubgroupLatticeOfZn)
+
+See this list [here](https://resources.wolframcloud.com/publishers/resources?PublisherID=Taggar).
