@@ -11,24 +11,29 @@ $$0\leftrightarrow\epsilon, \quad 1\leftrightarrow(123), \quad 2\leftrightarrow(
 
 In general, if $G$ be any group, then associate to each $g\in G$ a permutation of $G$ given by $p_g(x) = gx$, also known as the evaluation map. Then, $S_G=\{p_g:g\in G\}$ is a group of permutations and the map $g\mapsto p_g$ is an isomorphism making $G$ isomorphic to a group of permutations.
 
-So, each group can be simulated using permutations. Consequently, each group homomorphism^[A group homomorphism is a map $\phi$ between two groups $G_1$ and $G_2$ which preserves the operation, that is whenever $ab=c$ in $G_1$, we must have $\phi(a)\phi(b)=\phi(c)$ in $G_2$. This condition is usually written as $\phi(ab)=\phi(a)\phi(b)$ for all $a,b$ in $G_1$.] can be represented as a homomorphism between groups of permutations. Indeed, given $\phi:G_1\to G_2$ where $\rho_1:G_1\to S_1$ and $\rho_2:G_2\to S_2$ are the associated isomorphisms from both groups to groups of permutations $S_1$ and $S_2$, we can always set $\psi=\rho_2\circ\phi\circ\rho_1^{-1}:S_1\to S_2$, the corresponding homomorphism of permutation groups.^[$\psi$, being a composition of homomorphisms, is itself a homomorphism.] As an example, consider the homomorphism $\mathrm{sgn}:D_3\to C_2$ from the third degree dihedral group to the cyclic group of order 2, taking rotations to 0 and reflections to 1. We understand that
+So, each group can be simulated using permutations. Consequently, each group homomorphism^[A group homomorphism is a map $\phi$ between two groups $G_1$ and $G_2$ which preserves the operation, that is whenever $ab=c$ in $G_1$, we must have $\phi(a)\phi(b)=\phi(c)$ in $G_2$. This condition is usually written as $\phi(ab)=\phi(a)\phi(b)$ for all $a,b$ in $G_1$.] can be represented as a homomorphism between groups of permutations. Indeed, given $\phi:G_1\to G_2$ where $\rho_1:G_1\to S_1$ and $\rho_2:G_2\to S_2$ are the associated isomorphisms from both groups to groups of permutations $S_1$ and $S_2$, we can always set $\psi=\rho_2\circ\phi\circ\rho_1^{-1}:S_1\to S_2$, the corresponding homomorphism of permutation groups.^[$\psi$, being a composition of homomorphisms, is itself a homomorphism.] As an example, consider the homomorphism $\phi:D_3\to C_2$ from the third degree dihedral group to the cyclic group of order 2, taking rotations to 0 and reflections to 1. We understand that
 
-$$D_3 = \langle r,s\rangle \equiv \langle (123), (23) \rangle$$
+$$D_3 = \langle r,s\rangle \xrightarrow{\rho_1} \langle (123), (23) \rangle = S_1$$
 
 and
 
-$$C_2 = \langle 1 \rangle \equiv \langle (12) \rangle.$$
+$$C_2 = \langle 1 \rangle \xrightarrow{\rho_2} \langle (12) \rangle = S_2,$$
 
-Now, the image of $rs$ will be computed as follows:
+and also that $\phi$ is effectively determined by its application on generators $r$ and $s$ of $D_3$, that is, by the facts that $\phi(r)=0$ and $\phi(s)=1$. Now, the image of $(132)$ under $\psi$ will be readily computed as follows:
 
-$$\psi(rs) = \rho_2\circ\phi\circ\rho_1^{-1}(rs)
-	= \rho_2\circ\phi (\rho_1^{-1}(r)\rho_1^{-1}(s))
-	= \rho_2\circ\phi ((123)(23))
-	= \rho_2\circ\phi((13))
-	= \rho_2(1)
-	= (12).$$
+$$\psi((132)) = \psi((123)^2)
+	= \rho_2\circ\phi\circ\rho_1^{-1}((123)^2)
+	= \rho_2\circ\phi (\rho_1^{-1}((123)^2))
+	= \rho_2\circ\phi (\rho_1^{-1}((123))^2)
+	= \rho_2\circ\phi(r^2)
+	= \rho_2\circ\phi(rr)
+	= \rho(\phi(r)\phi(r))
+	= \rho(1\cdot1)
+	= \rho(1+1)
+	= \rho(0)
+	= \epsilon.$$
 
-The first and second step expand $\psi$ and $\rho_1^{-1}$, third step evaluates $\rho_1^{-1}$, fourth computes $(123)(23)=(13)$, fifth evaluates $\phi$ and takes $(13)$ to 1 as $(13)$ is a reflection, and sixth step evaluates that 1 corresponds to $(12)$ under $\rho_2$.
+Notice that we used no facts other than $(132)=(123)^2$ (writing input in terms of generators), and calculating $\rho_1^{-1}((123))=r$, $\phi(r)=1$ and $\rho(0)=\epsilon$.
 
 ## Groups in Mathematica
 

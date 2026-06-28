@@ -132,30 +132,32 @@ the corresponding homomorphism of permutation groups.<span
 class="sidenote"><span class="math inline"><em>ψ</em></span>, being a
 composition of homomorphisms, is itself a homomorphism.</span> As an
 example, consider the homomorphism <span
-class="math inline">sgn : <em>D</em><sub>3</sub> → <em>C</em><sub>2</sub></span>
+class="math inline"><em>ϕ</em> : <em>D</em><sub>3</sub> → <em>C</em><sub>2</sub></span>
 from the third degree dihedral group to the cyclic group of order 2,
 taking rotations to 0 and reflections to 1. We understand that</p>
-<p><span
-class="math display"><em>D</em><sub>3</sub> = ⟨<em>r</em>, <em>s</em>⟩ ≡ ⟨(123), (23)⟩</span></p>
+<p><span class="math display">$$D_3 = \langle r,s\rangle
+\xrightarrow{\rho_1} \langle (123), (23) \rangle = S_1$$</span></p>
 <p>and</p>
-<p><span
-class="math display"><em>C</em><sub>2</sub> = ⟨1⟩ ≡ ⟨(12)⟩.</span></p>
-<p>Now, the image of <span
-class="math inline"><em>r</em><em>s</em></span> will be computed as
+<p><span class="math display">$$C_2 = \langle 1 \rangle
+\xrightarrow{\rho_2} \langle (12) \rangle = S_2,$$</span></p>
+<p>and also that <span class="math inline"><em>ϕ</em></span> is
+effectively determined by its application on generators <span
+class="math inline"><em>r</em></span> and <span
+class="math inline"><em>s</em></span> of <span
+class="math inline"><em>D</em><sub>3</sub></span>, that is, by the facts
+that <span class="math inline"><em>ϕ</em>(<em>r</em>) = 0</span> and
+<span class="math inline"><em>ϕ</em>(<em>s</em>) = 1</span>. Now, the
+image of <span class="math inline">(132)</span> under <span
+class="math inline"><em>ψ</em></span> will be readily computed as
 follows:</p>
 <p><span
-class="math display"><em>ψ</em>(<em>r</em><em>s</em>) = <em>ρ</em><sub>2</sub> ∘ <em>ϕ</em> ∘ <em>ρ</em><sub>1</sub><sup>−1</sup>(<em>r</em><em>s</em>) = <em>ρ</em><sub>2</sub> ∘ <em>ϕ</em>(<em>ρ</em><sub>1</sub><sup>−1</sup>(<em>r</em>)<em>ρ</em><sub>1</sub><sup>−1</sup>(<em>s</em>)) = <em>ρ</em><sub>2</sub> ∘ <em>ϕ</em>((123)(23)) = <em>ρ</em><sub>2</sub> ∘ <em>ϕ</em>((13)) = <em>ρ</em><sub>2</sub>(1) = (12).</span></p>
-<p>The first and second step expand <span
-class="math inline"><em>ψ</em></span> and <span
-class="math inline"><em>ρ</em><sub>1</sub><sup>−1</sup></span>, third
-step evaluates <span
-class="math inline"><em>ρ</em><sub>1</sub><sup>−1</sup></span>, fourth
-computes <span class="math inline">(123)(23) = (13)</span>, fifth
-evaluates <span class="math inline"><em>ϕ</em></span> and takes <span
-class="math inline">(13)</span> to 1 as <span
-class="math inline">(13)</span> is a reflection, and sixth step
-evaluates that 1 corresponds to <span class="math inline">(12)</span>
-under <span class="math inline"><em>ρ</em><sub>2</sub></span>.</p>
+class="math display"><em>ψ</em>((132)) = <em>ψ</em>((123)<sup>2</sup>) = <em>ρ</em><sub>2</sub> ∘ <em>ϕ</em> ∘ <em>ρ</em><sub>1</sub><sup>−1</sup>((123)<sup>2</sup>) = <em>ρ</em><sub>2</sub> ∘ <em>ϕ</em>(<em>ρ</em><sub>1</sub><sup>−1</sup>((123)<sup>2</sup>)) = <em>ρ</em><sub>2</sub> ∘ <em>ϕ</em>(<em>ρ</em><sub>1</sub><sup>−1</sup>((123))<sup>2</sup>) = <em>ρ</em><sub>2</sub> ∘ <em>ϕ</em>(<em>r</em><sup>2</sup>) = <em>ρ</em><sub>2</sub> ∘ <em>ϕ</em>(<em>r</em><em>r</em>) = <em>ρ</em>(<em>ϕ</em>(<em>r</em>)<em>ϕ</em>(<em>r</em>)) = <em>ρ</em>(1 ⋅ 1) = <em>ρ</em>(1 + 1) = <em>ρ</em>(0) = <em>ϵ</em>.</span></p>
+<p>Notice that we used no facts other than <span
+class="math inline">(132) = (123)<sup>2</sup></span> (writing input in
+terms of generators), and calculating <span
+class="math inline"><em>ρ</em><sub>1</sub><sup>−1</sup>((123)) = <em>r</em></span>,
+<span class="math inline"><em>ϕ</em>(<em>r</em>) = 1</span> and <span
+class="math inline"><em>ρ</em>(0) = <em>ϵ</em></span>.</p>
 <h2 id="groups-in-mathematica">Groups in Mathematica</h2>
 <p>Mathematica has various implementations of “named” groups such as the
 <a
