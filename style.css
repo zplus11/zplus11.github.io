@@ -55,15 +55,15 @@ nav > ul li a:hover { font-style: italic }
 
 header { display: flex; align-items: center }
 @media (max-width: 768px) { header { display: block } figure { margin: 0 } }
-.hero { flex: 1}
+.hero { flex: 7}
 @media (max-width: 512px) { .hero { margin-top: 3rem } }
-header > figure { flex: 1 }
+header > figure { flex: 5 }
 
 /* blogs */
 
-#blogs__list { columns: 3 200px; column-gap: 1.5rem; margin: 1rem 0 }
-#blogs__list > .blog__card { break-inside: avoid; margin: 1rem 0 }
-#blogs__list > .blog__card:first-child { margin-top: 0 }
+.blogs__list { columns: 3 200px; column-gap: 1.5rem; margin: 1rem 0 }
+.blogs__list > .blog__card { break-inside: avoid; margin: 1rem 0 }
+.blogs__list > .blog__card:first-child { margin-top: 0 }
 .dropcap::first-letter {
 	float: left;
 	font-size: 2.7rem;

@@ -1,48 +1,46 @@
-document.addEventListener("DOMContentLoaded", function () {
+let blogs = [];
 
-	fetch(window.location.origin+"/pages/blog.json")
-		.then(response => response.json())
-		.then(data => {
-			const blogList = document.getElementById("blogs__list");
-			const tagFilter = document.getElementById("tag-filter");
+function renderBlogs(list, container = "blogs") {
+	const blogList = document.getElementById(container);
+	blogList.innerHTML = "";
 
-			let allTags = new Set();
+	list.forEach(blog => {
+		const card = document.createElement("div");
+		card.className = "blog__card";
 
-			function renderBlogs(filterTag = "all") {
-				blogList.innerHTML = ""; 
+		card.innerHTML = `
+	    <div class="dropcap">
+		<a href="/pages/posts/${blog.url}">${blog.title}</a>
+		<span class="blog-date">${blog.date}</span><br>
+		<span class="blog-desc">${blog.desc}</span>
+	    </div>
+	`;
 
-				data.forEach(blog => {
-					if (filterTag === "all" || blog.tags.includes(filterTag)) {
-						const blogCard = document.createElement("div");
-						blogCard.classList.add("blog__card");
+		blogList.appendChild(card);
+	});
+}
 
-						blogCard.innerHTML = `
-						<div class="dropcap">
-					<a href="posts/${blog.url}">${blog.title}</a>
-					<span class="blog-date">${blog.date}</span> <br>
-					<span class="blog-desc">${blog.desc}</span></div>`;
+function filterBlogs({
+	tag = null,
+	predicate = null,
+	limit = null
+} = {}) {
+	let list = blogs;
 
-						blogList.appendChild(blogCard);
-					}
-				});
-			}
+	if (tag)
+		list = list.filter(b => b.tags.includes(tag));
 
-			data.forEach(blog => blog.tags.forEach(tag => allTags.add(tag)));
+	if (predicate)
+		list = list.filter(predicate);
 
-			allTags.forEach(tag => {
-				let btn = document.createElement("button");
-				btn.classList.add("tag-btn");
-				btn.textContent = tag;
-				btn.dataset.tag = tag;
-				tagFilter.appendChild(btn);
-			});
+	if (limit)
+		list = list.slice(0, limit);
 
-			tagFilter.addEventListener("click", function (e) {
-				if (e.target.classList.contains("tag-btn")) {
-					renderBlogs(e.target.dataset.tag);
-				}
-			});
+	return list;
+}
 
-			renderBlogs();
-		});
-});
+async function loadBlogs() {
+	const response = await fetch("/pages/blog.json");
+	blogs = await response.json();
+	return blogs;
+}

@@ -33,20 +33,31 @@
 				<div class="hero">
 					<h1>Naman T.</h1>
 					<p>I am a post-graduate student of Mathematics in India, having done my bachelors in the same subject. Apart from Mathematics, I am interested in many other things including design, typesetting, music and photography. I am still exploring my research interests, but algebra and analysis (in particular group theory and topology) are interesting and I look forward to exploring these areas from a research point of view.</p>
-					<p>The subgroup lattice of <i>S</i><sub>5</sub> on this web page was created with the help of <a href="/pages/mgroups.html">MGroups,</a> a Mathematica package I created.</p>
 					<p>My links: <a href="https://github.com/zplus11">GitHub</a></p>
+					<h3>Featured blogs</h3>
+					<div id="featured" class="blogs__list"></div>
 				</div>
 				<figure>
 					<img src="/resources/s5g.svg"
 					     alt="Graph of S₅"
 					     id="s5g"
 					     width="100%">
-					<figcaption>Subgroup lattice of <i>S</i><sub>5</sub>, the group of permutations on 5 symbols, presented using radial embedding. A path from <i>S</i><sub>5</sub> to {&varepsilon;} is highlighted in brown.</figcaption>
+					<figcaption>Subgroup lattice of <i>S</i><sub>5</sub>, the group of permutations on 5 symbols, presented using radial embedding. A path from <i>S</i><sub>5</sub> to {&varepsilon;} is highlighted in brown. Created with the help of <a href="/pages/mgroups.html">MGroups,</a> a Mathematica package I created.</figcaption>
 				</figure>
 			</header>
 		</main>
 
-		<script src="/script.js"></script>
+		<script src="/pages/blog.js"></script>
+		<script>
+			document.addEventListener("DOMContentLoaded", async () => {
+				await loadBlogs();
+
+				renderBlogs(filterBlogs({
+					predicate: b => b.featured,
+					limit: 3
+				}), "featured");
+			});
+		</script>
 		<footer>Copyright &copy; 2025&ndash;26, Naman T.</footer>
 	</body>
 </html>

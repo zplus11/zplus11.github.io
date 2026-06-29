@@ -6,15 +6,15 @@
 		<title>taggar.me > blog</title>
 		<link rel="stylesheet" href="/style.css">
 	</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-85NBEPVK2H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-85NBEPVK2H"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-  gtag('config', 'G-85NBEPVK2H');
-</script>
+		gtag('config', 'G-85NBEPVK2H');
+	</script>
 	<body>
 		<nav>
 			<img class="pfp" onclick="location.href='/'" src="/resources/profiles/Portrait.png" alt="pfp">
@@ -34,12 +34,18 @@
 			<div id="tag-filter">
 				<button class="tag-btn" data-tag="all">All</button>
 			</div>
-			<section id="blogs__list">
+			<section id="blogs" class="blogs__list">
 			</section>
 		</main>
 
-		<script src="/script.js"></script>
 		<script src="/pages/blog.js"></script>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", async () => {
+				await loadBlogs();
+				renderBlogs(filterBlogs(), "blogs");
+			});
+		</script>
 		<footer>Copyright &copy; 2025&ndash;26, Naman T.</footer>
 	</body>
 </html>

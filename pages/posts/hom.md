@@ -27,10 +27,10 @@ $$\psi((132)) = \psi((123)^2)
 	= \rho_2\circ\phi (\rho_1^{-1}((123))^2)
 	= \rho_2\circ\phi(r^2)
 	= \rho_2\circ\phi(rr)
-	= \rho(\phi(r)\phi(r))
-	= \rho(1\cdot1)
-	= \rho(1+1)
-	= \rho(0)
+	= \rho_2(\phi(r)\phi(r))
+	= \rho_2(1\cdot1)
+	= \rho_2(1+1)
+	= \rho_2(0)
 	= \epsilon.$$
 
 Notice that we used no facts other than $(132)=(123)^2$ (writing input in terms of generators), and calculating $\rho_1^{-1}((123))=r$, $\phi(r)=1$ and $\rho(0)=\epsilon$.

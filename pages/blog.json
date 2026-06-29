@@ -1,114 +1,130 @@
 [
 	{
 		"title": "<tt>GroupHomomorphism</tt>",
-		"date": "00 mon, 2026",
+		"date": "28 June, 2026",
 		"desc": "My implementation of group homomorphisms for Mathematica",
 		"url": "hom.html",
-		"tags": ["maths", "wolfram"]
+		"tags": ["maths", "wolfram"],
+		"featured": true
 	},
 	{
 		"title": "The art of being disjoint",
 		"date": "20 June, 2026",
 		"desc": "Sets are confusing, though they form the basis of most of mathematics. In this post I discuss an problem concerning them.",
 		"url": "Anew.html",
-		"tags": ["maths"]
+		"tags": ["maths"],
+		"featured": true
 	},
 	{
 		"title": "Bezier curves",
 		"date": "06 May, 2026",
 		"desc": "Modelling Bezier curves of various degrees.",
 		"url": "bezier.html",
-		"tags": ["wolfram", "fun"]
+		"tags": ["wolfram", "fun"],
+		"featured": false
 	},
 	{
 		"title": "Billiards",
 		"date": "06 April, 2026",
 		"desc": "How the ball moves &mdash; visualised.",
 		"url": "bill.html",
-		"tags": ["maths", "fun"]
+		"tags": ["maths", "fun"],
+		"featured": false
 	},
 	{
 		"title": "Derivatives in multivariate calculus",
 		"date": "21 March, 2026",
 		"desc": "Second article on multivariate calculus showcasing various also visualisations that I created.",
 		"url": "derivatives-in-multivariate-calculus.html",
-		"tags": ["maths", "calculus"]
+		"tags": ["maths", "calculus"],
+		"featured": false
 	},
 	{
 		"title": "Brouwer's fixed point theorem",
 		"date": "01 March, 2026",
 		"desc": "In this post I talk about the Brouwer's fixed point theorem for the closed disk.",
 		"url": "brouwer.html",
-		"tags": ["maths", "fun"]
+		"tags": ["maths", "fun"],
+		"featured": true
 	},
 	{
 		"title": "Population growth",
 		"date": "24 February, 2026",
 		"desc": "Demonstrating population growth dynamics with time dependent rates.",
 		"url": "population-growth.html",
-		"tags": ["maths", "mm"]
+		"tags": ["maths", "mm"],
+		"featured": false
 	},
 	{
 		"title": "Entourages",
 		"date": "03 January, 2026",
 		"desc": "I share what little I have been able to understand, of an introduction to uniform spaces in topology.",
 		"url": "entourages.html",
-		"tags": ["maths", "general"]
+		"tags": ["maths", "general"],
+		"featured": false
 	},
 	{
 		"title": "Interpolation",
 		"date": "26 October, 2025",
 		"desc": "Fun with interpolation.",
 		"url": "interpolation.html",
-		"tags": ["wolfram", "maths", "fun"]
+		"tags": ["wolfram", "maths", "fun"],
+		"featured": false
 	},
 	{
 		"title": "Dihedrals with Mathematica",
 		"date": "04 August, 2025",
 		"desc": "In this post, I define a set of rules that simulate the operation of a dihedral group.",
 		"url": "dihedrals-with-mathematica.html",
-		"tags": ["wolfram", "maths"]
+		"tags": ["wolfram", "maths"],
+		"featured": false
 	},
 	{
 		"title": "Functions of Multiple Variables",
 		"date": "17 July, 2025",
 		"desc": "Introductory blog post on multivariate calculus showcasing various visualisations I created.",
 		"url": "functions-of-multiple-variables.html",
-		"tags": ["maths", "calculus"]
+		"tags": ["maths", "calculus"],
+		"featured": true
 	},
 	{
 		"title": "Demonstrations, Functions and Paclets",
 		"date": "25 June, 2025",
 		"desc": "Compilation of my contributions to the public repositories of Wolfram language.",
 		"url": "Wolfram.html",
-		"tags": ["wolfram", "general"]
+		"tags": ["wolfram", "general"],
+		"featured": false
 	},
 	{
     		"title": "Gaussian Distribution",
     		"date": "05 May, 2025",
     		"desc": "Marks scored by students in a large class follow the gaussian distribution &mdash; a demonstration of that.",
 		"url": "Gaussian-Distribution.html",
-    		"tags": ["maths"]
+    		"tags": ["maths"],
+		"featured": false
   	},
 	{
 		"title": "Logistics of IITJAM 2025",
 		"date": "22 March, 2025",
 		"desc": "I fitted a logistics growth model to the rank vs. marks dynamics in IITJAM 2025 Examination.",
 		"url": "JAM25-Logistics.html",
-		"tags": ["maths", "fun"]
+		"tags": ["maths", "fun"],
+		"featured": false
 	},
 	{
 		"title": "Salaries of Professors",
 		"date": "14 February, 2025",
 		"desc": "Show-case of my project work done for a course of data analytics that included machine learning as well. In it, I studied a dataset concerning the salaries of professors at a university and found disparity among salary on the basis of gender.",
 		"url": "salaries-disparity.html",
-		"tags": ["ml"]
+		"tags": ["ml"],
+		"featured": false
 	},
   	{
    	 	"title": "On This Website",
     		"date": "17 December, 2024",
     		"desc": "A first blog that talks about this website itself, how I create blogs. Nothing extra-ordinary...",
     		"url": "on-this-website.html",
-    		"tags": ["general"]
+    		"tags": ["general"],
+		"featured": false
 	}
 ]
