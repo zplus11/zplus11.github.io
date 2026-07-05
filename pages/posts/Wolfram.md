@@ -19,9 +19,10 @@ This blog post will serve the purpose of bringing all of my contributions to the
 
 #### Functions
 
-- [GroupDirectProduct](https://www.wolframcloud.com/obj/namantaggar11/DeployedResources/Function/GroupDirectProduct), pending review
-- [GroupHomomorphism](https://www.wolframcloud.com/obj/namantaggar11/DeployedResources/Function/GroupHomomorphism/), pending review
-- [ConformableD](https://www.wolframcloud.com/obj/namantaggar11/DeployedResources/Function/ConformableD/), pending review
+- [MultiplicativeGroup](https://www.wolframcloud.com/obj/namantaggar11/DeployedResources/Function/MultiplicativeGroup/), under review
+- [GroupDirectProduct](https://resources.wolframcloud.com/FunctionRepository/resources/GroupDirectProduct/)
+- [GroupHomomorphism](https://www.wolframcloud.com/obj/namantaggar11/DeployedResources/Function/GroupHomomorphism/), u.r.
+- [ConformableD](https://www.wolframcloud.com/obj/namantaggar11/DeployedResources/Function/ConformableD/), u.r.
 - [MatrixConditionNumber](https://www.wolframcloud.com/obj/namantaggar11/DeployedResources/Function/MatrixConditionNumber/), pending submission
 - [AutomorphicIntegerQ](https://resources.wolframcloud.com/FunctionRepository/resources/AutomorphicIntegerQ/)
 - [SerflingFit](https://resources.wolframcloud.com/FunctionRepository/resources/SerflingFit/)

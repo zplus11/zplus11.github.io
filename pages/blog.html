@@ -43,7 +43,45 @@
 		<script>
 			document.addEventListener("DOMContentLoaded", async () => {
 				await loadBlogs();
-				renderBlogs(filterBlogs(), "blogs");
+
+				const tagFilter = document.getElementById("tag-filter");
+
+				const tagCounts = {};
+				blogs.forEach(blog => {
+					blog.tags.forEach(tag => {
+						tagCounts[tag] = (tagCounts[tag] || 0) + 1;
+					});
+				});
+
+				Object.entries(tagCounts)
+					.sort((a, b) => b[1] - a[1])
+					.forEach(([tag, count]) => {
+						const btn = document.createElement("button");
+						btn.className = "tag-btn";
+						btn.dataset.tag = tag;
+						btn.textContent = `${tag} (${count})`;
+						tagFilter.appendChild(btn);
+					});
+
+				renderBlogs(filterBlogs());
+				tagFilter.querySelector('[data-tag="all"]').classList.add("active");
+
+				tagFilter.addEventListener("click", e => {
+					const btn = e.target.closest(".tag-btn");
+					if (!btn) return;
+
+					const tag = btn.dataset.tag;
+
+					document.querySelectorAll(".tag-btn")
+						.forEach(b => b.classList.remove("active"));
+					btn.classList.add("active");
+
+					if (tag === "all") {
+						renderBlogs(filterBlogs());
+					} else {
+						renderBlogs(filterBlogs({ tag }));
+					}
+				});
 			});
 		</script>
 		<footer>Copyright &copy; 2025&ndash;26, Naman T.</footer>
