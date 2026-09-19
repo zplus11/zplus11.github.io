@@ -44,7 +44,7 @@ nav {
 	font-family: var(--font); margin-bottom: 1rem; gap: 1rem
 }
 nav > ul { display: flex; flex-wrap: wrap; list-style: none; margin: 0; 
-	padding: 0; gap: 0 1rem; justify-content: flex-end }
+padding: 0; gap: 0 1rem; justify-content: flex-end }
 nav > ul li a, nav > ul li a:visited { color: var(--fg) !important }
 nav > ul li a:hover { font-style: italic }
 @media (max-width: 512px) {
@@ -118,3 +118,34 @@ blockquote { border-left: var(--grey) solid 2px; font-style: italic; color: var(
 
 .entry { color: var(--grey); cursor: pointer }
 .entry:hover { color: inherit; cursor: pointer }
+
+#TOC > ul {
+	display: flex; flex-wrap: wrap; list-style: none;
+	padding: 0; margin: 0
+}
+#TOC > ul > li { display: flex; align-items: center; gap: 20px }
+#TOC > ul > li:not(:last-child)::after { content: "" }
+
+@media (min-width: 1300px) {
+	#TOC {
+		position: fixed;
+		top: 50%; transform: translateY(-50%);
+		left: calc(50% + 450px + 2rem);
+		width: min(220px, calc(100vw - (50% + 450px + 4rem)))
+	}
+	#TOC > ul { display: block; margin: 0 }
+	#TOC > ul > li {
+		display: block;
+		margin: 0.4rem 0;
+		overflow-wrap: anywhere;
+		line-height: 1.2;
+		font-size: var(--small)
+	}
+	#TOC > ul > li:not(:last-child)::after {
+		display: block;
+		width: 65%;
+		margin: 0.45rem 0 0;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+		border-radius: 20px
+	}
+}

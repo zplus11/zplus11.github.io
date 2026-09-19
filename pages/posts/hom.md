@@ -155,6 +155,77 @@ Module[
 
 This completes the implementation of `GroupHomomorphism`, providing an efficient representation of group homomorphisms together with operations such as computing images, kernels, injectivity, and surjectivity.
 
+## Showcase
+
+The final implementation is accepted into the Wolfram function repository, and can be viewed <a href="https://resources.wolframcloud.com/FunctionRepository/resources/GroupHomomorphism/" target="_blank">here.</a> In this section I show some usage examples.
+
+- Embed $C_2$ in $C_4$ via $(12)\mapsto(13)(24)$:^[Here the third argument specifies where the generators of $C_2$ are mapped. The only generator is $(12)$ so it means $(12)\mapsto(13)(24)$.]
+  
+	```mathematica
+	In[]:= phi = ResourceFunction["GroupHomomorphism"][CyclicGroup[2], CyclicGroup[4], {Cycles[{{1, 3}, {2, 4}}]}];
+	```
+ 	
+	and obtain the underlying map:
+
+	```mathematica
+	In[]:= Normal[phi]
+	Out[]= <|Cycles[{}] -> Cycles[{}], Cycles[{{1, 2}}] -> Cycles[{{1, 3}, {2, 4}}]|>
+	```
+
+- Specify a large group action, such as the identity homomorphism from $S_{20}$ to itself:^[Mapping generators of $S_{20}$ to themselves, *in that order.*]
+
+	```mathematica
+	In[]:= id = ResourceFunction["GroupHomomorphism"][SymmetricGroup[20], SymmetricGroup[20], GroupGenerators[SymmetricGroup[20]]];
+	```
+
+	Calculate its image and kernel:
+
+	```mathematica
+	In[]:= id["ImageGroup"]
+	Out[]= PermutationGroup[{Cycles[{{1, 2}}], Cycles[{{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20}}]}]
+	```
+
+	which is complete $S_{20}$, and
+
+	```mathematica
+	In[]:= id["KernelGroup"]
+	Out[]= PermutationGroup[{}]
+	```
+
+	is the identity group.
+
+- Construct the sign homomorphism from $S_4$ to $C_2$:
+	
+	```mathematica
+	In[]:= S4 = SymmetricGroup[4];
+	In[]:= C2 = CyclicGroup[2];
+	```
+
+	Odd generators must map to $(12)$:^[Both generators of $S_4$ &mdash; $(12)$ and $(1234)$ &mdash; being even, get mapped to $(12)$.]
+	
+	```mathematica
+	In[]:= sgn = ResourceFunction["GroupHomomorphism"][S4, C2, {Cycles[{{1, 2}}], Cycles[{{1, 2}}]}];
+	```
+	
+	Find all even permutations:
+
+	```mathematica
+	In[]:= sgn["KernelGroup"] // GroupElements
+	Out[]= {Cycles[{}], Cycles[{{2, 3, 4}}], Cycles[{{2, 4, 3}}], 
+ Cycles[{{1, 2}, {3, 4}}], Cycles[{{1, 2, 3}}], 
+ Cycles[{{1, 2, 4}}], Cycles[{{1, 3, 2}}], Cycles[{{1, 3, 4}}], 
+ Cycles[{{1, 3}, {2, 4}}], Cycles[{{1, 4, 2}}], 
+ Cycles[{{1, 4, 3}}], Cycles[{{1, 4}, {2, 3}}]}
+	```
+
+	Verify that there are exactly 12 of them:
+	
+	```mathematica
+	In[]:= Length[%]
+	Out[]= 12
+	```
+
+
 ## Related works
 
 See [GroupTheoryPaclet](https://resources.wolframcloud.com/PacletRepository/resources/DanielMcDonald/GroupTheoryPaclet/) and [FindGroupIsomorphism](https://resources.wolframcloud.com/FunctionRepository/resources/FindGroupIsomorphism).

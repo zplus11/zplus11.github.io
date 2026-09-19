@@ -5,13 +5,13 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title><tt>GroupHomomorphism</tt></title>
 		<link rel="stylesheet" href="/style.css">
-<script>
-  window.MathJax = {
-    options: {
-      processHtmlClass: 'sidenote'
-    }
-  };
-</script>
+		<script>
+			window.MathJax = {
+				options: {
+					processHtmlClass: 'sidenote'
+				}
+			};
+		</script>
 		<style>
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -46,15 +46,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 		<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" id="MathJax-script" async></script>
 	</head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-85NBEPVK2H"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-85NBEPVK2H"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
 
-  gtag('config', 'G-85NBEPVK2H');
-</script>
+		gtag('config', 'G-85NBEPVK2H');
+	</script>
 	<body>
 		<nav>
 			<img class="pfp" onclick="location.href='/'" src="/resources/profiles/Portrait.png" alt="pfp">
@@ -74,10 +74,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 			</section>
 			<section class="blog__post">
 				<div class="blog__content">
-				<h1><tt>GroupHomomorphism</tt></h1>
-				<p><i>28 June, 2026</i></p>
-				<hr><br><br>
-				<h2 id="introduction">Introduction</h2>
+					<h1><tt>GroupHomomorphism</tt></h1>
+					<p><i>28 June, 2026</i></p>
+					<hr><br>
+										<div id="TOC" role="doc-toc">
+						<ul>
+<li><a href="#introduction" id="toc-introduction">Introduction</a></li>
+<li><a href="#groups-in-mathematica"
+id="toc-groups-in-mathematica">Groups in Mathematica</a></li>
+<li><a href="#construction" id="toc-construction">Construction</a></li>
+<li><a href="#showcase" id="toc-showcase">Showcase</a></li>
+<li><a href="#related-works" id="toc-related-works">Related
+works</a></li>
+</ul>
+					</div>
+										<br><br>
+					<h2 id="introduction">Introduction</h2>
 <p>Wolfram Mathematica includes an efficient in-built support of group
 theory, wherein it implements a group as one of permutations. Cayley’s
 theorem states that each group is isomorphic to a group of permutations,
@@ -374,6 +386,69 @@ class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb
 providing an efficient representation of group homomorphisms together
 with operations such as computing images, kernels, injectivity, and
 surjectivity.</p>
+<h2 id="showcase">Showcase</h2>
+<p>The final implementation is accepted into the Wolfram function
+repository, and can be viewed
+<a href="https://resources.wolframcloud.com/FunctionRepository/resources/GroupHomomorphism/" target="_blank">here.</a>
+In this section I show some usage examples.</p>
+<ul>
+<li><p>Embed <span class="math inline"><em>C</em><sub>2</sub></span> in
+<span class="math inline"><em>C</em><sub>4</sub></span> via <span
+class="math inline">(12) ↦ (13)(24)</span>:<span class="sidenote">Here
+the third argument specifies where the generators of <span
+class="math inline"><em>C</em><sub>2</sub></span> are mapped. The only
+generator is <span class="math inline">(12)</span> so it means <span
+class="math inline">(12) ↦ (13)(24)</span>.</span></p>
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">In</span><span class="op">[]</span><span class="ex">:=</span> phi <span class="ex">=</span> ResourceFunction<span class="op">[</span><span class="st">&quot;GroupHomomorphism&quot;</span><span class="op">][</span><span class="fu">CyclicGroup</span><span class="op">[</span><span class="dv">2</span><span class="op">],</span> <span class="fu">CyclicGroup</span><span class="op">[</span><span class="dv">4</span><span class="op">],</span> <span class="op">{</span><span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">},</span> <span class="op">{</span><span class="dv">2</span><span class="op">,</span> <span class="dv">4</span><span class="op">}}]}]</span>;</span></code></pre></div>
+<p>and obtain the underlying map:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">In</span><span class="op">[]</span><span class="ex">:=</span> <span class="fu">Normal</span><span class="op">[</span>phi<span class="op">]</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Out</span><span class="op">[]</span><span class="ex">=</span> &lt;<span class="sc">|</span><span class="fu">Cycles</span><span class="op">[{}]</span> <span class="ot">-&gt;</span> <span class="fu">Cycles</span><span class="op">[{}],</span> <span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">}}]</span> <span class="ot">-&gt;</span> <span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">},</span> <span class="op">{</span><span class="dv">2</span><span class="op">,</span> <span class="dv">4</span><span class="op">}}]</span><span class="sc">|</span>&gt;</span></code></pre></div></li>
+<li><p>Specify a large group action, such as the identity homomorphism
+from <span class="math inline"><em>S</em><sub>20</sub></span> to
+itself:<span class="sidenote">Mapping generators of <span
+class="math inline"><em>S</em><sub>20</sub></span> to themselves, <em>in
+that order.</em></span></p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">In</span><span class="op">[]</span><span class="ex">:=</span> id <span class="ex">=</span> ResourceFunction<span class="op">[</span><span class="st">&quot;GroupHomomorphism&quot;</span><span class="op">][</span><span class="fu">SymmetricGroup</span><span class="op">[</span><span class="dv">20</span><span class="op">],</span> <span class="fu">SymmetricGroup</span><span class="op">[</span><span class="dv">20</span><span class="op">],</span> <span class="fu">GroupGenerators</span><span class="op">[</span><span class="fu">SymmetricGroup</span><span class="op">[</span><span class="dv">20</span><span class="op">]]]</span>;</span></code></pre></div>
+<p>Calculate its image and kernel:</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">In</span><span class="op">[]</span><span class="ex">:=</span> id<span class="op">[</span><span class="st">&quot;ImageGroup&quot;</span><span class="op">]</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Out</span><span class="op">[]</span><span class="ex">=</span> <span class="fu">PermutationGroup</span><span class="op">[{</span><span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">}}],</span> <span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">5</span><span class="op">,</span> <span class="dv">6</span><span class="op">,</span> <span class="dv">7</span><span class="op">,</span> <span class="dv">8</span><span class="op">,</span> <span class="dv">9</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="dv">12</span><span class="op">,</span> <span class="dv">13</span><span class="op">,</span> <span class="dv">14</span><span class="op">,</span> <span class="dv">15</span><span class="op">,</span> <span class="dv">16</span><span class="op">,</span> <span class="dv">17</span><span class="op">,</span> <span class="dv">18</span><span class="op">,</span> <span class="dv">19</span><span class="op">,</span> <span class="dv">20</span><span class="op">}}]}]</span></span></code></pre></div>
+<p>which is complete <span
+class="math inline"><em>S</em><sub>20</sub></span>, and</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">In</span><span class="op">[]</span><span class="ex">:=</span> id<span class="op">[</span><span class="st">&quot;KernelGroup&quot;</span><span class="op">]</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Out</span><span class="op">[]</span><span class="ex">=</span> <span class="fu">PermutationGroup</span><span class="op">[{}]</span></span></code></pre></div>
+<p>is the identity group.</p></li>
+<li><p>Construct the sign homomorphism from <span
+class="math inline"><em>S</em><sub>4</sub></span> to <span
+class="math inline"><em>C</em><sub>2</sub></span>:</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">In</span><span class="op">[]</span><span class="ex">:=</span> S4 <span class="ex">=</span> <span class="fu">SymmetricGroup</span><span class="op">[</span><span class="dv">4</span><span class="op">]</span>;</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">In</span><span class="op">[]</span><span class="ex">:=</span> C2 <span class="ex">=</span> <span class="fu">CyclicGroup</span><span class="op">[</span><span class="dv">2</span><span class="op">]</span>;</span></code></pre></div>
+<p>Odd generators must map to <span
+class="math inline">(12)</span>:<span class="sidenote">Both generators
+of <span class="math inline"><em>S</em><sub>4</sub></span> — <span
+class="math inline">(12)</span> and <span
+class="math inline">(1234)</span> — being even, get mapped to <span
+class="math inline">(12)</span>.</span></p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">In</span><span class="op">[]</span><span class="ex">:=</span> sgn <span class="ex">=</span> ResourceFunction<span class="op">[</span><span class="st">&quot;GroupHomomorphism&quot;</span><span class="op">][</span>S4<span class="op">,</span> C2<span class="op">,</span> <span class="op">{</span><span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">}}],</span> <span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">}}]}]</span>;</span></code></pre></div>
+<p>Find all even permutations:</p>
+<div class="sourceCode" id="cb17"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">In</span><span class="op">[]</span><span class="ex">:=</span> sgn<span class="op">[</span><span class="st">&quot;KernelGroup&quot;</span><span class="op">]</span> <span class="sc">//</span> <span class="fu">GroupElements</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Out</span><span class="op">[]</span><span class="ex">=</span> <span class="op">{</span><span class="fu">Cycles</span><span class="op">[{}],</span> <span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">}}],</span> <span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">2</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">3</span><span class="op">}}],</span> </span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">},</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">}}],</span> <span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">}}],</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">4</span><span class="op">}}],</span> <span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">2</span><span class="op">}}],</span> <span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">,</span> <span class="dv">4</span><span class="op">}}],</span> </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">3</span><span class="op">},</span> <span class="op">{</span><span class="dv">2</span><span class="op">,</span> <span class="dv">4</span><span class="op">}}],</span> <span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">2</span><span class="op">}}],</span> </span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">4</span><span class="op">,</span> <span class="dv">3</span><span class="op">}}],</span> <span class="fu">Cycles</span><span class="op">[{{</span><span class="dv">1</span><span class="op">,</span> <span class="dv">4</span><span class="op">},</span> <span class="op">{</span><span class="dv">2</span><span class="op">,</span> <span class="dv">3</span><span class="op">}}]}</span></span></code></pre></div>
+<p>Verify that there are exactly 12 of them:</p>
+<div class="sourceCode" id="cb18"><pre
+class="sourceCode mathematica"><code class="sourceCode mathematica"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">In</span><span class="op">[]</span><span class="ex">:=</span> <span class="fu">Length</span><span class="op">[</span><span class="sc">%</span><span class="op">]</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Out</span><span class="op">[]</span><span class="ex">=</span> <span class="dv">12</span></span></code></pre></div></li>
+</ul>
 <h2 id="related-works">Related works</h2>
 <p>See <a
 href="https://resources.wolframcloud.com/PacletRepository/resources/DanielMcDonald/GroupTheoryPaclet/">GroupTheoryPaclet</a>

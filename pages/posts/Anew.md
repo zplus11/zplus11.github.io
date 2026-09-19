@@ -3,6 +3,10 @@ title: The art of being disjoint
 date: 20 June, 2026
 ---
 
+Copyright (C) All rights reserved.
+
+This article is expected to appear in Resonance Journal of Science Education.
+
 Set theory [1] is often regarded as the "scaffolding" of modern
 mathematics. It is as foundational as it is omnipresent; almost every
 mathematical object we encounter can ultimately be decomposed into sets.
